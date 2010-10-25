@@ -7,12 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
-@interface AppDelegate_iPhone : NSObject <UIApplicationDelegate> {
-    UIWindow *window;
+@interface AppDelegate_iPhone : AppDelegate {
 }
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-
 @end
-
