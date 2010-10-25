@@ -7,11 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AardvarkController.h"
+#import "FamigoHeaders.h"
 
 @interface AppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
+    AardvarkController *aardvarkController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) AardvarkController *aardvarkController;
 
 @end

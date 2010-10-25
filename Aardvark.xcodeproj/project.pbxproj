@@ -141,6 +141,9 @@
 		34E8313B127609E500FFF679 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E8313A127609E500FFF679 /* QuartzCore.framework */; };
 		34E8313D127609E500FFF679 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E8313C127609E500FFF679 /* SystemConfiguration.framework */; };
 		34E8315C12760CE500FFF679 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E8315B12760CE500FFF679 /* AppDelegate.m */; };
+		34E831B4127611C100FFF679 /* AardvarkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E831B2127611C100FFF679 /* AardvarkController.m */; };
+		34E832321276157E00FFF679 /* AardvarkController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34E832311276157E00FFF679 /* AardvarkController.xib */; };
+		34E832471276164100FFF679 /* AardvarkController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34E832461276164100FFF679 /* AardvarkController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -322,6 +325,10 @@
 		34E8313C127609E500FFF679 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		34E8315A12760CE500FFF679 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Shared/AppDelegate.h; sourceTree = "<group>"; };
 		34E8315B12760CE500FFF679 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Shared/AppDelegate.m; sourceTree = "<group>"; };
+		34E831B1127611C100FFF679 /* AardvarkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AardvarkController.h; path = Shared/AardvarkController.h; sourceTree = "<group>"; };
+		34E831B2127611C100FFF679 /* AardvarkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AardvarkController.m; path = Shared/AardvarkController.m; sourceTree = "<group>"; };
+		34E832311276157E00FFF679 /* AardvarkController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AardvarkController.xib; sourceTree = "<group>"; };
+		34E832461276164100FFF679 /* AardvarkController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AardvarkController.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Aardvark-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Aardvark-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -360,6 +367,7 @@
 				2860E325111B887F00E27156 /* AppDelegate_iPhone.h */,
 				2860E326111B887F00E27156 /* AppDelegate_iPhone.m */,
 				2860E327111B887F00E27156 /* MainWindow_iPhone.xib */,
+				34E832311276157E00FFF679 /* AardvarkController.xib */,
 			);
 			path = iPhone;
 			sourceTree = "<group>";
@@ -370,6 +378,7 @@
 				2860E32B111B888700E27156 /* AppDelegate_iPad.h */,
 				2860E32C111B888700E27156 /* AppDelegate_iPad.m */,
 				2860E32D111B888700E27156 /* MainWindow_iPad.xib */,
+				34E832461276164100FFF679 /* AardvarkController.xib */,
 			);
 			path = iPad;
 			sourceTree = "<group>";
@@ -381,6 +390,8 @@
 				8D1107310486CEB800E47090 /* Aardvark-Info.plist */,
 				34E8315A12760CE500FFF679 /* AppDelegate.h */,
 				34E8315B12760CE500FFF679 /* AppDelegate.m */,
+				34E831B1127611C100FFF679 /* AardvarkController.h */,
+				34E831B2127611C100FFF679 /* AardvarkController.m */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -757,6 +768,8 @@
 				34E8312D127609B400FFF679 /* WelcomeViewController-iPad.xib in Resources */,
 				34E8312E127609B400FFF679 /* WelcomeViewController.xib in Resources */,
 				34E8312F127609B400FFF679 /* yay.wav in Resources */,
+				34E832321276157E00FFF679 /* AardvarkController.xib in Resources */,
+				34E832471276164100FFF679 /* AardvarkController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,6 +784,7 @@
 				2860E328111B887F00E27156 /* AppDelegate_iPhone.m in Sources */,
 				2860E32E111B888700E27156 /* AppDelegate_iPad.m in Sources */,
 				34E8315C12760CE500FFF679 /* AppDelegate.m in Sources */,
+				34E831B4127611C100FFF679 /* AardvarkController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
