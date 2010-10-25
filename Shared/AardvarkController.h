@@ -7,8 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FamigoHeaders.h"
 
-@interface AardvarkController : UIViewController {
+@interface AardvarkController : UIViewController <FamigoControllerDelegate> {
+    FamigoController *famigoController;
+    LogoAnimationController *logoAnimationController;
 }
+
+@property (nonatomic, retain) FamigoController *famigoController;
+@property (nonatomic, retain) LogoAnimationController *logoAnimationController;
+
+- (void)famigoReady;
 
 @end

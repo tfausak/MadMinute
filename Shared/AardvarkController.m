@@ -10,10 +10,16 @@
 
 @implementation AardvarkController
 
+@synthesize famigoController;
+@synthesize logoAnimationController;
+
 #pragma mark -
 #pragma mark Memory management
 
 - (void)dealloc {
+    [famigoController release];
+    [logoAnimationController release];
+    
     [super dealloc];
 }
 
@@ -24,6 +30,24 @@
 #pragma mark -
 #pragma mark View
 
+- (void)viewDidLoad {
+    // Display the Famigo controller
+    famigoController = [FamigoController sharedInstanceWithDelegate:self];
+    [[famigoController view] setFrame:[[self view] frame]];
+    [famigoController viewWillAppear:NO];
+    [famigoController show];
+    [[self view] addSubview:[famigoController view]];
+    
+    // Display the Famigo logo
+    logoAnimationController = [[LogoAnimationController alloc] init];
+    [[logoAnimationController view] setFrame:[[self view] frame]];
+    [[logoAnimationController view] setBackgroundColor:[UIColor blackColor]];
+    [[self view] addSubview:[logoAnimationController view]];
+    
+    // Capture the notification at the end of the logo animation
+    [logoAnimationController registerForNotifications:self withSelector:@selector(logoAnimationDidFinish:)];
+}
+
 - (void)viewDidUnload {
     [super viewDidUnload];
 }
@@ -32,6 +56,14 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return YES;
+}
+
+- (void)logoAnimationDidFinish:(NSNotification *)notification {
+    [[logoAnimationController view] removeFromSuperview];
+    [logoAnimationController release];
+}
+
+- (void)famigoReady {
 }
 
 @end

@@ -258,7 +258,7 @@
 						<dict>
 							<key>PBXSmartGroupTreeModuleColumnWidthsKey</key>
 							<array>
-								<real>185</real>
+								<real>249</real>
 							</array>
 							<key>PBXSmartGroupTreeModuleColumnsKey_v4</key>
 							<array>
@@ -278,13 +278,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>9</integer>
-									<integer>5</integer>
+									<integer>17</integer>
+									<integer>11</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {185, 680}}</string>
+							<string>{{0, 0}, {249, 680}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -294,11 +294,11 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {202, 698}}</string>
+						<string>{{0, 0}, {266, 698}}</string>
 						<key>GroupTreeTableConfiguration</key>
 						<array>
 							<string>MainColumn</string>
-							<real>185</real>
+							<real>249</real>
 						</array>
 						<key>RubberWindowFrame</key>
 						<string>0 39 1280 739 0 0 1280 778 </string>
@@ -306,7 +306,7 @@
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
 					<key>Proportion</key>
-					<string>202pt</string>
+					<string>266pt</string>
 				</dict>
 				<dict>
 					<key>Dock</key>
@@ -317,7 +317,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>34E830071276097800FFF679</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>asm __kill  0x95e12eec</string>
+								<string>AardvarkController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,18 +325,22 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>34E830081276097800FFF679</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>asm __kill  0x95e12eec</string>
+										<string>AardvarkController.m</string>
+										<key>_historyCapacity</key>
+										<integer>0</integer>
+										<key>bookmark</key>
+										<string>34E8336112762C2F00FFF679</string>
 										<key>history</key>
 										<array>
-											<string>34E8319A12760FD400FFF679</string>
-											<string>34E8319C12760FD400FFF679</string>
 											<string>34E8319D12760FD400FFF679</string>
 											<string>34E8319E12760FD400FFF679</string>
 											<string>34E8319F12760FD400FFF679</string>
-											<string>34E831F9127612C900FFF679</string>
-											<string>34E8320B1276137900FFF679</string>
 											<string>34E832271276141F00FFF679</string>
-											<string>34E832371276159200FFF679</string>
+											<string>34E832681276180900FFF679</string>
+											<string>34E833041276250700FFF679</string>
+											<string>34E8335A127629C500FFF679</string>
+											<string>34E8335B127629C500FFF679</string>
+											<string>34E8335C127629C500FFF679</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -350,7 +354,7 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1073, 693}}</string>
+								<string>{{0, 0}, {1009, 693}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 39 1280 739 0 0 1280 778 </string>
 							</dict>
@@ -375,7 +379,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1073, -27}}</string>
+										<string>{{10, 27}, {1009, -27}}</string>
 										<key>RubberWindowFrame</key>
 										<string>0 39 1280 739 0 0 1280 778 </string>
 									</dict>
@@ -440,7 +444,7 @@
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>1073pt</string>
+					<string>1009pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -653,7 +657,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>34E832431276161300FFF679</string>
+		<string>34E8336212762C2F00FFF679</string>
 		<string>34E8314C12760A0900FFF679</string>
 		<string>34E830141276097800FFF679</string>
 		<string>/Users/taylor/Documents/Famigo/Aardvark/Aardvark.xcodeproj</string>

@@ -17,8 +17,8 @@
 #pragma mark Memory management
 
 - (void)dealloc {
-    [[self window] release];
-    [[self aardvarkController] release];
+    [window release];
+    [aardvarkController release];
     
     [super dealloc];
 }
@@ -36,12 +36,19 @@
 	f.game_name = @"Aardvark";
 	f.game_instructions = @"\nIf you're an ant, it's going to eat you up.\n";
     
-    // Load the main view
-    [self setAardvarkController:[[AardvarkController alloc] init]];
-    [[[self aardvarkController] view] setFrame:[[self window] frame]];
-    [[self window] addSubview:[[self aardvarkController] view]];
+    // Create a new frame below the status bar
+    CGRect frame = [window frame];
+    if (![UIApplication sharedApplication].statusBarHidden) {
+        frame.origin.y += [UIApplication sharedApplication].statusBarFrame.size.height;
+        frame.size.height -= [UIApplication sharedApplication].statusBarFrame.size.height;
+    }
     
-    [[self window] makeKeyAndVisible];
+    // Load the main view
+    aardvarkController = [[AardvarkController alloc] init];
+    [[aardvarkController view] setFrame:frame];
+    [window addSubview:[aardvarkController view]];
+    
+    [window makeKeyAndVisible];
     return YES;
 }
 
