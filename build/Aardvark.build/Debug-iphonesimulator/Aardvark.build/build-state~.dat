@@ -1,0 +1,255 @@
+TAardvark
+v7
+r0
+t309725559.696883
+cCheck dependencies
+cProcessInfoPlistFile /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app/Info.plist Aardvark-Info.plist
+cCompileXIB /Users/taylor/Documents/Famigo/Aardvark/iPhone/MainWindow_iPhone.xib
+cCompileXIB /Users/taylor/Documents/Famigo/Aardvark/iPad/MainWindow_iPad.xib
+cProcessPCH /var/folders/xL/xLTCVj48H74-SYkKXnqM4U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Aardvark_Prefix-ehrlnmbnjpsdjjdwmilaroyvndoc/Aardvark_Prefix.pch.gch Aardvark_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Objects-normal/i386/main.o /Users/taylor/Documents/Famigo/Aardvark/Shared/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Objects-normal/i386/AppDelegate_iPhone.o /Users/taylor/Documents/Famigo/Aardvark/iPhone/AppDelegate_iPhone.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Objects-normal/i386/AppDelegate_iPad.o /Users/taylor/Documents/Famigo/Aardvark/iPad/AppDelegate_iPad.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app/Aardvark normal i386
+cGenerateDSYMFile /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app.dSYM /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app/Aardvark
+cTouch /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk
+c000000004C6C30170000000000000110
+t1282158615
+s272
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004C5A4DB60000000000295900
+t1280986550
+s2709760
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004C5A4DB0000000000029D580
+t1280986544
+s2741632
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004C5A4DA10000000000001466
+t1280986529
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C6241ED00000000000009CD
+t1281507821
+s2509
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C6242840000000001E228C0
+t1281507972
+s31598784
+
+N/Users/taylor/Documents/Famigo/Aardvark/Aardvark_Prefix.pch
+c000000004CC5D1EB00000000000000B9
+t1288032747
+s185
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/taylor/Documents/Famigo/Aardvark/Shared/main.m
+c000000004CC5D1EB000000000000016C
+t1288032747
+s364
+i<UIKit/UIKit.h>
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Objects-normal/i386/Aardvark.LinkFileList
+c000000004CC5D1F60000000000000191
+t1288032758
+s401
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Objects-normal/i386/AppDelegate_iPad.o
+t1288032759
+s45320
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Objects-normal/i386/AppDelegate_iPhone.o
+t1288032759
+s46204
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Objects-normal/i386/main.o
+t1288032759
+s6320
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app
+t1288032759
+s238
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app.dSYM
+t1288032759
+s102
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app/Aardvark
+t1288032759
+s17348
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app/Info.plist
+t1288032758
+s909
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app/MainWindow_iPad.nib
+t1288032758
+s982
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app/MainWindow_iPhone.nib
+t1288032758
+s984
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app/PkgInfo
+t1288032758
+s8
+
+N/Users/taylor/Documents/Famigo/Aardvark/iPad/AppDelegate_iPad.h
+c000000004CC5D1EB0000000000000146
+t1288032747
+s326
+i<UIKit/UIKit.h>
+
+N/Users/taylor/Documents/Famigo/Aardvark/iPad/AppDelegate_iPad.m
+c000000004CC5D1EB00000000000006A7
+t1288032747
+s1703
+i"AppDelegate_iPad.h"
+
+N/Users/taylor/Documents/Famigo/Aardvark/iPad/MainWindow_iPad.xib
+c000000004CC5D1EB00000000000036DC
+t1288032747
+s14044
+
+N/Users/taylor/Documents/Famigo/Aardvark/iPhone/AppDelegate_iPhone.h
+c000000004CC5D1EB000000000000014A
+t1288032747
+s330
+i<UIKit/UIKit.h>
+
+N/Users/taylor/Documents/Famigo/Aardvark/iPhone/AppDelegate_iPhone.m
+c000000004CC5D1EB00000000000009CC
+t1288032747
+s2508
+i"AppDelegate_iPhone.h"
+
+N/Users/taylor/Documents/Famigo/Aardvark/iPhone/MainWindow_iPhone.xib
+c000000004CC5D1EB000000000000390B
+t1288032747
+s14603
+
+N/var/folders/xL/xLTCVj48H74-SYkKXnqM4U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Aardvark_Prefix-ehrlnmbnjpsdjjdwmilaroyvndoc/Aardvark_Prefix.pch.gch
+t1288032759
+s15232016
+
+NAardvark-Info.plist
+c000000004CC5D1EB0000000000000569
+t1288032747
+s1385
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies309725558#309725558#0(0"0(0#1#0"8683570144#0"0#
+
+CCompileC build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Objects-normal/i386/AppDelegate_iPad.o /Users/taylor/Documents/Famigo/Aardvark/iPad/AppDelegate_iPad.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s309725559.569533
+e309725559.648050
+r1
+xCompileC
+xbuild/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Objects-normal/i386/AppDelegate_iPad.o
+x/Users/taylor/Documents/Famigo/Aardvark/iPad/AppDelegate_iPad.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@71"Compile /Users/taylor/Documents/Famigo/Aardvark/iPad/AppDelegate_iPad.m309725559#309725559#0(0"0(0#0#63"/Users/taylor/Documents/Famigo/Aardvark/iPad/AppDelegate_iPad.m8677443584#2036"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Aardvark-generated-files.hmap -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Aardvark-own-target-headers.hmap -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Aardvark-all-target-headers.hmap -iquote /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Aardvark-project-headers.hmap -F/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator -I/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/include -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/DerivedSources/i386 -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/DerivedSources -include /var/folders/xL/xLTCVj48H74-SYkKXnqM4U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Aardvark_Prefix-ehrlnmbnjpsdjjdwmilaroyvndoc/Aardvark_Prefix.pch -c /Users/taylor/Documents/Famigo/Aardvark/iPad/AppDelegate_iPad.m -o /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Objects-normal/i386/AppDelegate_iPad.o0#
+
+CCompileC build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Objects-normal/i386/AppDelegate_iPhone.o /Users/taylor/Documents/Famigo/Aardvark/iPhone/AppDelegate_iPhone.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s309725559.508556
+e309725559.598340
+r1
+xCompileC
+xbuild/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Objects-normal/i386/AppDelegate_iPhone.o
+x/Users/taylor/Documents/Famigo/Aardvark/iPhone/AppDelegate_iPhone.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@75"Compile /Users/taylor/Documents/Famigo/Aardvark/iPhone/AppDelegate_iPhone.m309725559#309725559#0(0"0(0#0#67"/Users/taylor/Documents/Famigo/Aardvark/iPhone/AppDelegate_iPhone.m8677978784#2042"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Aardvark-generated-files.hmap -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Aardvark-own-target-headers.hmap -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Aardvark-all-target-headers.hmap -iquote /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Aardvark-project-headers.hmap -F/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator -I/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/include -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/DerivedSources/i386 -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/DerivedSources -include /var/folders/xL/xLTCVj48H74-SYkKXnqM4U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Aardvark_Prefix-ehrlnmbnjpsdjjdwmilaroyvndoc/Aardvark_Prefix.pch -c /Users/taylor/Documents/Famigo/Aardvark/iPhone/AppDelegate_iPhone.m -o /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Objects-normal/i386/AppDelegate_iPhone.o0#
+
+CCompileC build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Objects-normal/i386/main.o /Users/taylor/Documents/Famigo/Aardvark/Shared/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s309725559.506707
+e309725559.569422
+r1
+xCompileC
+xbuild/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Objects-normal/i386/main.o
+x/Users/taylor/Documents/Famigo/Aardvark/Shared/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@61"Compile /Users/taylor/Documents/Famigo/Aardvark/Shared/main.m309725559#309725559#0(0"0(0#0#53"/Users/taylor/Documents/Famigo/Aardvark/Shared/main.m8680191104#2014"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Aardvark-generated-files.hmap -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Aardvark-own-target-headers.hmap -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Aardvark-all-target-headers.hmap -iquote /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Aardvark-project-headers.hmap -F/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator -I/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/include -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/DerivedSources/i386 -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/DerivedSources -include /var/folders/xL/xLTCVj48H74-SYkKXnqM4U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Aardvark_Prefix-ehrlnmbnjpsdjjdwmilaroyvndoc/Aardvark_Prefix.pch -c /Users/taylor/Documents/Famigo/Aardvark/Shared/main.m -o /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Objects-normal/i386/main.o0#
+
+CCompileXIB /Users/taylor/Documents/Famigo/Aardvark/iPad/MainWindow_iPad.xib
+s309725558.281118
+e309725558.697966
+r1
+xCompileXIB
+x/Users/taylor/Documents/Famigo/Aardvark/iPad/MainWindow_iPad.xib
+lSLF07#2@35"CompileXIB iPad/MainWindow_iPad.xib309725558#309725558#0(0"0(0#0#64"/Users/taylor/Documents/Famigo/Aardvark/iPad/MainWindow_iPad.xib8679540928#651"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app/MainWindow_iPad.nib /Users/taylor/Documents/Famigo/Aardvark/iPad/MainWindow_iPad.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk0#
+
+CCompileXIB /Users/taylor/Documents/Famigo/Aardvark/iPhone/MainWindow_iPhone.xib
+s309725558.276084
+e309725558.729276
+r1
+xCompileXIB
+x/Users/taylor/Documents/Famigo/Aardvark/iPhone/MainWindow_iPhone.xib
+lSLF07#2@39"CompileXIB iPhone/MainWindow_iPhone.xib309725558#309725558#0(0"0(0#0#68"/Users/taylor/Documents/Famigo/Aardvark/iPhone/MainWindow_iPhone.xib8679801056#657"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app/MainWindow_iPhone.nib /Users/taylor/Documents/Famigo/Aardvark/iPhone/MainWindow_iPhone.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk0#
+
+CGenerateDSYMFile /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app.dSYM /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app/Aardvark
+s309725559.677348
+e309725559.693597
+r1
+xGenerateDSYMFile
+x/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app.dSYM
+x/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app/Aardvark
+lSLF07#2@112"GenerateDSYMFile build/Debug-iphonesimulator/Aardvark.app.dSYM build/Debug-iphonesimulator/Aardvark.app/Aardvark309725559#309725559#0(0"0(0#0#89"/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app/Aardvark8685202784#451"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/usr/bin/dsymutil /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app/Aardvark -o /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app.dSYM0#
+
+CLd /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app/Aardvark normal i386
+s309725559.648136
+e309725559.677253
+r1
+xLd
+x/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app/Aardvark
+xnormal
+xi386
+lSLF07#2@94"Link /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app/Aardvark309725559#309725559#0(0"0(0#0#0"8676730560#972"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -L/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator -F/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator -filelist /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Objects-normal/i386/Aardvark.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app/Aardvark0#
+
+CProcessInfoPlistFile /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app/Info.plist Aardvark-Info.plist
+s309725558.255543
+e309725558.275985
+r1
+xProcessInfoPlistFile
+x/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app/Info.plist
+xAardvark-Info.plist
+lSLF07#2@27"Process Aardvark-Info.plist309725558#309725558#0(0"0(0#0#59"/Users/taylor/Documents/Famigo/Aardvark/Aardvark-Info.plist8680712480#547"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    builtin-infoPlistUtility Aardvark-Info.plist -genpkginfo /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app/Info.plist0#
+
+CProcessPCH /var/folders/xL/xLTCVj48H74-SYkKXnqM4U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Aardvark_Prefix-ehrlnmbnjpsdjjdwmilaroyvndoc/Aardvark_Prefix.pch.gch Aardvark_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s309725558.729402
+e309725559.506457
+r1
+xProcessPCH
+x/var/folders/xL/xLTCVj48H74-SYkKXnqM4U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Aardvark_Prefix-ehrlnmbnjpsdjjdwmilaroyvndoc/Aardvark_Prefix.pch.gch
+xAardvark_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@30"Precompile Aardvark_Prefix.pch309725558#309725559#0(0"0(0#0#59"/Users/taylor/Documents/Famigo/Aardvark/Aardvark_Prefix.pch8683635808#1897"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -iquote /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Aardvark-generated-files.hmap -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Aardvark-own-target-headers.hmap -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Aardvark-all-target-headers.hmap -iquote /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/Aardvark-project-headers.hmap -F/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator -I/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/include -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/DerivedSources/i386 -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphonesimulator/Aardvark.build/DerivedSources -c /Users/taylor/Documents/Famigo/Aardvark/Aardvark_Prefix.pch -o /var/folders/xL/xLTCVj48H74-SYkKXnqM4U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Aardvark_Prefix-ehrlnmbnjpsdjjdwmilaroyvndoc/Aardvark_Prefix.pch.gch0#
+
+CTouch /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app
+s309725559.693727
+e309725559.696833
+r1
+xTouch
+x/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app
+lSLF07#2@86"Touch /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app309725559#309725559#0(0"0(0#0#0"8684357600#343"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /usr/bin/touch -c /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphonesimulator/Aardvark.app0#
+

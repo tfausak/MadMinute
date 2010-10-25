@@ -1,0 +1,428 @@
+TAardvark
+v7
+r0
+t309725553.847857
+cCheck dependencies
+cCpResource build/Debug-iphoneos/Aardvark.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/ResourceRules.plist
+cProcessInfoPlistFile /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/Info.plist Aardvark-Info.plist
+cCompileXIB /Users/taylor/Documents/Famigo/Aardvark/iPhone/MainWindow_iPhone.xib
+cCompileXIB /Users/taylor/Documents/Famigo/Aardvark/iPad/MainWindow_iPad.xib
+cProcessPCH /var/folders/xL/xLTCVj48H74-SYkKXnqM4U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Aardvark_Prefix-asjsxtstqohbvnftuggoxvhfgdkl/Aardvark_Prefix.pch.gch Aardvark_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+cProcessPCH /var/folders/xL/xLTCVj48H74-SYkKXnqM4U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Aardvark_Prefix-bhypxljkgkvborbjxkhoazdptzdk/Aardvark_Prefix.pch.gch Aardvark_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv6/main.o /Users/taylor/Documents/Famigo/Aardvark/Shared/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv6/AppDelegate_iPhone.o /Users/taylor/Documents/Famigo/Aardvark/iPhone/AppDelegate_iPhone.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv6/AppDelegate_iPad.o /Users/taylor/Documents/Famigo/Aardvark/iPad/AppDelegate_iPad.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv7/main.o /Users/taylor/Documents/Famigo/Aardvark/Shared/main.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv6/Aardvark normal armv6
+cCompileC build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv7/AppDelegate_iPhone.o /Users/taylor/Documents/Famigo/Aardvark/iPhone/AppDelegate_iPhone.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv7/AppDelegate_iPad.o /Users/taylor/Documents/Famigo/Aardvark/iPad/AppDelegate_iPad.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv7/Aardvark normal armv7
+cCreateUniversalBinary /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/Aardvark normal "armv6 armv7"
+cGenerateDSYMFile /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app.dSYM /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/Aardvark
+cProcessProductPackaging "/Users/taylor/Library/MobileDevice/Provisioning Profiles/6E27FDFC-A00C-4CE0-A4C9-F166AC8078AB.mobileprovision" /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/embedded.mobileprovision
+cTouch /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app
+cProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/Entitlements.plist /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark.xcent
+cCodeSign /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk
+c000000004C6DE9E30000000000000110
+t1282271715
+s272
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/Entitlements.plist
+c000000004C578FA900000000000001A7
+t1280806825
+s423
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/ResourceRules.plist
+c000000004C578FA900000000000001E5
+t1280806825
+s485
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004C5A51050000000000345F00
+t1280987397
+s3432192
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004C5A52B100000000003E1EF0
+t1280987825
+s4071152
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004C5A527F0000000000001466
+t1280987775
+s5222
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C62427000000000000009CD
+t1281507952
+s2509
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C62430F0000000002EBC2B0
+t1281508111
+s49005232
+
+N/Users/taylor/Documents/Famigo/Aardvark/Aardvark_Prefix.pch
+c000000004CC5D1EB00000000000000B9
+t1288032747
+s185
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/taylor/Documents/Famigo/Aardvark/Shared/main.m
+c000000004CC5D1EB000000000000016C
+t1288032747
+s364
+i<UIKit/UIKit.h>
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark.xcent
+t1288032753
+s422
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv6/Aardvark
+t1288032753
+s17332
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv6/Aardvark.LinkFileList
+c000000004CC5D1EF000000000000017F
+t1288032751
+s383
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv6/AppDelegate_iPad.o
+t1288032753
+s45216
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv6/AppDelegate_iPhone.o
+t1288032753
+s45992
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv6/main.o
+t1288032753
+s6464
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv7/Aardvark
+t1288032753
+s17332
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv7/Aardvark.LinkFileList
+c000000004CC5D1EF000000000000017F
+t1288032751
+s383
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv7/AppDelegate_iPad.o
+t1288032753
+s45168
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv7/AppDelegate_iPhone.o
+t1288032753
+s45936
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv7/main.o
+t1288032753
+s6448
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app
+t1288032753
+s374
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app.dSYM
+t1288032753
+s102
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/Aardvark
+t1288032753
+s41908
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/Info.plist
+t1288032751
+s1044
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/MainWindow_iPad.nib
+t1288032752
+s982
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/MainWindow_iPhone.nib
+t1288032752
+s984
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/PkgInfo
+t1288032751
+s8
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/ResourceRules.plist
+t1288032751
+s485
+
+N/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/embedded.mobileprovision
+t1288032753
+s14733
+
+N/Users/taylor/Documents/Famigo/Aardvark/iPad/AppDelegate_iPad.h
+c000000004CC5D1EB0000000000000146
+t1288032747
+s326
+i<UIKit/UIKit.h>
+
+N/Users/taylor/Documents/Famigo/Aardvark/iPad/AppDelegate_iPad.m
+c000000004CC5D1EB00000000000006A7
+t1288032747
+s1703
+i"AppDelegate_iPad.h"
+
+N/Users/taylor/Documents/Famigo/Aardvark/iPad/MainWindow_iPad.xib
+c000000004CC5D1EB00000000000036DC
+t1288032747
+s14044
+
+N/Users/taylor/Documents/Famigo/Aardvark/iPhone/AppDelegate_iPhone.h
+c000000004CC5D1EB000000000000014A
+t1288032747
+s330
+i<UIKit/UIKit.h>
+
+N/Users/taylor/Documents/Famigo/Aardvark/iPhone/AppDelegate_iPhone.m
+c000000004CC5D1EB00000000000009CC
+t1288032747
+s2508
+i"AppDelegate_iPhone.h"
+
+N/Users/taylor/Documents/Famigo/Aardvark/iPhone/MainWindow_iPhone.xib
+c000000004CC5D1EB000000000000390B
+t1288032747
+s14603
+
+N/Users/taylor/Library/MobileDevice/Provisioning Profiles/6E27FDFC-A00C-4CE0-A4C9-F166AC8078AB.mobileprovision
+c000000004CB4D7FC000000000000398D
+t1286920188
+s14733
+
+N/var/folders/xL/xLTCVj48H74-SYkKXnqM4U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Aardvark_Prefix-asjsxtstqohbvnftuggoxvhfgdkl/Aardvark_Prefix.pch.gch
+t1288032753
+s9848368
+
+N/var/folders/xL/xLTCVj48H74-SYkKXnqM4U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Aardvark_Prefix-bhypxljkgkvborbjxkhoazdptzdk/Aardvark_Prefix.pch.gch
+t1288032753
+s10315312
+
+NAardvark-Info.plist
+c000000004CC5D1EB0000000000000569
+t1288032747
+s1385
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies309725551#309725551#0(0"0(0#1#0"8673038336#0"0#
+
+CCodeSign /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app
+s309725553.661727
+e309725553.847817
+r1
+xCodeSign
+x/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app
+lSLF07#2@42"CodeSign build/Debug-iphoneos/Aardvark.app309725553#309725553#0(0"0(0#0#73"/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app8664486400#720"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    setenv _CODESIGN_ALLOCATE_ /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate    /usr/bin/codesign -f -s "iPhone Developer: Taylor Fausak (72H9XHH9B9)" --resource-rules=/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/ResourceRules.plist --entitlements /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark.xcent /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app0#
+
+CCompileC build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv6/AppDelegate_iPad.o /Users/taylor/Documents/Famigo/Aardvark/iPad/AppDelegate_iPad.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s309725553.408008
+e309725553.486577
+r1
+xCompileC
+xbuild/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv6/AppDelegate_iPad.o
+x/Users/taylor/Documents/Famigo/Aardvark/iPad/AppDelegate_iPad.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@71"Compile /Users/taylor/Documents/Famigo/Aardvark/iPad/AppDelegate_iPad.m309725553#309725553#0(0"0(0#0#63"/Users/taylor/Documents/Famigo/Aardvark/iPad/AppDelegate_iPad.m8674748704#1846"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.2 -iquote /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-generated-files.hmap -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-own-target-headers.hmap -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-all-target-headers.hmap -iquote /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-project-headers.hmap -F/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos -I/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/include -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/DerivedSources/armv6 -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/DerivedSources -include /var/folders/xL/xLTCVj48H74-SYkKXnqM4U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Aardvark_Prefix-asjsxtstqohbvnftuggoxvhfgdkl/Aardvark_Prefix.pch -c /Users/taylor/Documents/Famigo/Aardvark/iPad/AppDelegate_iPad.m -o /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv6/AppDelegate_iPad.o0#
+
+CCompileC build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv6/AppDelegate_iPhone.o /Users/taylor/Documents/Famigo/Aardvark/iPhone/AppDelegate_iPhone.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s309725553.352200
+e309725553.435058
+r1
+xCompileC
+xbuild/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv6/AppDelegate_iPhone.o
+x/Users/taylor/Documents/Famigo/Aardvark/iPhone/AppDelegate_iPhone.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@75"Compile /Users/taylor/Documents/Famigo/Aardvark/iPhone/AppDelegate_iPhone.m309725553#309725553#0(0"0(0#0#67"/Users/taylor/Documents/Famigo/Aardvark/iPhone/AppDelegate_iPhone.m8679341920#1852"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.2 -iquote /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-generated-files.hmap -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-own-target-headers.hmap -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-all-target-headers.hmap -iquote /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-project-headers.hmap -F/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos -I/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/include -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/DerivedSources/armv6 -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/DerivedSources -include /var/folders/xL/xLTCVj48H74-SYkKXnqM4U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Aardvark_Prefix-asjsxtstqohbvnftuggoxvhfgdkl/Aardvark_Prefix.pch -c /Users/taylor/Documents/Famigo/Aardvark/iPhone/AppDelegate_iPhone.m -o /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv6/AppDelegate_iPhone.o0#
+
+CCompileC build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv6/main.o /Users/taylor/Documents/Famigo/Aardvark/Shared/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s309725553.350753
+e309725553.407417
+r1
+xCompileC
+xbuild/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv6/main.o
+x/Users/taylor/Documents/Famigo/Aardvark/Shared/main.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@61"Compile /Users/taylor/Documents/Famigo/Aardvark/Shared/main.m309725553#309725553#0(0"0(0#0#53"/Users/taylor/Documents/Famigo/Aardvark/Shared/main.m8680942048#1824"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.2 -iquote /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-generated-files.hmap -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-own-target-headers.hmap -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-all-target-headers.hmap -iquote /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-project-headers.hmap -F/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos -I/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/include -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/DerivedSources/armv6 -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/DerivedSources -include /var/folders/xL/xLTCVj48H74-SYkKXnqM4U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Aardvark_Prefix-asjsxtstqohbvnftuggoxvhfgdkl/Aardvark_Prefix.pch -c /Users/taylor/Documents/Famigo/Aardvark/Shared/main.m -o /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv6/main.o0#
+
+CCompileC build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv7/AppDelegate_iPad.o /Users/taylor/Documents/Famigo/Aardvark/iPad/AppDelegate_iPad.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s309725553.516227
+e309725553.592480
+r1
+xCompileC
+xbuild/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv7/AppDelegate_iPad.o
+x/Users/taylor/Documents/Famigo/Aardvark/iPad/AppDelegate_iPad.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@71"Compile /Users/taylor/Documents/Famigo/Aardvark/iPad/AppDelegate_iPad.m309725553#309725553#0(0"0(0#0#63"/Users/taylor/Documents/Famigo/Aardvark/iPad/AppDelegate_iPad.m8675692512#1846"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.2 -iquote /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-generated-files.hmap -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-own-target-headers.hmap -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-all-target-headers.hmap -iquote /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-project-headers.hmap -F/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos -I/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/include -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/DerivedSources/armv7 -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/DerivedSources -include /var/folders/xL/xLTCVj48H74-SYkKXnqM4U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Aardvark_Prefix-bhypxljkgkvborbjxkhoazdptzdk/Aardvark_Prefix.pch -c /Users/taylor/Documents/Famigo/Aardvark/iPad/AppDelegate_iPad.m -o /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv7/AppDelegate_iPad.o0#
+
+CCompileC build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv7/AppDelegate_iPhone.o /Users/taylor/Documents/Famigo/Aardvark/iPhone/AppDelegate_iPhone.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s309725553.506512
+e309725553.592196
+r1
+xCompileC
+xbuild/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv7/AppDelegate_iPhone.o
+x/Users/taylor/Documents/Famigo/Aardvark/iPhone/AppDelegate_iPhone.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@75"Compile /Users/taylor/Documents/Famigo/Aardvark/iPhone/AppDelegate_iPhone.m309725553#309725553#0(0"0(0#0#67"/Users/taylor/Documents/Famigo/Aardvark/iPhone/AppDelegate_iPhone.m8676706144#1852"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.2 -iquote /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-generated-files.hmap -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-own-target-headers.hmap -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-all-target-headers.hmap -iquote /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-project-headers.hmap -F/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos -I/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/include -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/DerivedSources/armv7 -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/DerivedSources -include /var/folders/xL/xLTCVj48H74-SYkKXnqM4U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Aardvark_Prefix-bhypxljkgkvborbjxkhoazdptzdk/Aardvark_Prefix.pch -c /Users/taylor/Documents/Famigo/Aardvark/iPhone/AppDelegate_iPhone.m -o /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv7/AppDelegate_iPhone.o0#
+
+CCompileC build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv7/main.o /Users/taylor/Documents/Famigo/Aardvark/Shared/main.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s309725553.435171
+e309725553.506404
+r1
+xCompileC
+xbuild/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv7/main.o
+x/Users/taylor/Documents/Famigo/Aardvark/Shared/main.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@61"Compile /Users/taylor/Documents/Famigo/Aardvark/Shared/main.m309725553#309725553#0(0"0(0#0#53"/Users/taylor/Documents/Famigo/Aardvark/Shared/main.m8667473792#1824"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.2 -iquote /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-generated-files.hmap -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-own-target-headers.hmap -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-all-target-headers.hmap -iquote /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-project-headers.hmap -F/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos -I/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/include -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/DerivedSources/armv7 -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/DerivedSources -include /var/folders/xL/xLTCVj48H74-SYkKXnqM4U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Aardvark_Prefix-bhypxljkgkvborbjxkhoazdptzdk/Aardvark_Prefix.pch -c /Users/taylor/Documents/Famigo/Aardvark/Shared/main.m -o /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv7/main.o0#
+
+CCompileXIB /Users/taylor/Documents/Famigo/Aardvark/iPad/MainWindow_iPad.xib
+s309725551.814088
+e309725552.403687
+r1
+xCompileXIB
+x/Users/taylor/Documents/Famigo/Aardvark/iPad/MainWindow_iPad.xib
+lSLF07#2@35"CompileXIB iPad/MainWindow_iPad.xib309725551#309725552#0(0"0(0#0#64"/Users/taylor/Documents/Famigo/Aardvark/iPad/MainWindow_iPad.xib8682032096#623"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/MainWindow_iPad.nib /Users/taylor/Documents/Famigo/Aardvark/iPad/MainWindow_iPad.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk0#
+
+CCompileXIB /Users/taylor/Documents/Famigo/Aardvark/iPhone/MainWindow_iPhone.xib
+s309725551.813278
+e309725552.403535
+r1
+xCompileXIB
+x/Users/taylor/Documents/Famigo/Aardvark/iPhone/MainWindow_iPhone.xib
+lSLF07#2@39"CompileXIB iPhone/MainWindow_iPhone.xib309725551#309725552#0(0"0(0#0#68"/Users/taylor/Documents/Famigo/Aardvark/iPhone/MainWindow_iPhone.xib8685039456#629"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/MainWindow_iPhone.nib /Users/taylor/Documents/Famigo/Aardvark/iPhone/MainWindow_iPhone.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk0#
+
+CCpResource build/Debug-iphoneos/Aardvark.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/ResourceRules.plist
+s309725551.782899
+e309725551.788466
+r1
+xCpResource
+xbuild/Debug-iphoneos/Aardvark.app/ResourceRules.plist
+x/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/ResourceRules.plist
+lSLF07#2@94"Copy /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/ResourceRules.plist309725551#309725551#0(0"0(0#0#89"/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/ResourceRules.plist8672444704#545"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/ResourceRules.plist /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app0#
+
+CCreateUniversalBinary /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/Aardvark normal "armv6 armv7"
+s309725553.619440
+e309725553.623066
+r1
+xCreateUniversalBinary
+x/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/Aardvark
+xnormal
+xarmv6 armv7
+lSLF07#2@85"CreateUniversalBinary build/Debug-iphoneos/Aardvark.app/Aardvark normal "armv6 armv7"309725553#309725553#0(0"0(0#0#51"/Users/taylor/Documents/Famigo/Aardvark/armv6 armv78673040256#592"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /usr/bin/lipo -create /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv6/Aardvark /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv7/Aardvark -output /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/Aardvark0#
+
+CGenerateDSYMFile /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app.dSYM /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/Aardvark
+s309725553.623152
+e309725553.646456
+r1
+xGenerateDSYMFile
+x/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app.dSYM
+x/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/Aardvark
+lSLF07#2@98"GenerateDSYMFile build/Debug-iphoneos/Aardvark.app.dSYM build/Debug-iphoneos/Aardvark.app/Aardvark309725553#309725553#0(0"0(0#0#82"/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/Aardvark8666702368#430"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/usr/bin/dsymutil /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/Aardvark -o /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app.dSYM0#
+
+CLd /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv6/Aardvark normal armv6
+s309725553.486676
+e309725553.516113
+r1
+xLd
+x/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv6/Aardvark
+xnormal
+xarmv6
+lSLF07#2@125"Link /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv6/Aardvark309725553#309725553#0(0"0(0#0#0"8680367968#932"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv IPHONEOS_DEPLOYMENT_TARGET 3.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv6 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -L/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos -F/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos -filelist /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv6/Aardvark.LinkFileList -dead_strip -miphoneos-version-min=3.2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv6/Aardvark0#
+
+CLd /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv7/Aardvark normal armv7
+s309725553.592543
+e309725553.619322
+r1
+xLd
+x/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv7/Aardvark
+xnormal
+xarmv7
+lSLF07#2@125"Link /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv7/Aardvark309725553#309725553#0(0"0(0#0#0"8674962496#932"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv IPHONEOS_DEPLOYMENT_TARGET 3.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv7 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -L/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos -F/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos -filelist /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv7/Aardvark.LinkFileList -dead_strip -miphoneos-version-min=3.2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Objects-normal/armv7/Aardvark0#
+
+CProcessInfoPlistFile /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/Info.plist Aardvark-Info.plist
+s309725551.784095
+e309725551.813181
+r1
+xProcessInfoPlistFile
+x/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/Info.plist
+xAardvark-Info.plist
+lSLF07#2@27"Process Aardvark-Info.plist309725551#309725551#0(0"0(0#0#59"/Users/taylor/Documents/Famigo/Aardvark/Aardvark-Info.plist8661806528#632"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    builtin-infoPlistUtility Aardvark-Info.plist -genpkginfo /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/ResourceRules.plist -o /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/Info.plist0#
+
+CProcessPCH /var/folders/xL/xLTCVj48H74-SYkKXnqM4U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Aardvark_Prefix-asjsxtstqohbvnftuggoxvhfgdkl/Aardvark_Prefix.pch.gch Aardvark_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+s309725552.403807
+e309725553.350528
+r1
+xProcessPCH
+x/var/folders/xL/xLTCVj48H74-SYkKXnqM4U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Aardvark_Prefix-asjsxtstqohbvnftuggoxvhfgdkl/Aardvark_Prefix.pch.gch
+xAardvark_Prefix.pch
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@30"Precompile Aardvark_Prefix.pch309725552#309725553#0(0"0(0#0#59"/Users/taylor/Documents/Famigo/Aardvark/Aardvark_Prefix.pch8675390944#1713"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.2 -iquote /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-generated-files.hmap -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-own-target-headers.hmap -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-all-target-headers.hmap -iquote /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-project-headers.hmap -F/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos -I/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/include -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/DerivedSources/armv6 -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/DerivedSources -c /Users/taylor/Documents/Famigo/Aardvark/Aardvark_Prefix.pch -o /var/folders/xL/xLTCVj48H74-SYkKXnqM4U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Aardvark_Prefix-asjsxtstqohbvnftuggoxvhfgdkl/Aardvark_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/xL/xLTCVj48H74-SYkKXnqM4U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Aardvark_Prefix-bhypxljkgkvborbjxkhoazdptzdk/Aardvark_Prefix.pch.gch Aardvark_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+s309725552.404947
+e309725553.334574
+r1
+xProcessPCH
+x/var/folders/xL/xLTCVj48H74-SYkKXnqM4U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Aardvark_Prefix-bhypxljkgkvborbjxkhoazdptzdk/Aardvark_Prefix.pch.gch
+xAardvark_Prefix.pch
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@30"Precompile Aardvark_Prefix.pch309725552#309725553#0(0"0(0#0#59"/Users/taylor/Documents/Famigo/Aardvark/Aardvark_Prefix.pch8674248544#1713"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.2 -iquote /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-generated-files.hmap -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-own-target-headers.hmap -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-all-target-headers.hmap -iquote /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark-project-headers.hmap -F/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos -I/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/include -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/DerivedSources/armv7 -I/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/DerivedSources -c /Users/taylor/Documents/Famigo/Aardvark/Aardvark_Prefix.pch -o /var/folders/xL/xLTCVj48H74-SYkKXnqM4U+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Aardvark_Prefix-bhypxljkgkvborbjxkhoazdptzdk/Aardvark_Prefix.pch.gch0#
+
+CProcessProductPackaging "/Users/taylor/Library/MobileDevice/Provisioning Profiles/6E27FDFC-A00C-4CE0-A4C9-F166AC8078AB.mobileprovision" /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/embedded.mobileprovision
+s309725553.646560
+e309725553.648158
+r1
+xProcessProductPackaging
+x/Users/taylor/Library/MobileDevice/Provisioning Profiles/6E27FDFC-A00C-4CE0-A4C9-F166AC8078AB.mobileprovision
+x/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/embedded.mobileprovision
+lSLF07#2@194"ProcessProductPackaging "/Users/taylor/Library/MobileDevice/Provisioning Profiles/6E27FDFC-A00C-4CE0-A4C9-F166AC8078AB.mobileprovision" build/Debug-iphoneos/Aardvark.app/embedded.mobileprovision309725553#309725553#0(0"0(0#0#98"/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/embedded.mobileprovision8662359616#489"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    <com.apple.tools.product-pkg-utility> "/Users/taylor/Library/MobileDevice/Provisioning Profiles/6E27FDFC-A00C-4CE0-A4C9-F166AC8078AB.mobileprovision" -o /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app/embedded.mobileprovision0#
+
+CProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/Entitlements.plist /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark.xcent
+s309725553.651420
+e309725553.661656
+r1
+xProcessProductPackaging
+x/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/Entitlements.plist
+x/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark.xcent
+lSLF07#2@178"ProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/Entitlements.plist build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark.xcent309725553#309725553#0(0"0(0#0#105"/Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark.xcent8672537344#499"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    <com.apple.tools.product-pkg-utility> /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.1.sdk/Entitlements.plist -entitlements -format xml -o /Users/taylor/Documents/Famigo/Aardvark/build/Aardvark.build/Debug-iphoneos/Aardvark.build/Aardvark.xcent0#
+
+CTouch /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app
+s309725553.648218
+e309725553.651326
+r1
+xTouch
+x/Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app
+lSLF07#2@79"Touch /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app309725553#309725553#0(0"0(0#0#0"8650902464#329"    cd /Users/taylor/Documents/Famigo/Aardvark    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/usr/local/git/bin"    /usr/bin/touch -c /Users/taylor/Documents/Famigo/Aardvark/build/Debug-iphoneos/Aardvark.app0#
+
