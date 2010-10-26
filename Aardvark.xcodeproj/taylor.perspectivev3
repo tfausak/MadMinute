@@ -329,7 +329,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>34E8336112762C2F00FFF679</string>
+										<string>341860F6127720AB00E4BAD5</string>
 										<key>history</key>
 										<array>
 											<string>34E8319D12760FD400FFF679</string>
@@ -339,8 +339,8 @@
 											<string>34E832681276180900FFF679</string>
 											<string>34E833041276250700FFF679</string>
 											<string>34E8335A127629C500FFF679</string>
-											<string>34E8335B127629C500FFF679</string>
-											<string>34E8335C127629C500FFF679</string>
+											<string>341860F4127720AB00E4BAD5</string>
+											<string>341860F5127720AB00E4BAD5</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -435,7 +435,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1073, -27}}</string>
+										<string>{{0, 0}, {568, 405}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -463,11 +463,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>34E830091276097800FFF679</string>
+				<string>341860F7127720AB00E4BAD5</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>34E8300A1276097800FFF679</string>
+				<string>341860F8127720AB00E4BAD5</string>
 				<string>34E830071276097800FFF679</string>
-				<string>34E8300B1276097800FFF679</string>
+				<string>341860F9127720AB00E4BAD5</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -616,14 +616,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>34E8300C1276097800FFF679</string>
+				<string>341860FA127720AB00E4BAD5</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>34E8300D1276097800FFF679</string>
-				<string>34E8300E1276097800FFF679</string>
-				<string>34E8300F1276097800FFF679</string>
-				<string>34E830101276097800FFF679</string>
-				<string>34E830111276097800FFF679</string>
+				<string>341860FB127720AB00E4BAD5</string>
+				<string>341860FC127720AB00E4BAD5</string>
+				<string>341860FD127720AB00E4BAD5</string>
+				<string>341860FE127720AB00E4BAD5</string>
+				<string>341860FF127720AB00E4BAD5</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
 			<string>2</string>
@@ -657,9 +657,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>34E8336212762C2F00FFF679</string>
-		<string>34E8314C12760A0900FFF679</string>
-		<string>34E830141276097800FFF679</string>
+		<string>34186100127720AB00E4BAD5</string>
+		<string>34186101127720AB00E4BAD5</string>
 		<string>/Users/taylor/Documents/Famigo/Aardvark/Aardvark.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
