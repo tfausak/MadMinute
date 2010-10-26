@@ -13,6 +13,9 @@
 @synthesize famigoController;
 @synthesize logoAnimationController;
 
+- (void)famigoReady {
+}
+
 #pragma mark -
 #pragma mark Memory management
 
@@ -61,9 +64,6 @@
 - (void)logoAnimationDidFinish:(NSNotification *)notification {
     [[logoAnimationController view] removeFromSuperview];
     [logoAnimationController release];
-}
-
-- (void)famigoReady {
 }
 
 @end
