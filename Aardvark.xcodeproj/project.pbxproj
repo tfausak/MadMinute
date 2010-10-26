@@ -425,6 +425,7 @@
 				2860E32A111B888700E27156 /* iPad */,
 				2860E324111B887F00E27156 /* iPhone */,
 				28EEBF621118D79A00187D67 /* Shared */,
+				341861DB1277333E00E4BAD5 /* Tests */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -474,6 +475,13 @@
 				3418614A127724F500E4BAD5 /* Default@2x.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		341861DB1277333E00E4BAD5 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Tests;
 			sourceTree = "<group>";
 		};
 		34E8301C1276099C00FFF679 /* Famigo */ = {
