@@ -41,7 +41,7 @@
     // Display the Famigo logo
     logoAnimationController = [[LogoAnimationController alloc] init];
     [[logoAnimationController view] setFrame:[[self view] frame]];
-    [[logoAnimationController view] setBackgroundColor:[UIColor blackColor]];
+    [[logoAnimationController view] setBackgroundColor:[UIColor whiteColor]];
     [[self view] addSubview:[logoAnimationController view]];
     
     // Capture the notification at the end of the logo animation
