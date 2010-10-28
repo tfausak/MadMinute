@@ -15,6 +15,8 @@
 		2860E32E111B888700E27156 /* AppDelegate_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 2860E32C111B888700E27156 /* AppDelegate_iPad.m */; };
 		2860E32F111B888700E27156 /* MainWindow_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2860E32D111B888700E27156 /* MainWindow_iPad.xib */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		340AE6591278D3D100F3DF8C /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 340AE6581278D3D100F3DF8C /* libsqlite3.0.dylib */; };
+		340AE65C1278D3E300F3DF8C /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 340AE65B1278D3E300F3DF8C /* libGoogleAnalytics.a */; };
 		3418614B127724F500E4BAD5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 34186149127724F500E4BAD5 /* Default.png */; };
 		3418614C127724F500E4BAD5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3418614A127724F500E4BAD5 /* Default@2x.png */; };
 		34186168127726E300E4BAD5 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 3418615F127726E300E4BAD5 /* Default-Landscape.png */; };
@@ -26,13 +28,6 @@
 		3418616E127726E300E4BAD5 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 34186165127726E300E4BAD5 /* Icon.png */; };
 		3418616F127726E300E4BAD5 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34186166127726E300E4BAD5 /* Icon@2x.png */; };
 		34186170127726E300E4BAD5 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 34186167127726E300E4BAD5 /* iTunesArtwork.png */; };
-		3494BD151278B1D800168789 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3494BD141278B1D800168789 /* GHUnitIOS.framework */; };
-		3494BD241278B28500168789 /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 3494BD231278B28500168789 /* GHUnitIOSTestMain.m */; };
-		3494BD2C1278B3A200168789 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3494BD141278B1D800168789 /* GHUnitIOS.framework */; };
-		3494BDB41278B3B500168789 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
-		3494BDB51278B3B900168789 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
-		3494BE081278B3C000168789 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		3494BE1B1278B47E00168789 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 3494BE1A1278B47E00168789 /* Test.m */; };
 		34E830191276098F00FFF679 /* libFamigoAPI-Release.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E830181276098F00FFF679 /* libFamigoAPI-Release.a */; };
 		34E830BA127609B400FFF679 /* bro2.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E83023127609B400FFF679 /* bro2.png */; };
 		34E830BB127609B400FFF679 /* bro3.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E83024127609B400FFF679 /* bro3.png */; };
@@ -160,8 +155,6 @@
 		34E8313D127609E500FFF679 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E8313C127609E500FFF679 /* SystemConfiguration.framework */; };
 		34E8315C12760CE500FFF679 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E8315B12760CE500FFF679 /* AppDelegate.m */; };
 		34E831B4127611C100FFF679 /* AardvarkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E831B2127611C100FFF679 /* AardvarkController.m */; };
-		34E832321276157E00FFF679 /* AardvarkController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34E832311276157E00FFF679 /* AardvarkController.xib */; };
-		34E832471276164100FFF679 /* AardvarkController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34E832461276164100FFF679 /* AardvarkController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -177,6 +170,9 @@
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Shared/main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Aardvark_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aardvark_Prefix.pch; sourceTree = "<group>"; };
+		340AE6581278D3D100F3DF8C /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		340AE65A1278D3E300F3DF8C /* GANTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GANTracker.h; path = "../Famigo/build/Release-universal/FamigoAPI/GANTracker.h"; sourceTree = SOURCE_ROOT; };
+		340AE65B1278D3E300F3DF8C /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = "../Famigo/build/Release-universal/FamigoAPI/libGoogleAnalytics.a"; sourceTree = SOURCE_ROOT; };
 		34186149127724F500E4BAD5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Shared/Images/Default.png; sourceTree = "<group>"; };
 		3418614A127724F500E4BAD5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Shared/Images/Default@2x.png"; sourceTree = "<group>"; };
 		3418615F127726E300E4BAD5 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape.png"; path = "Shared/Images/Default-Landscape.png"; sourceTree = "<group>"; };
@@ -188,11 +184,6 @@
 		34186165127726E300E4BAD5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Shared/Images/Icon.png; sourceTree = "<group>"; };
 		34186166127726E300E4BAD5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Shared/Images/Icon@2x.png"; sourceTree = "<group>"; };
 		34186167127726E300E4BAD5 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iTunesArtwork.png; path = Shared/Images/iTunesArtwork.png; sourceTree = "<group>"; };
-		3494BD0E1278B1BE00168789 /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3494BD101278B1BE00168789 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
-		3494BD141278B1D800168789 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = "/Users/taylor/Documents/Famigo/gh-unit/Project-IPhone/build/Framework/GHUnitIOS.framework"; sourceTree = "<absolute>"; };
-		3494BD231278B28500168789 /* GHUnitIOSTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHUnitIOSTestMain.m; path = "../gh-unit/Project-IPhone/build/Debug-iphonesimulator/GHUnitIOSTestMain.m"; sourceTree = SOURCE_ROOT; };
-		3494BE1A1278B47E00168789 /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Test.m; path = Shared/Tests/Test.m; sourceTree = "<group>"; };
 		34E830181276098F00FFF679 /* libFamigoAPI-Release.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libFamigoAPI-Release.a"; path = "/Users/taylor/Documents/Famigo/Famigo/build/Release-universal/FamigoAPI/libFamigoAPI-Release.a"; sourceTree = "<absolute>"; };
 		34E8301D127609B400FFF679 /* ABContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABContact.h; path = "../Famigo/build/Release-universal/FamigoAPI/ABContact.h"; sourceTree = SOURCE_ROOT; };
 		34E8301E127609B400FFF679 /* ABContactsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABContactsHelper.h; path = "../Famigo/build/Release-universal/FamigoAPI/ABContactsHelper.h"; sourceTree = SOURCE_ROOT; };
@@ -360,9 +351,7 @@
 		34E8315A12760CE500FFF679 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Shared/AppDelegate.h; sourceTree = "<group>"; };
 		34E8315B12760CE500FFF679 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Shared/AppDelegate.m; sourceTree = "<group>"; };
 		34E831B1127611C100FFF679 /* AardvarkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AardvarkController.h; path = Shared/AardvarkController.h; sourceTree = "<group>"; };
-		34E831B2127611C100FFF679 /* AardvarkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AardvarkController.m; path = Shared/AardvarkController.m; sourceTree = "<group>"; };
-		34E832311276157E00FFF679 /* AardvarkController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AardvarkController.xib; sourceTree = "<group>"; };
-		34E832461276164100FFF679 /* AardvarkController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AardvarkController.xib; sourceTree = "<group>"; };
+		34E831B2127611C100FFF679 /* AardvarkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AardvarkController.m; path = Shared/AardvarkController.m; sourceTree = "<group>"; wrapsLines = 1; };
 		8D1107310486CEB800E47090 /* Aardvark-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Aardvark-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -381,18 +370,8 @@
 				34E83139127609E500FFF679 /* MediaPlayer.framework in Frameworks */,
 				34E8313B127609E500FFF679 /* QuartzCore.framework in Frameworks */,
 				34E8313D127609E500FFF679 /* SystemConfiguration.framework in Frameworks */,
-				3494BD151278B1D800168789 /* GHUnitIOS.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3494BD0C1278B1BE00168789 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3494BD2C1278B3A200168789 /* GHUnitIOS.framework in Frameworks */,
-				3494BDB41278B3B500168789 /* CoreGraphics.framework in Frameworks */,
-				3494BDB51278B3B900168789 /* Foundation.framework in Frameworks */,
-				3494BE081278B3C000168789 /* UIKit.framework in Frameworks */,
+				340AE6591278D3D100F3DF8C /* libsqlite3.0.dylib in Frameworks */,
+				340AE65C1278D3E300F3DF8C /* libGoogleAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +382,6 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* Aardvark.app */,
-				3494BD0E1278B1BE00168789 /* Tests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -414,7 +392,6 @@
 				2860E325111B887F00E27156 /* AppDelegate_iPhone.h */,
 				2860E326111B887F00E27156 /* AppDelegate_iPhone.m */,
 				2860E327111B887F00E27156 /* MainWindow_iPhone.xib */,
-				34E832311276157E00FFF679 /* AardvarkController.xib */,
 			);
 			path = iPhone;
 			sourceTree = "<group>";
@@ -425,7 +402,6 @@
 				2860E32B111B888700E27156 /* AppDelegate_iPad.h */,
 				2860E32C111B888700E27156 /* AppDelegate_iPad.m */,
 				2860E32D111B888700E27156 /* MainWindow_iPad.xib */,
-				34E832461276164100FFF679 /* AardvarkController.xib */,
 			);
 			path = iPad;
 			sourceTree = "<group>";
@@ -435,10 +411,7 @@
 			children = (
 				34E8301C1276099C00FFF679 /* Famigo */,
 				3418613C127723CB00E4BAD5 /* Images */,
-				3494BE141278B40C00168789 /* Tests */,
 				8D1107310486CEB800E47090 /* Aardvark-Info.plist */,
-				3494BD101278B1BE00168789 /* Tests-Info.plist */,
-				3494BD231278B28500168789 /* GHUnitIOSTestMain.m */,
 				34E8315A12760CE500FFF679 /* AppDelegate.h */,
 				34E8315B12760CE500FFF679 /* AppDelegate.m */,
 				34E831B1127611C100FFF679 /* AardvarkController.h */,
@@ -482,7 +455,7 @@
 				34E83138127609E500FFF679 /* MediaPlayer.framework */,
 				34E8313A127609E500FFF679 /* QuartzCore.framework */,
 				34E8313C127609E500FFF679 /* SystemConfiguration.framework */,
-				3494BD141278B1D800168789 /* GHUnitIOS.framework */,
+				340AE6581278D3D100F3DF8C /* libsqlite3.0.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -505,17 +478,11 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
-		3494BE141278B40C00168789 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				3494BE1A1278B47E00168789 /* Test.m */,
-			);
-			name = Tests;
-			sourceTree = "<group>";
-		};
 		34E8301C1276099C00FFF679 /* Famigo */ = {
 			isa = PBXGroup;
 			children = (
+				340AE65A1278D3E300F3DF8C /* GANTracker.h */,
+				340AE65B1278D3E300F3DF8C /* libGoogleAnalytics.a */,
 				34E8301D127609B400FFF679 /* ABContact.h */,
 				34E8301E127609B400FFF679 /* ABContactsHelper.h */,
 				34E8301F127609B400FFF679 /* ABGroup.h */,
@@ -697,23 +664,6 @@
 			productReference = 1D6058910D05DD3D006BFB54 /* Aardvark.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3494BD0D1278B1BE00168789 /* Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3494BD131278B1BF00168789 /* Build configuration list for PBXNativeTarget "Tests" */;
-			buildPhases = (
-				3494BD0A1278B1BE00168789 /* Resources */,
-				3494BD0B1278B1BE00168789 /* Sources */,
-				3494BD0C1278B1BE00168789 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Tests;
-			productName = Tests;
-			productReference = 3494BD0E1278B1BE00168789 /* Tests.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -734,7 +684,6 @@
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* Aardvark */,
-				3494BD0D1278B1BE00168789 /* Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -864,8 +813,6 @@
 				34E8312D127609B400FFF679 /* WelcomeViewController-iPad.xib in Resources */,
 				34E8312E127609B400FFF679 /* WelcomeViewController.xib in Resources */,
 				34E8312F127609B400FFF679 /* yay.wav in Resources */,
-				34E832321276157E00FFF679 /* AardvarkController.xib in Resources */,
-				34E832471276164100FFF679 /* AardvarkController.xib in Resources */,
 				3418614B127724F500E4BAD5 /* Default.png in Resources */,
 				3418614C127724F500E4BAD5 /* Default@2x.png in Resources */,
 				34186168127726E300E4BAD5 /* Default-Landscape.png in Resources */,
@@ -877,13 +824,6 @@
 				3418616E127726E300E4BAD5 /* Icon.png in Resources */,
 				3418616F127726E300E4BAD5 /* Icon@2x.png in Resources */,
 				34186170127726E300E4BAD5 /* iTunesArtwork.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3494BD0A1278B1BE00168789 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -902,15 +842,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3494BD0B1278B1BE00168789 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3494BD241278B28500168789 /* GHUnitIOSTestMain.m in Sources */,
-				3494BE1B1278B47E00168789 /* Test.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
@@ -919,10 +850,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../gh-unit/Project-IPhone/build/Framework\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -954,65 +882,6 @@
 				);
 				PRODUCT_NAME = Aardvark;
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		3494BD111278B1BE00168789 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../gh-unit/Project-IPhone/build/Framework\"",
-				);
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
-				INFOPLIST_FILE = "Tests-Info.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
-				OTHER_LDFLAGS = (
-					"-all_load",
-					"-ObjC",
-					"-framework",
-					Foundation,
-					"-framework",
-					UIKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = Tests;
-				SDKROOT = iphoneos4.1;
-			};
-			name = Debug;
-		};
-		3494BD121278B1BE00168789 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../gh-unit/Project-IPhone/build/Framework\"",
-				);
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
-				INFOPLIST_FILE = "Tests-Info.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-					"-framework",
-					UIKit,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = Tests;
-				SDKROOT = iphoneos4.1;
-				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
@@ -1061,15 +930,6 @@
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3494BD131278B1BF00168789 /* Build configuration list for PBXNativeTarget "Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3494BD111278B1BE00168789 /* Debug */,
-				3494BD121278B1BE00168789 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -18,5 +18,6 @@
 @property (nonatomic, retain) LogoAnimationController *logoAnimationController;
 
 - (void)famigoReady;
+- (void)buildInterface;
 
 @end

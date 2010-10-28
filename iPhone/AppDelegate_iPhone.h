@@ -9,7 +9,5 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
-@interface AppDelegate_iPhone : AppDelegate {
-}
-
+@interface AppDelegate_iPhone : AppDelegate { }
 @end

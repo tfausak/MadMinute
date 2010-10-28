@@ -8,32 +8,42 @@
 
 #import "AardvarkController.h"
 
+@interface AardvarkController()
+
+- (void)buildInterfaceIPhonePortrait;
+- (void)buildInterfaceIPhoneLandscape;
+- (void)buildInterfaceIPadPortrait;
+- (void)buildInterfaceIPadLandscape;
+
+@end
+
 @implementation AardvarkController
 
 @synthesize famigoController;
 @synthesize logoAnimationController;
 
-- (void)famigoReady {
+#pragma mark -
+#pragma mark Creating a View Controller Using Nib Files
+
+- (id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)nibBundle {
+    if (self = [super initWithNibName:nibName bundle:nibBundle]) {
+    }
+    return self;
 }
 
 #pragma mark -
-#pragma mark Memory management
+#pragma mark Managing the View
 
-- (void)dealloc {
-    [famigoController release];
-    [logoAnimationController release];
-    
-    [super dealloc];
+- (void)loadView {
+    UIView *view = [[UIView alloc] init];
+    [view setFrame:[[UIScreen mainScreen] bounds]];
+    [self setView:view];
+    [view release];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
-#pragma mark -
-#pragma mark View
 
 - (void)viewDidLoad {
+    [self buildInterface];
+    
     // Display the Famigo controller
     famigoController = [FamigoController sharedInstanceWithDelegate:self];
     [[famigoController view] setFrame:[[self view] frame]];
@@ -48,22 +58,176 @@
     [[self view] addSubview:[logoAnimationController view]];
     
     // Capture the notification at the end of the logo animation
-    [logoAnimationController registerForNotifications:self withSelector:@selector(logoAnimationDidFinish:)];
+    [logoAnimationController registerForNotifications:self withSelector:@selector(logoAnimationDidFinish:)];    
 }
 
+/*
 - (void)viewDidUnload {
-    [super viewDidUnload];
 }
+*/
+
+/*
+- (void)isViewLoaded {
+}
+*/
 
 #pragma mark -
+#pragma mark Responding to View Events
+
+/*
+- (void)viewWillAppear:(BOOL)animated {
+}
+*/
+
+/*
+- (void)viewDidAppear:(BOOL)animated {
+}
+*/
+
+/*
+- (void)viewWillDisappear:(BOOL)animated {
+}
+*/
+
+/*
+- (void)viewDidDisappear:(BOOL)animated {
+}
+*/
+
+#pragma mark -
+#pragma mark Configuring the View Rotation Settings
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return YES;
 }
 
+/*
+- (UIView *)rotatingHeaderView {
+}
+*/
+
+/*
+- (UIView *)rotatingFooterView {
+}
+*/
+
+#pragma mark -
+#pragma mark Responding to View Rotation Events
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [self buildInterface];
+}
+
+/*
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration {
+}
+*/
+
+/*
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+}
+*/
+
+/*
+- (void)willAnimateFirstHalfOfRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+}
+*/
+
+/*
+- (void)didAnimateFirstHalfOfRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+}
+*/
+
+/*
+- (void)willAnimateSecondHalfOfRotationFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation duration:(NSTimeInterval)duration {
+}
+*/
+
+#pragma mark -
+#pragma mark Handling Memory Warnings
+
+/*
+- (void)didReceiveMemoryWarning {
+}
+*/
+
+#pragma mark -
+#pragma mark Presenting Modal Views
+
+/*
+- (void)presentModalViewController:(UIViewController *)modalViewController animated:(BOOL)animated {
+}
+*/
+
+/*
+- (void)dismissModalViewControllerAnimated:(BOOL)animated {
+}
+*/
+
+#pragma mark -
+#pragma mark Configuring a Navigation Interface
+
+/*
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+}
+*/
+
+/*
+- (UIBarButtonItem *)editButtonItem {
+}
+*/
+
+#pragma mark -
+#pragma mark Configuring the Navigation Controller’s Toolbar
+
+/*
+- (void)setToolbarItems:(NSArray *)toolbarItems animated:(BOOL)animated {
+}
+*/
+
+#pragma mark -
+
+- (void)famigoReady {
+}
+
 - (void)logoAnimationDidFinish:(NSNotification *)notification {
     [[logoAnimationController view] removeFromSuperview];
     [logoAnimationController release];
+}
+#pragma mark -
+
+- (void)buildInterface {
+    [[self view] setBackgroundColor:[UIColor blackColor]];
+    
+    switch ([[UIDevice currentDevice] userInterfaceIdiom]) {
+        case UIUserInterfaceIdiomPhone:
+            switch ([[UIDevice currentDevice] orientation]) {
+                case UIInterfaceOrientationLandscapeLeft:
+                case UIInterfaceOrientationLandscapeRight:
+                    return [self buildInterfaceIPhoneLandscape];
+                default: return [self buildInterfaceIPhonePortrait];
+            }
+        case UIUserInterfaceIdiomPad:
+            switch ([[UIDevice currentDevice] orientation]) {
+                case UIInterfaceOrientationLandscapeLeft:
+                case UIInterfaceOrientationLandscapeRight:
+                    return [self buildInterfaceIPadLandscape];
+                default: return [self buildInterfaceIPadPortrait];
+            }
+        default: return;
+    }
+}
+
+- (void)buildInterfaceIPhonePortrait {
+}
+
+- (void)buildInterfaceIPhoneLandscape {
+}
+
+- (void)buildInterfaceIPadPortrait {
+}
+
+- (void)buildInterfaceIPadLandscape {
 }
 
 @end
