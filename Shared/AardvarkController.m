@@ -10,10 +10,12 @@
 
 @interface AardvarkController()
 
-- (void)buildInterfaceIPhonePortrait;
-- (void)buildInterfaceIPhoneLandscape;
-- (void)buildInterfaceIPadPortrait;
-- (void)buildInterfaceIPadLandscape;
+@property (nonatomic, assign) BOOL interfaceIsBuilt;
+
+- (void)buildInterfaceIPhonePortrait:(NSTimeInterval)duration;
+- (void)buildInterfaceIPhoneLandscape:(NSTimeInterval)duration;
+- (void)buildInterfaceIPadPortrait:(NSTimeInterval)duration;
+- (void)buildInterfaceIPadLandscape:(NSTimeInterval)duration;
 
 @end
 
@@ -21,6 +23,20 @@
 
 @synthesize famigoController;
 @synthesize logoAnimationController;
+@synthesize interfaceIsBuilt;
+@synthesize numberPad;
+@synthesize numberPadButtons;
+@synthesize answer;
+
+- (void)dealloc {
+    [famigoController release];
+    [logoAnimationController release];
+    [numberPad release];
+    [numberPadButtons release];
+    [answer release];
+    
+    [super dealloc];
+}
 
 #pragma mark -
 #pragma mark Creating a View Controller Using Nib Files
@@ -115,7 +131,7 @@
 #pragma mark Responding to View Rotation Events
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    [self buildInterface];
+    [self buildInterface:duration];
 }
 
 /*
@@ -197,37 +213,119 @@
 #pragma mark -
 
 - (void)buildInterface {
-    [[self view] setBackgroundColor:[UIColor blackColor]];
+    return [self buildInterface:0.0];
+}
+
+- (void)buildInterface:(NSTimeInterval)duration {
+    if (!interfaceIsBuilt) {
+        interfaceIsBuilt = YES;
+        
+        [[self view] setBackgroundColor:[UIColor whiteColor]];
+        
+        // Create the number pad view
+        numberPad = [[UIView alloc] init];
+        [numberPad setBackgroundColor:[UIColor lightGrayColor]];
+        [[self view] addSubview:numberPad];
+        
+        // Create all the buttons and put them in the number pad
+        numberPadButtons = [[NSMutableArray alloc] initWithCapacity:14];
+        for (int index = 0; index < 14; index += 1) {
+            UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+            [numberPad addSubview:button];
+            [numberPadButtons insertObject:button atIndex:index];
+        }
+        
+        // Set the buttons' titles
+        // TODO maybe this should go in a hash of some kind?
+        [[numberPadButtons objectAtIndex:0] setTitle:@"0" forState:UIControlStateNormal];
+        [[numberPadButtons objectAtIndex:1] setTitle:@"1" forState:UIControlStateNormal];
+        [[numberPadButtons objectAtIndex:2] setTitle:@"2" forState:UIControlStateNormal];
+        [[numberPadButtons objectAtIndex:3] setTitle:@"3" forState:UIControlStateNormal];
+        [[numberPadButtons objectAtIndex:4] setTitle:@"4" forState:UIControlStateNormal];
+        [[numberPadButtons objectAtIndex:5] setTitle:@"5" forState:UIControlStateNormal];
+        [[numberPadButtons objectAtIndex:6] setTitle:@"6" forState:UIControlStateNormal];
+        [[numberPadButtons objectAtIndex:7] setTitle:@"7" forState:UIControlStateNormal];
+        [[numberPadButtons objectAtIndex:8] setTitle:@"8" forState:UIControlStateNormal];
+        [[numberPadButtons objectAtIndex:9] setTitle:@"9" forState:UIControlStateNormal];
+        [[numberPadButtons objectAtIndex:10] setTitle:@"." forState:UIControlStateNormal];
+        [[numberPadButtons objectAtIndex:11] setTitle:@"C" forState:UIControlStateNormal];
+        [[numberPadButtons objectAtIndex:12] setTitle:@"±" forState:UIControlStateNormal];
+        [[numberPadButtons objectAtIndex:13] setTitle:@"=" forState:UIControlStateNormal];
+        
+        // Create the answer text field
+        answer = [[UITextField alloc] init];
+        [answer setBorderStyle:UITextBorderStyleRoundedRect];
+        [[self view] addSubview:answer];
+    }
     
     switch ([[UIDevice currentDevice] userInterfaceIdiom]) {
         case UIUserInterfaceIdiomPhone:
             switch ([[UIDevice currentDevice] orientation]) {
                 case UIInterfaceOrientationLandscapeLeft:
                 case UIInterfaceOrientationLandscapeRight:
-                    return [self buildInterfaceIPhoneLandscape];
-                default: return [self buildInterfaceIPhonePortrait];
+                    return [self buildInterfaceIPhoneLandscape:duration];
+                default: return [self buildInterfaceIPhonePortrait:duration];
             }
         case UIUserInterfaceIdiomPad:
             switch ([[UIDevice currentDevice] orientation]) {
                 case UIInterfaceOrientationLandscapeLeft:
                 case UIInterfaceOrientationLandscapeRight:
-                    return [self buildInterfaceIPadLandscape];
-                default: return [self buildInterfaceIPadPortrait];
+                    return [self buildInterfaceIPadLandscape:duration];
+                default: return [self buildInterfaceIPadPortrait:duration];
             }
         default: return;
     }
 }
 
-- (void)buildInterfaceIPhonePortrait {
+- (void)buildInterfaceIPhonePortrait:(NSTimeInterval)duration {
+    assert(interfaceIsBuilt);
+    
+    [UIView beginAnimations:nil context:nil]; {
+        [UIView setAnimationDuration:duration];
+        
+        [numberPad setFrame:CGRectMake(0, 236, 320, 224)];
+        
+        [[numberPadButtons objectAtIndex:0]  setFrame:CGRectMake( 20, 164, 136, 40)];
+        [[numberPadButtons objectAtIndex:1]  setFrame:CGRectMake( 20, 116,  64, 40)];
+        [[numberPadButtons objectAtIndex:2]  setFrame:CGRectMake( 92, 116,  64, 40)];
+        [[numberPadButtons objectAtIndex:3]  setFrame:CGRectMake(164, 116,  64, 40)];
+        [[numberPadButtons objectAtIndex:4]  setFrame:CGRectMake( 20,  68,  64, 40)];
+        [[numberPadButtons objectAtIndex:5]  setFrame:CGRectMake( 92,  68,  64, 40)];
+        [[numberPadButtons objectAtIndex:6]  setFrame:CGRectMake(164,  68,  64, 40)];
+        [[numberPadButtons objectAtIndex:7]  setFrame:CGRectMake( 20,  20,  64, 40)];
+        [[numberPadButtons objectAtIndex:8]  setFrame:CGRectMake( 92,  20,  64, 40)];
+        [[numberPadButtons objectAtIndex:9]  setFrame:CGRectMake(164,  20,  64, 40)];
+        [[numberPadButtons objectAtIndex:10] setFrame:CGRectMake(164, 164,  64, 40)];
+        [[numberPadButtons objectAtIndex:11] setFrame:CGRectMake(236,  20,  64, 40)];
+        [[numberPadButtons objectAtIndex:12] setFrame:CGRectMake(236,  68,  64, 40)];
+        [[numberPadButtons objectAtIndex:13] setFrame:CGRectMake(236, 116,  64, 88)];
+        
+        [answer setFrame:CGRectMake(20, 182, 280, 40)];
+    } [UIView commitAnimations];
 }
 
-- (void)buildInterfaceIPhoneLandscape {
+- (void)buildInterfaceIPhoneLandscape:(NSTimeInterval)duration {
+    assert(interfaceIsBuilt);
+    
+    [UIView beginAnimations:nil context:nil]; {
+        [UIView setAnimationDuration:duration];
+    } [UIView commitAnimations];
 }
 
-- (void)buildInterfaceIPadPortrait {
+- (void)buildInterfaceIPadPortrait:(NSTimeInterval)duration {
+    assert(interfaceIsBuilt);
+    
+    [UIView beginAnimations:nil context:nil]; {
+        [UIView setAnimationDuration:duration];
+    } [UIView commitAnimations];
 }
 
-- (void)buildInterfaceIPadLandscape {
+- (void)buildInterfaceIPadLandscape:(NSTimeInterval)duration {
+    assert(interfaceIsBuilt);
+    
+    [UIView beginAnimations:nil context:nil]; {
+        [UIView setAnimationDuration:duration];
+    } [UIView commitAnimations];
 }
 
 @end
