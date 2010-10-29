@@ -155,6 +155,8 @@
 		34E8313D127609E500FFF679 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E8313C127609E500FFF679 /* SystemConfiguration.framework */; };
 		34E8315C12760CE500FFF679 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E8315B12760CE500FFF679 /* AppDelegate.m */; };
 		34E831B4127611C100FFF679 /* AardvarkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E831B2127611C100FFF679 /* AardvarkController.m */; };
+		C3084E4C127B377800D426B4 /* QuestionGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = C3084E4B127B377800D426B4 /* QuestionGenerator.m */; };
+		C3084E6A127B38E800D426B4 /* MathQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = C3084E69127B38E800D426B4 /* MathQuestion.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -353,6 +355,10 @@
 		34E831B1127611C100FFF679 /* AardvarkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AardvarkController.h; path = Shared/AardvarkController.h; sourceTree = "<group>"; };
 		34E831B2127611C100FFF679 /* AardvarkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AardvarkController.m; path = Shared/AardvarkController.m; sourceTree = "<group>"; wrapsLines = 1; };
 		8D1107310486CEB800E47090 /* Aardvark-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Aardvark-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		C3084E4A127B377800D426B4 /* QuestionGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionGenerator.h; sourceTree = "<group>"; };
+		C3084E4B127B377800D426B4 /* QuestionGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionGenerator.m; sourceTree = "<group>"; };
+		C3084E68127B38E800D426B4 /* MathQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathQuestion.h; sourceTree = "<group>"; };
+		C3084E69127B38E800D426B4 /* MathQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathQuestion.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -416,6 +422,10 @@
 				34E8315B12760CE500FFF679 /* AppDelegate.m */,
 				34E831B1127611C100FFF679 /* AardvarkController.h */,
 				34E831B2127611C100FFF679 /* AardvarkController.m */,
+				C3084E4A127B377800D426B4 /* QuestionGenerator.h */,
+				C3084E4B127B377800D426B4 /* QuestionGenerator.m */,
+				C3084E68127B38E800D426B4 /* MathQuestion.h */,
+				C3084E69127B38E800D426B4 /* MathQuestion.m */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -839,6 +849,8 @@
 				2860E32E111B888700E27156 /* AppDelegate_iPad.m in Sources */,
 				34E8315C12760CE500FFF679 /* AppDelegate.m in Sources */,
 				34E831B4127611C100FFF679 /* AardvarkController.m in Sources */,
+				C3084E4C127B377800D426B4 /* QuestionGenerator.m in Sources */,
+				C3084E6A127B38E800D426B4 /* MathQuestion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

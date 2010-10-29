@@ -7,6 +7,8 @@
 //
 
 #import "AardvarkController.h"
+#import "QuestionGenerator.h"
+#import "MathQuestion.h"
 
 @interface AardvarkController()
 
@@ -28,6 +30,9 @@
 @synthesize numberPad;
 @synthesize numberPadButtons;
 @synthesize answer;
+@synthesize questionText;
+@synthesize questionGenerator;
+@synthesize currentQuestion;
 
 - (void)dealloc {
     [famigoController release];
@@ -35,7 +40,9 @@
     [numberPad release];
     [numberPadButtons release];
     [answer release];
-    
+    [questionGenerator release];
+	[questionText release];
+	
     [super dealloc];
 }
 
@@ -217,6 +224,13 @@
 
 - (void)buildInterface {
     [self buildInterface:0.0];
+	
+	self.questionText = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 280, 150)];
+	[self.view addSubview:questionText];
+	
+	self.questionGenerator = [[QuestionGenerator alloc] initWithDifficulty:2];
+	self.currentQuestion = [self.questionGenerator generateQuestion];
+	self.questionText.text = currentQuestion.questionText;
 }
 
 - (void)buildInterface:(NSTimeInterval)duration {
