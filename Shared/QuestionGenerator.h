@@ -29,7 +29,7 @@ typedef enum {
 	NSInteger nontrivialRangeMax;
 }
 
--(id)initWithDifficulty:(int)difficultyLevel;
--(MathQuestion*)generateQuestion;
+- (id)initWithDifficulty:(int)difficultyLevel;
+- (MathQuestion *)generateQuestion;
 
 @end

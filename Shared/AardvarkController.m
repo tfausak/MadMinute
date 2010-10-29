@@ -26,22 +26,22 @@
 
 @synthesize famigoController;
 @synthesize logoAnimationController;
+@synthesize questionGenerator;
+@synthesize currentQuestion;
 @synthesize interfaceIsBuilt;
 @synthesize numberPad;
 @synthesize numberPadButtons;
 @synthesize answer;
-@synthesize questionText;
-@synthesize questionGenerator;
-@synthesize currentQuestion;
+@synthesize question;
 
 - (void)dealloc {
     [famigoController release];
     [logoAnimationController release];
+    [questionGenerator release];
     [numberPad release];
     [numberPadButtons release];
     [answer release];
-    [questionGenerator release];
-	[questionText release];
+	[question release];
 	
     [super dealloc];
 }
@@ -67,6 +67,10 @@
 
 - (void)viewDidLoad {
     [self buildInterface];
+    
+    questionGenerator = [[QuestionGenerator alloc] initWithDifficulty:2];
+    currentQuestion = [questionGenerator generateQuestion];
+    [question setText:[currentQuestion question]];
     /*
     // Display the Famigo controller
     famigoController = [FamigoController sharedInstanceWithDelegate:self];
@@ -224,13 +228,6 @@
 
 - (void)buildInterface {
     [self buildInterface:0.0];
-	
-	self.questionText = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 280, 150)];
-	[self.view addSubview:questionText];
-	
-	self.questionGenerator = [[QuestionGenerator alloc] initWithDifficulty:2];
-	self.currentQuestion = [self.questionGenerator generateQuestion];
-	self.questionText.text = currentQuestion.questionText;
 }
 
 - (void)buildInterface:(NSTimeInterval)duration {
@@ -276,6 +273,10 @@
         [answer setBorderStyle:UITextBorderStyleLine];
         [answer setText:@""];
         [[self view] addSubview:answer];
+        
+        // Create the question label
+        question = [[UILabel alloc] init];
+        [[self view] addSubview:question];
     }
     
     // Build the right interface for the current device and orientation
@@ -323,6 +324,8 @@
         [[numberPadButtons objectAtIndex:13] setFrame:CGRectMake(236, 116,  64, 88)];
         
         [answer setFrame:CGRectMake(20, 183, 280, 40)];
+        
+        [question setFrame:CGRectMake(20, 20, 280, 150)];
     } [UIView commitAnimations];
 }
 

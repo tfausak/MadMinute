@@ -154,7 +154,7 @@
 	}
 	
 	questionText = [NSString stringWithFormat:@"%d %@ %d", leftOperand, questionText, rightOperand];
-	return [[MathQuestion alloc] initWithTextAndAnswer:questionText :answer];
+	return [[MathQuestion alloc] initWithQuestion:questionText answer:answer];
 }
 
 @end

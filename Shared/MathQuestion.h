@@ -8,16 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface MathQuestion : NSObject {
-	NSString *questionText;
+	NSString *question;
 	int answer;
 }
 
-@property (retain, nonatomic) NSString *questionText;
+@property (retain, nonatomic) NSString *question;
 @property (assign, nonatomic) int answer;
 
-
--(id)initWithTextAndAnswer:(NSString*)myText :(int)myAnswer;
+- (id)initWithQuestion:(NSString *)initialQuestion answer:(int)initialAnswer;
 
 @end
