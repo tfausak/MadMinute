@@ -29,6 +29,7 @@
 @synthesize logoAnimationController;
 @synthesize questionGenerator;
 @synthesize currentQuestion;
+@synthesize navigationBar;
 @synthesize prompt;
 @synthesize promptLabel;
 @synthesize response;
@@ -40,6 +41,7 @@
     [famigoController release];
     [logoAnimationController release];
     [questionGenerator release];
+    [navigationBar release];
     [prompt release];
     [promptLabel release];
     [response release];
@@ -76,7 +78,6 @@
     currentQuestion = [questionGenerator generateQuestion];
     [promptLabel setText:[currentQuestion question]];
     
-    /*
     // Display the Famigo controller
     famigoController = [FamigoController sharedInstanceWithDelegate:self];
     [[famigoController view] setFrame:[[self view] frame]];
@@ -92,7 +93,6 @@
     
     // Capture the notification at the end of the logo animation
     [logoAnimationController registerForNotifications:self withSelector:@selector(logoAnimationDidFinish:)];
-     */
 }
 
 /*
@@ -243,54 +243,49 @@
         
         [[self view] setBackgroundColor:[UIColor whiteColor]];
         
+        // Create the top navigation item for the navigation bar
+        UINavigationItem *navigationItem = [[UINavigationItem alloc] initWithTitle:@"Aardvark"];
+        [navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Famigo" style:UIBarButtonItemStylePlain target:nil action:nil]];
+        [navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:nil action:nil]];
+        
+        // Create the navigation bar
+        navigationBar = [[UINavigationBar alloc] init];
+        [navigationBar pushNavigationItem:navigationItem animated:NO];
+        [[self view] addSubview:navigationBar];
+        
         // Create the prompt view
         prompt = [[UIView alloc] init];
         [[self view] addSubview:prompt];
         
         // Create the prompt label
         promptLabel = [[UILabel alloc] init];
-        [promptLabel setBackgroundColor:[UIColor clearColor]];
         [promptLabel setText:@""];
-        [promptLabel setTextAlignment:UITextAlignmentCenter];
         [prompt addSubview:promptLabel];
         
         // Create the answer view
         response = [[UIView alloc] init];
-        [response setBackgroundColor:[UIColor lightGrayColor]];
         [[self view] addSubview:response];
         
         // Create the answer label
         responseLabel = [[UILabel alloc] init];
-        [responseLabel setBackgroundColor:[UIColor clearColor]];
         [responseLabel setText:@""];
-        [responseLabel setTextAlignment:UITextAlignmentCenter];
         [response addSubview:responseLabel];
         
         // Create the number pad view
         numberPad = [[UIView alloc] init];
-        [numberPad setBackgroundColor:[UIColor grayColor]];
         [[self view] addSubview:numberPad];
         
         // Create all the buttons and put them in the number pad
         numberPadButtons = [[NSMutableArray alloc] initWithCapacity:14];
         for (int index = 0; index < 14; index += 1) {
             UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-            [numberPad addSubview:button];
+            [button setTitle:[NSString stringWithFormat:@"%d", index] forState:UIControlStateNormal];
             [button addTarget:self action:@selector(pressedNumberPadButton:) forControlEvents:UIControlEventTouchUpInside];
             [numberPadButtons insertObject:button atIndex:index];
+            [numberPad addSubview:[numberPadButtons objectAtIndex:index]];
         }
         
         // Set the buttons' titles
-        [[numberPadButtons objectAtIndex:0]  setTitle:@"0" forState:UIControlStateNormal];
-        [[numberPadButtons objectAtIndex:1]  setTitle:@"1" forState:UIControlStateNormal];
-        [[numberPadButtons objectAtIndex:2]  setTitle:@"2" forState:UIControlStateNormal];
-        [[numberPadButtons objectAtIndex:3]  setTitle:@"3" forState:UIControlStateNormal];
-        [[numberPadButtons objectAtIndex:4]  setTitle:@"4" forState:UIControlStateNormal];
-        [[numberPadButtons objectAtIndex:5]  setTitle:@"5" forState:UIControlStateNormal];
-        [[numberPadButtons objectAtIndex:6]  setTitle:@"6" forState:UIControlStateNormal];
-        [[numberPadButtons objectAtIndex:7]  setTitle:@"7" forState:UIControlStateNormal];
-        [[numberPadButtons objectAtIndex:8]  setTitle:@"8" forState:UIControlStateNormal];
-        [[numberPadButtons objectAtIndex:9]  setTitle:@"9" forState:UIControlStateNormal];
         [[numberPadButtons objectAtIndex:10] setTitle:@"." forState:UIControlStateNormal];
         [[numberPadButtons objectAtIndex:11] setTitle:@"C" forState:UIControlStateNormal];
         [[numberPadButtons objectAtIndex:12] setTitle:@"±" forState:UIControlStateNormal];
@@ -324,13 +319,25 @@
     [UIView beginAnimations:nil context:nil]; {
         [UIView setAnimationDuration:duration];
         
-        [prompt setFrame:CGRectMake(0, 0, 320, 180)];
-        [promptLabel setFrame:CGRectMake(20, 20, 280, 140)];
+        [navigationBar setFrame:CGRectMake(0, 0, 320, 44)];
+        
+        [prompt setFrame:CGRectMake(0, 44, 320, 136)];
+        [prompt setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
+        
+        [promptLabel setFrame:CGRectMake(20, 20, 280, 96)];
+        [promptLabel setBackgroundColor:[UIColor clearColor]];
+        [promptLabel setTextAlignment:UITextAlignmentCenter];
         
         [response setFrame:CGRectMake(0, 178, 320, 60)];
+        [response setBackgroundColor:[UIColor lightGrayColor]];
+        
         [responseLabel setFrame:CGRectMake(20, 0, 280, 60)];
+        [responseLabel setBackgroundColor:[UIColor clearColor]];
+        [responseLabel setTextAlignment:UITextAlignmentCenter];
         
         [numberPad setFrame:CGRectMake(0, 236, 320, 224)];
+        [numberPad setBackgroundColor:[UIColor grayColor]];
+        
         [[numberPadButtons objectAtIndex:0]  setFrame:CGRectMake( 20, 164, 136, 40)];
         [[numberPadButtons objectAtIndex:1]  setFrame:CGRectMake( 20, 116,  64, 40)];
         [[numberPadButtons objectAtIndex:2]  setFrame:CGRectMake( 92, 116,  64, 40)];
@@ -351,6 +358,9 @@
 - (void)buildInterfaceIPhoneLandscape:(NSTimeInterval)duration {
     assert(interfaceIsBuilt);
     
+    // TODO
+    return [self buildInterfaceIPhonePortrait:duration];
+    
     [UIView beginAnimations:nil context:nil]; {
         [UIView setAnimationDuration:duration];
     } [UIView commitAnimations];
@@ -359,6 +369,9 @@
 - (void)buildInterfaceIPadPortrait:(NSTimeInterval)duration {
     assert(interfaceIsBuilt);
     
+    // TODO
+    return [self buildInterfaceIPhonePortrait:duration];
+    
     [UIView beginAnimations:nil context:nil]; {
         [UIView setAnimationDuration:duration];
     } [UIView commitAnimations];
@@ -366,6 +379,9 @@
 
 - (void)buildInterfaceIPadLandscape:(NSTimeInterval)duration {
     assert(interfaceIsBuilt);
+    
+    // TODO
+    return [self buildInterfaceIPhonePortrait:duration];
     
     [UIView beginAnimations:nil context:nil]; {
         [UIView setAnimationDuration:duration];
@@ -379,33 +395,35 @@
     assert([text length] == 1);
     unichar action = [text characterAtIndex:0];
     
-    if (action >= 48 && action <= 57) { // a digit
-        // Don't allow adding 0s to the beginning of the text
-        if (action != 48 || [[responseLabel text] length] > 0) {
+    if (action >= '1' && action <= '9') {
+        [responseLabel setText:[[responseLabel text] stringByAppendingString:text]];
+    }
+    else if (action == '0') {
+        if ([[responseLabel text] length] > 0 && [responseLabel text] != @"-") {
             [responseLabel setText:[[responseLabel text] stringByAppendingString:text]];
         }
     }
-    else if (action == 46) { // "."
-        NSRange range = [[responseLabel text] rangeOfString:text];
-        if (range.location == NSNotFound) {
-            if ([[responseLabel text] length] == 0) {
-                [responseLabel setText:[[responseLabel text] stringByAppendingString:@"0"]];
-            }
+    else if (action == '.') {
+        if ([[responseLabel text] length] == 0 || [responseLabel text] == @"-") {
+            [responseLabel setText:[[responseLabel text] stringByAppendingString:@"0."]];
+        }
+        else if ([[responseLabel text] rangeOfString:text].location == NSNotFound) {
             [responseLabel setText:[[responseLabel text] stringByAppendingString:text]];
         }
     }
-    else if (action == 177) { // "±"
-        if ([[responseLabel text] length] > 0 && [[responseLabel text] characterAtIndex:0] == 45) { // "-"
+    else if (action == 177) { // '±'
+        if ([[responseLabel text] length] > 0 && [[responseLabel text] characterAtIndex:0] == '-') {
             [responseLabel setText:[[responseLabel text] substringFromIndex:1]];
         }
         else {
             [responseLabel setText:[@"-" stringByAppendingString:[responseLabel text]]];
         }
     }
-    else if (action == 67) { // "C" (clear)
+    else if (action == 'C') {
         [responseLabel setText:@""];
     }
-    else if (action == 61) { // "="
+    else if (action == '=') {
+        // TODO the hard part
     }
 }
 

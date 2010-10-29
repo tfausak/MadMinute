@@ -19,6 +19,7 @@
 	MathQuestion *currentQuestion;
     
     // Interface elements
+    UINavigationBar *navigationBar;
     UIView *prompt;
     UILabel *promptLabel;
     UIView *response;
@@ -31,6 +32,7 @@
 @property (nonatomic, retain) LogoAnimationController *logoAnimationController;
 @property (nonatomic, retain) QuestionGenerator *questionGenerator;
 @property (nonatomic, retain) MathQuestion *currentQuestion;
+@property (nonatomic, retain) UINavigationBar *navigationBar;
 @property (nonatomic, retain) UIView *prompt;
 @property (nonatomic, retain) UILabel *promptLabel;
 @property (nonatomic, retain) UIView *response;
