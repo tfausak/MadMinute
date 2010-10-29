@@ -16,6 +16,7 @@
 - (void)buildInterfaceIPhoneLandscape:(NSTimeInterval)duration;
 - (void)buildInterfaceIPadPortrait:(NSTimeInterval)duration;
 - (void)buildInterfaceIPadLandscape:(NSTimeInterval)duration;
+- (void)pressedNumberPadButton:(id)sender;
 
 @end
 
@@ -59,7 +60,7 @@
 
 - (void)viewDidLoad {
     [self buildInterface];
-    
+    /*
     // Display the Famigo controller
     famigoController = [FamigoController sharedInstanceWithDelegate:self];
     [[famigoController view] setFrame:[[self view] frame]];
@@ -74,7 +75,8 @@
     [[self view] addSubview:[logoAnimationController view]];
     
     // Capture the notification at the end of the logo animation
-    [logoAnimationController registerForNotifications:self withSelector:@selector(logoAnimationDidFinish:)];    
+    [logoAnimationController registerForNotifications:self withSelector:@selector(logoAnimationDidFinish:)];
+     */
 }
 
 /*
@@ -210,13 +212,16 @@
     [[logoAnimationController view] removeFromSuperview];
     [logoAnimationController release];
 }
+
 #pragma mark -
 
 - (void)buildInterface {
-    return [self buildInterface:0.0];
+    [self buildInterface:0.0];
 }
 
 - (void)buildInterface:(NSTimeInterval)duration {
+    // Only create the interface elements once
+    // Every other call will just move things around
     if (!interfaceIsBuilt) {
         interfaceIsBuilt = YES;
         
@@ -232,21 +237,21 @@
         for (int index = 0; index < 14; index += 1) {
             UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
             [numberPad addSubview:button];
+            [button addTarget:self action:@selector(pressedNumberPadButton:) forControlEvents:UIControlEventTouchUpInside];
             [numberPadButtons insertObject:button atIndex:index];
         }
         
         // Set the buttons' titles
-        // TODO maybe this should go in a hash of some kind?
-        [[numberPadButtons objectAtIndex:0] setTitle:@"0" forState:UIControlStateNormal];
-        [[numberPadButtons objectAtIndex:1] setTitle:@"1" forState:UIControlStateNormal];
-        [[numberPadButtons objectAtIndex:2] setTitle:@"2" forState:UIControlStateNormal];
-        [[numberPadButtons objectAtIndex:3] setTitle:@"3" forState:UIControlStateNormal];
-        [[numberPadButtons objectAtIndex:4] setTitle:@"4" forState:UIControlStateNormal];
-        [[numberPadButtons objectAtIndex:5] setTitle:@"5" forState:UIControlStateNormal];
-        [[numberPadButtons objectAtIndex:6] setTitle:@"6" forState:UIControlStateNormal];
-        [[numberPadButtons objectAtIndex:7] setTitle:@"7" forState:UIControlStateNormal];
-        [[numberPadButtons objectAtIndex:8] setTitle:@"8" forState:UIControlStateNormal];
-        [[numberPadButtons objectAtIndex:9] setTitle:@"9" forState:UIControlStateNormal];
+        [[numberPadButtons objectAtIndex:0]  setTitle:@"0" forState:UIControlStateNormal];
+        [[numberPadButtons objectAtIndex:1]  setTitle:@"1" forState:UIControlStateNormal];
+        [[numberPadButtons objectAtIndex:2]  setTitle:@"2" forState:UIControlStateNormal];
+        [[numberPadButtons objectAtIndex:3]  setTitle:@"3" forState:UIControlStateNormal];
+        [[numberPadButtons objectAtIndex:4]  setTitle:@"4" forState:UIControlStateNormal];
+        [[numberPadButtons objectAtIndex:5]  setTitle:@"5" forState:UIControlStateNormal];
+        [[numberPadButtons objectAtIndex:6]  setTitle:@"6" forState:UIControlStateNormal];
+        [[numberPadButtons objectAtIndex:7]  setTitle:@"7" forState:UIControlStateNormal];
+        [[numberPadButtons objectAtIndex:8]  setTitle:@"8" forState:UIControlStateNormal];
+        [[numberPadButtons objectAtIndex:9]  setTitle:@"9" forState:UIControlStateNormal];
         [[numberPadButtons objectAtIndex:10] setTitle:@"." forState:UIControlStateNormal];
         [[numberPadButtons objectAtIndex:11] setTitle:@"C" forState:UIControlStateNormal];
         [[numberPadButtons objectAtIndex:12] setTitle:@"±" forState:UIControlStateNormal];
@@ -254,26 +259,29 @@
         
         // Create the answer text field
         answer = [[UITextField alloc] init];
-        [answer setBorderStyle:UITextBorderStyleRoundedRect];
+        [answer setBorderStyle:UITextBorderStyleLine];
+        [answer setText:@""];
         [[self view] addSubview:answer];
     }
     
-    switch ([[UIDevice currentDevice] userInterfaceIdiom]) {
-        case UIUserInterfaceIdiomPhone:
-            switch ([[UIDevice currentDevice] orientation]) {
-                case UIInterfaceOrientationLandscapeLeft:
-                case UIInterfaceOrientationLandscapeRight:
-                    return [self buildInterfaceIPhoneLandscape:duration];
-                default: return [self buildInterfaceIPhonePortrait:duration];
-            }
-        case UIUserInterfaceIdiomPad:
-            switch ([[UIDevice currentDevice] orientation]) {
-                case UIInterfaceOrientationLandscapeLeft:
-                case UIInterfaceOrientationLandscapeRight:
-                    return [self buildInterfaceIPadLandscape:duration];
-                default: return [self buildInterfaceIPadPortrait:duration];
-            }
-        default: return;
+    // Build the right interface for the current device and orientation
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        if ([[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeLeft ||
+            [[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeRight) {
+            [self buildInterfaceIPadLandscape:duration];
+        }
+        else {
+            [self buildInterfaceIPadPortrait:duration];
+        }
+    }
+    else {
+        if ([[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeLeft ||
+            [[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeRight) {
+            [self buildInterfaceIPhoneLandscape:duration];
+        }
+        else {
+            [self buildInterfaceIPhonePortrait:duration];
+        }
     }
 }
 
@@ -300,7 +308,7 @@
         [[numberPadButtons objectAtIndex:12] setFrame:CGRectMake(236,  68,  64, 40)];
         [[numberPadButtons objectAtIndex:13] setFrame:CGRectMake(236, 116,  64, 88)];
         
-        [answer setFrame:CGRectMake(20, 182, 280, 40)];
+        [answer setFrame:CGRectMake(20, 183, 280, 40)];
     } [UIView commitAnimations];
 }
 
@@ -326,6 +334,40 @@
     [UIView beginAnimations:nil context:nil]; {
         [UIView setAnimationDuration:duration];
     } [UIView commitAnimations];
+}
+
+#pragma mark -
+
+- (void)pressedNumberPadButton:(id)sender {
+    NSString *text = [[(UIButton *)sender titleLabel] text];
+    assert([text length] == 1);
+    unichar action = [text characterAtIndex:0];
+    
+    if (action >= 48 && action <= 57) { // a digit
+        [answer setText:[[answer text] stringByAppendingString:text]];
+    }
+    else if (action == 46) { // "."
+        NSRange range = [[answer text] rangeOfString:text];
+        if (range.location == NSNotFound) {
+            if ([[answer text] length] == 0) {
+                [answer setText:[[answer text] stringByAppendingString:@"0"]];
+            }
+            [answer setText:[[answer text] stringByAppendingString:text]];
+        }
+    }
+    else if (action == 177) { // "±"
+        if ([[answer text] length] > 0 && [[answer text] characterAtIndex:0] == 45) { // "-"
+            [answer setText:[[answer text] substringFromIndex:1]];
+        }
+        else {
+            [answer setText:[@"-" stringByAppendingString:[answer text]]];
+        }
+    }
+    else if (action == 67) { // "C" (clear)
+        [answer setText:@""];
+    }
+    else if (action == 61) { // "="
+    }
 }
 
 @end
