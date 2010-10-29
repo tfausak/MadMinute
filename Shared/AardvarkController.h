@@ -19,20 +19,24 @@
 	MathQuestion *currentQuestion;
     
     // Interface elements
+    UIView *prompt;
+    UILabel *promptLabel;
+    UIView *response;
+    UILabel *responseLabel;
     UIView *numberPad;
     NSMutableArray *numberPadButtons;
-    UITextField *answer;
-	UILabel *question;
 }
 
 @property (nonatomic, retain) FamigoController *famigoController;
 @property (nonatomic, retain) LogoAnimationController *logoAnimationController;
 @property (nonatomic, retain) QuestionGenerator *questionGenerator;
 @property (nonatomic, retain) MathQuestion *currentQuestion;
+@property (nonatomic, retain) UIView *prompt;
+@property (nonatomic, retain) UILabel *promptLabel;
+@property (nonatomic, retain) UIView *response;
+@property (nonatomic, retain) UILabel *responseLabel;
 @property (nonatomic, retain) UIView *numberPad;
 @property (nonatomic, retain) NSMutableArray *numberPadButtons;
-@property (nonatomic, retain) UITextField *answer;
-@property (nonatomic, retain) UILabel *question;
 
 - (void)famigoReady;
 - (void)buildInterface;

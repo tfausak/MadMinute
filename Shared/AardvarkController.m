@@ -24,24 +24,28 @@
 
 @implementation AardvarkController
 
+@synthesize interfaceIsBuilt;
 @synthesize famigoController;
 @synthesize logoAnimationController;
 @synthesize questionGenerator;
 @synthesize currentQuestion;
-@synthesize interfaceIsBuilt;
+@synthesize prompt;
+@synthesize promptLabel;
+@synthesize response;
+@synthesize responseLabel;
 @synthesize numberPad;
 @synthesize numberPadButtons;
-@synthesize answer;
-@synthesize question;
 
 - (void)dealloc {
     [famigoController release];
     [logoAnimationController release];
     [questionGenerator release];
+    [prompt release];
+    [promptLabel release];
+    [response release];
+    [responseLabel release];
     [numberPad release];
     [numberPadButtons release];
-    [answer release];
-	[question release];
 	
     [super dealloc];
 }
@@ -70,7 +74,8 @@
     
     questionGenerator = [[QuestionGenerator alloc] initWithDifficulty:2];
     currentQuestion = [questionGenerator generateQuestion];
-    [question setText:[currentQuestion question]];
+    [promptLabel setText:[currentQuestion question]];
+    
     /*
     // Display the Famigo controller
     famigoController = [FamigoController sharedInstanceWithDelegate:self];
@@ -238,9 +243,32 @@
         
         [[self view] setBackgroundColor:[UIColor whiteColor]];
         
+        // Create the prompt view
+        prompt = [[UIView alloc] init];
+        [[self view] addSubview:prompt];
+        
+        // Create the prompt label
+        promptLabel = [[UILabel alloc] init];
+        [promptLabel setBackgroundColor:[UIColor clearColor]];
+        [promptLabel setText:@""];
+        [promptLabel setTextAlignment:UITextAlignmentCenter];
+        [prompt addSubview:promptLabel];
+        
+        // Create the answer view
+        response = [[UIView alloc] init];
+        [response setBackgroundColor:[UIColor lightGrayColor]];
+        [[self view] addSubview:response];
+        
+        // Create the answer label
+        responseLabel = [[UILabel alloc] init];
+        [responseLabel setBackgroundColor:[UIColor clearColor]];
+        [responseLabel setText:@""];
+        [responseLabel setTextAlignment:UITextAlignmentCenter];
+        [response addSubview:responseLabel];
+        
         // Create the number pad view
         numberPad = [[UIView alloc] init];
-        [numberPad setBackgroundColor:[UIColor lightGrayColor]];
+        [numberPad setBackgroundColor:[UIColor grayColor]];
         [[self view] addSubview:numberPad];
         
         // Create all the buttons and put them in the number pad
@@ -267,16 +295,6 @@
         [[numberPadButtons objectAtIndex:11] setTitle:@"C" forState:UIControlStateNormal];
         [[numberPadButtons objectAtIndex:12] setTitle:@"±" forState:UIControlStateNormal];
         [[numberPadButtons objectAtIndex:13] setTitle:@"=" forState:UIControlStateNormal];
-        
-        // Create the answer text field
-        answer = [[UITextField alloc] init];
-        [answer setBorderStyle:UITextBorderStyleLine];
-        [answer setText:@""];
-        [[self view] addSubview:answer];
-        
-        // Create the question label
-        question = [[UILabel alloc] init];
-        [[self view] addSubview:question];
     }
     
     // Build the right interface for the current device and orientation
@@ -306,8 +324,13 @@
     [UIView beginAnimations:nil context:nil]; {
         [UIView setAnimationDuration:duration];
         
-        [numberPad setFrame:CGRectMake(0, 236, 320, 224)];
+        [prompt setFrame:CGRectMake(0, 0, 320, 180)];
+        [promptLabel setFrame:CGRectMake(20, 20, 280, 140)];
         
+        [response setFrame:CGRectMake(0, 178, 320, 60)];
+        [responseLabel setFrame:CGRectMake(20, 0, 280, 60)];
+        
+        [numberPad setFrame:CGRectMake(0, 236, 320, 224)];
         [[numberPadButtons objectAtIndex:0]  setFrame:CGRectMake( 20, 164, 136, 40)];
         [[numberPadButtons objectAtIndex:1]  setFrame:CGRectMake( 20, 116,  64, 40)];
         [[numberPadButtons objectAtIndex:2]  setFrame:CGRectMake( 92, 116,  64, 40)];
@@ -322,10 +345,6 @@
         [[numberPadButtons objectAtIndex:11] setFrame:CGRectMake(236,  20,  64, 40)];
         [[numberPadButtons objectAtIndex:12] setFrame:CGRectMake(236,  68,  64, 40)];
         [[numberPadButtons objectAtIndex:13] setFrame:CGRectMake(236, 116,  64, 88)];
-        
-        [answer setFrame:CGRectMake(20, 183, 280, 40)];
-        
-        [question setFrame:CGRectMake(20, 20, 280, 150)];
     } [UIView commitAnimations];
 }
 
@@ -361,27 +380,30 @@
     unichar action = [text characterAtIndex:0];
     
     if (action >= 48 && action <= 57) { // a digit
-        [answer setText:[[answer text] stringByAppendingString:text]];
+        // Don't allow adding 0s to the beginning of the text
+        if (action != 48 || [[responseLabel text] length] > 0) {
+            [responseLabel setText:[[responseLabel text] stringByAppendingString:text]];
+        }
     }
     else if (action == 46) { // "."
-        NSRange range = [[answer text] rangeOfString:text];
+        NSRange range = [[responseLabel text] rangeOfString:text];
         if (range.location == NSNotFound) {
-            if ([[answer text] length] == 0) {
-                [answer setText:[[answer text] stringByAppendingString:@"0"]];
+            if ([[responseLabel text] length] == 0) {
+                [responseLabel setText:[[responseLabel text] stringByAppendingString:@"0"]];
             }
-            [answer setText:[[answer text] stringByAppendingString:text]];
+            [responseLabel setText:[[responseLabel text] stringByAppendingString:text]];
         }
     }
     else if (action == 177) { // "±"
-        if ([[answer text] length] > 0 && [[answer text] characterAtIndex:0] == 45) { // "-"
-            [answer setText:[[answer text] substringFromIndex:1]];
+        if ([[responseLabel text] length] > 0 && [[responseLabel text] characterAtIndex:0] == 45) { // "-"
+            [responseLabel setText:[[responseLabel text] substringFromIndex:1]];
         }
         else {
-            [answer setText:[@"-" stringByAppendingString:[answer text]]];
+            [responseLabel setText:[@"-" stringByAppendingString:[responseLabel text]]];
         }
     }
     else if (action == 67) { // "C" (clear)
-        [answer setText:@""];
+        [responseLabel setText:@""];
     }
     else if (action == 61) { // "="
     }
