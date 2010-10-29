@@ -7,8 +7,7 @@
 //
 
 #import "AardvarkController.h"
-#import "QuestionGenerator.h"
-#import "MathQuestion.h"
+#import "ArithmeticEquationGenerator.h"
 
 @interface AardvarkController()
 
@@ -27,11 +26,12 @@
 @synthesize interfaceIsBuilt;
 @synthesize famigoController;
 @synthesize logoAnimationController;
-@synthesize questionGenerator;
-@synthesize currentQuestion;
 @synthesize navigationBar;
 @synthesize prompt;
-@synthesize promptLabel;
+@synthesize firstOperandLabel;
+@synthesize operationLabel;
+@synthesize secondOperandLabel;
+@synthesize resultLabel;
 @synthesize response;
 @synthesize responseLabel;
 @synthesize numberPad;
@@ -40,10 +40,12 @@
 - (void)dealloc {
     [famigoController release];
     [logoAnimationController release];
-    [questionGenerator release];
     [navigationBar release];
     [prompt release];
-    [promptLabel release];
+    [firstOperandLabel release];
+    [operationLabel release];
+    [secondOperandLabel release];
+    [resultLabel release];
     [response release];
     [responseLabel release];
     [numberPad release];
@@ -74,10 +76,13 @@
 - (void)viewDidLoad {
     [self buildInterface];
     
-    questionGenerator = [[QuestionGenerator alloc] initWithDifficulty:2];
-    currentQuestion = [questionGenerator generateQuestion];
-    [promptLabel setText:[currentQuestion question]];
-    
+    ArithmeticEquationGenerator *aeg = [[ArithmeticEquationGenerator alloc] initWithDifficulty:VeryHard allowNegativeNumbers:YES];
+    ArithmeticEquation *ae = [aeg generateEquation];
+    [firstOperandLabel setText:[ae firstOperandAsString]];
+    [operationLabel setText:[ae operationAsString]];
+    [secondOperandLabel setText:[ae secondOperandAsString]];
+    [resultLabel setText:[ae resultAsString]];
+    /*
     // Display the Famigo controller
     famigoController = [FamigoController sharedInstanceWithDelegate:self];
     [[famigoController view] setFrame:[[self view] frame]];
@@ -92,7 +97,7 @@
     [[self view] addSubview:[logoAnimationController view]];
     
     // Capture the notification at the end of the logo animation
-    [logoAnimationController registerForNotifications:self withSelector:@selector(logoAnimationDidFinish:)];
+    [logoAnimationController registerForNotifications:self withSelector:@selector(logoAnimationDidFinish:)];*/
 }
 
 /*
@@ -243,39 +248,39 @@
         
         [[self view] setBackgroundColor:[UIColor whiteColor]];
         
-        // Create the top navigation item for the navigation bar
         UINavigationItem *navigationItem = [[UINavigationItem alloc] initWithTitle:@"Aardvark"];
         [navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Famigo" style:UIBarButtonItemStylePlain target:nil action:nil]];
         [navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:nil action:nil]];
         
-        // Create the navigation bar
         navigationBar = [[UINavigationBar alloc] init];
         [navigationBar pushNavigationItem:navigationItem animated:NO];
         [[self view] addSubview:navigationBar];
         
-        // Create the prompt view
         prompt = [[UIView alloc] init];
         [[self view] addSubview:prompt];
         
-        // Create the prompt label
-        promptLabel = [[UILabel alloc] init];
-        [promptLabel setText:@""];
-        [prompt addSubview:promptLabel];
+        firstOperandLabel = [[UILabel alloc] init];
+        [prompt addSubview:firstOperandLabel];
         
-        // Create the answer view
+        operationLabel = [[UILabel alloc] init];
+        [prompt addSubview:operationLabel];
+        
+        secondOperandLabel = [[UILabel alloc] init];
+        [prompt addSubview:secondOperandLabel];
+        
+        resultLabel = [[UILabel alloc] init];
+        [prompt addSubview:resultLabel];
+        
         response = [[UIView alloc] init];
         [[self view] addSubview:response];
         
-        // Create the answer label
         responseLabel = [[UILabel alloc] init];
         [responseLabel setText:@""];
         [response addSubview:responseLabel];
         
-        // Create the number pad view
         numberPad = [[UIView alloc] init];
         [[self view] addSubview:numberPad];
         
-        // Create all the buttons and put them in the number pad
         numberPadButtons = [[NSMutableArray alloc] initWithCapacity:14];
         for (int index = 0; index < 14; index += 1) {
             UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -285,7 +290,6 @@
             [numberPad addSubview:[numberPadButtons objectAtIndex:index]];
         }
         
-        // Set the buttons' titles
         [[numberPadButtons objectAtIndex:10] setTitle:@"." forState:UIControlStateNormal];
         [[numberPadButtons objectAtIndex:11] setTitle:@"C" forState:UIControlStateNormal];
         [[numberPadButtons objectAtIndex:12] setTitle:@"±" forState:UIControlStateNormal];
@@ -314,7 +318,7 @@
 }
 
 - (void)buildInterfaceIPhonePortrait:(NSTimeInterval)duration {
-    assert(interfaceIsBuilt);
+    NSAssert(interfaceIsBuilt, @"Interface not built before resizing");
     
     [UIView beginAnimations:nil context:nil]; {
         [UIView setAnimationDuration:duration];
@@ -324,9 +328,20 @@
         [prompt setFrame:CGRectMake(0, 44, 320, 136)];
         [prompt setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
         
-        [promptLabel setFrame:CGRectMake(20, 20, 280, 96)];
-        [promptLabel setBackgroundColor:[UIColor clearColor]];
-        [promptLabel setTextAlignment:UITextAlignmentCenter];
+        [firstOperandLabel setBackgroundColor:[UIColor clearColor]];
+        [firstOperandLabel setFrame:CGRectMake(20, 20, 280, 40)];
+        [firstOperandLabel setTextAlignment:UITextAlignmentRight];
+        
+        [operationLabel setBackgroundColor:[UIColor clearColor]];
+        [operationLabel setFrame:CGRectMake(20, 60, 280, 40)];
+        
+        [secondOperandLabel setBackgroundColor:[UIColor clearColor]];
+        [secondOperandLabel setFrame:CGRectMake(20, 60, 280, 40)];
+        [secondOperandLabel setTextAlignment:UITextAlignmentRight];
+        
+        [resultLabel setBackgroundColor:[UIColor clearColor]];
+        [resultLabel setFrame:CGRectMake(20, 100, 280, 40)];
+        [resultLabel setTextAlignment:UITextAlignmentRight];
         
         [response setFrame:CGRectMake(0, 178, 320, 60)];
         [response setBackgroundColor:[UIColor lightGrayColor]];
@@ -356,7 +371,7 @@
 }
 
 - (void)buildInterfaceIPhoneLandscape:(NSTimeInterval)duration {
-    assert(interfaceIsBuilt);
+    NSAssert(interfaceIsBuilt, @"Interface not built before resizing");
     
     // TODO
     return [self buildInterfaceIPhonePortrait:duration];
@@ -367,7 +382,7 @@
 }
 
 - (void)buildInterfaceIPadPortrait:(NSTimeInterval)duration {
-    assert(interfaceIsBuilt);
+    NSAssert(interfaceIsBuilt, @"Interface not built before resizing");
     
     // TODO
     return [self buildInterfaceIPhonePortrait:duration];
@@ -378,7 +393,7 @@
 }
 
 - (void)buildInterfaceIPadLandscape:(NSTimeInterval)duration {
-    assert(interfaceIsBuilt);
+    NSAssert(interfaceIsBuilt, @"Interface not built before resizing");
     
     // TODO
     return [self buildInterfaceIPhonePortrait:duration];
@@ -411,7 +426,7 @@
             [responseLabel setText:[[responseLabel text] stringByAppendingString:text]];
         }
     }
-    else if (action == 177) { // '±'
+    else if (action == 177) { // '±' issues a warning
         if ([[responseLabel text] length] > 0 && [[responseLabel text] characterAtIndex:0] == '-') {
             [responseLabel setText:[[responseLabel text] substringFromIndex:1]];
         }

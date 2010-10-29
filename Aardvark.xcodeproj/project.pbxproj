@@ -28,8 +28,8 @@
 		3418616E127726E300E4BAD5 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 34186165127726E300E4BAD5 /* Icon.png */; };
 		3418616F127726E300E4BAD5 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34186166127726E300E4BAD5 /* Icon@2x.png */; };
 		34186170127726E300E4BAD5 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 34186167127726E300E4BAD5 /* iTunesArtwork.png */; };
-		34DC9364127B40A100EB659F /* MathQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DC9361127B40A100EB659F /* MathQuestion.m */; };
-		34DC9365127B40A100EB659F /* QuestionGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DC9363127B40A100EB659F /* QuestionGenerator.m */; };
+		34DC9453127B627200EB659F /* ArithmeticEquation.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DC9452127B627200EB659F /* ArithmeticEquation.m */; };
+		34DC9458127B62BC00EB659F /* ArithmeticEquationGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DC9457127B62BC00EB659F /* ArithmeticEquationGenerator.m */; };
 		34E830191276098F00FFF679 /* libFamigoAPI-Release.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E830181276098F00FFF679 /* libFamigoAPI-Release.a */; };
 		34E830BA127609B400FFF679 /* bro2.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E83023127609B400FFF679 /* bro2.png */; };
 		34E830BB127609B400FFF679 /* bro3.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E83024127609B400FFF679 /* bro3.png */; };
@@ -186,10 +186,10 @@
 		34186165127726E300E4BAD5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Shared/Images/Icon.png; sourceTree = "<group>"; };
 		34186166127726E300E4BAD5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Shared/Images/Icon@2x.png"; sourceTree = "<group>"; };
 		34186167127726E300E4BAD5 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iTunesArtwork.png; path = Shared/Images/iTunesArtwork.png; sourceTree = "<group>"; };
-		34DC9360127B40A100EB659F /* MathQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MathQuestion.h; path = Shared/MathQuestion.h; sourceTree = "<group>"; };
-		34DC9361127B40A100EB659F /* MathQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MathQuestion.m; path = Shared/MathQuestion.m; sourceTree = "<group>"; };
-		34DC9362127B40A100EB659F /* QuestionGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionGenerator.h; path = Shared/QuestionGenerator.h; sourceTree = "<group>"; };
-		34DC9363127B40A100EB659F /* QuestionGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionGenerator.m; path = Shared/QuestionGenerator.m; sourceTree = "<group>"; };
+		34DC9451127B627200EB659F /* ArithmeticEquation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArithmeticEquation.h; path = Shared/ArithmeticEquation.h; sourceTree = "<group>"; };
+		34DC9452127B627200EB659F /* ArithmeticEquation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArithmeticEquation.m; path = Shared/ArithmeticEquation.m; sourceTree = "<group>"; };
+		34DC9456127B62BC00EB659F /* ArithmeticEquationGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArithmeticEquationGenerator.h; path = Shared/ArithmeticEquationGenerator.h; sourceTree = "<group>"; wrapsLines = 1; };
+		34DC9457127B62BC00EB659F /* ArithmeticEquationGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArithmeticEquationGenerator.m; path = Shared/ArithmeticEquationGenerator.m; sourceTree = "<group>"; wrapsLines = 1; };
 		34E830181276098F00FFF679 /* libFamigoAPI-Release.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libFamigoAPI-Release.a"; path = "/Users/taylor/Documents/Famigo/Famigo/build/Release-universal/FamigoAPI/libFamigoAPI-Release.a"; sourceTree = "<absolute>"; };
 		34E8301D127609B400FFF679 /* ABContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABContact.h; path = "../Famigo/build/Release-universal/FamigoAPI/ABContact.h"; sourceTree = SOURCE_ROOT; };
 		34E8301E127609B400FFF679 /* ABContactsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABContactsHelper.h; path = "../Famigo/build/Release-universal/FamigoAPI/ABContactsHelper.h"; sourceTree = SOURCE_ROOT; };
@@ -422,10 +422,10 @@
 				34E8315B12760CE500FFF679 /* AppDelegate.m */,
 				34E831B1127611C100FFF679 /* AardvarkController.h */,
 				34E831B2127611C100FFF679 /* AardvarkController.m */,
-				34DC9360127B40A100EB659F /* MathQuestion.h */,
-				34DC9361127B40A100EB659F /* MathQuestion.m */,
-				34DC9362127B40A100EB659F /* QuestionGenerator.h */,
-				34DC9363127B40A100EB659F /* QuestionGenerator.m */,
+				34DC9451127B627200EB659F /* ArithmeticEquation.h */,
+				34DC9452127B627200EB659F /* ArithmeticEquation.m */,
+				34DC9456127B62BC00EB659F /* ArithmeticEquationGenerator.h */,
+				34DC9457127B62BC00EB659F /* ArithmeticEquationGenerator.m */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -849,8 +849,8 @@
 				2860E32E111B888700E27156 /* AppDelegate_iPad.m in Sources */,
 				34E8315C12760CE500FFF679 /* AppDelegate.m in Sources */,
 				34E831B4127611C100FFF679 /* AardvarkController.m in Sources */,
-				34DC9364127B40A100EB659F /* MathQuestion.m in Sources */,
-				34DC9365127B40A100EB659F /* QuestionGenerator.m in Sources */,
+				34DC9453127B627200EB659F /* ArithmeticEquation.m in Sources */,
+				34DC9458127B62BC00EB659F /* ArithmeticEquationGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
