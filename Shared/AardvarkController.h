@@ -19,8 +19,8 @@
     UILabel *firstOperandLabel;
     UILabel *operationLabel;
     UILabel *secondOperandLabel;
-    UILabel *resultLabel;
     UIView *response;
+    int responseValue;
     UILabel *responseLabel;
     UIView *numberPad;
     NSMutableArray *numberPadButtons;
@@ -33,8 +33,8 @@
 @property (nonatomic, retain) UILabel *firstOperandLabel;
 @property (nonatomic, retain) UILabel *operationLabel;
 @property (nonatomic, retain) UILabel *secondOperandLabel;
-@property (nonatomic, retain) UILabel *resultLabel;
 @property (nonatomic, retain) UIView *response;
+@property (nonatomic, assign) int responseValue;
 @property (nonatomic, retain) UILabel *responseLabel;
 @property (nonatomic, retain) UIView *numberPad;
 @property (nonatomic, retain) NSMutableArray *numberPadButtons;

@@ -41,20 +41,20 @@
                 allowedOperations = Addition | Subtraction | Multiplication;
                 additionMax = 50;
                 subtractionMax = 20;
-                multiplicationMax = 10;
+                multiplicationMax = 6;
                 break;
             case Hard:
                 allowedOperations = Addition | Subtraction | Multiplication | Division;
                 additionMax = 100;
                 subtractionMax = 50;
-                multiplicationMax = 20;
-                divisionMax = 10;
+                multiplicationMax = 13;
+                divisionMax = 6;
                 break;
             case VeryHard:
                 additionMax = 100;
                 subtractionMax = 100;
-                multiplicationMax = 20;
-                divisionMax = 20;
+                multiplicationMax = 13;
+                divisionMax = 13;
                 break;
             default:
                 NSAssert(NO, @"Unknown difficulty");
