@@ -276,8 +276,9 @@
         
         numberPadButtons = [[NSMutableArray alloc] initWithCapacity:12];
         for (int index = 0; index < 12; index += 1) {
-            UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
             [button setTitle:[NSString stringWithFormat:@"%d", index] forState:UIControlStateNormal];
+            [button setImage:[UIImage imageNamed:[NSString stringWithFormat:@"Button%d", index]] forState:UIControlStateNormal];
             [button addTarget:self action:@selector(pressedNumberPadButton:) forControlEvents:UIControlEventTouchUpInside];
             [numberPadButtons insertObject:button atIndex:index];
             [numberPad addSubview:[numberPadButtons objectAtIndex:index]];
@@ -311,9 +312,10 @@
     [UIView beginAnimations:nil context:nil]; {
         [UIView setAnimationDuration:duration];
         
-        [[self view] setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
+        [[self view] setBackgroundColor:[UIColor colorWithRed:0.0 green:0.502 blue:0.251 alpha:1.0]];
         
         [navigationBar setFrame:CGRectMake(0, 0, 320, 44)];
+        [navigationBar setTintColor:[UIColor colorWithRed:0.0 green:0.502 blue:0.251 alpha:1.0]];
         
         [prompt setFrame:CGRectMake(0, 44, 320, 136)];
         [prompt setBackgroundColor:[UIColor clearColor]];
