@@ -27,7 +27,7 @@
 		3418616D127726E300E4BAD5 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34186164127726E300E4BAD5 /* Icon-Small@2x.png */; };
 		3418616E127726E300E4BAD5 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 34186165127726E300E4BAD5 /* Icon.png */; };
 		3418616F127726E300E4BAD5 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34186166127726E300E4BAD5 /* Icon@2x.png */; };
-		34186170127726E300E4BAD5 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 34186167127726E300E4BAD5 /* iTunesArtwork.png */; };
+		34186170127726E300E4BAD5 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 34186167127726E300E4BAD5 /* iTunesArtwork */; };
 		34DC9453127B627200EB659F /* ArithmeticEquation.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DC9452127B627200EB659F /* ArithmeticEquation.m */; };
 		34DC9458127B62BC00EB659F /* ArithmeticEquationGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DC9457127B62BC00EB659F /* ArithmeticEquationGenerator.m */; };
 		34E830191276098F00FFF679 /* libFamigoAPI-Release.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E830181276098F00FFF679 /* libFamigoAPI-Release.a */; };
@@ -156,12 +156,12 @@
 		34E8313B127609E500FFF679 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E8313A127609E500FFF679 /* QuartzCore.framework */; };
 		34E8313D127609E500FFF679 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E8313C127609E500FFF679 /* SystemConfiguration.framework */; };
 		34E8315C12760CE500FFF679 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E8315B12760CE500FFF679 /* AppDelegate.m */; };
-		34E831B4127611C100FFF679 /* AardvarkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E831B2127611C100FFF679 /* AardvarkController.m */; };
+		34E831B4127611C100FFF679 /* MadMinuteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E831B2127611C100FFF679 /* MadMinuteController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* Aardvark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aardvark.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* MadMinute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MadMinute.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2860E325111B887F00E27156 /* AppDelegate_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate_iPhone.h; sourceTree = "<group>"; };
 		2860E326111B887F00E27156 /* AppDelegate_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate_iPhone.m; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 		2860E32D111B888700E27156 /* MainWindow_iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow_iPad.xib; sourceTree = "<group>"; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Shared/main.m; sourceTree = "<group>"; };
-		32CA4F630368D1EE00C91783 /* Aardvark_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aardvark_Prefix.pch; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* MadMinute_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MadMinute_Prefix.pch; sourceTree = "<group>"; };
 		340AE6581278D3D100F3DF8C /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		340AE65A1278D3E300F3DF8C /* GANTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GANTracker.h; path = "../Famigo/build/Release-universal/FamigoAPI/GANTracker.h"; sourceTree = SOURCE_ROOT; };
 		340AE65B1278D3E300F3DF8C /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = "../Famigo/build/Release-universal/FamigoAPI/libGoogleAnalytics.a"; sourceTree = SOURCE_ROOT; };
@@ -185,7 +185,7 @@
 		34186164127726E300E4BAD5 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "Shared/Images/Icon-Small@2x.png"; sourceTree = "<group>"; };
 		34186165127726E300E4BAD5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Shared/Images/Icon.png; sourceTree = "<group>"; };
 		34186166127726E300E4BAD5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Shared/Images/Icon@2x.png"; sourceTree = "<group>"; };
-		34186167127726E300E4BAD5 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iTunesArtwork.png; path = Shared/Images/iTunesArtwork.png; sourceTree = "<group>"; };
+		34186167127726E300E4BAD5 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Shared/Images/iTunesArtwork; sourceTree = "<group>"; };
 		34DC9451127B627200EB659F /* ArithmeticEquation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArithmeticEquation.h; path = Shared/ArithmeticEquation.h; sourceTree = "<group>"; };
 		34DC9452127B627200EB659F /* ArithmeticEquation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArithmeticEquation.m; path = Shared/ArithmeticEquation.m; sourceTree = "<group>"; };
 		34DC9456127B62BC00EB659F /* ArithmeticEquationGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArithmeticEquationGenerator.h; path = Shared/ArithmeticEquationGenerator.h; sourceTree = "<group>"; wrapsLines = 1; };
@@ -356,9 +356,9 @@
 		34E8313C127609E500FFF679 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		34E8315A12760CE500FFF679 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Shared/AppDelegate.h; sourceTree = "<group>"; };
 		34E8315B12760CE500FFF679 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Shared/AppDelegate.m; sourceTree = "<group>"; };
-		34E831B1127611C100FFF679 /* AardvarkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AardvarkController.h; path = Shared/AardvarkController.h; sourceTree = "<group>"; };
-		34E831B2127611C100FFF679 /* AardvarkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AardvarkController.m; path = Shared/AardvarkController.m; sourceTree = "<group>"; wrapsLines = 1; };
-		8D1107310486CEB800E47090 /* Aardvark-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Aardvark-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		34E831B1127611C100FFF679 /* MadMinuteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MadMinuteController.h; path = Shared/MadMinuteController.h; sourceTree = "<group>"; };
+		34E831B2127611C100FFF679 /* MadMinuteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MadMinuteController.m; path = Shared/MadMinuteController.m; sourceTree = "<group>"; wrapsLines = 1; };
+		8D1107310486CEB800E47090 /* MadMinute-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MadMinute-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,7 +387,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* Aardvark.app */,
+				1D6058910D05DD3D006BFB54 /* MadMinute.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -417,11 +417,11 @@
 			children = (
 				34E8301C1276099C00FFF679 /* Famigo */,
 				3418613C127723CB00E4BAD5 /* Images */,
-				8D1107310486CEB800E47090 /* Aardvark-Info.plist */,
+				8D1107310486CEB800E47090 /* MadMinute-Info.plist */,
 				34E8315A12760CE500FFF679 /* AppDelegate.h */,
 				34E8315B12760CE500FFF679 /* AppDelegate.m */,
-				34E831B1127611C100FFF679 /* AardvarkController.h */,
-				34E831B2127611C100FFF679 /* AardvarkController.m */,
+				34E831B1127611C100FFF679 /* MadMinuteController.h */,
+				34E831B2127611C100FFF679 /* MadMinuteController.m */,
 				34DC9451127B627200EB659F /* ArithmeticEquation.h */,
 				34DC9452127B627200EB659F /* ArithmeticEquation.m */,
 				34DC9456127B62BC00EB659F /* ArithmeticEquationGenerator.h */,
@@ -446,7 +446,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				32CA4F630368D1EE00C91783 /* Aardvark_Prefix.pch */,
+				32CA4F630368D1EE00C91783 /* MadMinute_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
@@ -473,17 +473,17 @@
 		3418613C127723CB00E4BAD5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				3418615F127726E300E4BAD5 /* Default-Landscape.png */,
-				34186160127726E300E4BAD5 /* Default-Portrait.png */,
-				34186161127726E300E4BAD5 /* Icon-72.png */,
-				34186162127726E300E4BAD5 /* Icon-Small-50.png */,
-				34186163127726E300E4BAD5 /* Icon-Small.png */,
-				34186164127726E300E4BAD5 /* Icon-Small@2x.png */,
-				34186165127726E300E4BAD5 /* Icon.png */,
-				34186166127726E300E4BAD5 /* Icon@2x.png */,
-				34186167127726E300E4BAD5 /* iTunesArtwork.png */,
+				34186167127726E300E4BAD5 /* iTunesArtwork */,
 				34186149127724F500E4BAD5 /* Default.png */,
 				3418614A127724F500E4BAD5 /* Default@2x.png */,
+				34186160127726E300E4BAD5 /* Default-Portrait.png */,
+				3418615F127726E300E4BAD5 /* Default-Landscape.png */,
+				34186165127726E300E4BAD5 /* Icon.png */,
+				34186166127726E300E4BAD5 /* Icon@2x.png */,
+				34186161127726E300E4BAD5 /* Icon-72.png */,
+				34186163127726E300E4BAD5 /* Icon-Small.png */,
+				34186164127726E300E4BAD5 /* Icon-Small@2x.png */,
+				34186162127726E300E4BAD5 /* Icon-Small-50.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -657,9 +657,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* Aardvark */ = {
+		1D6058900D05DD3D006BFB54 /* MadMinute */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Aardvark" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "MadMinute" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -669,9 +669,9 @@
 			);
 			dependencies = (
 			);
-			name = Aardvark;
+			name = MadMinute;
 			productName = Aardvark;
-			productReference = 1D6058910D05DD3D006BFB54 /* Aardvark.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* MadMinute.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -679,7 +679,7 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Aardvark" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MadMinute" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -693,7 +693,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* Aardvark */,
+				1D6058900D05DD3D006BFB54 /* MadMinute */,
 			);
 		};
 /* End PBXProject section */
@@ -833,7 +833,7 @@
 				3418616D127726E300E4BAD5 /* Icon-Small@2x.png in Resources */,
 				3418616E127726E300E4BAD5 /* Icon.png in Resources */,
 				3418616F127726E300E4BAD5 /* Icon@2x.png in Resources */,
-				34186170127726E300E4BAD5 /* iTunesArtwork.png in Resources */,
+				34186170127726E300E4BAD5 /* iTunesArtwork in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -848,7 +848,7 @@
 				2860E328111B887F00E27156 /* AppDelegate_iPhone.m in Sources */,
 				2860E32E111B888700E27156 /* AppDelegate_iPad.m in Sources */,
 				34E8315C12760CE500FFF679 /* AppDelegate.m in Sources */,
-				34E831B4127611C100FFF679 /* AardvarkController.m in Sources */,
+				34E831B4127611C100FFF679 /* MadMinuteController.m in Sources */,
 				34DC9453127B627200EB659F /* ArithmeticEquation.m in Sources */,
 				34DC9458127B62BC00EB659F /* ArithmeticEquationGenerator.m in Sources */,
 			);
@@ -866,13 +866,13 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Aardvark_Prefix.pch;
-				INFOPLIST_FILE = "Aardvark-Info.plist";
+				GCC_PREFIX_HEADER = MadMinute_Prefix.pch;
+				INFOPLIST_FILE = "MadMinute-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../Famigo/build/Release-universal/FamigoAPI\"",
 				);
-				PRODUCT_NAME = Aardvark;
+				PRODUCT_NAME = MadMinute;
 			};
 			name = Debug;
 		};
@@ -886,13 +886,13 @@
 					"\"$(SRCROOT)/../gh-unit/Project-IPhone/build/Framework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Aardvark_Prefix.pch;
-				INFOPLIST_FILE = "Aardvark-Info.plist";
+				GCC_PREFIX_HEADER = MadMinute_Prefix.pch;
+				INFOPLIST_FILE = "MadMinute-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../Famigo/build/Release-universal/FamigoAPI\"",
 				);
-				PRODUCT_NAME = Aardvark;
+				PRODUCT_NAME = MadMinute;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -937,7 +937,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Aardvark" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "MadMinute" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
@@ -946,7 +946,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Aardvark" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MadMinute" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,

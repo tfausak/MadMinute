@@ -1,15 +1,15 @@
 //
-//  AardvarkController.m
-//  Aardvark
+//  MadMinuteController.m
+//  MadMinute
 //
 //  Created by Taylor Fausak on 10/25/10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "AardvarkController.h"
+#import "MadMinuteController.h"
 #import "ArithmeticEquationGenerator.h"
 
-@interface AardvarkController()
+@interface MadMinuteController()
 
 @property (nonatomic, assign) BOOL interfaceIsBuilt;
 
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation AardvarkController
+@implementation MadMinuteController
 
 @synthesize interfaceIsBuilt;
 @synthesize famigoController;
@@ -244,7 +244,7 @@
     if (!interfaceIsBuilt) {
         interfaceIsBuilt = YES;
         
-        UINavigationItem *navigationItem = [[UINavigationItem alloc] initWithTitle:@"Aardvark"];
+        UINavigationItem *navigationItem = [[UINavigationItem alloc] initWithTitle:@"Mad Minute"];
         [navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Famigo" style:UIBarButtonItemStylePlain target:nil action:nil]];
         [navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:nil action:nil]];
         

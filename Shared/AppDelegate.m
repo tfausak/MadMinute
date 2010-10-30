@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  Aardvark
+//  MadMinute
 //
 //  Created by Taylor Fausak on 10/25/10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
@@ -11,14 +11,14 @@
 @implementation AppDelegate
 
 @synthesize window;
-@synthesize aardvarkController;
+@synthesize madMinuteController;
 
 #pragma mark -
 #pragma mark Memory management
 
 - (void)dealloc {
     [window release];
-    [aardvarkController release];
+    [madMinuteController release];
     
     [super dealloc];
 }
@@ -33,8 +33,8 @@
 	Famigo *f = [Famigo sharedInstance];
 	f.skipInvites = NO;
 	f.allFamigoPlayers = YES;
-	f.game_name = @"Aardvark";
-	f.game_instructions = @"\nIf you're an ant, it's going to eat you up.\n";
+	f.game_name = @"Mad Minute";
+	f.game_instructions = @"";
     
     // Create a new frame below the status bar
     CGRect frame = [window frame];
@@ -44,9 +44,9 @@
     }
     
     // Load the main view
-    aardvarkController = [[AardvarkController alloc] init];
-    [[aardvarkController view] setFrame:frame];
-    [window addSubview:[aardvarkController view]];
+    madMinuteController = [[MadMinuteController alloc] init];
+    [[madMinuteController view] setFrame:frame];
+    [window addSubview:[madMinuteController view]];
     
     [window makeKeyAndVisible];
     return YES;
