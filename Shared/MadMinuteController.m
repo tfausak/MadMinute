@@ -7,46 +7,53 @@
 //
 
 #import "MadMinuteController.h"
-#import "ArithmeticEquationGenerator.h"
-
-@interface MadMinuteController()
-
-@property (nonatomic, assign) BOOL interfaceIsBuilt;
-
-- (void)buildInterfaceIPhonePortrait:(NSTimeInterval)duration;
-- (void)buildInterfaceIPhoneLandscape:(NSTimeInterval)duration;
-- (void)buildInterfaceIPadPortrait:(NSTimeInterval)duration;
-- (void)buildInterfaceIPadLandscape:(NSTimeInterval)duration;
-- (void)pressedNumberPadButton:(id)sender;
-
-@end
 
 @implementation MadMinuteController
 
-@synthesize interfaceIsBuilt;
+static const int kNumberPadButtons = 12;
+
 @synthesize famigoController;
 @synthesize logoAnimationController;
+@synthesize arithmeticEquationGenerator;
+
+@synthesize interfaceIsBuilt;
+@synthesize time;
+@synthesize score;
+@synthesize result;
+@synthesize response;
+
 @synthesize navigationBar;
-@synthesize prompt;
+@synthesize statusView;
+@synthesize timeProgress;
+@synthesize scoreLabel;
+@synthesize problemView;
 @synthesize firstOperandLabel;
 @synthesize operationLabel;
 @synthesize secondOperandLabel;
-@synthesize response;
-@synthesize responseValue;
+@synthesize blackBar;
 @synthesize responseLabel;
+@synthesize skipButton;
+@synthesize doneButton;
 @synthesize numberPad;
 @synthesize numberPadButtons;
 
 - (void)dealloc {
     [famigoController release];
     [logoAnimationController release];
+    [arithmeticEquationGenerator release];
+    
     [navigationBar release];
-    [prompt release];
+    [statusView release];
+    [timeProgress release];
+    [scoreLabel release];
+    [problemView release];
     [firstOperandLabel release];
     [operationLabel release];
     [secondOperandLabel release];
-    [response release];
+    [blackBar release];
     [responseLabel release];
+    [skipButton release];
+    [doneButton release];
     [numberPad release];
     [numberPadButtons release];
 	
@@ -74,12 +81,7 @@
 
 - (void)viewDidLoad {
     [self buildInterface];
-    
-    ArithmeticEquationGenerator *aeg = [[ArithmeticEquationGenerator alloc] initWithDifficulty:VeryHard allowNegativeNumbers:YES];
-    ArithmeticEquation *ae = [aeg generateEquation];
-    [firstOperandLabel setText:[ae firstOperandAsString]];
-    [operationLabel setText:[ae operationAsString]];
-    [secondOperandLabel setText:[ae secondOperandAsString]];
+    [self generateEquation];
     /*
     // Display the Famigo controller
     famigoController = [FamigoController sharedInstanceWithDelegate:self];
@@ -244,41 +246,58 @@
     if (!interfaceIsBuilt) {
         interfaceIsBuilt = YES;
         
-        UINavigationItem *navigationItem = [[UINavigationItem alloc] initWithTitle:@"Mad Minute"];
-        [navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Famigo" style:UIBarButtonItemStylePlain target:nil action:nil]];
-        [navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:nil action:nil]];
+        navigationBar = [[UINavigationBar alloc] init]; {
+            UINavigationItem *navigationItem = [[UINavigationItem alloc] initWithTitle:@"Mad Minute"];
+            [navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Famigo" style:UIBarButtonItemStylePlain target:self action:@selector(pressedFamigoButton:)]];
+            [navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(pressedSettingsButton:)]];
+            [navigationBar pushNavigationItem:navigationItem animated:NO];
+        } [[self view] addSubview:navigationBar];
         
-        navigationBar = [[UINavigationBar alloc] init];
-        [navigationBar pushNavigationItem:navigationItem animated:NO];
-        [[self view] addSubview:navigationBar];
+        statusView = [[UIView alloc] init];
+        [[self view] addSubview:statusView];
         
-        prompt = [[UIView alloc] init];
-        [[self view] addSubview:prompt];
+        timeProgress = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+        [statusView addSubview:timeProgress];
+        
+        scoreLabel = [[UILabel alloc] init];
+        [statusView addSubview:scoreLabel];
+        
+        problemView = [[UIView alloc] init];
+        [[self view] addSubview:problemView];
         
         firstOperandLabel = [[UILabel alloc] init];
-        [prompt addSubview:firstOperandLabel];
+        [problemView addSubview:firstOperandLabel];
         
         operationLabel = [[UILabel alloc] init];
-        [prompt addSubview:operationLabel];
+        [problemView addSubview:operationLabel];
         
         secondOperandLabel = [[UILabel alloc] init];
-        [prompt addSubview:secondOperandLabel];
-                
-        response = [[UIView alloc] init];
-        [[self view] addSubview:response];
+        [problemView addSubview:secondOperandLabel];
+        
+        blackBar = [[UIView alloc] init];
+        [problemView addSubview:blackBar];
         
         responseLabel = [[UILabel alloc] init];
-        [responseLabel setText:[NSString stringWithFormat:@"%d", responseValue]];
-        [response addSubview:responseLabel];
+        [problemView addSubview:responseLabel];
+        
+        skipButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [skipButton setTitle:@"Skip" forState:UIControlStateNormal];
+        [skipButton addTarget:self action:@selector(pressedSkipButton:) forControlEvents:UIControlEventTouchUpInside];
+        [[self view] addSubview:skipButton];
+        
+        doneButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [doneButton setTitle:@"Done" forState:UIControlStateNormal];
+        [doneButton addTarget:self action:@selector(pressedDoneButton:) forControlEvents:UIControlEventTouchUpInside];
+        [[self view] addSubview:doneButton];
         
         numberPad = [[UIView alloc] init];
         [[self view] addSubview:numberPad];
         
-        numberPadButtons = [[NSMutableArray alloc] initWithCapacity:12];
-        for (int index = 0; index < 12; index += 1) {
-            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        numberPadButtons = [[NSMutableArray alloc] init];
+        for (int index = 0; index < kNumberPadButtons; index += 1) {
+            UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
             [button setTitle:[NSString stringWithFormat:@"%d", index] forState:UIControlStateNormal];
-            [button setImage:[UIImage imageNamed:[NSString stringWithFormat:@"Button%d", index]] forState:UIControlStateNormal];
+            //[button setImage:[UIImage imageNamed:[NSString stringWithFormat:@"Button%d", index]] forState:UIControlStateNormal];
             [button addTarget:self action:@selector(pressedNumberPadButton:) forControlEvents:UIControlEventTouchUpInside];
             [numberPadButtons insertObject:button atIndex:index];
             [numberPad addSubview:[numberPadButtons objectAtIndex:index]];
@@ -312,55 +331,71 @@
     [UIView beginAnimations:nil context:nil]; {
         [UIView setAnimationDuration:duration];
         
-        [[self view] setBackgroundColor:[UIColor colorWithRed:0.0 green:0.502 blue:0.251 alpha:1.0]];
+        [[self view] setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
         
         [navigationBar setFrame:CGRectMake(0, 0, 320, 44)];
-        [navigationBar setTintColor:[UIColor colorWithRed:0.0 green:0.502 blue:0.251 alpha:1.0]];
         
-        [prompt setFrame:CGRectMake(0, 44, 320, 136)];
-        [prompt setBackgroundColor:[UIColor clearColor]];
+        [statusView setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5]];
+        [statusView setFrame:CGRectMake(0, 44, 320, 44)];
+        
+        [timeProgress setFrame:CGRectMake(20, 8, 280, 9)];
+        [timeProgress setProgress:0.5];
+        
+        [scoreLabel setBackgroundColor:[UIColor clearColor]];
+        [scoreLabel setFrame:CGRectMake(20, 20, 280, 20)];
+        [scoreLabel setText:@"score!"];
+        [scoreLabel setTextAlignment:UITextAlignmentCenter];
+        [scoreLabel setTextColor:[UIColor whiteColor]];
+        
+        [problemView setBackgroundColor:[UIColor clearColor]];
+        [problemView setFrame:CGRectMake(0, 88, 320, 122)];
         
         [firstOperandLabel setBackgroundColor:[UIColor clearColor]];
-        [firstOperandLabel setFrame:CGRectMake(20, 20, 280, 40)];
+        [firstOperandLabel setFont:[UIFont fontWithName:@"Helvetica" size:36]];
+        [firstOperandLabel setFrame:CGRectMake(80, 0, 160, 40)];
         [firstOperandLabel setTextAlignment:UITextAlignmentRight];
         
         [operationLabel setBackgroundColor:[UIColor clearColor]];
-        [operationLabel setFrame:CGRectMake(20, 60, 280, 40)];
+        [operationLabel setFont:[UIFont fontWithName:@"Helvetica" size:36]];
+        [operationLabel setFrame:CGRectMake(80, 40, 160, 40)];
         
         [secondOperandLabel setBackgroundColor:[UIColor clearColor]];
-        [secondOperandLabel setFrame:CGRectMake(20, 60, 280, 40)];
+        [secondOperandLabel setFont:[UIFont fontWithName:@"Helvetica" size:36]];
+        [secondOperandLabel setFrame:CGRectMake(80, 40, 160, 40)];
         [secondOperandLabel setTextAlignment:UITextAlignmentRight];
         
-        [response setFrame:CGRectMake(0, 178, 320, 60)];
-        [response setBackgroundColor:[UIColor clearColor]];
+        [blackBar setBackgroundColor:[UIColor blackColor]];
+        [blackBar setFrame:CGRectMake(60, 80, 200, 2)];
         
-        [responseLabel setFrame:CGRectMake(20, 0, 280, 60)];
         [responseLabel setBackgroundColor:[UIColor clearColor]];
-        [responseLabel setTextAlignment:UITextAlignmentCenter];
+        [responseLabel setFont:[UIFont fontWithName:@"Helvetica" size:36]];
+        [responseLabel setFrame:CGRectMake(20, 82, 220, 40)];
+        [responseLabel setTextAlignment:UITextAlignmentRight];
         
-        [numberPad setFrame:CGRectMake(0, 280, 320, 180)];
+        [skipButton setFrame:CGRectMake(0, 210, 160, 50)];
+        
+        [doneButton setFrame:CGRectMake(160, 210, 160, 50)];
+        
         [numberPad setBackgroundColor:[UIColor clearColor]];
+        [numberPad setFrame:CGRectMake(0, 260, 320, 200)];
         
-        [[numberPadButtons objectAtIndex:0]  setFrame:CGRectMake(107, 135, 107, 45)];
-        [[numberPadButtons objectAtIndex:1]  setFrame:CGRectMake(  0,   0, 107, 45)];
-        [[numberPadButtons objectAtIndex:2]  setFrame:CGRectMake(107,   0, 107, 45)];
-        [[numberPadButtons objectAtIndex:3]  setFrame:CGRectMake(214,   0, 107, 45)];
-        [[numberPadButtons objectAtIndex:4]  setFrame:CGRectMake(  0,  45, 107, 45)];
-        [[numberPadButtons objectAtIndex:5]  setFrame:CGRectMake(107,  45, 107, 45)];
-        [[numberPadButtons objectAtIndex:6]  setFrame:CGRectMake(214,  45, 107, 45)];
-        [[numberPadButtons objectAtIndex:7]  setFrame:CGRectMake(  0,  90, 107, 45)];
-        [[numberPadButtons objectAtIndex:8]  setFrame:CGRectMake(107,  90, 107, 45)];
-        [[numberPadButtons objectAtIndex:9]  setFrame:CGRectMake(214,  90, 107, 45)];
-        [[numberPadButtons objectAtIndex:10] setFrame:CGRectMake(  0, 135, 107, 45)];
-        [[numberPadButtons objectAtIndex:11] setFrame:CGRectMake(214, 135, 107, 45)];
+        [[numberPadButtons objectAtIndex:0]  setFrame:CGRectMake(107, 150, 106, 50)];
+        [[numberPadButtons objectAtIndex:1]  setFrame:CGRectMake(  0,   0, 106, 50)];
+        [[numberPadButtons objectAtIndex:2]  setFrame:CGRectMake(107,   0, 106, 50)];
+        [[numberPadButtons objectAtIndex:3]  setFrame:CGRectMake(214,   0, 106, 50)];
+        [[numberPadButtons objectAtIndex:4]  setFrame:CGRectMake(  0,  50, 106, 50)];
+        [[numberPadButtons objectAtIndex:5]  setFrame:CGRectMake(107,  50, 106, 50)];
+        [[numberPadButtons objectAtIndex:6]  setFrame:CGRectMake(214,  50, 106, 50)];
+        [[numberPadButtons objectAtIndex:7]  setFrame:CGRectMake(  0, 100, 106, 50)];
+        [[numberPadButtons objectAtIndex:8]  setFrame:CGRectMake(107, 100, 106, 50)];
+        [[numberPadButtons objectAtIndex:9]  setFrame:CGRectMake(214, 100, 106, 50)];
+        [[numberPadButtons objectAtIndex:10] setFrame:CGRectMake(  0, 150, 106, 50)];
+        [[numberPadButtons objectAtIndex:11] setFrame:CGRectMake(214, 150, 106, 50)];
     } [UIView commitAnimations];
 }
 
 - (void)buildInterfaceIPhoneLandscape:(NSTimeInterval)duration {
     NSAssert(interfaceIsBuilt, @"Interface not built before resizing");
-    
-    // TODO
-    return [self buildInterfaceIPhonePortrait:duration];
     
     [UIView beginAnimations:nil context:nil]; {
         [UIView setAnimationDuration:duration];
@@ -370,9 +405,6 @@
 - (void)buildInterfaceIPadPortrait:(NSTimeInterval)duration {
     NSAssert(interfaceIsBuilt, @"Interface not built before resizing");
     
-    // TODO
-    return [self buildInterfaceIPhonePortrait:duration];
-    
     [UIView beginAnimations:nil context:nil]; {
         [UIView setAnimationDuration:duration];
     } [UIView commitAnimations];
@@ -381,9 +413,6 @@
 - (void)buildInterfaceIPadLandscape:(NSTimeInterval)duration {
     NSAssert(interfaceIsBuilt, @"Interface not built before resizing");
     
-    // TODO
-    return [self buildInterfaceIPhonePortrait:duration];
-    
     [UIView beginAnimations:nil context:nil]; {
         [UIView setAnimationDuration:duration];
     } [UIView commitAnimations];
@@ -391,22 +420,68 @@
 
 #pragma mark -
 
+- (void)pressedFamigoButton:(id)sender {
+    NSLog(@"pressedFamigoButton");
+}
+
+- (void)pressedSettingsButton:(id)sender {
+    NSLog(@"pressedSettingsButton");
+}
+
 - (void)pressedNumberPadButton:(id)sender {
     int index = [[[(UIButton *)sender titleLabel] text] intValue];
     switch (index) {
         case 10:
-            responseValue *= -1;
+            response *= -1;
             break;
         case 11:
-            responseValue /= 10;
+            response /= 10;
             break;
         default:
-            responseValue *= 10;
-            responseValue += index;
+            // Don't let the response value overflow
+            if (log10(abs(response)) < 8) {
+                response *= 10;
+                response += index;
+            }
             break;
     }
     
-    [responseLabel setText:[NSString stringWithFormat:@"%d", responseValue]];
+    if (response == 0) {
+        [responseLabel setText:@""];
+    }
+    else {
+        [responseLabel setText:[NSString stringWithFormat:@"%d", response]];
+    }
+}
+
+- (void)pressedSkipButton:(id)sender {
+    [self generateEquation];
+}
+
+- (void)pressedDoneButton:(id)sender {
+    if (response == result) {
+        // great jorb!
+    }
+    else {
+        // try again, sucka
+    }
+    [self generateEquation];
+}
+
+#pragma mark -
+
+- (void)generateEquation {
+    if (arithmeticEquationGenerator == nil) {
+        arithmeticEquationGenerator = [[ArithmeticEquationGenerator alloc] initWithDifficulty:VeryHard allowNegativeNumbers:YES];
+    }
+    
+    ArithmeticEquation *ae = [arithmeticEquationGenerator generateEquation];
+    [firstOperandLabel setText:[ae firstOperandAsString]];
+    [operationLabel setText:[ae operationAsString]];
+    [secondOperandLabel setText:[ae secondOperandAsString]];
+    result = [ae result];
+    response = 0;
+    [responseLabel setText:@""];
 }
 
 @end

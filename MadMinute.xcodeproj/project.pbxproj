@@ -147,7 +147,6 @@
 		34E8313D127609E500FFF679 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E8313C127609E500FFF679 /* SystemConfiguration.framework */; };
 		34E8315C12760CE500FFF679 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E8315B12760CE500FFF679 /* AppDelegate.m */; };
 		34E831B4127611C100FFF679 /* MadMinuteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E831B2127611C100FFF679 /* MadMinuteController.m */; };
-		34F507DD127BD07200FB1B13 /* Button1.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F507D5127BD07200FB1B13 /* Button1.png */; };
 		34F507DE127BD07200FB1B13 /* Button1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F507D6127BD07200FB1B13 /* Button1@2x.png */; };
 		34F507DF127BD07200FB1B13 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F507D7127BD07200FB1B13 /* Default.png */; };
 		34F507E0127BD07200FB1B13 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F507D8127BD07200FB1B13 /* Default@2x.png */; };
@@ -361,7 +360,6 @@
 		34E8315B12760CE500FFF679 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Shared/AppDelegate.m; sourceTree = "<group>"; };
 		34E831B1127611C100FFF679 /* MadMinuteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MadMinuteController.h; path = Shared/MadMinuteController.h; sourceTree = "<group>"; };
 		34E831B2127611C100FFF679 /* MadMinuteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MadMinuteController.m; path = Shared/MadMinuteController.m; sourceTree = "<group>"; wrapsLines = 1; };
-		34F507D5127BD07200FB1B13 /* Button1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Button1.png; path = Images/Button1.png; sourceTree = "<group>"; };
 		34F507D6127BD07200FB1B13 /* Button1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button1@2x.png"; path = "Images/Button1@2x.png"; sourceTree = "<group>"; };
 		34F507D7127BD07200FB1B13 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Images/Default.png; sourceTree = "<group>"; };
 		34F507D8127BD07200FB1B13 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Images/Default@2x.png"; sourceTree = "<group>"; };
@@ -681,7 +679,6 @@
 				34F507DC127BD07200FB1B13 /* Icon@2x.png */,
 				34F507D9127BD07200FB1B13 /* Icon-Small.png */,
 				34F507DA127BD07200FB1B13 /* Icon-Small@2x.png */,
-				34F507D5127BD07200FB1B13 /* Button1.png */,
 				34F50835127BDF3700FB1B13 /* Button0@2x.png */,
 				34F507D6127BD07200FB1B13 /* Button1@2x.png */,
 				34F5081B127BDEFB00FB1B13 /* Button2@2x.png */,
@@ -879,7 +876,6 @@
 				34E8312E127609B400FFF679 /* WelcomeViewController.xib in Resources */,
 				34E8312F127609B400FFF679 /* yay.wav in Resources */,
 				34186170127726E300E4BAD5 /* iTunesArtwork in Resources */,
-				34F507DD127BD07200FB1B13 /* Button1.png in Resources */,
 				34F507DE127BD07200FB1B13 /* Button1@2x.png in Resources */,
 				34F507DF127BD07200FB1B13 /* Default.png in Resources */,
 				34F507E0127BD07200FB1B13 /* Default@2x.png in Resources */,
