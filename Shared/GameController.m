@@ -369,9 +369,61 @@ int const kInitialTime = 60;
     else {
         if ([[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeLeft || [[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeRight) {
             // iPhone landscape
+            [[self view] setFrame:CGRectMake(0, 0, 480, 320)];
+            [responseLabel setText:@"999999"];
+            
+            [firstOperandLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48.0]];
+            [firstOperandLabel setFrame:CGRectMake(20, 86, 90, 52)];
+            [firstOperandLabel setTextAlignment:UITextAlignmentCenter];
+            
+            [secondOperandLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48.0]];
+            [secondOperandLabel setFrame:CGRectMake(170, 86, 90, 52)];
+            [secondOperandLabel setTextAlignment:UITextAlignmentCenter];
+            
+            [operatorLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48.0]];
+            [operatorLabel setFrame:CGRectMake(110, 86, 60, 52)];
+            
+            [responseBar setFrame:CGRectZero];
+            
+            [responseBackground setFrame:CGRectZero];
+            
+            [responseLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48.0]];
+            [responseLabel setFrame:CGRectMake(360, 86, 100, 52)];
+            [responseLabel setTextAlignment:UITextAlignmentCenter];
+            
+            if ([arithmeticEquationGenerator allowNegativeNumbers]) {
+                [signControl setFrame:CGRectMake(280, 86, 80, 43)];
+            }
+            
+            [navigationBar setFrame:CGRectMake(0, 0, 480, 44)];
+            
+            [scoreLabel setText:[NSString stringWithFormat:@"%d", score]];
+            
+            [timeBar setFrame:CGRectMake(0, 44, 480, 44)];
+            
+            [timeElapsedBar setFrame:CGRectMake(0, 44, 480 - (timeLeft / (double) kInitialTime) * 480, 44)];
+            
+            [timeElapsedLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:24.0]];
+            [timeElapsedLabel setFrame:CGRectMake(MIN(420, [timeElapsedBar frame].size.width + 10), 44, 50, 44)];
+            
+            [numberPad setFrame:CGRectMake(0, 138, 480, 162)];
+            
+            [(UIButton *)[[numberPad subviews] objectAtIndex:0]  setFrame:CGRectMake(159, 123, 162,  39)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:1]  setFrame:CGRectMake(  0,   1, 158,  40)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:2]  setFrame:CGRectMake(159,   1, 162,  40)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:3]  setFrame:CGRectMake(322,   1, 158,  40)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:4]  setFrame:CGRectMake(  0,  42, 158,  39)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:5]  setFrame:CGRectMake(159,  42, 162,  39)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:6]  setFrame:CGRectMake(322,  42, 158,  39)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:7]  setFrame:CGRectMake(  0,  82, 158,  40)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:8]  setFrame:CGRectMake(159,  82, 162,  40)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:9]  setFrame:CGRectMake(322,  82, 158,  40)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:10] setFrame:CGRectMake(322, 123, 158,  39)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:11] setFrame:CGRectMake(  0, 123, 158,  39)];
         }
         else {
             // iPhone portrait
+            [[self view] setFrame:CGRectMake(0, 0, 320, 480)];
             
             [firstOperandLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48.0]];
             [firstOperandLabel setFrame:CGRectMake(120, 88, 140, 52)];
