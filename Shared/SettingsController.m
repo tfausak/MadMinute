@@ -10,11 +10,13 @@
 
 @implementation SettingsController
 
+@synthesize parentViewController;
 @synthesize navigationBar;
 @synthesize difficultySlider;
 @synthesize allowNegativeNumbersSwitch;
 
 - (void)dealloc {
+    [parentViewController release];
     [navigationBar release];
     [difficultySlider release];
     [allowNegativeNumbersSwitch release];
@@ -40,14 +42,14 @@
         
         UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Famigo"
                                                                        style:UIBarButtonItemStylePlain
-                                                                      target:self
+                                                                      target:parentViewController
                                                                       action:@selector(pressedFamigoButton:)];
         [navigationItem setLeftBarButtonItem:leftButton];
         [leftButton release];
         
         UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"New Game"
                                                                         style:UIBarButtonItemStyleDone
-                                                                       target:self
+                                                                       target:parentViewController
                                                                        action:@selector(pressedNewGameButton:)];
         [navigationItem setRightBarButtonItem:rightButton];
         [rightButton release];
@@ -58,10 +60,16 @@
     
     difficultySlider = [[UISlider alloc] init]; {
         [difficultySlider addTarget:self action:@selector(movedSlider:) forControlEvents:UIControlEventValueChanged];
+        
+        int difficulty = [[NSUserDefaults standardUserDefaults] integerForKey:@"difficulty"];
+        [difficultySlider setValue:difficulty animated:YES];
     } [[self view] addSubview:difficultySlider];
     
     allowNegativeNumbersSwitch = [[UISwitch alloc] init]; {
         [allowNegativeNumbersSwitch addTarget:self action:@selector(toggledSwitch:) forControlEvents:UIControlEventValueChanged];
+        
+        BOOL allowNegativeNumbers = [[NSUserDefaults standardUserDefaults] boolForKey:@"allowNegativeNumbers"];
+        [allowNegativeNumbersSwitch setOn:allowNegativeNumbers];
     } [[self view] addSubview:allowNegativeNumbersSwitch];
     
     [self updateUI];
@@ -69,15 +77,9 @@
 
 #pragma mark -
 
-- (void)pressedFamigoButton:(id)sender {
-}
-
-- (void)pressedNewGameButton:(id)sender {
-}
-
 - (void)movedSlider:(id)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:([difficultySlider value] * 5) forKey:@"difficulty"];
+    [defaults setInteger:([difficultySlider value] * 4) forKey:@"difficulty"];
     [defaults synchronize];
 }
 

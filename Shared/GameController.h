@@ -12,6 +12,8 @@
 extern int const kInitialTime;
 
 @interface GameController : UIViewController {
+    UIViewController *parentViewController;
+    
     // Game state
     ArithmeticEquationGenerator *arithmeticEquationGenerator;
     ArithmeticEquation *arithmeticEquation;
@@ -37,6 +39,7 @@ extern int const kInitialTime;
     UIView *numberPad;
 }
 
+@property (nonatomic, assign) UIViewController *parentViewController;
 @property (nonatomic, retain) ArithmeticEquationGenerator *arithmeticEquationGenerator;
 @property (nonatomic, retain) ArithmeticEquation *arithmeticEquation;
 @property (nonatomic, retain) NSTimer *gameClock;
@@ -61,7 +64,6 @@ extern int const kInitialTime;
 - (void)newGame;
 - (void)endGame;
 - (void)gameEnded;
-- (void)pressedSettingsButton:(id)sender;
 - (void)pressedNumberPadButton:(id)sender;
 - (void)pressedDeleteButton:(id)sender;
 - (void)pressedDoneButton:(id)sender;

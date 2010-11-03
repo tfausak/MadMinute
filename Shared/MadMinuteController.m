@@ -10,10 +10,14 @@
 
 @implementation MadMinuteController
 
+@synthesize settingsController;
+@synthesize gameController;
 @synthesize famigoController;
 @synthesize logoAnimationController;
 
 - (void)dealloc {
+    [settingsController release];
+    [famigoController release];
     [famigoController release];
     [logoAnimationController release];
 	
@@ -31,6 +35,15 @@
 }
 
 - (void)viewDidLoad {
+    // Display the game controller
+    gameController = [[GameController alloc] init];
+    [[self view] addSubview:[gameController view]];
+    
+    // Display the settings controller
+    settingsController = [[SettingsController alloc] init];
+    [settingsController setParentViewController:self];
+    [[self view] addSubview:[settingsController view]];
+    
     // Display the Famigo controller
     famigoController = [FamigoController sharedInstanceWithDelegate:self];
     [[famigoController view] setFrame:[[self view] frame]];
@@ -48,22 +61,32 @@
     [logoAnimationController registerForNotifications:self withSelector:@selector(logoAnimationDidFinish:)];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return YES;
-}
-
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+- (void)logoAnimationDidFinish:(NSNotification *)notification {
+    [[logoAnimationController view] removeFromSuperview];
+    [logoAnimationController release];
 }
 
 #pragma mark -
 
-- (void)famigoReady {
-    NSLog(@"famigoReady");
+- (void)pressedFamigoButton:(id)sender {
 }
 
-- (void)logoAnimationDidFinish:(NSNotification *)notification {
-    [[logoAnimationController view] removeFromSuperview];
-    [logoAnimationController release];
+- (void)pressedNewGameButton:(id)sender {
+    [UIView beginAnimations:nil context:nil]; {
+        [[settingsController view] removeFromSuperview];
+        [gameController newGame];
+    } [UIView commitAnimations];
+}
+
+- (void)pressedSettingsButton:(id)sender {
+    [UIView beginAnimations:nil context:nil]; {
+        [[self view] addSubview:[settingsController view]];
+        [gameController endGame];
+    } [UIView commitAnimations];
+}
+
+- (void)famigoReady {
+    NSLog(@"famigoReady");
 }
 
 @end

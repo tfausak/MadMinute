@@ -12,6 +12,7 @@ int const kInitialTime = 60;
 
 @implementation GameController
 
+@synthesize parentViewController;
 @synthesize arithmeticEquationGenerator;
 @synthesize arithmeticEquation;
 @synthesize gameClock;
@@ -34,6 +35,7 @@ int const kInitialTime = 60;
 @synthesize numberPad;
 
 - (void)dealloc {
+    [parentViewController release];
     [arithmeticEquationGenerator release];
     [arithmeticEquation release];
     [gameClock release];
@@ -117,7 +119,7 @@ int const kInitialTime = 60;
         
         UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Settings"
                                                                        style:UIBarButtonItemStylePlain
-                                                                      target:self
+                                                                      target:parentViewController
                                                                       action:@selector(pressedSettingsButton:)];
         [navigationItem setLeftBarButtonItem:leftButton];
         [leftButton release];
@@ -178,7 +180,7 @@ int const kInitialTime = 60;
         [doneButton release];
     } [[self view] addSubview:numberPad];
     
-    [self newGame];
+    [self endGame];
 }
 
 #pragma mark -
@@ -239,9 +241,6 @@ int const kInitialTime = 60;
 }
 
 #pragma mark -
-
-- (void)pressedSettingsButton:(id)sender {
-}
 
 - (void)pressedNumberPadButton:(id)sender {
     if ([responseValue length] >= 6) {
