@@ -85,7 +85,7 @@
 
 - (void)toggledSwitch:(id)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setBool:[allowNegativeNumbersSwitch isOn] forKey:@"allowNegativeNumber"];
+    [defaults setBool:[allowNegativeNumbersSwitch isOn] forKey:@"allowNegativeNumbers"];
     [defaults synchronize];    
 }
 
