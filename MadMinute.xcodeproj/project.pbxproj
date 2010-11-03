@@ -18,6 +18,58 @@
 		340AE6591278D3D100F3DF8C /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 340AE6581278D3D100F3DF8C /* libsqlite3.0.dylib */; };
 		340AE65C1278D3E300F3DF8C /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 340AE65B1278D3E300F3DF8C /* libGoogleAnalytics.a */; };
 		34186170127726E300E4BAD5 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 34186167127726E300E4BAD5 /* iTunesArtwork */; };
+		34609438127FB2A70045734E /* Button1-Inverse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34609436127FB2A70045734E /* Button1-Inverse@2x.png */; };
+		34609439127FB2A70045734E /* Button1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34609437127FB2A70045734E /* Button1@2x.png */; };
+		3460944E127FB3910045734E /* Button2-Inverse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3460944A127FB3910045734E /* Button2-Inverse@2x.png */; };
+		3460944F127FB3910045734E /* Button2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3460944B127FB3910045734E /* Button2@2x.png */; };
+		34609450127FB3910045734E /* Button3-Inverse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3460944C127FB3910045734E /* Button3-Inverse@2x.png */; };
+		34609451127FB3910045734E /* Button3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3460944D127FB3910045734E /* Button3@2x.png */; };
+		34609464127FB4540045734E /* Button4-Inverse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3460945C127FB4540045734E /* Button4-Inverse@2x.png */; };
+		34609465127FB4540045734E /* Button4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3460945D127FB4540045734E /* Button4@2x.png */; };
+		34609466127FB4540045734E /* Button5-Inverse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3460945E127FB4540045734E /* Button5-Inverse@2x.png */; };
+		34609467127FB4540045734E /* Button5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3460945F127FB4540045734E /* Button5@2x.png */; };
+		34609468127FB4540045734E /* Button6-Inverse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34609460127FB4540045734E /* Button6-Inverse@2x.png */; };
+		34609469127FB4540045734E /* Button6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34609461127FB4540045734E /* Button6@2x.png */; };
+		34609485127FB5690045734E /* Button0-Inverse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3460947D127FB5690045734E /* Button0-Inverse@2x.png */; };
+		34609486127FB5690045734E /* Button0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3460947E127FB5690045734E /* Button0@2x.png */; };
+		34609487127FB5690045734E /* Button7-Inverse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3460947F127FB5690045734E /* Button7-Inverse@2x.png */; };
+		34609488127FB5690045734E /* Button7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34609480127FB5690045734E /* Button7@2x.png */; };
+		34609489127FB5690045734E /* Button8-Inverse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34609481127FB5690045734E /* Button8-Inverse@2x.png */; };
+		3460948A127FB5690045734E /* Button8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34609482127FB5690045734E /* Button8@2x.png */; };
+		3460948B127FB5690045734E /* Button9-Inverse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34609483127FB5690045734E /* Button9-Inverse@2x.png */; };
+		3460948C127FB5690045734E /* Button9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34609484127FB5690045734E /* Button9@2x.png */; };
+		34609497127FB63E0045734E /* DeleteButton-Inverse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34609493127FB63E0045734E /* DeleteButton-Inverse@2x.png */; };
+		34609498127FB63E0045734E /* DeleteButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34609494127FB63E0045734E /* DeleteButton@2x.png */; };
+		34609499127FB63E0045734E /* DoneButton-Inverse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34609495127FB63E0045734E /* DoneButton-Inverse@2x.png */; };
+		3460949A127FB63E0045734E /* DoneButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34609496127FB63E0045734E /* DoneButton@2x.png */; };
+		3460949D127FB6440045734E /* SkipButton-Inverse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3460949B127FB6440045734E /* SkipButton-Inverse@2x.png */; };
+		3460949E127FB6440045734E /* SkipButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3460949C127FB6440045734E /* SkipButton@2x.png */; };
+		346094C2127FB9DE0045734E /* Button0-Inverse.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094BE127FB9DE0045734E /* Button0-Inverse.png */; };
+		346094C3127FB9DE0045734E /* Button0.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094BF127FB9DE0045734E /* Button0.png */; };
+		346094C4127FB9DE0045734E /* Button1-Inverse.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094C0127FB9DE0045734E /* Button1-Inverse.png */; };
+		346094C5127FB9DE0045734E /* Button1.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094C1127FB9DE0045734E /* Button1.png */; };
+		346094E6127FBB0D0045734E /* Button2-Inverse.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094D0127FBB0D0045734E /* Button2-Inverse.png */; };
+		346094E7127FBB0D0045734E /* Button2.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094D1127FBB0D0045734E /* Button2.png */; };
+		346094E8127FBB0D0045734E /* Button3-Inverse.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094D2127FBB0D0045734E /* Button3-Inverse.png */; };
+		346094E9127FBB0D0045734E /* Button3.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094D3127FBB0D0045734E /* Button3.png */; };
+		346094EA127FBB0D0045734E /* Button4-Inverse.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094D4127FBB0D0045734E /* Button4-Inverse.png */; };
+		346094EB127FBB0D0045734E /* Button4.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094D5127FBB0D0045734E /* Button4.png */; };
+		346094EC127FBB0D0045734E /* Button5-Inverse.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094D6127FBB0D0045734E /* Button5-Inverse.png */; };
+		346094ED127FBB0D0045734E /* Button5.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094D7127FBB0D0045734E /* Button5.png */; };
+		346094EE127FBB0D0045734E /* Button6-Inverse.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094D8127FBB0D0045734E /* Button6-Inverse.png */; };
+		346094EF127FBB0D0045734E /* Button6.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094D9127FBB0D0045734E /* Button6.png */; };
+		346094F0127FBB0D0045734E /* Button7-Inverse.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094DA127FBB0D0045734E /* Button7-Inverse.png */; };
+		346094F1127FBB0D0045734E /* Button7.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094DB127FBB0D0045734E /* Button7.png */; };
+		346094F2127FBB0D0045734E /* Button8-Inverse.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094DC127FBB0D0045734E /* Button8-Inverse.png */; };
+		346094F3127FBB0D0045734E /* Button8.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094DD127FBB0D0045734E /* Button8.png */; };
+		346094F4127FBB0D0045734E /* Button9-Inverse.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094DE127FBB0D0045734E /* Button9-Inverse.png */; };
+		346094F5127FBB0D0045734E /* Button9.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094DF127FBB0D0045734E /* Button9.png */; };
+		346094F6127FBB0D0045734E /* DeleteButton-Inverse.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094E0127FBB0D0045734E /* DeleteButton-Inverse.png */; };
+		346094F7127FBB0D0045734E /* DeleteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094E1127FBB0D0045734E /* DeleteButton.png */; };
+		346094F8127FBB0D0045734E /* DoneButton-Inverse.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094E2127FBB0D0045734E /* DoneButton-Inverse.png */; };
+		346094F9127FBB0D0045734E /* DoneButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094E3127FBB0D0045734E /* DoneButton.png */; };
+		346094FA127FBB0D0045734E /* SkipButton-Inverse.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094E4127FBB0D0045734E /* SkipButton-Inverse.png */; };
+		346094FB127FBB0D0045734E /* SkipButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 346094E5127FBB0D0045734E /* SkipButton.png */; };
 		34DC9453127B627200EB659F /* ArithmeticEquation.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DC9452127B627200EB659F /* ArithmeticEquation.m */; };
 		34DC9458127B62BC00EB659F /* ArithmeticEquationGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DC9457127B62BC00EB659F /* ArithmeticEquationGenerator.m */; };
 		34E830191276098F00FFF679 /* libFamigoAPI-Release.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E830181276098F00FFF679 /* libFamigoAPI-Release.a */; };
@@ -147,7 +199,8 @@
 		34E8313D127609E500FFF679 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E8313C127609E500FFF679 /* SystemConfiguration.framework */; };
 		34E8315C12760CE500FFF679 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E8315B12760CE500FFF679 /* AppDelegate.m */; };
 		34E831B4127611C100FFF679 /* MadMinuteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E831B2127611C100FFF679 /* MadMinuteController.m */; };
-		34F507DE127BD07200FB1B13 /* Button1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F507D6127BD07200FB1B13 /* Button1@2x.png */; };
+		34EA90FD1281DFD800286BE9 /* SettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EA90FC1281DFD800286BE9 /* SettingsController.m */; };
+		34EA91011281E10D00286BE9 /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EA91001281E10D00286BE9 /* GameController.m */; };
 		34F507DF127BD07200FB1B13 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F507D7127BD07200FB1B13 /* Default.png */; };
 		34F507E0127BD07200FB1B13 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F507D8127BD07200FB1B13 /* Default@2x.png */; };
 		34F507E1127BD07200FB1B13 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F507D9127BD07200FB1B13 /* Icon-Small.png */; };
@@ -158,17 +211,6 @@
 		34F507EC127BD0A300FB1B13 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F507E8127BD0A300FB1B13 /* Default-Portrait.png */; };
 		34F507ED127BD0A300FB1B13 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F507E9127BD0A300FB1B13 /* Icon-72.png */; };
 		34F507EE127BD0A300FB1B13 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F507EA127BD0A300FB1B13 /* Icon-Small-50.png */; };
-		34F50825127BDEFB00FB1B13 /* Button2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F5081B127BDEFB00FB1B13 /* Button2@2x.png */; };
-		34F50826127BDEFB00FB1B13 /* Button3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F5081C127BDEFB00FB1B13 /* Button3@2x.png */; };
-		34F50827127BDEFB00FB1B13 /* Button4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F5081D127BDEFB00FB1B13 /* Button4@2x.png */; };
-		34F50828127BDEFB00FB1B13 /* Button5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F5081E127BDEFB00FB1B13 /* Button5@2x.png */; };
-		34F50829127BDEFB00FB1B13 /* Button6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F5081F127BDEFB00FB1B13 /* Button6@2x.png */; };
-		34F5082A127BDEFB00FB1B13 /* Button7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F50820127BDEFB00FB1B13 /* Button7@2x.png */; };
-		34F5082B127BDEFB00FB1B13 /* Button8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F50821127BDEFB00FB1B13 /* Button8@2x.png */; };
-		34F5082C127BDEFB00FB1B13 /* Button9@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F50822127BDEFB00FB1B13 /* Button9@2x.png */; };
-		34F5082D127BDEFB00FB1B13 /* Button10@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F50823127BDEFB00FB1B13 /* Button10@2x.png */; };
-		34F5082E127BDEFB00FB1B13 /* Button11@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F50824127BDEFB00FB1B13 /* Button11@2x.png */; };
-		34F50836127BDF3700FB1B13 /* Button0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F50835127BDF3700FB1B13 /* Button0@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -188,6 +230,58 @@
 		340AE65A1278D3E300F3DF8C /* GANTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GANTracker.h; path = "../Famigo/build/Release-universal/FamigoAPI/GANTracker.h"; sourceTree = SOURCE_ROOT; };
 		340AE65B1278D3E300F3DF8C /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = "../Famigo/build/Release-universal/FamigoAPI/libGoogleAnalytics.a"; sourceTree = SOURCE_ROOT; };
 		34186167127726E300E4BAD5 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Shared/Images/iTunesArtwork; sourceTree = "<group>"; };
+		34609436127FB2A70045734E /* Button1-Inverse@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button1-Inverse@2x.png"; path = "Images/Button1-Inverse@2x.png"; sourceTree = "<group>"; };
+		34609437127FB2A70045734E /* Button1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button1@2x.png"; path = "Images/Button1@2x.png"; sourceTree = "<group>"; };
+		3460944A127FB3910045734E /* Button2-Inverse@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button2-Inverse@2x.png"; path = "Images/Button2-Inverse@2x.png"; sourceTree = "<group>"; };
+		3460944B127FB3910045734E /* Button2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button2@2x.png"; path = "Images/Button2@2x.png"; sourceTree = "<group>"; };
+		3460944C127FB3910045734E /* Button3-Inverse@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button3-Inverse@2x.png"; path = "Images/Button3-Inverse@2x.png"; sourceTree = "<group>"; };
+		3460944D127FB3910045734E /* Button3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button3@2x.png"; path = "Images/Button3@2x.png"; sourceTree = "<group>"; };
+		3460945C127FB4540045734E /* Button4-Inverse@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button4-Inverse@2x.png"; path = "Images/Button4-Inverse@2x.png"; sourceTree = "<group>"; };
+		3460945D127FB4540045734E /* Button4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button4@2x.png"; path = "Images/Button4@2x.png"; sourceTree = "<group>"; };
+		3460945E127FB4540045734E /* Button5-Inverse@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button5-Inverse@2x.png"; path = "Images/Button5-Inverse@2x.png"; sourceTree = "<group>"; };
+		3460945F127FB4540045734E /* Button5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button5@2x.png"; path = "Images/Button5@2x.png"; sourceTree = "<group>"; };
+		34609460127FB4540045734E /* Button6-Inverse@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button6-Inverse@2x.png"; path = "Images/Button6-Inverse@2x.png"; sourceTree = "<group>"; };
+		34609461127FB4540045734E /* Button6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button6@2x.png"; path = "Images/Button6@2x.png"; sourceTree = "<group>"; };
+		3460947D127FB5690045734E /* Button0-Inverse@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button0-Inverse@2x.png"; path = "Images/Button0-Inverse@2x.png"; sourceTree = "<group>"; };
+		3460947E127FB5690045734E /* Button0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button0@2x.png"; path = "Images/Button0@2x.png"; sourceTree = "<group>"; };
+		3460947F127FB5690045734E /* Button7-Inverse@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button7-Inverse@2x.png"; path = "Images/Button7-Inverse@2x.png"; sourceTree = "<group>"; };
+		34609480127FB5690045734E /* Button7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button7@2x.png"; path = "Images/Button7@2x.png"; sourceTree = "<group>"; };
+		34609481127FB5690045734E /* Button8-Inverse@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button8-Inverse@2x.png"; path = "Images/Button8-Inverse@2x.png"; sourceTree = "<group>"; };
+		34609482127FB5690045734E /* Button8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button8@2x.png"; path = "Images/Button8@2x.png"; sourceTree = "<group>"; };
+		34609483127FB5690045734E /* Button9-Inverse@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button9-Inverse@2x.png"; path = "Images/Button9-Inverse@2x.png"; sourceTree = "<group>"; };
+		34609484127FB5690045734E /* Button9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button9@2x.png"; path = "Images/Button9@2x.png"; sourceTree = "<group>"; };
+		34609493127FB63E0045734E /* DeleteButton-Inverse@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DeleteButton-Inverse@2x.png"; path = "Images/DeleteButton-Inverse@2x.png"; sourceTree = "<group>"; };
+		34609494127FB63E0045734E /* DeleteButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DeleteButton@2x.png"; path = "Images/DeleteButton@2x.png"; sourceTree = "<group>"; };
+		34609495127FB63E0045734E /* DoneButton-Inverse@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DoneButton-Inverse@2x.png"; path = "Images/DoneButton-Inverse@2x.png"; sourceTree = "<group>"; };
+		34609496127FB63E0045734E /* DoneButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DoneButton@2x.png"; path = "Images/DoneButton@2x.png"; sourceTree = "<group>"; };
+		3460949B127FB6440045734E /* SkipButton-Inverse@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SkipButton-Inverse@2x.png"; path = "Images/SkipButton-Inverse@2x.png"; sourceTree = "<group>"; };
+		3460949C127FB6440045734E /* SkipButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SkipButton@2x.png"; path = "Images/SkipButton@2x.png"; sourceTree = "<group>"; };
+		346094BE127FB9DE0045734E /* Button0-Inverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button0-Inverse.png"; path = "Images/Button0-Inverse.png"; sourceTree = "<group>"; };
+		346094BF127FB9DE0045734E /* Button0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Button0.png; path = Images/Button0.png; sourceTree = "<group>"; };
+		346094C0127FB9DE0045734E /* Button1-Inverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button1-Inverse.png"; path = "Images/Button1-Inverse.png"; sourceTree = "<group>"; };
+		346094C1127FB9DE0045734E /* Button1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Button1.png; path = Images/Button1.png; sourceTree = "<group>"; };
+		346094D0127FBB0D0045734E /* Button2-Inverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button2-Inverse.png"; path = "Images/Button2-Inverse.png"; sourceTree = "<group>"; };
+		346094D1127FBB0D0045734E /* Button2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Button2.png; path = Images/Button2.png; sourceTree = "<group>"; };
+		346094D2127FBB0D0045734E /* Button3-Inverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button3-Inverse.png"; path = "Images/Button3-Inverse.png"; sourceTree = "<group>"; };
+		346094D3127FBB0D0045734E /* Button3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Button3.png; path = Images/Button3.png; sourceTree = "<group>"; };
+		346094D4127FBB0D0045734E /* Button4-Inverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button4-Inverse.png"; path = "Images/Button4-Inverse.png"; sourceTree = "<group>"; };
+		346094D5127FBB0D0045734E /* Button4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Button4.png; path = Images/Button4.png; sourceTree = "<group>"; };
+		346094D6127FBB0D0045734E /* Button5-Inverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button5-Inverse.png"; path = "Images/Button5-Inverse.png"; sourceTree = "<group>"; };
+		346094D7127FBB0D0045734E /* Button5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Button5.png; path = Images/Button5.png; sourceTree = "<group>"; };
+		346094D8127FBB0D0045734E /* Button6-Inverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button6-Inverse.png"; path = "Images/Button6-Inverse.png"; sourceTree = "<group>"; };
+		346094D9127FBB0D0045734E /* Button6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Button6.png; path = Images/Button6.png; sourceTree = "<group>"; };
+		346094DA127FBB0D0045734E /* Button7-Inverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button7-Inverse.png"; path = "Images/Button7-Inverse.png"; sourceTree = "<group>"; };
+		346094DB127FBB0D0045734E /* Button7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Button7.png; path = Images/Button7.png; sourceTree = "<group>"; };
+		346094DC127FBB0D0045734E /* Button8-Inverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button8-Inverse.png"; path = "Images/Button8-Inverse.png"; sourceTree = "<group>"; };
+		346094DD127FBB0D0045734E /* Button8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Button8.png; path = Images/Button8.png; sourceTree = "<group>"; };
+		346094DE127FBB0D0045734E /* Button9-Inverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button9-Inverse.png"; path = "Images/Button9-Inverse.png"; sourceTree = "<group>"; };
+		346094DF127FBB0D0045734E /* Button9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Button9.png; path = Images/Button9.png; sourceTree = "<group>"; };
+		346094E0127FBB0D0045734E /* DeleteButton-Inverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DeleteButton-Inverse.png"; path = "Images/DeleteButton-Inverse.png"; sourceTree = "<group>"; };
+		346094E1127FBB0D0045734E /* DeleteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DeleteButton.png; path = Images/DeleteButton.png; sourceTree = "<group>"; };
+		346094E2127FBB0D0045734E /* DoneButton-Inverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "DoneButton-Inverse.png"; path = "Images/DoneButton-Inverse.png"; sourceTree = "<group>"; };
+		346094E3127FBB0D0045734E /* DoneButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DoneButton.png; path = Images/DoneButton.png; sourceTree = "<group>"; };
+		346094E4127FBB0D0045734E /* SkipButton-Inverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SkipButton-Inverse.png"; path = "Images/SkipButton-Inverse.png"; sourceTree = "<group>"; };
+		346094E5127FBB0D0045734E /* SkipButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SkipButton.png; path = Images/SkipButton.png; sourceTree = "<group>"; };
 		34DC9451127B627200EB659F /* ArithmeticEquation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArithmeticEquation.h; path = Shared/ArithmeticEquation.h; sourceTree = "<group>"; };
 		34DC9452127B627200EB659F /* ArithmeticEquation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArithmeticEquation.m; path = Shared/ArithmeticEquation.m; sourceTree = "<group>"; };
 		34DC9456127B62BC00EB659F /* ArithmeticEquationGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArithmeticEquationGenerator.h; path = Shared/ArithmeticEquationGenerator.h; sourceTree = "<group>"; wrapsLines = 1; };
@@ -360,7 +454,10 @@
 		34E8315B12760CE500FFF679 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Shared/AppDelegate.m; sourceTree = "<group>"; };
 		34E831B1127611C100FFF679 /* MadMinuteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MadMinuteController.h; path = Shared/MadMinuteController.h; sourceTree = "<group>"; };
 		34E831B2127611C100FFF679 /* MadMinuteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MadMinuteController.m; path = Shared/MadMinuteController.m; sourceTree = "<group>"; wrapsLines = 1; };
-		34F507D6127BD07200FB1B13 /* Button1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button1@2x.png"; path = "Images/Button1@2x.png"; sourceTree = "<group>"; };
+		34EA90FB1281DFD800286BE9 /* SettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsController.h; path = Shared/SettingsController.h; sourceTree = "<group>"; };
+		34EA90FC1281DFD800286BE9 /* SettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsController.m; path = Shared/SettingsController.m; sourceTree = "<group>"; };
+		34EA90FF1281E10D00286BE9 /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameController.h; path = Shared/GameController.h; sourceTree = "<group>"; };
+		34EA91001281E10D00286BE9 /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameController.m; path = Shared/GameController.m; sourceTree = "<group>"; };
 		34F507D7127BD07200FB1B13 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Images/Default.png; sourceTree = "<group>"; };
 		34F507D8127BD07200FB1B13 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Images/Default@2x.png"; sourceTree = "<group>"; };
 		34F507D9127BD07200FB1B13 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Images/Icon-Small.png"; sourceTree = "<group>"; };
@@ -371,17 +468,6 @@
 		34F507E8127BD0A300FB1B13 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait.png"; path = "Images/Default-Portrait.png"; sourceTree = "<group>"; };
 		34F507E9127BD0A300FB1B13 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Images/Icon-72.png"; sourceTree = "<group>"; };
 		34F507EA127BD0A300FB1B13 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "Images/Icon-Small-50.png"; sourceTree = "<group>"; };
-		34F5081B127BDEFB00FB1B13 /* Button2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button2@2x.png"; path = "Images/Button2@2x.png"; sourceTree = "<group>"; };
-		34F5081C127BDEFB00FB1B13 /* Button3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button3@2x.png"; path = "Images/Button3@2x.png"; sourceTree = "<group>"; };
-		34F5081D127BDEFB00FB1B13 /* Button4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button4@2x.png"; path = "Images/Button4@2x.png"; sourceTree = "<group>"; };
-		34F5081E127BDEFB00FB1B13 /* Button5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button5@2x.png"; path = "Images/Button5@2x.png"; sourceTree = "<group>"; };
-		34F5081F127BDEFB00FB1B13 /* Button6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button6@2x.png"; path = "Images/Button6@2x.png"; sourceTree = "<group>"; };
-		34F50820127BDEFB00FB1B13 /* Button7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button7@2x.png"; path = "Images/Button7@2x.png"; sourceTree = "<group>"; };
-		34F50821127BDEFB00FB1B13 /* Button8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button8@2x.png"; path = "Images/Button8@2x.png"; sourceTree = "<group>"; };
-		34F50822127BDEFB00FB1B13 /* Button9@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button9@2x.png"; path = "Images/Button9@2x.png"; sourceTree = "<group>"; };
-		34F50823127BDEFB00FB1B13 /* Button10@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button10@2x.png"; path = "Images/Button10@2x.png"; sourceTree = "<group>"; };
-		34F50824127BDEFB00FB1B13 /* Button11@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button11@2x.png"; path = "Images/Button11@2x.png"; sourceTree = "<group>"; };
-		34F50835127BDF3700FB1B13 /* Button0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Button0@2x.png"; path = "Images/Button0@2x.png"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* MadMinute-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MadMinute-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -448,10 +534,14 @@
 				34E8315B12760CE500FFF679 /* AppDelegate.m */,
 				34E831B1127611C100FFF679 /* MadMinuteController.h */,
 				34E831B2127611C100FFF679 /* MadMinuteController.m */,
-				34DC9451127B627200EB659F /* ArithmeticEquation.h */,
-				34DC9452127B627200EB659F /* ArithmeticEquation.m */,
+				34EA90FB1281DFD800286BE9 /* SettingsController.h */,
+				34EA90FC1281DFD800286BE9 /* SettingsController.m */,
+				34EA90FF1281E10D00286BE9 /* GameController.h */,
+				34EA91001281E10D00286BE9 /* GameController.m */,
 				34DC9456127B62BC00EB659F /* ArithmeticEquationGenerator.h */,
 				34DC9457127B62BC00EB659F /* ArithmeticEquationGenerator.m */,
+				34DC9451127B627200EB659F /* ArithmeticEquation.h */,
+				34DC9452127B627200EB659F /* ArithmeticEquation.m */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -502,6 +592,65 @@
 				34186167127726E300E4BAD5 /* iTunesArtwork */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		34609507127FBCB10045734E /* Number Pad */ = {
+			isa = PBXGroup;
+			children = (
+				346094BF127FB9DE0045734E /* Button0.png */,
+				3460947E127FB5690045734E /* Button0@2x.png */,
+				346094BE127FB9DE0045734E /* Button0-Inverse.png */,
+				3460947D127FB5690045734E /* Button0-Inverse@2x.png */,
+				346094C1127FB9DE0045734E /* Button1.png */,
+				34609437127FB2A70045734E /* Button1@2x.png */,
+				346094C0127FB9DE0045734E /* Button1-Inverse.png */,
+				34609436127FB2A70045734E /* Button1-Inverse@2x.png */,
+				346094D1127FBB0D0045734E /* Button2.png */,
+				3460944B127FB3910045734E /* Button2@2x.png */,
+				346094D0127FBB0D0045734E /* Button2-Inverse.png */,
+				3460944A127FB3910045734E /* Button2-Inverse@2x.png */,
+				346094D3127FBB0D0045734E /* Button3.png */,
+				3460944D127FB3910045734E /* Button3@2x.png */,
+				346094D2127FBB0D0045734E /* Button3-Inverse.png */,
+				3460944C127FB3910045734E /* Button3-Inverse@2x.png */,
+				346094D5127FBB0D0045734E /* Button4.png */,
+				3460945D127FB4540045734E /* Button4@2x.png */,
+				346094D4127FBB0D0045734E /* Button4-Inverse.png */,
+				3460945C127FB4540045734E /* Button4-Inverse@2x.png */,
+				346094D7127FBB0D0045734E /* Button5.png */,
+				3460945F127FB4540045734E /* Button5@2x.png */,
+				346094D6127FBB0D0045734E /* Button5-Inverse.png */,
+				3460945E127FB4540045734E /* Button5-Inverse@2x.png */,
+				346094D9127FBB0D0045734E /* Button6.png */,
+				34609461127FB4540045734E /* Button6@2x.png */,
+				346094D8127FBB0D0045734E /* Button6-Inverse.png */,
+				34609460127FB4540045734E /* Button6-Inverse@2x.png */,
+				346094DB127FBB0D0045734E /* Button7.png */,
+				34609480127FB5690045734E /* Button7@2x.png */,
+				346094DA127FBB0D0045734E /* Button7-Inverse.png */,
+				3460947F127FB5690045734E /* Button7-Inverse@2x.png */,
+				346094DD127FBB0D0045734E /* Button8.png */,
+				34609482127FB5690045734E /* Button8@2x.png */,
+				346094DC127FBB0D0045734E /* Button8-Inverse.png */,
+				34609481127FB5690045734E /* Button8-Inverse@2x.png */,
+				346094DF127FBB0D0045734E /* Button9.png */,
+				34609484127FB5690045734E /* Button9@2x.png */,
+				346094DE127FBB0D0045734E /* Button9-Inverse.png */,
+				34609483127FB5690045734E /* Button9-Inverse@2x.png */,
+				346094E5127FBB0D0045734E /* SkipButton.png */,
+				3460949C127FB6440045734E /* SkipButton@2x.png */,
+				346094E4127FBB0D0045734E /* SkipButton-Inverse.png */,
+				3460949B127FB6440045734E /* SkipButton-Inverse@2x.png */,
+				346094E3127FBB0D0045734E /* DoneButton.png */,
+				34609496127FB63E0045734E /* DoneButton@2x.png */,
+				346094E2127FBB0D0045734E /* DoneButton-Inverse.png */,
+				34609495127FB63E0045734E /* DoneButton-Inverse@2x.png */,
+				346094E1127FBB0D0045734E /* DeleteButton.png */,
+				34609494127FB63E0045734E /* DeleteButton@2x.png */,
+				346094E0127FBB0D0045734E /* DeleteButton-Inverse.png */,
+				34609493127FB63E0045734E /* DeleteButton-Inverse@2x.png */,
+			);
+			name = "Number Pad";
 			sourceTree = "<group>";
 		};
 		34E8301C1276099C00FFF679 /* Famigo */ = {
@@ -673,24 +822,13 @@
 		34F507D3127BD04500FB1B13 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				34609507127FBCB10045734E /* Number Pad */,
 				34F507D7127BD07200FB1B13 /* Default.png */,
 				34F507D8127BD07200FB1B13 /* Default@2x.png */,
 				34F507DB127BD07200FB1B13 /* Icon.png */,
 				34F507DC127BD07200FB1B13 /* Icon@2x.png */,
 				34F507D9127BD07200FB1B13 /* Icon-Small.png */,
 				34F507DA127BD07200FB1B13 /* Icon-Small@2x.png */,
-				34F50835127BDF3700FB1B13 /* Button0@2x.png */,
-				34F507D6127BD07200FB1B13 /* Button1@2x.png */,
-				34F5081B127BDEFB00FB1B13 /* Button2@2x.png */,
-				34F5081C127BDEFB00FB1B13 /* Button3@2x.png */,
-				34F5081D127BDEFB00FB1B13 /* Button4@2x.png */,
-				34F5081E127BDEFB00FB1B13 /* Button5@2x.png */,
-				34F5081F127BDEFB00FB1B13 /* Button6@2x.png */,
-				34F50820127BDEFB00FB1B13 /* Button7@2x.png */,
-				34F50821127BDEFB00FB1B13 /* Button8@2x.png */,
-				34F50822127BDEFB00FB1B13 /* Button9@2x.png */,
-				34F50823127BDEFB00FB1B13 /* Button10@2x.png */,
-				34F50824127BDEFB00FB1B13 /* Button11@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -876,7 +1014,6 @@
 				34E8312E127609B400FFF679 /* WelcomeViewController.xib in Resources */,
 				34E8312F127609B400FFF679 /* yay.wav in Resources */,
 				34186170127726E300E4BAD5 /* iTunesArtwork in Resources */,
-				34F507DE127BD07200FB1B13 /* Button1@2x.png in Resources */,
 				34F507DF127BD07200FB1B13 /* Default.png in Resources */,
 				34F507E0127BD07200FB1B13 /* Default@2x.png in Resources */,
 				34F507E1127BD07200FB1B13 /* Icon-Small.png in Resources */,
@@ -887,17 +1024,58 @@
 				34F507EC127BD0A300FB1B13 /* Default-Portrait.png in Resources */,
 				34F507ED127BD0A300FB1B13 /* Icon-72.png in Resources */,
 				34F507EE127BD0A300FB1B13 /* Icon-Small-50.png in Resources */,
-				34F50825127BDEFB00FB1B13 /* Button2@2x.png in Resources */,
-				34F50826127BDEFB00FB1B13 /* Button3@2x.png in Resources */,
-				34F50827127BDEFB00FB1B13 /* Button4@2x.png in Resources */,
-				34F50828127BDEFB00FB1B13 /* Button5@2x.png in Resources */,
-				34F50829127BDEFB00FB1B13 /* Button6@2x.png in Resources */,
-				34F5082A127BDEFB00FB1B13 /* Button7@2x.png in Resources */,
-				34F5082B127BDEFB00FB1B13 /* Button8@2x.png in Resources */,
-				34F5082C127BDEFB00FB1B13 /* Button9@2x.png in Resources */,
-				34F5082D127BDEFB00FB1B13 /* Button10@2x.png in Resources */,
-				34F5082E127BDEFB00FB1B13 /* Button11@2x.png in Resources */,
-				34F50836127BDF3700FB1B13 /* Button0@2x.png in Resources */,
+				34609438127FB2A70045734E /* Button1-Inverse@2x.png in Resources */,
+				34609439127FB2A70045734E /* Button1@2x.png in Resources */,
+				3460944E127FB3910045734E /* Button2-Inverse@2x.png in Resources */,
+				3460944F127FB3910045734E /* Button2@2x.png in Resources */,
+				34609450127FB3910045734E /* Button3-Inverse@2x.png in Resources */,
+				34609451127FB3910045734E /* Button3@2x.png in Resources */,
+				34609464127FB4540045734E /* Button4-Inverse@2x.png in Resources */,
+				34609465127FB4540045734E /* Button4@2x.png in Resources */,
+				34609466127FB4540045734E /* Button5-Inverse@2x.png in Resources */,
+				34609467127FB4540045734E /* Button5@2x.png in Resources */,
+				34609468127FB4540045734E /* Button6-Inverse@2x.png in Resources */,
+				34609469127FB4540045734E /* Button6@2x.png in Resources */,
+				34609485127FB5690045734E /* Button0-Inverse@2x.png in Resources */,
+				34609486127FB5690045734E /* Button0@2x.png in Resources */,
+				34609487127FB5690045734E /* Button7-Inverse@2x.png in Resources */,
+				34609488127FB5690045734E /* Button7@2x.png in Resources */,
+				34609489127FB5690045734E /* Button8-Inverse@2x.png in Resources */,
+				3460948A127FB5690045734E /* Button8@2x.png in Resources */,
+				3460948B127FB5690045734E /* Button9-Inverse@2x.png in Resources */,
+				3460948C127FB5690045734E /* Button9@2x.png in Resources */,
+				34609497127FB63E0045734E /* DeleteButton-Inverse@2x.png in Resources */,
+				34609498127FB63E0045734E /* DeleteButton@2x.png in Resources */,
+				34609499127FB63E0045734E /* DoneButton-Inverse@2x.png in Resources */,
+				3460949A127FB63E0045734E /* DoneButton@2x.png in Resources */,
+				3460949D127FB6440045734E /* SkipButton-Inverse@2x.png in Resources */,
+				3460949E127FB6440045734E /* SkipButton@2x.png in Resources */,
+				346094C2127FB9DE0045734E /* Button0-Inverse.png in Resources */,
+				346094C3127FB9DE0045734E /* Button0.png in Resources */,
+				346094C4127FB9DE0045734E /* Button1-Inverse.png in Resources */,
+				346094C5127FB9DE0045734E /* Button1.png in Resources */,
+				346094E6127FBB0D0045734E /* Button2-Inverse.png in Resources */,
+				346094E7127FBB0D0045734E /* Button2.png in Resources */,
+				346094E8127FBB0D0045734E /* Button3-Inverse.png in Resources */,
+				346094E9127FBB0D0045734E /* Button3.png in Resources */,
+				346094EA127FBB0D0045734E /* Button4-Inverse.png in Resources */,
+				346094EB127FBB0D0045734E /* Button4.png in Resources */,
+				346094EC127FBB0D0045734E /* Button5-Inverse.png in Resources */,
+				346094ED127FBB0D0045734E /* Button5.png in Resources */,
+				346094EE127FBB0D0045734E /* Button6-Inverse.png in Resources */,
+				346094EF127FBB0D0045734E /* Button6.png in Resources */,
+				346094F0127FBB0D0045734E /* Button7-Inverse.png in Resources */,
+				346094F1127FBB0D0045734E /* Button7.png in Resources */,
+				346094F2127FBB0D0045734E /* Button8-Inverse.png in Resources */,
+				346094F3127FBB0D0045734E /* Button8.png in Resources */,
+				346094F4127FBB0D0045734E /* Button9-Inverse.png in Resources */,
+				346094F5127FBB0D0045734E /* Button9.png in Resources */,
+				346094F6127FBB0D0045734E /* DeleteButton-Inverse.png in Resources */,
+				346094F7127FBB0D0045734E /* DeleteButton.png in Resources */,
+				346094F8127FBB0D0045734E /* DoneButton-Inverse.png in Resources */,
+				346094F9127FBB0D0045734E /* DoneButton.png in Resources */,
+				346094FA127FBB0D0045734E /* SkipButton-Inverse.png in Resources */,
+				346094FB127FBB0D0045734E /* SkipButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -915,6 +1093,8 @@
 				34E831B4127611C100FFF679 /* MadMinuteController.m in Sources */,
 				34DC9453127B627200EB659F /* ArithmeticEquation.m in Sources */,
 				34DC9458127B62BC00EB659F /* ArithmeticEquationGenerator.m in Sources */,
+				34EA90FD1281DFD800286BE9 /* SettingsController.m in Sources */,
+				34EA91011281E10D00286BE9 /* GameController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

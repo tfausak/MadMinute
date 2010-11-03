@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "GameController.h"
 
 @implementation AppDelegate
 
@@ -43,10 +44,15 @@
         frame.size.height -= [UIApplication sharedApplication].statusBarFrame.size.height;
     }
     
-    // Load the main view
+    /*
     madMinuteController = [[MadMinuteController alloc] init];
     [[madMinuteController view] setFrame:frame];
     [window addSubview:[madMinuteController view]];
+    /*/
+    GameController *gameController = [[GameController alloc] init];
+    [[gameController view] setFrame:frame];
+    [window addSubview:[gameController view]];
+     //*/
     
     [window makeKeyAndVisible];
     return YES;

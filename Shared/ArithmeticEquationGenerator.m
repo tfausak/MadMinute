@@ -19,6 +19,8 @@
 @synthesize divisionMax;
 
 - (void)dealloc {
+    [allowedOperations release];
+    
     [super dealloc];
 }
 
@@ -26,35 +28,46 @@
     if (self = [super init]) {
         difficulty = theDifficulty;
         allowNegativeNumbers = negativeNumbers;
+        allowedOperations = [[NSMutableArray alloc] init];
         
         switch (difficulty) {
             case VeryEasy:
-                allowedOperations = Addition;
+                [allowedOperations addObject:[NSNumber numberWithInt:Addition]];
                 additionMax = 10;
                 break;
             case Easy:
-                allowedOperations = Addition | Subtraction;
-                additionMax = 20;
+                [allowedOperations addObject:[NSNumber numberWithInt:Addition]];
+                [allowedOperations addObject:[NSNumber numberWithInt:Subtraction]];
+                additionMax = 21;
                 subtractionMax = 10;
                 break;
             case Medium:
-                allowedOperations = Addition | Subtraction | Multiplication;
-                additionMax = 50;
-                subtractionMax = 20;
+                [allowedOperations addObject:[NSNumber numberWithInt:Addition]];
+                [allowedOperations addObject:[NSNumber numberWithInt:Subtraction]];
+                [allowedOperations addObject:[NSNumber numberWithInt:Multiplication]];
+                additionMax = 51;
+                subtractionMax = 21;
                 multiplicationMax = 6;
                 break;
             case Hard:
-                allowedOperations = Addition | Subtraction | Multiplication | Division;
-                additionMax = 100;
-                subtractionMax = 50;
-                multiplicationMax = 13;
+                [allowedOperations addObject:[NSNumber numberWithInt:Addition]];
+                [allowedOperations addObject:[NSNumber numberWithInt:Subtraction]];
+                [allowedOperations addObject:[NSNumber numberWithInt:Multiplication]];
+                [allowedOperations addObject:[NSNumber numberWithInt:Division]];
+                additionMax = 101;
+                subtractionMax = 51;
+                multiplicationMax = 14;
                 divisionMax = 6;
                 break;
             case VeryHard:
-                additionMax = 100;
-                subtractionMax = 100;
-                multiplicationMax = 13;
-                divisionMax = 13;
+                [allowedOperations addObject:[NSNumber numberWithInt:Addition]];
+                [allowedOperations addObject:[NSNumber numberWithInt:Subtraction]];
+                [allowedOperations addObject:[NSNumber numberWithInt:Multiplication]];
+                [allowedOperations addObject:[NSNumber numberWithInt:Division]];
+                additionMax = 101;
+                subtractionMax = 101;
+                multiplicationMax = 14;
+                divisionMax = 14;
                 break;
             default:
                 NSAssert(NO, @"Unknown difficulty");
@@ -70,7 +83,7 @@
     float secondOperand;
     
     // Generate a random operation
-    operation = pow(2, arc4random() % sizeof(Operation));
+    operation = [(NSNumber *)[allowedOperations objectAtIndex:(arc4random() % [allowedOperations count])] intValue];
     switch (operation) {
         case Addition:
             firstOperand = arc4random() % additionMax;
@@ -99,6 +112,16 @@
         default:
             NSAssert(NO, @"Unknown operation");
             break;
+    }
+    
+    // Randomly flip signs if negative numbers are allowed
+    if (allowNegativeNumbers) {
+        if (arc4random() & 1) {
+            firstOperand *= -1;
+        }
+        if (arc4random() & 1) {
+            secondOperand *= -1;
+        }
     }
     
     return [[ArithmeticEquation alloc] initWithFirstOperand:firstOperand operation:operation secondOperand:secondOperand];

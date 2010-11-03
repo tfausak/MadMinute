@@ -19,7 +19,7 @@ typedef enum {
 
 @interface ArithmeticEquationGenerator : NSObject {
     Difficulty difficulty;
-    int allowedOperations;
+    NSMutableArray *allowedOperations;
     BOOL allowNegativeNumbers;
     int additionMax;
     int subtractionMax;
@@ -28,7 +28,7 @@ typedef enum {
 }
 
 @property (nonatomic, assign, readonly) Difficulty difficulty;
-@property (nonatomic, assign, readonly) int allowedOperations;
+@property (nonatomic, retain, readonly) NSMutableArray *allowedOperations;
 @property (nonatomic, assign, readonly) BOOL allowNegativeNumbers;
 @property (nonatomic, assign, readonly) int additionMax;
 @property (nonatomic, assign, readonly) int subtractionMax;

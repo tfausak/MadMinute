@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-    Addition = 1,
-    Subtraction = 2,
-    Multiplication = 4,
-    Division = 8
+    Addition,
+    Subtraction,
+    Multiplication,
+    Division
 } Operation;
 
 @interface ArithmeticEquation : NSObject {

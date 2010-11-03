@@ -61,16 +61,14 @@ static const int kNumberPadButtons = 12;
 }
 
 #pragma mark -
-#pragma mark Creating a View Controller Using Nib Files
+#pragma mark Managing the View
 
 - (id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)nibBundle {
-    if (self = [super initWithNibName:nibName bundle:nibBundle]) {
+    self = [super initWithNibName:nibName bundle:nibBundle];
+    if (self) {
     }
     return self;
 }
-
-#pragma mark -
-#pragma mark Managing the View
 
 - (void)loadView {
     UIView *view = [[UIView alloc] init];
@@ -81,8 +79,7 @@ static const int kNumberPadButtons = 12;
 
 - (void)viewDidLoad {
     [self buildInterface];
-    [self generateEquation];
-    /*
+    
     // Display the Famigo controller
     famigoController = [FamigoController sharedInstanceWithDelegate:self];
     [[famigoController view] setFrame:[[self view] frame]];
@@ -97,136 +94,21 @@ static const int kNumberPadButtons = 12;
     [[self view] addSubview:[logoAnimationController view]];
     
     // Capture the notification at the end of the logo animation
-    [logoAnimationController registerForNotifications:self withSelector:@selector(logoAnimationDidFinish:)];*/
+    [logoAnimationController registerForNotifications:self withSelector:@selector(logoAnimationDidFinish:)];
 }
-
-/*
-- (void)viewDidUnload {
-}
-*/
-
-/*
-- (void)isViewLoaded {
-}
-*/
-
-#pragma mark -
-#pragma mark Responding to View Events
-
-/*
-- (void)viewWillAppear:(BOOL)animated {
-}
-*/
-
-/*
-- (void)viewDidAppear:(BOOL)animated {
-}
-*/
-
-/*
-- (void)viewWillDisappear:(BOOL)animated {
-}
-*/
-
-/*
-- (void)viewDidDisappear:(BOOL)animated {
-}
-*/
-
-#pragma mark -
-#pragma mark Configuring the View Rotation Settings
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return YES;
 }
 
-/*
-- (UIView *)rotatingHeaderView {
-}
-*/
-
-/*
-- (UIView *)rotatingFooterView {
-}
-*/
-
-#pragma mark -
-#pragma mark Responding to View Rotation Events
-
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     [self buildInterface:duration];
 }
 
-/*
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration {
-}
-*/
-
-/*
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-}
-*/
-
-/*
-- (void)willAnimateFirstHalfOfRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-}
-*/
-
-/*
-- (void)didAnimateFirstHalfOfRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-}
-*/
-
-/*
-- (void)willAnimateSecondHalfOfRotationFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation duration:(NSTimeInterval)duration {
-}
-*/
-
-#pragma mark -
-#pragma mark Handling Memory Warnings
-
-/*
-- (void)didReceiveMemoryWarning {
-}
-*/
-
-#pragma mark -
-#pragma mark Presenting Modal Views
-
-/*
-- (void)presentModalViewController:(UIViewController *)modalViewController animated:(BOOL)animated {
-}
-*/
-
-/*
-- (void)dismissModalViewControllerAnimated:(BOOL)animated {
-}
-*/
-
-#pragma mark -
-#pragma mark Configuring a Navigation Interface
-
-/*
-- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
-}
-*/
-
-/*
-- (UIBarButtonItem *)editButtonItem {
-}
-*/
-
-#pragma mark -
-#pragma mark Configuring the Navigation Controller’s Toolbar
-
-/*
-- (void)setToolbarItems:(NSArray *)toolbarItems animated:(BOOL)animated {
-}
-*/
-
 #pragma mark -
 
 - (void)famigoReady {
+    NSLog(@"famigoReady");
 }
 
 - (void)logoAnimationDidFinish:(NSNotification *)notification {
@@ -251,6 +133,7 @@ static const int kNumberPadButtons = 12;
             [navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Famigo" style:UIBarButtonItemStylePlain target:self action:@selector(pressedFamigoButton:)]];
             [navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(pressedSettingsButton:)]];
             [navigationBar pushNavigationItem:navigationItem animated:NO];
+            [navigationItem release];
         } [[self view] addSubview:navigationBar];
         
         statusView = [[UIView alloc] init];
@@ -297,7 +180,6 @@ static const int kNumberPadButtons = 12;
         for (int index = 0; index < kNumberPadButtons; index += 1) {
             UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
             [button setTitle:[NSString stringWithFormat:@"%d", index] forState:UIControlStateNormal];
-            //[button setImage:[UIImage imageNamed:[NSString stringWithFormat:@"Button%d", index]] forState:UIControlStateNormal];
             [button addTarget:self action:@selector(pressedNumberPadButton:) forControlEvents:UIControlEventTouchUpInside];
             [numberPadButtons insertObject:button atIndex:index];
             [numberPad addSubview:[numberPadButtons objectAtIndex:index]];
@@ -339,11 +221,9 @@ static const int kNumberPadButtons = 12;
         [statusView setFrame:CGRectMake(0, 44, 320, 44)];
         
         [timeProgress setFrame:CGRectMake(20, 8, 280, 9)];
-        [timeProgress setProgress:0.5];
         
         [scoreLabel setBackgroundColor:[UIColor clearColor]];
         [scoreLabel setFrame:CGRectMake(20, 20, 280, 20)];
-        [scoreLabel setText:@"score!"];
         [scoreLabel setTextAlignment:UITextAlignmentCenter];
         [scoreLabel setTextColor:[UIColor whiteColor]];
         
@@ -397,6 +277,9 @@ static const int kNumberPadButtons = 12;
 - (void)buildInterfaceIPhoneLandscape:(NSTimeInterval)duration {
     NSAssert(interfaceIsBuilt, @"Interface not built before resizing");
     
+    // TODO
+    [self buildInterfaceIPhonePortrait:duration];
+    
     [UIView beginAnimations:nil context:nil]; {
         [UIView setAnimationDuration:duration];
     } [UIView commitAnimations];
@@ -405,6 +288,9 @@ static const int kNumberPadButtons = 12;
 - (void)buildInterfaceIPadPortrait:(NSTimeInterval)duration {
     NSAssert(interfaceIsBuilt, @"Interface not built before resizing");
     
+    // TODO
+    [self buildInterfaceIPhonePortrait:duration];
+    
     [UIView beginAnimations:nil context:nil]; {
         [UIView setAnimationDuration:duration];
     } [UIView commitAnimations];
@@ -412,6 +298,9 @@ static const int kNumberPadButtons = 12;
 
 - (void)buildInterfaceIPadLandscape:(NSTimeInterval)duration {
     NSAssert(interfaceIsBuilt, @"Interface not built before resizing");
+    
+    // TODO
+    [self buildInterfaceIPhonePortrait:duration];
     
     [UIView beginAnimations:nil context:nil]; {
         [UIView setAnimationDuration:duration];
