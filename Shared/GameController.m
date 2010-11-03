@@ -14,8 +14,6 @@ int const kInitialTime = 60;
 
 @synthesize arithmeticEquationGenerator;
 @synthesize arithmeticEquation;
-@synthesize difficulty;
-@synthesize allowNegativeNumbers;
 @synthesize gameClock;
 @synthesize timeLeft;
 @synthesize responseValue;
@@ -114,9 +112,15 @@ int const kInitialTime = 60;
     } [[self view] addSubview:signControl];
     
     navigationBar = [[UINavigationBar alloc] init]; {
-        UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] init];
-        [leftButton setStyle:UIBarButtonItemStylePlain];
-        [leftButton setTitle:@"Settings"];
+        UINavigationItem *navigationItem = [[UINavigationItem alloc] init];
+        [navigationItem setTitle:@"Mad Minute"];
+        
+        UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Settings"
+                                                                       style:UIBarButtonItemStylePlain
+                                                                      target:self
+                                                                      action:@selector(pressedSettingsButton:)];
+        [navigationItem setLeftBarButtonItem:leftButton];
+        [leftButton release];
         
         scoreLabel = [[UITextField alloc] init];
         [scoreLabel setBorderStyle:UITextBorderStyleRoundedRect];
@@ -126,12 +130,7 @@ int const kInitialTime = 60;
         [scoreLabel setTextAlignment:UITextAlignmentCenter];
         
         UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithCustomView:scoreLabel];
-        
-        UINavigationItem *navigationItem = [[UINavigationItem alloc] init];
-        [navigationItem setLeftBarButtonItem:leftButton];
         [navigationItem setRightBarButtonItem:rightButton];
-        [navigationItem setTitle:@"Mad Minute"];
-        [leftButton release];
         [rightButton release];
         
         [navigationBar pushNavigationItem:navigationItem animated:NO];
@@ -185,6 +184,9 @@ int const kInitialTime = 60;
 #pragma mark -
 
 - (void)newGame {
+    Difficulty difficulty = [[NSUserDefaults standardUserDefaults] integerForKey:@"difficulty"];
+    BOOL allowNegativeNumbers = [[NSUserDefaults standardUserDefaults] boolForKey:@"allowNegativeNumbers"];
+
     arithmeticEquationGenerator = [[ArithmeticEquationGenerator alloc] initWithDifficulty:difficulty allowNegativeNumbers:allowNegativeNumbers];
     arithmeticEquation = [arithmeticEquationGenerator generateEquation];
     gameClock = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFireMethod:) userInfo:nil repeats:YES];
@@ -237,6 +239,9 @@ int const kInitialTime = 60;
 }
 
 #pragma mark -
+
+- (void)pressedSettingsButton:(id)sender {
+}
 
 - (void)pressedNumberPadButton:(id)sender {
     if ([responseValue length] >= 6) {

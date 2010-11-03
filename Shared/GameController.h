@@ -15,8 +15,6 @@ extern int const kInitialTime;
     // Game state
     ArithmeticEquationGenerator *arithmeticEquationGenerator;
     ArithmeticEquation *arithmeticEquation;
-    Difficulty difficulty;
-    BOOL allowNegativeNumbers;
     NSTimer *gameClock;
     int timeLeft;
     NSString *responseValue;
@@ -41,8 +39,6 @@ extern int const kInitialTime;
 
 @property (nonatomic, retain) ArithmeticEquationGenerator *arithmeticEquationGenerator;
 @property (nonatomic, retain) ArithmeticEquation *arithmeticEquation;
-@property (nonatomic, assign) Difficulty difficulty;
-@property (nonatomic, assign) BOOL allowNegativeNumbers;
 @property (nonatomic, retain) NSTimer *gameClock;
 @property (nonatomic, assign) int timeLeft;
 @property (nonatomic, retain) NSString *responseValue;
@@ -65,6 +61,7 @@ extern int const kInitialTime;
 - (void)newGame;
 - (void)endGame;
 - (void)gameEnded;
+- (void)pressedSettingsButton:(id)sender;
 - (void)pressedNumberPadButton:(id)sender;
 - (void)pressedDeleteButton:(id)sender;
 - (void)pressedDoneButton:(id)sender;

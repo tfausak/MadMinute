@@ -9,6 +9,20 @@
 #import <UIKit/UIKit.h>
 
 @interface SettingsController : UIViewController {
+    // UI elements
+    UINavigationBar *navigationBar;
+    UISlider *difficultySlider;
+    UISwitch *allowNegativeNumbersSwitch;
 }
+
+@property (nonatomic, retain) UINavigationBar *navigationBar;
+@property (nonatomic, retain) UISlider *difficultySlider;
+@property (nonatomic, retain) UISwitch *allowNegativeNumbersSwitch;
+
+- (void)pressedFamigoButton:(id)sender;
+- (void)pressedNewGameButton:(id)sender;
+- (void)movedSlider:(id)sender;
+- (void)toggledSwitch:(id)sender;
+- (void)updateUI;
 
 @end
