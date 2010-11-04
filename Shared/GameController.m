@@ -330,10 +330,118 @@ int const kInitialTime = 60;
         if ([[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeLeft || [[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeRight) {
             // iPad landscape
             [[self view] setFrame:CGRectMake(0, 0, 1024, 768)];
+            
+            float xScale = 1024.0 / 320.0;
+            float yScale = 768.0 / 480.0;
+            
+            [firstOperandLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48]];
+            [firstOperandLabel setFrame:CGRectMake(120 * xScale, 88 * yScale, 140 * xScale, 52 * yScale)];
+            [firstOperandLabel setTextAlignment:UITextAlignmentRight];
+            
+            [secondOperandLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48]];
+            [secondOperandLabel setFrame:CGRectMake(120 * xScale, 140 * yScale, 140 * xScale, 52 * yScale)];
+            [secondOperandLabel setTextAlignment:UITextAlignmentRight];
+            
+            [operatorLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48]];
+            [operatorLabel setFrame:CGRectMake(60 * xScale, 140 * yScale, 60 * xScale, 52 * yScale)];
+            
+            [responseBar setFrame:CGRectMake(0 * xScale, 191 * yScale, 320 * xScale, 1 * yScale)];
+            
+            [responseBackground setFrame:CGRectMake(0 * xScale, 192 * yScale, 320 * xScale, 52 * yScale)];
+            
+            [responseLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48]];
+            [responseLabel setFrame:CGRectMake(90 * xScale, 192 * yScale, 170 * xScale, 52 * yScale)];
+            [responseLabel setTextAlignment:UITextAlignmentRight];
+            
+            [signControl setFrame:CGRectMake(5 * xScale, 197 * yScale, 80 * xScale, 42 * yScale)];
+            
+            [navigationBar setFrame:CGRectMake(0 * xScale, 0 * yScale, 320 * xScale, 44 * yScale)];
+            
+            [timeBar setFrame:CGRectMake(0 * xScale, 44 * yScale, 320 * xScale, 44 * yScale)];
+            
+            [timeElapsedBar setFrame:CGRectMake(0 * xScale, 44 * yScale, 0 * xScale, 44 * yScale)];
+            
+            [timeElapsedLabel setFrame:CGRectMake(0 * xScale, 44 * yScale, 50 * xScale, 44 * yScale)];
+            
+            [numberPad setFrame:CGRectMake(0 * xScale, 244 * yScale, 320 * xScale, 216 * yScale)];
+            
+            for (int index = 0; index <= 9; index += 1) {
+                [[(UIButton *)[[numberPad subviews] objectAtIndex:index] titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:36]];
+            }
+            
+            [(UIButton *)[[numberPad subviews] objectAtIndex:0]  setFrame:CGRectMake(106 * xScale, 163 * yScale, 108 * xScale,  53 * yScale)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:1]  setFrame:CGRectMake(  0 * xScale,   1 * yScale, 105 * xScale,  53 * yScale)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:2]  setFrame:CGRectMake(106 * xScale,   1 * yScale, 108 * xScale,  53 * yScale)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:3]  setFrame:CGRectMake(215 * xScale,   1 * yScale, 105 * xScale,  53 * yScale)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:4]  setFrame:CGRectMake(  0 * xScale,  55 * yScale, 105 * xScale,  53 * yScale)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:5]  setFrame:CGRectMake(106 * xScale,  55 * yScale, 108 * xScale,  53 * yScale)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:6]  setFrame:CGRectMake(215 * xScale,  55 * yScale, 105 * xScale,  53 * yScale)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:7]  setFrame:CGRectMake(  0 * xScale, 109 * yScale, 105 * xScale,  53 * yScale)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:8]  setFrame:CGRectMake(106 * xScale, 109 * yScale, 108 * xScale,  53 * yScale)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:9]  setFrame:CGRectMake(215 * xScale, 109 * yScale, 105 * xScale,  53 * yScale)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:10] setFrame:CGRectMake(215 * xScale, 163 * yScale, 105 * xScale,  53 * yScale)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:11] setFrame:CGRectMake(  0 * xScale, 163 * yScale, 105 * xScale,  53 * yScale)];
+            
+            [[(UIButton *)[[numberPad subviews] objectAtIndex:10] titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:24]];
+            [[(UIButton *)[[numberPad subviews] objectAtIndex:11] titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:24]];
         }
         else {
             // iPad portrait
             [[self view] setFrame:CGRectMake(0, 0, 768, 1024)];
+            
+            float xScale = 768.0 / 320.0;
+            float yScale = 1024.0 / 480.0;
+            
+            [firstOperandLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48]];
+            [firstOperandLabel setFrame:CGRectMake(120 * xScale, 88 * yScale, 140 * xScale, 52 * yScale)];
+            [firstOperandLabel setTextAlignment:UITextAlignmentRight];
+            
+            [secondOperandLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48]];
+            [secondOperandLabel setFrame:CGRectMake(120 * xScale, 140 * yScale, 140 * xScale, 52 * yScale)];
+            [secondOperandLabel setTextAlignment:UITextAlignmentRight];
+            
+            [operatorLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48]];
+            [operatorLabel setFrame:CGRectMake(60 * xScale, 140 * yScale, 60 * xScale, 52 * yScale)];
+            
+            [responseBar setFrame:CGRectMake(0 * xScale, 191 * yScale, 320 * xScale, 1 * yScale)];
+            
+            [responseBackground setFrame:CGRectMake(0 * xScale, 192 * yScale, 320 * xScale, 52 * yScale)];
+            
+            [responseLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48]];
+            [responseLabel setFrame:CGRectMake(90 * xScale, 192 * yScale, 170 * xScale, 52 * yScale)];
+            [responseLabel setTextAlignment:UITextAlignmentRight];
+            
+            [signControl setFrame:CGRectMake(5 * xScale, 197 * yScale, 80 * xScale, 42 * yScale)];
+            
+            [navigationBar setFrame:CGRectMake(0 * xScale, 0 * yScale, 320 * xScale, 44 * yScale)];
+            
+            [timeBar setFrame:CGRectMake(0 * xScale, 44 * yScale, 320 * xScale, 44 * yScale)];
+            
+            [timeElapsedBar setFrame:CGRectMake(0 * xScale, 44 * yScale, 0 * xScale, 44 * yScale)];
+            
+            [timeElapsedLabel setFrame:CGRectMake(0 * xScale, 44 * yScale, 50 * xScale, 44 * yScale)];
+            
+            [numberPad setFrame:CGRectMake(0 * xScale, 244 * yScale, 320 * xScale, 216 * yScale)];
+            
+            for (int index = 0; index <= 9; index += 1) {
+                [[(UIButton *)[[numberPad subviews] objectAtIndex:index] titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:36]];
+            }
+            
+            [(UIButton *)[[numberPad subviews] objectAtIndex:0]  setFrame:CGRectMake(106 * xScale, 163 * yScale, 108 * xScale,  53 * yScale)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:1]  setFrame:CGRectMake(  0 * xScale,   1 * yScale, 105 * xScale,  53 * yScale)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:2]  setFrame:CGRectMake(106 * xScale,   1 * yScale, 108 * xScale,  53 * yScale)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:3]  setFrame:CGRectMake(215 * xScale,   1 * yScale, 105 * xScale,  53 * yScale)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:4]  setFrame:CGRectMake(  0 * xScale,  55 * yScale, 105 * xScale,  53 * yScale)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:5]  setFrame:CGRectMake(106 * xScale,  55 * yScale, 108 * xScale,  53 * yScale)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:6]  setFrame:CGRectMake(215 * xScale,  55 * yScale, 105 * xScale,  53 * yScale)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:7]  setFrame:CGRectMake(  0 * xScale, 109 * yScale, 105 * xScale,  53 * yScale)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:8]  setFrame:CGRectMake(106 * xScale, 109 * yScale, 108 * xScale,  53 * yScale)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:9]  setFrame:CGRectMake(215 * xScale, 109 * yScale, 105 * xScale,  53 * yScale)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:10] setFrame:CGRectMake(215 * xScale, 163 * yScale, 105 * xScale,  53 * yScale)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:11] setFrame:CGRectMake(  0 * xScale, 163 * yScale, 105 * xScale,  53 * yScale)];
+            
+            [[(UIButton *)[[numberPad subviews] objectAtIndex:10] titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:24]];
+            [[(UIButton *)[[numberPad subviews] objectAtIndex:11] titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:24]];
         }
     }
     else {
@@ -365,6 +473,10 @@ int const kInitialTime = 60;
             [navigationBar setFrame:CGRectMake(0, 0, 480, 44)];
             
             [timeBar setFrame:CGRectMake(0, 44, 480, 44)];
+            
+            [timeElapsedBar setFrame:CGRectMake(0, 44, 0, 44)];
+            
+            [timeElapsedLabel setFrame:CGRectMake(0, 44, 50, 44)];
             
             [numberPad setFrame:CGRectMake(0, 138, 480, 162)];
             
@@ -416,6 +528,10 @@ int const kInitialTime = 60;
             [navigationBar setFrame:CGRectMake(0, 0, 320, 44)];
             
             [timeBar setFrame:CGRectMake(0, 44, 320, 44)];
+            
+            [timeElapsedBar setFrame:CGRectMake(0, 44, 0, 44)];
+            
+            [timeElapsedLabel setFrame:CGRectMake(0, 44, 50, 44)];
             
             [numberPad setFrame:CGRectMake(0, 244, 320, 216)];
             
@@ -471,9 +587,13 @@ int const kInitialTime = 60;
             [(UIButton *)[[numberPad subviews] objectAtIndex:11] setTitle:@"Done" forState:UIControlStateNormal];
         }
     
-        [timeElapsedBar setFrame:CGRectMake(0, 44, [[self view] frame].size.width - (timeLeft / (double) kInitialTime) * [[self view] frame].size.width, 44)];
+        CGRect frame = [timeElapsedBar frame];
+        frame.size.width = [[self view] frame].size.width - (timeLeft / (double) kInitialTime) * [[self view] frame].size.width;
+        [timeElapsedBar setFrame:frame];
         
-        [timeElapsedLabel setFrame:CGRectMake(MIN([[self view] frame].size.width - 60, [timeElapsedBar frame].size.width + 10), 44, 50, 44)];
+        frame = [timeElapsedLabel frame];
+        frame.origin.x = MIN([[self view] frame].size.width - 60, [timeElapsedBar frame].size.width + 10);
+        [timeElapsedLabel setFrame:frame];
     } [UIView commitAnimations];
 }
 

@@ -106,24 +106,18 @@
         if ([[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeLeft || [[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeRight) {
             // iPhone landscape
             [[self view] setFrame:CGRectMake(0, 0, 480, 320)];
-            
-            [navigationBar setFrame:CGRectMake(0, 0, 480, 44)];
-            
-            [difficultySlider setFrame:CGRectMake(20, 64, 280, 22)];
-            
-            [allowNegativeNumbersSwitch setFrame:CGRectMake(113, 106, 94, 27)];
         }
         else {
             // iPhone portrait
             [[self view] setFrame:CGRectMake(0, 0, 320, 480)];
-            
-            [navigationBar setFrame:CGRectMake(0, 0, 320, 44)];
-            
-            [difficultySlider setFrame:CGRectMake(20, 64, 280, 22)];
-            
-            [allowNegativeNumbersSwitch setFrame:CGRectMake(113, 106, 94, 27)];
         }
     }
+    
+    [navigationBar setFrame:CGRectMake(0, 0, [[self view] frame].size.width, 44)];
+    
+    [difficultySlider setFrame:CGRectMake(20, 64, [[self view] frame].size.width - 40, 22)];
+    
+    [allowNegativeNumbersSwitch setFrame:CGRectMake(([[self view] frame].size.width / 2) - 47, 106, 94, 27)];
 }
 
 - (void)updateUI {
