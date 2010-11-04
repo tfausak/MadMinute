@@ -35,6 +35,7 @@
 }
 
 - (void)viewDidLoad {
+    
     // Display the game controller
     gameController = [[GameController alloc] init];
     [[self view] addSubview:[gameController view]];
@@ -59,6 +60,7 @@
     
     // Capture the notification at the end of the logo animation
     [logoAnimationController registerForNotifications:self withSelector:@selector(logoAnimationDidFinish:)];
+    
 }
 
 - (void)logoAnimationDidFinish:(NSNotification *)notification {
@@ -70,22 +72,29 @@
     return YES;
 }
 
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [gameController drawUI];
+    [settingsController drawUI];
+}
+
 #pragma mark -
 
 - (void)pressedFamigoButton:(id)sender {
 }
 
 - (void)pressedNewGameButton:(id)sender {
+    [gameController newGame];
+    
     [UIView beginAnimations:nil context:nil]; {
         [[settingsController view] removeFromSuperview];
-        [gameController newGame];
     } [UIView commitAnimations];
 }
 
 - (void)pressedSettingsButton:(id)sender {
+    [gameController endGame];
+    
     [UIView beginAnimations:nil context:nil]; {
         [[self view] addSubview:[settingsController view]];
-        [gameController endGame];
     } [UIView commitAnimations];
 }
 

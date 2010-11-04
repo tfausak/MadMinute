@@ -59,7 +59,7 @@
     } [[self view] addSubview:navigationBar];
     
     difficultySlider = [[UISlider alloc] init]; {
-        [difficultySlider addTarget:self action:@selector(movedSlider:) forControlEvents:UIControlEventValueChanged];
+        [difficultySlider addTarget:self action:@selector(movedSlider:) forControlEvents:UIControlEventTouchUpInside];
         
         int difficulty = [[NSUserDefaults standardUserDefaults] integerForKey:@"difficulty"];
         [difficultySlider setValue:difficulty animated:YES];
@@ -72,7 +72,7 @@
         [allowNegativeNumbersSwitch setOn:allowNegativeNumbers];
     } [[self view] addSubview:allowNegativeNumbersSwitch];
     
-    [self updateUI];
+    [self drawUI];
 }
 
 #pragma mark -
@@ -91,23 +91,31 @@
 
 #pragma mark -
 
-- (void)updateUI {
-    [UIView beginAnimations:nil context:nil];
-    
+- (void)drawUI {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         if ([[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeLeft || [[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeRight) {
             // iPad landscape
+            [[self view] setFrame:CGRectMake(0, 0, 1024, 768)];
         }
         else {
             // iPad portrait
+            [[self view] setFrame:CGRectMake(0, 0, 768, 1024)];
         }
     }
     else {
         if ([[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeLeft || [[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeRight) {
             // iPhone landscape
+            [[self view] setFrame:CGRectMake(0, 0, 480, 320)];
+            
+            [navigationBar setFrame:CGRectMake(0, 0, 480, 44)];
+            
+            [difficultySlider setFrame:CGRectMake(20, 64, 280, 22)];
+            
+            [allowNegativeNumbersSwitch setFrame:CGRectMake(113, 106, 94, 27)];
         }
         else {
             // iPhone portrait
+            [[self view] setFrame:CGRectMake(0, 0, 320, 480)];
             
             [navigationBar setFrame:CGRectMake(0, 0, 320, 44)];
             
@@ -116,8 +124,9 @@
             [allowNegativeNumbersSwitch setFrame:CGRectMake(113, 106, 94, 27)];
         }
     }
-    
-    [UIView commitAnimations];
+}
+
+- (void)updateUI {
 }
 
 @end

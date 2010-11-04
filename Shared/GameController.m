@@ -26,8 +26,8 @@ int const kInitialTime = 60;
 @synthesize timeElapsedBar;
 @synthesize timeElapsedLabel;
 @synthesize firstOperandLabel;
-@synthesize secondOperandLabel;
 @synthesize operatorLabel;
+@synthesize secondOperandLabel;
 @synthesize responseBar;
 @synthesize responseBackground;
 @synthesize responseLabel;
@@ -46,8 +46,8 @@ int const kInitialTime = 60;
     [timeElapsedBar release];
     [timeElapsedLabel release];
     [firstOperandLabel release];
-    [secondOperandLabel release];
     [operatorLabel release];
+    [secondOperandLabel release];
     [responseBar release];
     [responseBackground release];
     [responseLabel release];
@@ -63,7 +63,6 @@ int const kInitialTime = 60;
     UIView *view = [[UIView alloc] init];
     [view setFrame:[[UIScreen mainScreen] bounds]];
     [self setView:view];
-    [view release];
 }
 
 - (void)viewDidLoad {
@@ -72,16 +71,8 @@ int const kInitialTime = 60;
     firstOperandLabel = [[UILabel alloc] init]; {
         [firstOperandLabel setAdjustsFontSizeToFitWidth:YES];
         [firstOperandLabel setBackgroundColor:[UIColor clearColor]];
-        [firstOperandLabel setTextAlignment:UITextAlignmentRight];
         [firstOperandLabel setTextColor:[UIColor blackColor]];
     } [[self view] addSubview:firstOperandLabel];
-    
-    secondOperandLabel = [[UILabel alloc] init]; {
-        [secondOperandLabel setAdjustsFontSizeToFitWidth:YES];
-        [secondOperandLabel setBackgroundColor:[UIColor clearColor]];
-        [secondOperandLabel setTextAlignment:UITextAlignmentRight];
-        [secondOperandLabel setTextColor:[UIColor blackColor]];
-    } [[self view] addSubview:secondOperandLabel];
     
     operatorLabel = [[UILabel alloc] init]; {
         [operatorLabel setAdjustsFontSizeToFitWidth:YES];
@@ -89,6 +80,12 @@ int const kInitialTime = 60;
         [operatorLabel setTextAlignment:UITextAlignmentCenter];
         [operatorLabel setTextColor:[UIColor blackColor]];
     } [[self view] addSubview:operatorLabel];
+    
+    secondOperandLabel = [[UILabel alloc] init]; {
+        [secondOperandLabel setAdjustsFontSizeToFitWidth:YES];
+        [secondOperandLabel setBackgroundColor:[UIColor clearColor]];
+        [secondOperandLabel setTextColor:[UIColor blackColor]];
+    } [[self view] addSubview:secondOperandLabel];
     
     responseBar = [[UIView alloc] init]; {
         [responseBar setBackgroundColor:[UIColor blackColor]];
@@ -98,10 +95,9 @@ int const kInitialTime = 60;
         [responseBackground setBackgroundColor:[UIColor colorWithWhite:1.0 alpha:0.75]];
     } [[self view] addSubview:responseBackground];
     
-    responseLabel = [[UITextField alloc] init]; {
+    responseLabel = [[UILabel alloc] init]; {
         [responseLabel setAdjustsFontSizeToFitWidth:YES];
         [responseLabel setBackgroundColor:[UIColor clearColor]];
-        [responseLabel setEnabled:NO];
         [responseLabel setTextAlignment:UITextAlignmentRight];
         [responseLabel setTextColor:[UIColor blackColor]];
     } [[self view] addSubview:responseLabel];
@@ -110,7 +106,6 @@ int const kInitialTime = 60;
         [signControl addTarget:self action:@selector(pressedSignControl:) forControlEvents:UIControlEventValueChanged];
         [signControl insertSegmentWithTitle:@"+" atIndex:0 animated:NO];
         [signControl insertSegmentWithTitle:@"-" atIndex:1 animated:NO];
-        [signControl setSelectedSegmentIndex:0];
     } [[self view] addSubview:signControl];
     
     navigationBar = [[UINavigationBar alloc] init]; {
@@ -122,7 +117,6 @@ int const kInitialTime = 60;
                                                                       target:parentViewController
                                                                       action:@selector(pressedSettingsButton:)];
         [navigationItem setLeftBarButtonItem:leftButton];
-        [leftButton release];
         
         scoreLabel = [[UITextField alloc] init];
         [scoreLabel setBorderStyle:UITextBorderStyleRoundedRect];
@@ -133,10 +127,8 @@ int const kInitialTime = 60;
         
         UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithCustomView:scoreLabel];
         [navigationItem setRightBarButtonItem:rightButton];
-        [rightButton release];
         
         [navigationBar pushNavigationItem:navigationItem animated:NO];
-        [navigationItem release];
     } [[self view] addSubview:navigationBar];
     
     timeBar = [[UIView alloc] init]; {
@@ -149,6 +141,7 @@ int const kInitialTime = 60;
     
     timeElapsedLabel = [[UILabel alloc] init]; {
         [timeElapsedLabel setBackgroundColor:[UIColor clearColor]];
+        [timeElapsedLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:24]];
         [timeElapsedLabel setTextColor:[UIColor whiteColor]];
     } [[self view] addSubview:timeElapsedLabel];
     
@@ -158,50 +151,51 @@ int const kInitialTime = 60;
         for (int index = 0; index <= 9; index += 1) {
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom]; {
                 [button addTarget:self action:@selector(pressedNumberPadButton:) forControlEvents:UIControlEventTouchUpInside];
-                [button setImage:[UIImage imageNamed:[NSString stringWithFormat:@"Button%d", index]] forState:UIControlStateNormal];
-                [button setImage:[UIImage imageNamed:[NSString stringWithFormat:@"Button%d-Inverse", index]] forState:UIControlStateHighlighted];
+                [button setBackgroundImage:[UIImage imageNamed:@"Button-Background"] forState:UIControlStateNormal];
+                [button setBackgroundImage:[UIImage imageNamed:@"Button-Background-Inverse"] forState:UIControlStateHighlighted];
                 [button setTag:index];
+                [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+                [button setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+                [button setTitle:[NSString stringWithFormat:@"%d", index] forState:UIControlStateNormal];
             } [numberPad addSubview:button];
-            [button release];
         }
         
         UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeCustom]; {
             [deleteButton addTarget:self action:@selector(pressedDeleteButton:) forControlEvents:UIControlEventTouchUpInside];
-            [deleteButton setImage:[UIImage imageNamed:@"DeleteButton"] forState:UIControlStateNormal];
-            [deleteButton setImage:[UIImage imageNamed:@"DeleteButton-Inverse"] forState:UIControlStateHighlighted];
+            [deleteButton setBackgroundImage:[UIImage imageNamed:@"Button-Background-Inverse"] forState:UIControlStateNormal];
+            [deleteButton setBackgroundImage:[UIImage imageNamed:@"Button-Background"] forState:UIControlStateHighlighted];
+            [deleteButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [deleteButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+            [deleteButton setTitle:@"×" forState:UIControlStateNormal];
         } [numberPad addSubview:deleteButton];
-        [deleteButton release];
         
         UIButton *doneButton = [UIButton buttonWithType:UIButtonTypeCustom]; {
             [doneButton addTarget:self action:@selector(pressedDoneButton:) forControlEvents:UIControlEventTouchUpInside];
-            [doneButton setImage:[UIImage imageNamed:@"SkipButton"] forState:UIControlStateNormal];
-            [doneButton setImage:[UIImage imageNamed:@"SkipButton-Inverse"] forState:UIControlStateHighlighted];
+            [doneButton setBackgroundImage:[UIImage imageNamed:@"Button-Background-Inverse"] forState:UIControlStateNormal];
+            [doneButton setBackgroundImage:[UIImage imageNamed:@"Button-Background"] forState:UIControlStateHighlighted];
+            [doneButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [doneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+            [doneButton setTitle:@"Skip" forState:UIControlStateNormal];
         } [numberPad addSubview:doneButton];
-        [doneButton release];
     } [[self view] addSubview:numberPad];
     
+    [self drawUI];
     [self endGame];
 }
 
 #pragma mark -
 
 - (void)newGame {
-    Difficulty difficulty = [[NSUserDefaults standardUserDefaults] integerForKey:@"difficulty"];
-    BOOL allowNegativeNumbers = [[NSUserDefaults standardUserDefaults] boolForKey:@"allowNegativeNumbers"];
-
-    arithmeticEquationGenerator = [[ArithmeticEquationGenerator alloc] initWithDifficulty:difficulty allowNegativeNumbers:allowNegativeNumbers];
+    arithmeticEquationGenerator = [[ArithmeticEquationGenerator alloc] initWithDifficulty:[[NSUserDefaults standardUserDefaults] integerForKey:@"difficulty"]
+                                                                     allowNegativeNumbers:[[NSUserDefaults standardUserDefaults] boolForKey:@"allowNegativeNumbers"]];
     arithmeticEquation = [arithmeticEquationGenerator generateEquation];
     gameClock = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFireMethod:) userInfo:nil repeats:YES];
     timeLeft = kInitialTime;
     score = 0;
     responseValue = @"";
     responseIsPositive = YES;
-    [responseLabel setPlaceholder:@"?"];
-    [signControl setEnabled:YES];
-    
-    for (int index = 0; index < [[numberPad subviews] count]; index += 1) {
-        [(UIButton *)[[numberPad subviews] objectAtIndex:index] setEnabled:YES];
-    }
+    [numberPad setUserInteractionEnabled:YES];
+    [signControl setUserInteractionEnabled:YES];
     
     [self updateUI];
 }
@@ -212,19 +206,14 @@ int const kInitialTime = 60;
     timeLeft = 0;
     score = 0;
     responseValue = @"";
-    responseIsPositive = YES;
     arithmeticEquation = nil;
-    [responseLabel setPlaceholder:@""];
-    [signControl setEnabled:NO];
-    
-    for (int index = 0; index < [[numberPad subviews] count]; index += 1) {
-        [(UIButton *)[[numberPad subviews] objectAtIndex:index] setEnabled:NO];
-    }
+    [numberPad setUserInteractionEnabled:NO];
+    [signControl setUserInteractionEnabled:NO];
     
     [self updateUI];
 }
 
-- (void)gameEnded {
+- (void)gameClockExpired {
     [gameClock invalidate];
     gameClock = nil;
     timeLeft = 0;
@@ -241,6 +230,20 @@ int const kInitialTime = 60;
 }
 
 #pragma mark -
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (buttonIndex) {
+        case 0:
+            [self endGame];
+            break;
+        case 1:
+            [self newGame];
+            break;
+        default:
+            NSAssert(NO, @"Unknown button pressed");
+            break;
+    }
+}
 
 - (void)pressedNumberPadButton:(id)sender {
     if ([responseValue length] >= 6) {
@@ -265,6 +268,7 @@ int const kInitialTime = 60;
     }
     
     responseValue = [responseValue substringToIndex:([responseValue length] - 1)];
+    
     [self updateUI];
 }
 
@@ -289,6 +293,7 @@ int const kInitialTime = 60;
     arithmeticEquation = [arithmeticEquationGenerator generateEquation];
     responseValue = @"";
     responseIsPositive = YES;
+    
     [self updateUI];
 }
 
@@ -304,6 +309,7 @@ int const kInitialTime = 60;
             NSAssert(NO, @"Unknown sign control state");
             break;
     }
+    
     [self updateUI];
 }
 
@@ -311,102 +317,60 @@ int const kInitialTime = 60;
     timeLeft -= 1;
     
     if (timeLeft == -1) {
-        [self gameEnded];
+        [self gameClockExpired];
     }
     
     [self updateUI];
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    switch (buttonIndex) {
-        case 0:
-            [self endGame];
-            break;
-        case 1:
-            [self newGame];
-            break;
-        default:
-            NSAssert(NO, @"Unknown button pressed");
-            break;
-    }
-}
-
 #pragma mark -
 
-- (void)updateUI {
-    [UIView beginAnimations:nil context:nil];
-    
-    [firstOperandLabel setText:[arithmeticEquation firstOperandAsString]];
-    [secondOperandLabel setText:[arithmeticEquation secondOperandAsString]];
-    [operatorLabel setText:[arithmeticEquation operationAsString]];
-    [responseLabel setText:responseValue];
-    [timeElapsedLabel setText:[NSString stringWithFormat:@"%d:%02d", timeLeft / 60, timeLeft % 60]];
-    
-    if (responseIsPositive) {
-        [signControl setSelectedSegmentIndex:0];
-    }
-    else {
-        [signControl setSelectedSegmentIndex:1];
-    }
-        
-    if ([responseValue length] == 0) {
-        [(UIButton *)[[numberPad subviews] objectAtIndex:11] setImage:[UIImage imageNamed:@"SkipButton"] forState:UIControlStateNormal];
-        [(UIButton *)[[numberPad subviews] objectAtIndex:11] setImage:[UIImage imageNamed:@"SkipButton-Inverse"] forState:UIControlStateHighlighted];
-    }
-    else {
-        [(UIButton *)[[numberPad subviews] objectAtIndex:11] setImage:[UIImage imageNamed:@"DoneButton"] forState:UIControlStateNormal];
-        [(UIButton *)[[numberPad subviews] objectAtIndex:11] setImage:[UIImage imageNamed:@"DoneButton-Inverse"] forState:UIControlStateHighlighted];
-    }
-    
+- (void)drawUI {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         if ([[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeLeft || [[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeRight) {
             // iPad landscape
+            [[self view] setFrame:CGRectMake(0, 0, 1024, 768)];
         }
         else {
             // iPad portrait
+            [[self view] setFrame:CGRectMake(0, 0, 768, 1024)];
         }
     }
     else {
         if ([[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeLeft || [[UIDevice currentDevice] orientation] == UIInterfaceOrientationLandscapeRight) {
             // iPhone landscape
             [[self view] setFrame:CGRectMake(0, 0, 480, 320)];
-            [responseLabel setText:@"999999"];
             
-            [firstOperandLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48.0]];
-            [firstOperandLabel setFrame:CGRectMake(20, 86, 90, 52)];
+            [firstOperandLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:36]];
+            [firstOperandLabel setFrame:CGRectMake(20, 88, 80, 52)];
             [firstOperandLabel setTextAlignment:UITextAlignmentCenter];
             
-            [secondOperandLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48.0]];
-            [secondOperandLabel setFrame:CGRectMake(170, 86, 90, 52)];
+            [secondOperandLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:36]];
+            [secondOperandLabel setFrame:CGRectMake(140, 88, 80, 52)];
             [secondOperandLabel setTextAlignment:UITextAlignmentCenter];
             
-            [operatorLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48.0]];
-            [operatorLabel setFrame:CGRectMake(110, 86, 60, 52)];
+            [operatorLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:36]];
+            [operatorLabel setFrame:CGRectMake(100, 88, 40, 52)];
             
-            [responseBar setFrame:CGRectZero];
+            [responseBar setFrame:CGRectMake(239, 88, 1, 52)];
             
-            [responseBackground setFrame:CGRectZero];
+            [responseBackground setFrame:CGRectMake(240, 88, 240, 52)];
             
-            [responseLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48.0]];
-            [responseLabel setFrame:CGRectMake(360, 86, 100, 52)];
-            [responseLabel setTextAlignment:UITextAlignmentCenter];
+            [responseLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:36]];
+            [responseLabel setFrame:CGRectMake(330, 88, 130, 52)];
+            [responseLabel setTextAlignment:UITextAlignmentRight];
             
-            if ([arithmeticEquationGenerator allowNegativeNumbers]) {
-                [signControl setFrame:CGRectMake(280, 86, 80, 43)];
-            }
+            [signControl setFrame:CGRectMake(245, 93, 80, 42)];
             
             [navigationBar setFrame:CGRectMake(0, 0, 480, 44)];
             
-            [scoreLabel setText:[NSString stringWithFormat:@"%d", score]];
-            
             [timeBar setFrame:CGRectMake(0, 44, 480, 44)];
             
-            [timeElapsedBar setFrame:CGRectMake(0, 44, 480 - (timeLeft / (double) kInitialTime) * 480, 44)];
-            
-            [timeElapsedLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:24.0]];
-            [timeElapsedLabel setFrame:CGRectMake(MIN(420, [timeElapsedBar frame].size.width + 10), 44, 50, 44)];
-            
             [numberPad setFrame:CGRectMake(0, 138, 480, 162)];
+            
+            for (int index = 0; index <= 9; index += 1) {
+                [[(UIButton *)[[numberPad subviews] objectAtIndex:index] titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:24]];
+            }
             
             [(UIButton *)[[numberPad subviews] objectAtIndex:0]  setFrame:CGRectMake(159, 123, 162,  39)];
             [(UIButton *)[[numberPad subviews] objectAtIndex:1]  setFrame:CGRectMake(  0,   1, 158,  40)];
@@ -420,43 +384,44 @@ int const kInitialTime = 60;
             [(UIButton *)[[numberPad subviews] objectAtIndex:9]  setFrame:CGRectMake(322,  82, 158,  40)];
             [(UIButton *)[[numberPad subviews] objectAtIndex:10] setFrame:CGRectMake(322, 123, 158,  39)];
             [(UIButton *)[[numberPad subviews] objectAtIndex:11] setFrame:CGRectMake(  0, 123, 158,  39)];
+            
+            [[(UIButton *)[[numberPad subviews] objectAtIndex:10] titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:18]];
+            [[(UIButton *)[[numberPad subviews] objectAtIndex:11] titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:18]];
         }
         else {
             // iPhone portrait
             [[self view] setFrame:CGRectMake(0, 0, 320, 480)];
             
-            [firstOperandLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48.0]];
+            [firstOperandLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48]];
             [firstOperandLabel setFrame:CGRectMake(120, 88, 140, 52)];
+            [firstOperandLabel setTextAlignment:UITextAlignmentRight];
             
-            [secondOperandLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48.0]];
+            [secondOperandLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48]];
             [secondOperandLabel setFrame:CGRectMake(120, 140, 140, 52)];
+            [secondOperandLabel setTextAlignment:UITextAlignmentRight];
             
-            [operatorLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48.0]];
+            [operatorLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48]];
             [operatorLabel setFrame:CGRectMake(60, 140, 60, 52)];
             
             [responseBar setFrame:CGRectMake(0, 191, 320, 1)];
             
             [responseBackground setFrame:CGRectMake(0, 192, 320, 52)];
             
-            [responseLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48.0]];
-            [responseLabel setFrame:CGRectMake(60, 192, 200, 52)];
+            [responseLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48]];
+            [responseLabel setFrame:CGRectMake(90, 192, 170, 52)];
+            [responseLabel setTextAlignment:UITextAlignmentRight];
             
-            if ([arithmeticEquationGenerator allowNegativeNumbers]) {
-                [signControl setFrame:CGRectMake(5, 197, 75, 42)];
-            }
+            [signControl setFrame:CGRectMake(5, 197, 80, 42)];
             
             [navigationBar setFrame:CGRectMake(0, 0, 320, 44)];
             
-            [scoreLabel setText:[NSString stringWithFormat:@"%d", score]];
-            
             [timeBar setFrame:CGRectMake(0, 44, 320, 44)];
             
-            [timeElapsedBar setFrame:CGRectMake(0, 44, 320 - (timeLeft / (double) kInitialTime) * 320, 44)];
-            
-            [timeElapsedLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:24.0]];
-            [timeElapsedLabel setFrame:CGRectMake(MIN(260, [timeElapsedBar frame].size.width + 10), 44, 50, 44)];
-            
             [numberPad setFrame:CGRectMake(0, 244, 320, 216)];
+            
+            for (int index = 0; index <= 9; index += 1) {
+                [[(UIButton *)[[numberPad subviews] objectAtIndex:index] titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:36]];
+            }
             
             [(UIButton *)[[numberPad subviews] objectAtIndex:0]  setFrame:CGRectMake(106, 163, 108,  53)];
             [(UIButton *)[[numberPad subviews] objectAtIndex:1]  setFrame:CGRectMake(  0,   1, 105,  53)];
@@ -470,10 +435,46 @@ int const kInitialTime = 60;
             [(UIButton *)[[numberPad subviews] objectAtIndex:9]  setFrame:CGRectMake(215, 109, 105,  53)];
             [(UIButton *)[[numberPad subviews] objectAtIndex:10] setFrame:CGRectMake(215, 163, 105,  53)];
             [(UIButton *)[[numberPad subviews] objectAtIndex:11] setFrame:CGRectMake(  0, 163, 105,  53)];
+            
+            [[(UIButton *)[[numberPad subviews] objectAtIndex:10] titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:24]];
+            [[(UIButton *)[[numberPad subviews] objectAtIndex:11] titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:24]];
         }
     }
     
-    [UIView commitAnimations];
+    [self updateUI];
+}
+
+- (void)updateUI {
+    [UIView beginAnimations:nil context:nil]; {
+        [firstOperandLabel setText:[arithmeticEquation firstOperandAsString]];
+        [secondOperandLabel setText:[arithmeticEquation secondOperandAsString]];
+        [operatorLabel setText:[arithmeticEquation operationAsString]];
+        [responseLabel setText:responseValue];
+        [timeElapsedLabel setText:[NSString stringWithFormat:@"%d:%02d", timeLeft / 60, timeLeft % 60]];
+        [scoreLabel setText:[NSString stringWithFormat:@"%d", score]];
+        
+        if ([arithmeticEquationGenerator allowNegativeNumbers]) {
+            [signControl setEnabled:YES forSegmentAtIndex:1];
+            [signControl setAlpha:1];
+        }
+        else {
+            responseIsPositive = YES;
+            [signControl setAlpha:0];
+            [signControl setEnabled:NO forSegmentAtIndex:1];
+        }
+        [signControl setSelectedSegmentIndex:!responseIsPositive];
+            
+        if ([responseValue length] == 0) {
+            [(UIButton *)[[numberPad subviews] objectAtIndex:11] setTitle:@"Skip" forState:UIControlStateNormal];
+        }
+        else {
+            [(UIButton *)[[numberPad subviews] objectAtIndex:11] setTitle:@"Done" forState:UIControlStateNormal];
+        }
+    
+        [timeElapsedBar setFrame:CGRectMake(0, 44, [[self view] frame].size.width - (timeLeft / (double) kInitialTime) * [[self view] frame].size.width, 44)];
+        
+        [timeElapsedLabel setFrame:CGRectMake(MIN([[self view] frame].size.width - 60, [timeElapsedBar frame].size.width + 10), 44, 50, 44)];
+    } [UIView commitAnimations];
 }
 
 @end

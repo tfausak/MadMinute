@@ -24,6 +24,7 @@
 
 - (void)movedSlider:(id)sender;
 - (void)toggledSwitch:(id)sender;
+- (void)drawUI;
 - (void)updateUI;
 
 @end
