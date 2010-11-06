@@ -263,7 +263,7 @@ int const kInitialTime = 60;
 }
 
 - (void)pressedDoneButton:(id)sender {
-    if (!responseIsPositive) {
+    if (!responseIsPositive && ![responseValue isEqualToString:@"0"]) {
         responseValue = [@"-" stringByAppendingString:responseValue];
     }
     
