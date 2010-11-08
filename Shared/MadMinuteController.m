@@ -44,7 +44,7 @@
     settingsController = [[SettingsController alloc] init];
     [settingsController setParentViewController:self];
     [[self view] addSubview:[settingsController view]];
-    
+    /*
     // Display the Famigo controller
     famigoController = [FamigoController sharedInstanceWithDelegate:self];
     [[famigoController view] setFrame:[[self view] frame]];
@@ -60,7 +60,7 @@
     
     // Capture the notification at the end of the logo animation
     [logoAnimationController registerForNotifications:self withSelector:@selector(logoAnimationDidFinish:)];
-    
+    */
 }
 
 - (void)logoAnimationDidFinish:(NSNotification *)notification {
@@ -87,14 +87,6 @@
     
     [UIView beginAnimations:nil context:nil]; {
         [[settingsController view] removeFromSuperview];
-    } [UIView commitAnimations];
-}
-
-- (void)pressedSettingsButton:(id)sender {
-    [gameController endGame];
-    
-    [UIView beginAnimations:nil context:nil]; {
-        [[self view] addSubview:[settingsController view]];
     } [UIView commitAnimations];
 }
 

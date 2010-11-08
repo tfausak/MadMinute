@@ -25,7 +25,6 @@
 
 - (void)pressedFamigoButton:(id)sender;
 - (void)pressedNewGameButton:(id)sender;
-- (void)pressedSettingsButton:(id)sender;
 - (void)famigoReady;
 
 @end
