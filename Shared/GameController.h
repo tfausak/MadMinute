@@ -68,7 +68,6 @@ extern int const kInitialTime;
 - (void)pressedDeleteButton:(id)sender;
 - (void)pressedDoneButton:(id)sender;
 - (void)pressedSignControl:(id)sender;
-- (void)pressedSettingsButton:(id)sender;
 - (void)timerFireMethod:(NSTimer*)theTimer;
 - (void)drawUI;
 - (void)updateUI;

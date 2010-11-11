@@ -81,10 +81,18 @@
 #pragma mark -
 
 - (void)pressedFamigoButton:(id)sender {
+    [famigoController viewWillAppear:NO];
+    [famigoController show];
+    [[self view] addSubview:[famigoController view]];
 }
 
 - (void)pressedNewGameButton:(id)sender {
     [gameController newGame];
+    [[self view] exchangeSubviewAtIndex:0 withSubviewAtIndex:1];
+}
+
+- (void)pressedSettingsButton:(id)sender {
+    [gameController endGame];
     [[self view] exchangeSubviewAtIndex:0 withSubviewAtIndex:1];
 }
 

@@ -114,7 +114,7 @@ int const kInitialTime = 60;
         
         UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Settings"
                                                                        style:UIBarButtonItemStylePlain
-                                                                      target:self
+                                                                      target:parentViewController
                                                                       action:@selector(pressedSettingsButton:)];
         [navigationItem setLeftBarButtonItem:leftButton];
         
@@ -307,11 +307,6 @@ int const kInitialTime = 60;
     }
     
     [self updateUI];
-}
-
-- (void)pressedSettingsButton:(id)sender {
-    [self endGame];
-    [[parentViewController view] exchangeSubviewAtIndex:0 withSubviewAtIndex:1];
 }
 
 - (void)timerFireMethod:(NSTimer *)timer {
