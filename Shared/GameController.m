@@ -210,10 +210,6 @@ int const kInitialTime = 60;
 }
 
 - (void)gameClockExpired {
-    [gameClock invalidate];
-    gameClock = nil;
-    timeLeft = 0;
-    
     UIAlertView *alert = [[UIAlertView alloc] init]; {
         [alert setTitle:@"Great Job!"];
         [alert setMessage:[NSString stringWithFormat:@"You scored %d point%@!", score, score == 1 ? @"" : @"s"]];
@@ -223,6 +219,8 @@ int const kInitialTime = 60;
         [alert setCancelButtonIndex:0];
         [alert show];
     } [alert release];
+    
+    [self endGame];
 }
 
 #pragma mark -
@@ -231,6 +229,7 @@ int const kInitialTime = 60;
     switch (buttonIndex) {
         case 0:
             [self endGame];
+            [[parentViewController view] exchangeSubviewAtIndex:0 withSubviewAtIndex:1];
             break;
         case 1:
             [self newGame];
@@ -275,6 +274,7 @@ int const kInitialTime = 60;
     
     if ([responseValue isEqualToString:[arithmeticEquation resultAsString]]) {
         [[self view] setBackgroundColor:[UIColor greenColor]];
+        score += 1 + [arithmeticEquationGenerator difficulty] + [arithmeticEquationGenerator allowNegativeNumbers];
     }
     else {
         [[self view] setBackgroundColor:[UIColor redColor]];
@@ -306,6 +306,11 @@ int const kInitialTime = 60;
     }
     
     [self updateUI];
+}
+
+- (void)pressedSettingsButton:(id)sender {
+    [self endGame];
+    [[parentViewController view] exchangeSubviewAtIndex:0 withSubviewAtIndex:1];
 }
 
 - (void)timerFireMethod:(NSTimer *)timer {

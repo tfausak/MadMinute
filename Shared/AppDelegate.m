@@ -34,7 +34,7 @@
 	f.skipInvites = NO;
 	f.allFamigoPlayers = YES;
 	f.game_name = @"Mad Minute";
-	f.game_instructions = @"";
+	f.game_instructions = @"\nIt's like math, but faster!\n\n";
     
     // Create a new frame below the status bar
     CGRect frame = [window frame];

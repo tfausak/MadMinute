@@ -38,13 +38,14 @@
     
     // Display the game controller
     gameController = [[GameController alloc] init];
+    [gameController setParentViewController:self];
     [[self view] addSubview:[gameController view]];
     
     // Display the settings controller
     settingsController = [[SettingsController alloc] init];
     [settingsController setParentViewController:self];
     [[self view] addSubview:[settingsController view]];
-    /*
+    
     // Display the Famigo controller
     famigoController = [FamigoController sharedInstanceWithDelegate:self];
     [[famigoController view] setFrame:[[self view] frame]];
@@ -60,10 +61,16 @@
     
     // Capture the notification at the end of the logo animation
     [logoAnimationController registerForNotifications:self withSelector:@selector(logoAnimationDidFinish:)];
-    */
+    
 }
 
 - (void)logoAnimationDidFinish:(NSNotification *)notification {
+    // This one causes lots of SIGABRTs at random times, so we need to check
+    // that it exists before we do anything with it.
+    if (logoAnimationController == nil) {
+        return;
+    }
+    
     [[logoAnimationController view] removeFromSuperview];
     [logoAnimationController release];
 }
@@ -84,10 +91,7 @@
 
 - (void)pressedNewGameButton:(id)sender {
     [gameController newGame];
-    
-    [UIView beginAnimations:nil context:nil]; {
-        [[settingsController view] removeFromSuperview];
-    } [UIView commitAnimations];
+    [[self view] exchangeSubviewAtIndex:0 withSubviewAtIndex:1];
 }
 
 - (void)famigoReady {
