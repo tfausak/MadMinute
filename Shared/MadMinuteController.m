@@ -65,12 +65,6 @@
 }
 
 - (void)logoAnimationDidFinish:(NSNotification *)notification {
-    // This one causes lots of SIGABRTs at random times, so we need to check
-    // that it exists before we do anything with it.
-    if (logoAnimationController == nil) {
-        return;
-    }
-    
     [[logoAnimationController view] removeFromSuperview];
     [logoAnimationController release];
 }

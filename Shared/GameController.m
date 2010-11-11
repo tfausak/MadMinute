@@ -141,6 +141,7 @@ int const kInitialTime = 60;
     
     timeElapsedLabel = [[UILabel alloc] init]; {
         [timeElapsedLabel setBackgroundColor:[UIColor clearColor]];
+        [timeElapsedLabel setTextAlignment:UITextAlignmentCenter];
         [timeElapsedLabel setTextColor:[UIColor whiteColor]];
     } [[self view] addSubview:timeElapsedLabel];
     
@@ -474,7 +475,7 @@ int const kInitialTime = 60;
             [timeElapsedBar setFrame:CGRectMake(0, 44, 0, 44)];
             
             [timeElapsedLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:24]];
-            [timeElapsedLabel setFrame:CGRectMake(0, 44, 50, 44)];
+            [timeElapsedLabel setFrame:CGRectMake(0, 44, 60, 44)];
             
             [numberPad setFrame:CGRectMake(0, 138, 480, 162)];
             
@@ -530,7 +531,7 @@ int const kInitialTime = 60;
             [timeElapsedBar setFrame:CGRectMake(0, 44, 0, 44)];
             
             [timeElapsedLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:24]];
-            [timeElapsedLabel setFrame:CGRectMake(0, 44, 50, 44)];
+            [timeElapsedLabel setFrame:CGRectMake(0, 44, 60, 44)];
             
             [numberPad setFrame:CGRectMake(0, 244, 320, 216)];
             
@@ -560,40 +561,51 @@ int const kInitialTime = 60;
 }
 
 - (void)updateUI {
-    [UIView beginAnimations:nil context:nil]; {
-        [firstOperandLabel setText:[arithmeticEquation firstOperandAsString]];
-        [secondOperandLabel setText:[arithmeticEquation secondOperandAsString]];
-        [operatorLabel setText:[arithmeticEquation operationAsString]];
-        [responseLabel setText:responseValue];
-        [timeElapsedLabel setText:[NSString stringWithFormat:@"%d:%02d", timeLeft / 60, timeLeft % 60]];
-        [scoreLabel setText:[NSString stringWithFormat:@"%d", score]];
-        
-        if ([arithmeticEquationGenerator allowNegativeNumbers]) {
-            [signControl setEnabled:YES forSegmentAtIndex:1];
-            [signControl setAlpha:1];
-        }
-        else {
-            responseIsPositive = YES;
-            [signControl setAlpha:0];
-            [signControl setEnabled:NO forSegmentAtIndex:1];
-        }
-        [signControl setSelectedSegmentIndex:!responseIsPositive];
-            
-        if ([responseValue length] == 0) {
-            [(UIButton *)[[numberPad subviews] objectAtIndex:11] setTitle:@"Skip" forState:UIControlStateNormal];
-        }
-        else {
-            [(UIButton *)[[numberPad subviews] objectAtIndex:11] setTitle:@"Done" forState:UIControlStateNormal];
-        }
+    [firstOperandLabel setText:[arithmeticEquation firstOperandAsString]];
+    [secondOperandLabel setText:[arithmeticEquation secondOperandAsString]];
+    [operatorLabel setText:[arithmeticEquation operationAsString]];
+    [responseLabel setText:responseValue];
+    [timeElapsedLabel setText:[NSString stringWithFormat:@"%d:%02d", timeLeft / 60, timeLeft % 60]];
+    [scoreLabel setText:[NSString stringWithFormat:@"%d", score]];
     
-        CGRect frame = [timeElapsedBar frame];
-        frame.size.width = [[self view] frame].size.width - (timeLeft / (double) kInitialTime) * [[self view] frame].size.width;
-        [timeElapsedBar setFrame:frame];
-        
-        frame = [timeElapsedLabel frame];
-        frame.origin.x = MIN([[self view] frame].size.width - [timeElapsedLabel frame].size.width, [timeElapsedBar frame].size.width + 10);
-        [timeElapsedLabel setFrame:frame];
-    } [UIView commitAnimations];
+    if ([arithmeticEquationGenerator allowNegativeNumbers]) {
+        [signControl setEnabled:YES forSegmentAtIndex:1];
+        [signControl setAlpha:1];
+    }
+    else {
+        responseIsPositive = YES;
+        [signControl setAlpha:0];
+        [signControl setEnabled:NO forSegmentAtIndex:1];
+    }
+    [signControl setSelectedSegmentIndex:!responseIsPositive];
+    
+    if ([responseValue length] == 0) {
+        [(UIButton *)[[numberPad subviews] objectAtIndex:11] setTitle:@"Skip" forState:UIControlStateNormal];
+    }
+    else {
+        [(UIButton *)[[numberPad subviews] objectAtIndex:11] setTitle:@"Done" forState:UIControlStateNormal];
+    }
+    
+    // Only animate the timeElapsedBar if it's moving forward
+    int oldWidth = [timeElapsedBar frame].size.width;
+    int newWidth = [[self view] frame].size.width - (timeLeft / (double) kInitialTime) * [[self view] frame].size.width;
+    BOOL shouldAnimate = newWidth > oldWidth;
+    
+    if (shouldAnimate) {
+        [UIView beginAnimations:nil context:nil];
+    }
+    
+    CGRect frame = [timeElapsedBar frame];
+    frame.size.width = [[self view] frame].size.width - (timeLeft / (double) kInitialTime) * [[self view] frame].size.width;
+    [timeElapsedBar setFrame:frame];
+    
+    frame = [timeElapsedLabel frame];
+    frame.origin.x = MIN([[self view] frame].size.width - [timeElapsedLabel frame].size.width, [timeElapsedBar frame].size.width);
+    [timeElapsedLabel setFrame:frame];
+    
+    if (shouldAnimate) {
+        [UIView commitAnimations];
+    }
 }
 
 @end
