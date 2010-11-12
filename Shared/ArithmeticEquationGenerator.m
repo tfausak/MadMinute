@@ -124,7 +124,7 @@
         }
     }
     
-    return [[[ArithmeticEquation alloc] initWithFirstOperand:firstOperand operation:operation secondOperand:secondOperand] autorelease];
+    return [[ArithmeticEquation alloc] initWithFirstOperand:firstOperand operation:operation secondOperand:secondOperand];
 }
 
 @end
