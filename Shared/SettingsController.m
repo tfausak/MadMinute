@@ -98,6 +98,7 @@
 }
 
 - (void)pressedShareButton:(id)sender {
+    [[Famigo sharedInstance] launchGameResultsShareController];
 }
 
 #pragma mark -

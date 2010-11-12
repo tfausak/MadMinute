@@ -162,6 +162,7 @@
 		34EA90FD1281DFD800286BE9 /* SettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EA90FC1281DFD800286BE9 /* SettingsController.m */; };
 		34EA91011281E10D00286BE9 /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EA91001281E10D00286BE9 /* GameController.m */; };
 		34FC85EF128DEE200047B2CA /* GameResultsShareController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34FC85EE128DEE200047B2CA /* GameResultsShareController.xib */; };
+		34FC8603128DF1C20047B2CA /* GameResultsShareController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34FC8602128DF1C20047B2CA /* GameResultsShareController-iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -383,6 +384,7 @@
 		34EA91001281E10D00286BE9 /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameController.m; path = Shared/GameController.m; sourceTree = "<group>"; };
 		34FC85ED128DEE200047B2CA /* GameResultsShareController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameResultsShareController.h; path = "../Famigo/build/Release-universal/FamigoAPI/GameResultsShareController.h"; sourceTree = SOURCE_ROOT; };
 		34FC85EE128DEE200047B2CA /* GameResultsShareController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = GameResultsShareController.xib; path = "../Famigo/build/Release-universal/FamigoAPI/GameResultsShareController.xib"; sourceTree = SOURCE_ROOT; };
+		34FC8602128DF1C20047B2CA /* GameResultsShareController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "GameResultsShareController-iPad.xib"; path = "../Famigo/build/Release-universal/FamigoAPI/GameResultsShareController-iPad.xib"; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* MadMinute-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MadMinute-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -537,6 +539,7 @@
 		34E8301C1276099C00FFF679 /* Famigo */ = {
 			isa = PBXGroup;
 			children = (
+				34FC8602128DF1C20047B2CA /* GameResultsShareController-iPad.xib */,
 				34FC85ED128DEE200047B2CA /* GameResultsShareController.h */,
 				34FC85EE128DEE200047B2CA /* GameResultsShareController.xib */,
 				3420F796128C8895008CD434 /* Facebook.h */,
@@ -898,6 +901,7 @@
 				34AFB85A1284BBBB002D2369 /* Icon@2x.png in Resources */,
 				3420F7A4128C8895008CD434 /* FBDialog.bundle in Resources */,
 				34FC85EF128DEE200047B2CA /* GameResultsShareController.xib in Resources */,
+				34FC8603128DF1C20047B2CA /* GameResultsShareController-iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
