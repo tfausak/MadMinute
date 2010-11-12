@@ -129,6 +129,10 @@ int const kInitialTime = 60;
         [navigationItem setRightBarButtonItem:rightButton];
         
         [navigationBar pushNavigationItem:navigationItem animated:NO];
+        
+        [navigationItem release];
+        [leftButton release];
+        [rightButton release];
     } [[self view] addSubview:navigationBar];
     
     timeBar = [[UIView alloc] init]; {
