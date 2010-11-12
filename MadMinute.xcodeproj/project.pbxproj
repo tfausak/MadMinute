@@ -18,6 +18,8 @@
 		340AE6591278D3D100F3DF8C /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 340AE6581278D3D100F3DF8C /* libsqlite3.0.dylib */; };
 		340AE65C1278D3E300F3DF8C /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 340AE65B1278D3E300F3DF8C /* libGoogleAnalytics.a */; };
 		34186170127726E300E4BAD5 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 34186167127726E300E4BAD5 /* iTunesArtwork */; };
+		3420F7A4128C8895008CD434 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3420F798128C8895008CD434 /* FBDialog.bundle */; };
+		3420F7A5128C8895008CD434 /* libFamigoAPI-Release.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3420F79D128C8895008CD434 /* libFamigoAPI-Release.a */; };
 		34AFB8421284BBB4002D2369 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 34AFB83C1284BBB4002D2369 /* Default-Landscape.png */; };
 		34AFB8431284BBB4002D2369 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 34AFB83D1284BBB4002D2369 /* Default-Portrait.png */; };
 		34AFB8441284BBB4002D2369 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 34AFB83E1284BBB4002D2369 /* Icon-72.png */; };
@@ -178,6 +180,20 @@
 		340AE65A1278D3E300F3DF8C /* GANTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GANTracker.h; path = "../Famigo/build/Release-universal/FamigoAPI/GANTracker.h"; sourceTree = SOURCE_ROOT; };
 		340AE65B1278D3E300F3DF8C /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = "../Famigo/build/Release-universal/FamigoAPI/libGoogleAnalytics.a"; sourceTree = SOURCE_ROOT; };
 		34186167127726E300E4BAD5 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Shared/Images/iTunesArtwork; sourceTree = "<group>"; };
+		3420F796128C8895008CD434 /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Facebook.h; path = "../Famigo/build/Release-universal/FamigoAPI/Facebook.h"; sourceTree = SOURCE_ROOT; };
+		3420F797128C8895008CD434 /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBConnect.h; path = "../Famigo/build/Release-universal/FamigoAPI/FBConnect.h"; sourceTree = SOURCE_ROOT; };
+		3420F798128C8895008CD434 /* FBDialog.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FBDialog.bundle; path = "../Famigo/build/Release-universal/FamigoAPI/FBDialog.bundle"; sourceTree = SOURCE_ROOT; };
+		3420F799128C8895008CD434 /* FBDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBDialog.h; path = "../Famigo/build/Release-universal/FamigoAPI/FBDialog.h"; sourceTree = SOURCE_ROOT; };
+		3420F79A128C8895008CD434 /* FBLoginDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBLoginDialog.h; path = "../Famigo/build/Release-universal/FamigoAPI/FBLoginDialog.h"; sourceTree = SOURCE_ROOT; };
+		3420F79B128C8895008CD434 /* FBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBRequest.h; path = "../Famigo/build/Release-universal/FamigoAPI/FBRequest.h"; sourceTree = SOURCE_ROOT; };
+		3420F79C128C8895008CD434 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSON.h; path = "../Famigo/build/Release-universal/FamigoAPI/JSON.h"; sourceTree = SOURCE_ROOT; };
+		3420F79D128C8895008CD434 /* libFamigoAPI-Release.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libFamigoAPI-Release.a"; path = "../Famigo/build/Release-universal/FamigoAPI/libFamigoAPI-Release.a"; sourceTree = SOURCE_ROOT; };
+		3420F79E128C8895008CD434 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+SBJSON.h"; path = "../Famigo/build/Release-universal/FamigoAPI/NSObject+SBJSON.h"; sourceTree = SOURCE_ROOT; };
+		3420F79F128C8895008CD434 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+SBJSON.h"; path = "../Famigo/build/Release-universal/FamigoAPI/NSString+SBJSON.h"; sourceTree = SOURCE_ROOT; };
+		3420F7A0128C8895008CD434 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJSON.h; path = "../Famigo/build/Release-universal/FamigoAPI/SBJSON.h"; sourceTree = SOURCE_ROOT; };
+		3420F7A1128C8895008CD434 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonBase.h; path = "../Famigo/build/Release-universal/FamigoAPI/SBJsonBase.h"; sourceTree = SOURCE_ROOT; };
+		3420F7A2128C8895008CD434 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonParser.h; path = "../Famigo/build/Release-universal/FamigoAPI/SBJsonParser.h"; sourceTree = SOURCE_ROOT; };
+		3420F7A3128C8895008CD434 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonWriter.h; path = "../Famigo/build/Release-universal/FamigoAPI/SBJsonWriter.h"; sourceTree = SOURCE_ROOT; };
 		34AFB83C1284BBB4002D2369 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
 		34AFB83D1284BBB4002D2369 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
 		34AFB83E1284BBB4002D2369 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
@@ -384,6 +400,7 @@
 				34E8313D127609E500FFF679 /* SystemConfiguration.framework in Frameworks */,
 				340AE6591278D3D100F3DF8C /* libsqlite3.0.dylib in Frameworks */,
 				340AE65C1278D3E300F3DF8C /* libGoogleAnalytics.a in Frameworks */,
+				3420F7A5128C8895008CD434 /* libFamigoAPI-Release.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +534,20 @@
 		34E8301C1276099C00FFF679 /* Famigo */ = {
 			isa = PBXGroup;
 			children = (
+				3420F796128C8895008CD434 /* Facebook.h */,
+				3420F797128C8895008CD434 /* FBConnect.h */,
+				3420F798128C8895008CD434 /* FBDialog.bundle */,
+				3420F799128C8895008CD434 /* FBDialog.h */,
+				3420F79A128C8895008CD434 /* FBLoginDialog.h */,
+				3420F79B128C8895008CD434 /* FBRequest.h */,
+				3420F79C128C8895008CD434 /* JSON.h */,
+				3420F79D128C8895008CD434 /* libFamigoAPI-Release.a */,
+				3420F79E128C8895008CD434 /* NSObject+SBJSON.h */,
+				3420F79F128C8895008CD434 /* NSString+SBJSON.h */,
+				3420F7A0128C8895008CD434 /* SBJSON.h */,
+				3420F7A1128C8895008CD434 /* SBJsonBase.h */,
+				3420F7A2128C8895008CD434 /* SBJsonParser.h */,
+				3420F7A3128C8895008CD434 /* SBJsonWriter.h */,
 				340AE65A1278D3E300F3DF8C /* GANTracker.h */,
 				340AE65B1278D3E300F3DF8C /* libGoogleAnalytics.a */,
 				34E8301D127609B400FFF679 /* ABContact.h */,
@@ -860,6 +891,7 @@
 				34AFB8581284BBBB002D2369 /* Icon-Small@2x.png in Resources */,
 				34AFB8591284BBBB002D2369 /* Icon.png in Resources */,
 				34AFB85A1284BBBB002D2369 /* Icon@2x.png in Resources */,
+				3420F7A4128C8895008CD434 /* FBDialog.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
