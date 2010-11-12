@@ -21,6 +21,7 @@
     UISwitch *allowNegativeNumbersSwitch;
     UIButton *facebookButton;
     UIButton *shareButton;
+    UIButton *linkButton;
 }
 
 @property (nonatomic, assign) UIViewController *parentViewController;
@@ -31,11 +32,13 @@
 @property (nonatomic, retain) UISwitch *allowNegativeNumbersSwitch;
 @property (nonatomic, retain) UIButton *facebookButton;
 @property (nonatomic, retain) UIButton *shareButton;
+@property (nonatomic, retain) UIButton *linkButton;
 
 - (void)movedSlider:(id)sender;
 - (void)toggledSwitch:(id)sender;
 - (void)pressedFacebookButton:(id)sender;
 - (void)pressedShareButton:(id)sender;
+- (void)pressedLinkButton:(id)sender;
 - (void)drawUI;
 - (void)updateUI;
 

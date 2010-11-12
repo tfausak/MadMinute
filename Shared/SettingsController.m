@@ -18,6 +18,7 @@
 @synthesize allowNegativeNumbersSwitch;
 @synthesize facebookButton;
 @synthesize shareButton;
+@synthesize linkButton;
 
 - (void)dealloc {
     [parentViewController release];
@@ -27,6 +28,7 @@
     [allowNegativeNumbersSwitch release];
     [facebookButton release];
     [shareButton release];
+    [linkButton release];
     
     [super dealloc];
 }
@@ -88,6 +90,10 @@
         [shareButton addTarget:self action:@selector(pressedShareButton:) forControlEvents:UIControlEventTouchUpInside];
     } [[self view] addSubview:shareButton];
     
+    linkButton = [UIButton buttonWithType:UIButtonTypeRoundedRect]; {
+        [linkButton addTarget:self action:@selector(pressedLinkButton:) forControlEvents:UIControlEventTouchUpInside];
+    } [[self view] addSubview:linkButton];
+    
     [self drawUI];
 }
 
@@ -110,7 +116,7 @@
         [facebook logout:self];
     }
     else {
-        NSArray *permissions = [[NSArray arrayWithObjects:nil] retain];
+        NSArray *permissions = [[NSArray arrayWithObjects:@"publish_stream", nil] retain];
         [facebook authorize:FamigoFacebookApplicationID permissions:permissions delegate:self];
     }
 }
@@ -142,6 +148,15 @@
                                    nil];
 
     [facebook dialog:@"stream.publish" andParams:params andDelegate:self];
+}
+
+- (void)pressedLinkButton:(id)sender {
+    NSString *path = @"http://www.famigogames.com/main/viewfinishedgame?family_id=family_ee9084c1c2a7e50f81456d04d8ce2f9a4b61ebf3&game_id=game_97f0d3b95d3e0b96ad98f36e59db5530a7f61e32";
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   path, @"url",
+                                   nil];
+    [facebook requestWithMethodName:@"links.post" andParams:params andHttpMethod:@"POST" andDelegate:self];
 }
 
 #pragma mark -
@@ -178,6 +193,8 @@
     
     [shareButton setFrame:CGRectMake(([[self view] frame].size.width / 2) - 36, 210, 72, 37)];
     
+    [linkButton setFrame:CGRectMake(([[self view] frame].size.width / 2) - 36, 267, 72, 37)];
+    
     [self updateUI];
 }
 
@@ -185,10 +202,12 @@
     if (loggedIntoFacebook) {
         [facebookButton setTitle:@"logout" forState:UIControlStateNormal];
         [shareButton setTitle:@"share" forState:UIControlStateNormal];
+        [linkButton setTitle:@"link" forState:UIControlStateNormal];
     }
     else {
         [facebookButton setTitle:@"login" forState:UIControlStateNormal];
         [shareButton setTitle:@"-" forState:UIControlStateNormal];
+        [linkButton setTitle:@"-" forState:UIControlStateNormal];
     }
 }
 
