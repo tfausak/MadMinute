@@ -70,7 +70,7 @@
     allowNegativeNumbersSwitch = [[UISwitch alloc] init]; {
         [allowNegativeNumbersSwitch addTarget:self action:@selector(toggledSwitch:) forControlEvents:UIControlEventValueChanged];
         [allowNegativeNumbersSwitch setOn:[[NSUserDefaults standardUserDefaults] boolForKey:@"allowNegativeNumbers"]];
-    } [[settingsTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]] addSubview:allowNegativeNumbersSwitch];
+    } [[settingsTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]] setAccessoryView:allowNegativeNumbersSwitch];
     
     [self drawUI];
 }
