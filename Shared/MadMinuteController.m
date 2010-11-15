@@ -45,7 +45,7 @@
     settingsController = [[SettingsController alloc] init];
     [settingsController setParentViewController:self];
     [[self view] addSubview:[settingsController view]];
-    
+    /*
     // Display the Famigo controller
     famigoController = [FamigoController sharedInstanceWithDelegate:self];
     [[famigoController view] setFrame:[[self view] frame]];
@@ -61,7 +61,7 @@
     
     // Capture the notification at the end of the logo animation
     [logoAnimationController registerForNotifications:self withSelector:@selector(logoAnimationDidFinish:)];
-    
+    */
 }
 
 - (void)logoAnimationDidFinish:(NSNotification *)notification {

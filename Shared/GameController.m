@@ -190,7 +190,7 @@ int const kInitialTime = 60;
     arithmeticEquationGenerator = [[ArithmeticEquationGenerator alloc] initWithDifficulty:[[NSUserDefaults standardUserDefaults] integerForKey:@"difficulty"]
                                                                      allowNegativeNumbers:[[NSUserDefaults standardUserDefaults] boolForKey:@"allowNegativeNumbers"]];
     arithmeticEquation = [arithmeticEquationGenerator generateEquation];
-    gameClock = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFireMethod:) userInfo:nil repeats:YES];
+    gameClock = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFireMethod:) userInfo:nil repeats:YES];
     timeLeft = kInitialTime;
     score = 0;
     responseValue = @"";

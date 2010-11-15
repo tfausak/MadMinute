@@ -19,13 +19,12 @@
     [super dealloc];
 }
 
-- (id)initWithFirstOperand:(int)anOperand operation:(Operation)theOperation secondOperand:(int)anotherOperand {
+- (id)initWithFirstOperand:(int)_firstOperand operation:(Operation)_operation secondOperand:(int)_secondOperand {
     if (self = [super init]) {
-        firstOperand = anOperand;
-        operation = theOperation;
-        secondOperand = anotherOperand;
+        firstOperand = _firstOperand;
+        operation = _operation;
+        secondOperand = _secondOperand;
         
-        // Compute the result
         switch (operation) {
             case Addition:
                 result = firstOperand + secondOperand;
@@ -44,6 +43,7 @@
                 break;
         }
     }
+    
     return self;
 }
 
@@ -61,9 +61,10 @@
             return @"×";
         case Division:
             return @"÷";
-        default:
-            return @"";
     }
+    
+    NSAssert(NO, @"Unknown operation");
+    return @"";
 }
 
 - (NSString *)secondOperandAsString {

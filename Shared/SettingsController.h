@@ -9,26 +9,23 @@
 #import <UIKit/UIKit.h>
 #import "FamigoHeaders.h"
 
-@interface SettingsController : UIViewController {
+@interface SettingsController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     UIViewController *parentViewController;
+    NSIndexPath *difficulty;
     
     // UI elements
     UINavigationBar *navigationBar;
-    UISlider *difficultySlider;
+    UITableView *settingsTableView;
     UISwitch *allowNegativeNumbersSwitch;
-    UIButton *shareButton;
 }
 
 @property (nonatomic, assign) UIViewController *parentViewController;
-@property (nonatomic, assign) BOOL loggedIntoFacebook;
+@property (nonatomic, retain) NSIndexPath *difficulty;
 @property (nonatomic, retain) UINavigationBar *navigationBar;
-@property (nonatomic, retain) UISlider *difficultySlider;
+@property (nonatomic, retain) UITableView *settingsTableView;
 @property (nonatomic, retain) UISwitch *allowNegativeNumbersSwitch;
-@property (nonatomic, retain) UIButton *shareButton;
 
-- (void)movedSlider:(id)sender;
 - (void)toggledSwitch:(id)sender;
-- (void)pressedShareButton:(id)sender;
 - (void)drawUI;
 - (void)updateUI;
 

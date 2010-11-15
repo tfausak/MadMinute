@@ -24,50 +24,43 @@
     [super dealloc];
 }
 
-- (id)initWithDifficulty:(Difficulty)theDifficulty allowNegativeNumbers:(BOOL)negativeNumbers {
+- (id)initWithDifficulty:(Difficulty)_difficulty allowNegativeNumbers:(BOOL)_allowNegativeNumbers {
     if (self = [super init]) {
-        difficulty = theDifficulty;
-        allowNegativeNumbers = negativeNumbers;
-        allowedOperations = [[NSMutableArray alloc] init];
+        difficulty = _difficulty;
+        allowNegativeNumbers = _allowNegativeNumbers;
+        allowedOperations = [[NSMutableArray alloc] initWithObjects:
+                             [NSNumber numberWithInt:Addition],
+                             [NSNumber numberWithInt:Subtraction],
+                             [NSNumber numberWithInt:Multiplication],
+                             [NSNumber numberWithInt:Division],
+                             nil];
+        additionMax = subtractionMax = 101;
+        multiplicationMax = divisionMax = 14;
         
         switch (difficulty) {
             case VeryEasy:
-                [allowedOperations addObject:[NSNumber numberWithInt:Addition]];
+                [allowedOperations removeObjectAtIndex:3];
+                [allowedOperations removeObjectAtIndex:2];
+                [allowedOperations removeObjectAtIndex:1];
                 additionMax = 10;
                 break;
             case Easy:
-                [allowedOperations addObject:[NSNumber numberWithInt:Addition]];
-                [allowedOperations addObject:[NSNumber numberWithInt:Subtraction]];
+                [allowedOperations removeObjectAtIndex:3];
+                [allowedOperations removeObjectAtIndex:2];
                 additionMax = 21;
                 subtractionMax = 10;
                 break;
             case Medium:
-                [allowedOperations addObject:[NSNumber numberWithInt:Addition]];
-                [allowedOperations addObject:[NSNumber numberWithInt:Subtraction]];
-                [allowedOperations addObject:[NSNumber numberWithInt:Multiplication]];
+                [allowedOperations removeObjectAtIndex:3];
                 additionMax = 51;
                 subtractionMax = 21;
                 multiplicationMax = 6;
                 break;
             case Hard:
-                [allowedOperations addObject:[NSNumber numberWithInt:Addition]];
-                [allowedOperations addObject:[NSNumber numberWithInt:Subtraction]];
-                [allowedOperations addObject:[NSNumber numberWithInt:Multiplication]];
-                [allowedOperations addObject:[NSNumber numberWithInt:Division]];
-                additionMax = 101;
                 subtractionMax = 51;
-                multiplicationMax = 14;
                 divisionMax = 6;
                 break;
             case VeryHard:
-                [allowedOperations addObject:[NSNumber numberWithInt:Addition]];
-                [allowedOperations addObject:[NSNumber numberWithInt:Subtraction]];
-                [allowedOperations addObject:[NSNumber numberWithInt:Multiplication]];
-                [allowedOperations addObject:[NSNumber numberWithInt:Division]];
-                additionMax = 101;
-                subtractionMax = 101;
-                multiplicationMax = 14;
-                divisionMax = 14;
                 break;
             default:
                 NSAssert(NO, @"Unknown difficulty");
