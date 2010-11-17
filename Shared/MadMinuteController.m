@@ -35,7 +35,7 @@
 }
 
 - (void)viewDidLoad {
-    /*
+    
     // Display the game controller
     gameController = [[GameController alloc] init];
     [gameController setParentViewController:self];
@@ -45,16 +45,15 @@
     settingsController = [[SettingsController alloc] init];
     [settingsController setParentViewController:self];
     [[self view] addSubview:[settingsController view]];
-    */
+    
     // Display the Famigo controller
     famigoController = [FamigoController sharedInstanceWithDelegate:self];
     [[famigoController view] setFrame:[[self view] frame]];
     [famigoController viewWillAppear:NO];
     [famigoController show];
     [[self view] addSubview:[famigoController view]];
+    [famigoController launchGameResultsShareController:@"email subject" emailBody:@"email body" gameId:@"game id"];
     
-    [famigoController launchGameResultsShareControllerWithURL:@"url" emailSubject:@"subject" emailBody:@"body"];
-    /*
     // Display the Famigo logo
     logoAnimationController = [[LogoAnimationController alloc] init];
     [[logoAnimationController view] setFrame:[[self view] frame]];
@@ -63,7 +62,7 @@
     
     // Capture the notification at the end of the logo animation
     [logoAnimationController registerForNotifications:self withSelector:@selector(logoAnimationDidFinish:)];
-    */
+    
 }
 
 - (void)logoAnimationDidFinish:(NSNotification *)notification {
