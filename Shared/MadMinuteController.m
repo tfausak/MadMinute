@@ -52,7 +52,6 @@
     [famigoController viewWillAppear:NO];
     [famigoController show];
     [[self view] addSubview:[famigoController view]];
-    [famigoController launchGameResultsShareController:@"email subject" emailBody:@"email body" gameId:@"game id"];
     
     // Display the Famigo logo
     logoAnimationController = [[LogoAnimationController alloc] init];
