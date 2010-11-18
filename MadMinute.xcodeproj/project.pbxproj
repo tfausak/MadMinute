@@ -31,7 +31,6 @@
 		34AFB8591284BBBB002D2369 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 34AFB84F1284BBBB002D2369 /* Icon.png */; };
 		34AFB85A1284BBBB002D2369 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34AFB8501284BBBB002D2369 /* Icon@2x.png */; };
 		34B296731291E3FD00B52E9C /* libOAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34B296441291E3FD00B52E9C /* libOAuth.a */; };
-		34B296741291E3FD00B52E9C /* XAuthTwitterEngineDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34B296701291E3FD00B52E9C /* XAuthTwitterEngineDemoViewController.xib */; };
 		34B296A61291E64000B52E9C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34B296A51291E64000B52E9C /* Security.framework */; };
 		34B296AC1291E67800B52E9C /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 34B296AB1291E67800B52E9C /* libxml2.dylib */; };
 		34DC9453127B627200EB659F /* ArithmeticEquation.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DC9452127B627200EB659F /* ArithmeticEquation.m */; };
@@ -213,7 +212,6 @@
 		34B296441291E3FD00B52E9C /* libOAuth.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOAuth.a; path = "../Famigo/build/Release-universal/FamigoAPI/libOAuth.a"; sourceTree = SOURCE_ROOT; };
 		34B296451291E3FD00B52E9C /* MGTwitterEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterEngine.h; path = "../Famigo/build/Release-universal/FamigoAPI/MGTwitterEngine.h"; sourceTree = SOURCE_ROOT; };
 		34B296461291E3FD00B52E9C /* MGTwitterEngineDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterEngineDelegate.h; path = "../Famigo/build/Release-universal/FamigoAPI/MGTwitterEngineDelegate.h"; sourceTree = SOURCE_ROOT; };
-		34B296471291E3FD00B52E9C /* MGTwitterEngineDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterEngineDemoViewController.h; path = "../Famigo/build/Release-universal/FamigoAPI/MGTwitterEngineDemoViewController.h"; sourceTree = SOURCE_ROOT; };
 		34B296481291E3FD00B52E9C /* MGTwitterEngineGlobalHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterEngineGlobalHeader.h; path = "../Famigo/build/Release-universal/FamigoAPI/MGTwitterEngineGlobalHeader.h"; sourceTree = SOURCE_ROOT; };
 		34B296491291E3FD00B52E9C /* MGTwitterHTTPURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterHTTPURLConnection.h; path = "../Famigo/build/Release-universal/FamigoAPI/MGTwitterHTTPURLConnection.h"; sourceTree = SOURCE_ROOT; };
 		34B2964A1291E3FD00B52E9C /* MGTwitterLibXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterLibXMLParser.h; path = "../Famigo/build/Release-universal/FamigoAPI/MGTwitterLibXMLParser.h"; sourceTree = SOURCE_ROOT; };
@@ -248,9 +246,6 @@
 		34B2966B1291E3FD00B52E9C /* OAToken_KeychainExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAToken_KeychainExtensions.h; path = "../Famigo/build/Release-universal/FamigoAPI/OAToken_KeychainExtensions.h"; sourceTree = SOURCE_ROOT; };
 		34B2966C1291E3FD00B52E9C /* OAToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAToken.h; path = "../Famigo/build/Release-universal/FamigoAPI/OAToken.h"; sourceTree = SOURCE_ROOT; };
 		34B2966D1291E3FD00B52E9C /* OAuthConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAuthConsumer.h; path = "../Famigo/build/Release-universal/FamigoAPI/OAuthConsumer.h"; sourceTree = SOURCE_ROOT; };
-		34B2966E1291E3FD00B52E9C /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFHFKeychainUtils.h; path = "../Famigo/build/Release-universal/FamigoAPI/SFHFKeychainUtils.h"; sourceTree = SOURCE_ROOT; };
-		34B2966F1291E3FD00B52E9C /* UIAlertView+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Helper.h"; path = "../Famigo/build/Release-universal/FamigoAPI/UIAlertView+Helper.h"; sourceTree = SOURCE_ROOT; };
-		34B296701291E3FD00B52E9C /* XAuthTwitterEngineDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = XAuthTwitterEngineDemoViewController.xib; path = "../Famigo/build/Release-universal/FamigoAPI/XAuthTwitterEngineDemoViewController.xib"; sourceTree = SOURCE_ROOT; };
 		34B296A51291E64000B52E9C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		34B296AB1291E67800B52E9C /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		34DC9451127B627200EB659F /* ArithmeticEquation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArithmeticEquation.h; path = Shared/ArithmeticEquation.h; sourceTree = "<group>"; };
@@ -593,7 +588,6 @@
 				34B296441291E3FD00B52E9C /* libOAuth.a */,
 				34B296451291E3FD00B52E9C /* MGTwitterEngine.h */,
 				34B296461291E3FD00B52E9C /* MGTwitterEngineDelegate.h */,
-				34B296471291E3FD00B52E9C /* MGTwitterEngineDemoViewController.h */,
 				34B296481291E3FD00B52E9C /* MGTwitterEngineGlobalHeader.h */,
 				34B296491291E3FD00B52E9C /* MGTwitterHTTPURLConnection.h */,
 				34B2964A1291E3FD00B52E9C /* MGTwitterLibXMLParser.h */,
@@ -628,9 +622,6 @@
 				34B2966B1291E3FD00B52E9C /* OAToken_KeychainExtensions.h */,
 				34B2966C1291E3FD00B52E9C /* OAToken.h */,
 				34B2966D1291E3FD00B52E9C /* OAuthConsumer.h */,
-				34B2966E1291E3FD00B52E9C /* SFHFKeychainUtils.h */,
-				34B2966F1291E3FD00B52E9C /* UIAlertView+Helper.h */,
-				34B296701291E3FD00B52E9C /* XAuthTwitterEngineDemoViewController.xib */,
 				34FC8602128DF1C20047B2CA /* GameResultsShareController-iPad.xib */,
 				34FC85ED128DEE200047B2CA /* GameResultsShareController.h */,
 				34FC85EE128DEE200047B2CA /* GameResultsShareController.xib */,
@@ -993,7 +984,6 @@
 				3420F7A4128C8895008CD434 /* FBDialog.bundle in Resources */,
 				34FC85EF128DEE200047B2CA /* GameResultsShareController.xib in Resources */,
 				34FC8603128DF1C20047B2CA /* GameResultsShareController-iPad.xib in Resources */,
-				34B296741291E3FD00B52E9C /* XAuthTwitterEngineDemoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -233,7 +233,7 @@
     
     [navigationBar setFrame:CGRectMake(0, 0, [[self view] frame].size.width, 44)];
     [settingsTableView setFrame:CGRectMake(0, 44, [[self view] frame].size.width, [[self view] frame].size.height - 64)];
-        
+    
     [self updateUI];
 }
 

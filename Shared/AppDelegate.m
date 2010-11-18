@@ -27,6 +27,7 @@
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     // Set up the Famigo API
     NSUserDefaults *db = [NSUserDefaults standardUserDefaults];
 	[db setValue:@"0aa3a9f0acf8308151a50b8dd5d12e06a323ab12" forKey:FC_d_api_key];
@@ -49,6 +50,7 @@
     
     [window makeKeyAndVisible];
     return YES;
+    
 }
 
 @end
