@@ -34,6 +34,7 @@
 		34B296731291E3FD00B52E9C /* libOAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34B296441291E3FD00B52E9C /* libOAuth.a */; };
 		34B296A61291E64000B52E9C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34B296A51291E64000B52E9C /* Security.framework */; };
 		34B296AC1291E67800B52E9C /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 34B296AB1291E67800B52E9C /* libxml2.dylib */; };
+		34D121E412A59D820076542A /* WaitController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D121E312A59D820076542A /* WaitController.m */; };
 		34DC9453127B627200EB659F /* ArithmeticEquation.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DC9452127B627200EB659F /* ArithmeticEquation.m */; };
 		34DC9458127B62BC00EB659F /* ArithmeticEquationGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DC9457127B62BC00EB659F /* ArithmeticEquationGenerator.m */; };
 		34E830191276098F00FFF679 /* libFamigoAPI-Release.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E830181276098F00FFF679 /* libFamigoAPI-Release.a */; };
@@ -252,6 +253,8 @@
 		34B2966D1291E3FD00B52E9C /* OAuthConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAuthConsumer.h; path = "../Famigo/build/Release-universal/FamigoAPI/OAuthConsumer.h"; sourceTree = SOURCE_ROOT; };
 		34B296A51291E64000B52E9C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		34B296AB1291E67800B52E9C /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		34D121E212A59D820076542A /* WaitController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WaitController.h; path = Shared/WaitController.h; sourceTree = "<group>"; };
+		34D121E312A59D820076542A /* WaitController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WaitController.m; path = Shared/WaitController.m; sourceTree = "<group>"; };
 		34DC9451127B627200EB659F /* ArithmeticEquation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArithmeticEquation.h; path = Shared/ArithmeticEquation.h; sourceTree = "<group>"; };
 		34DC9452127B627200EB659F /* ArithmeticEquation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArithmeticEquation.m; path = Shared/ArithmeticEquation.m; sourceTree = "<group>"; };
 		34DC9456127B62BC00EB659F /* ArithmeticEquationGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArithmeticEquationGenerator.h; path = Shared/ArithmeticEquationGenerator.h; sourceTree = "<group>"; wrapsLines = 1; };
@@ -502,6 +505,8 @@
 				34E8315B12760CE500FFF679 /* AppDelegate.m */,
 				34E831B1127611C100FFF679 /* MadMinuteController.h */,
 				34E831B2127611C100FFF679 /* MadMinuteController.m */,
+				34D121E212A59D820076542A /* WaitController.h */,
+				34D121E312A59D820076542A /* WaitController.m */,
 				34EA90FB1281DFD800286BE9 /* SettingsController.h */,
 				34EA90FC1281DFD800286BE9 /* SettingsController.m */,
 				34EA90FF1281E10D00286BE9 /* GameController.h */,
@@ -1013,6 +1018,7 @@
 				34EA90FD1281DFD800286BE9 /* SettingsController.m in Sources */,
 				34EA91011281E10D00286BE9 /* GameController.m in Sources */,
 				343993AB12A573FD003E7304 /* ResultsController.m in Sources */,
+				34D121E412A59D820076542A /* WaitController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

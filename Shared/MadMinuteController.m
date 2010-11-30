@@ -7,7 +7,6 @@
 //
 
 #import "MadMinuteController.h"
-#import "Reachability.h"
 
 @implementation MadMinuteController
 
@@ -16,6 +15,7 @@
 @synthesize gameController;
 @synthesize famigoController;
 @synthesize logoAnimationController;
+@synthesize waitController;
 
 -(id)init {
 	if (self = [super init]) {
@@ -35,6 +35,7 @@
     [famigoController release];
     [famigoController release];
     [logoAnimationController release];
+    [waitController release];
 	
     [super dealloc];
 }
@@ -50,12 +51,7 @@
 }
 
 - (void)viewDidLoad {
-    /*
-    // Display the results controller
-    resultsController = [[ResultsController alloc] init];
-    [resultsController setParentViewController:self];
-    [[self view] addSubview:[resultsController view]];
-    */
+    
     // Display the game controller
     gameController = [[GameController alloc] init];
     [gameController setParentViewController:self];
@@ -161,6 +157,10 @@
         [f.gameInstance setValue:gameData forKey:f.game_name];
 		[f.gameInstance setValue:f.member_id forKey:FC_d_game_current_turn];
 		[f updateGame];
+        
+        // Throw the wait controller up on the screen
+        waitController = [[WaitController alloc] init];
+        [[self view] addSubview:[waitController view]];
     }
     else if ([noteName isEqualToString:FamigoMessageGameUpdated]) {
     }
@@ -181,6 +181,11 @@
 	}
     else if ([noteName isEqualToString:FamigoMessageGameFinished]) {		
 		// Show results.
+        
+        // Display the results controller
+        resultsController = [[ResultsController alloc] init];
+        [resultsController setParentViewController:self];
+        [[self view] addSubview:[resultsController view]];
 	}
 }
 
