@@ -32,7 +32,6 @@
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
     // Set up the Famigo API
     NSUserDefaults *db = [NSUserDefaults standardUserDefaults];
 	[db setValue:kAPIKey forKey:FC_d_api_key];
@@ -42,12 +41,10 @@
 	f.game_name = kGameName;
 	f.game_instructions = kGameInstructions;
 	f.forceGameToStartSynchronously = YES;
-	f.game_name = @"Mad Minute";
-	f.game_instructions = @"\nIt's like math, but faster!\n\n";
 	
 	[self evaluateTimeForReview];
 	
-	[[Reachability sharedReachability] setAddress:@"174.143.213.31"];
+	[[Reachability sharedReachability] setAddress:kFamigoIPAddress];
 	[[Reachability sharedReachability] setNetworkStatusNotificationsEnabled:YES];
 	[[Reachability sharedReachability] remoteHostStatus];
 	
