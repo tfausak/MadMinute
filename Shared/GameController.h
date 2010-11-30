@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Constants.h"
+#import "Famigo.h"
 #import "ArithmeticEquationGenerator.h"
 
 @interface GameController : UIViewController {
@@ -21,6 +22,9 @@
     NSString *responseValue;
     BOOL responseIsPositive;
     int score;
+    int numberRight;
+    int numberWrong;
+    int numberSkipped;
     
     // UI elements
     UINavigationBar *navigationBar;
@@ -46,6 +50,9 @@
 @property (nonatomic, retain) NSString *responseValue;
 @property (nonatomic, assign) BOOL responseIsPositive;
 @property (nonatomic, assign) int score;
+@property (nonatomic, assign) int numberRight;
+@property (nonatomic, assign) int numberWrong;
+@property (nonatomic, assign) int numberSkipped;
 @property (nonatomic, retain) UINavigationBar *navigationBar;
 @property (nonatomic, retain) UITextField *scoreLabel;
 @property (nonatomic, retain) UIView *timeBar;

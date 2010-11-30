@@ -132,13 +132,14 @@
         // Get a list of player names
         NSArray *playerDictionaries = [f.gameInstance valueForKey:FC_d_game_invites];
         NSMutableArray *playerNames = [NSMutableArray array];
-        [playerNames addObject:f.member_name];
+        [playerNames addObject:f.member_id];
         for (NSDictionary *playerDictionary in playerDictionaries) {
-            [playerNames addObject:[playerDictionary valueForKey:FC_d_member_name]];
+            [playerNames addObject:[playerDictionary valueForKey:FC_d_member_id]];
         }
         
         // Create the default player dictionary
         NSDictionary *defaultPlayerDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                                 [NSNumber numberWithInt:0], kGameFinishedKey,
                                                  [NSNumber numberWithInt:0], kNumberRightKey,
                                                  [NSNumber numberWithInt:0], kNumberWrongKey,
                                                  [NSNumber numberWithInt:0], kNumberSkippedKey,
@@ -161,8 +162,18 @@
 		[f.gameInstance setValue:f.member_id forKey:FC_d_game_current_turn];
 		[f updateGame];
     }
+    else if ([noteName isEqualToString:FamigoMessageGameUpdated]) {
+    }
     else if ([noteName isEqualToString:FamigoMessageGameCanceled]) {
 		// Wah wah wahhhhh. Back to Famigo.
+        
+        UIAlertView *alertView = [[UIAlertView alloc] init];
+        [alertView setTitle:@"Game Canceled"];
+        [alertView setMessage:@"Somebody canceled the game!"];
+        [alertView addButtonWithTitle:@"OK"];
+        [alertView setCancelButtonIndex:0];
+        [alertView show];
+        [alertView release];
         
         [famigoController viewWillAppear:NO];
         [famigoController show];

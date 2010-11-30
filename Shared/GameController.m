@@ -18,6 +18,9 @@
 @synthesize responseValue;
 @synthesize responseIsPositive;
 @synthesize score;
+@synthesize numberRight;
+@synthesize numberWrong;
+@synthesize numberSkipped;
 @synthesize navigationBar;
 @synthesize scoreLabel;
 @synthesize timeBar;
@@ -191,6 +194,9 @@
     gameClock = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFireMethod:) userInfo:nil repeats:YES];
     timeLeft = kInitialTime;
     score = 0;
+    numberRight = 0;
+    numberWrong = 0;
+    numberSkipped = 0;
     responseValue = @"";
     responseIsPositive = YES;
     [numberPad setUserInteractionEnabled:YES];
@@ -204,6 +210,9 @@
     gameClock = nil;
     timeLeft = 0;
     score = 0;
+    numberRight = 0;
+    numberWrong = 0;
+    numberSkipped = 0;
     responseValue = @"";
     arithmeticEquation = nil;
     [numberPad setUserInteractionEnabled:NO];
@@ -213,9 +222,33 @@
 }
 
 - (void)gameClockExpired {
+    Famigo *f = [Famigo sharedInstance];
+    
+    // Update the player's information
+    NSDictionary *playerDictionary = [[[f.gameInstance objectForKey:f.game_name] objectForKey:kScoresKey] objectForKey:f.member_id];
+    [playerDictionary setValue:[NSNumber numberWithInt:1] forKey:kGameFinishedKey];
+    [playerDictionary setValue:[NSNumber numberWithInt:numberRight] forKey:kNumberRightKey];
+    [playerDictionary setValue:[NSNumber numberWithInt:numberWrong] forKey:kNumberWrongKey];
+    [playerDictionary setValue:[NSNumber numberWithInt:numberSkipped] forKey:kNumberSkippedKey];
+    [playerDictionary setValue:[NSNumber numberWithInt:score] forKey:kScoreKey];
+    [[[f.gameInstance objectForKey:f.game_name] objectForKey:kScoresKey] setObject:playerDictionary forKey:f.member_id];
+    
+    // See if the game is actually done
+    BOOL finished = YES;
+    for (NSString *memberID in [[f.gameInstance objectForKey:f.game_name] objectForKey:kScoresKey]) {
+        finished &= (BOOL) [[[[[f.gameInstance objectForKey:f.game_name] objectForKey:kScoresKey] objectForKey:memberID] valueForKey:kGameFinishedKey] intValue];
+    }
+    if (finished) {
+        [f.gameInstance setValue:@"finished" forKey:FC_d_game_active];
+    }
+    
+    // Push updates to game state
+    [f updateGame];
+    
     UIAlertView *alert = [[UIAlertView alloc] init]; {
         [alert setTitle:@"Great Job!"];
         [alert setMessage:[NSString stringWithFormat:@"You scored %d point%@!", score, score == 1 ? @"" : @"s"]];
+        [alert setMessage:[NSString stringWithFormat:@"%d %d %d %d", numberRight, numberWrong, numberSkipped, score]];
         [alert setDelegate:self];
         [alert addButtonWithTitle:@"Go Back"];
         [alert addButtonWithTitle:@"Play Again"];
@@ -278,9 +311,16 @@
     if ([responseValue isEqualToString:[arithmeticEquation resultAsString]]) {
         [[self view] setBackgroundColor:[UIColor greenColor]];
         score += 1 + [arithmeticEquationGenerator difficulty] + [arithmeticEquationGenerator allowNegativeNumbers];
+        numberRight += 1;
     }
     else {
-        [[self view] setBackgroundColor:[UIColor redColor]];
+        if ([responseValue isEqualToString:@""]) {
+            numberSkipped += 1;
+        }
+        else {
+            [[self view] setBackgroundColor:[UIColor redColor]];
+            numberWrong += 1;
+        }
     }
     
     [UIView beginAnimations:nil context:nil]; {
