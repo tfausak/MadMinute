@@ -109,8 +109,45 @@
     [[self view] exchangeSubviewAtIndex:0 withSubviewAtIndex:1];
 }
 
+#pragma mark - Famigo integration
 - (void)famigoReady {
     NSLog(@"famigoReady");
+}
+
+- (void)famigoNote:(NSNotification*)note {
+	NSString *noteName = [note name];
+	NSLog(@"received note %@", noteName);
+	Famigo *f = [Famigo sharedInstance];
+	
+	if ([noteName isEqualToString:FamigoMessageGameUpdated]) {
+		// Game is ready to go.  All invites accepted.
+	} else if ([noteName isEqualToString:FamigoMessageGameCreated]) {		
+		// Populate initial data structures for multiplayer.
+		
+		/*
+		// For each player, we track which member id the player ties back to.
+		// We also track which points on our grid the player has claimed already.
+		NSDictionary *xMember = [membersForGame objectAtIndex:kXIndex];
+		NSString *xMemberId = [xMember objectForKey:FC_d_member_id];
+		NSMutableArray *xMemberClaimedPoints = [[NSMutableArray alloc] init];
+		NSDictionary *xData = [NSDictionary dictionaryWithObjectsAndKeys:xMemberId, FC_d_member_id,
+							   xMemberClaimedPoints, FC_claimed_points, nil];
+		
+		NSDictionary *oMember = [[f.gameInstance valueForKey:FC_d_game_players] objectAtIndex:kOIndex];
+		NSString *oMemberId = [oMember objectForKey:FC_d_member_id];
+		NSMutableArray *oMemberClaimedPoints = [[NSMutableArray alloc] init];
+		NSDictionary *oData = [NSDictionary dictionaryWithObjectsAndKeys:oMemberId, FC_d_member_id,
+							   oMemberClaimedPoints, FC_claimed_points, nil];
+		
+		NSDictionary *gameData = [NSDictionary dictionaryWithObjectsAndKeys:xData, FC_x_data, oData, FC_o_data, nil];
+		[f.gameInstance setValue:gameData forKey:f.game_name];
+		[f.gameInstance setValue:f.member_id forKey:FC_d_game_current_turn];
+		[f updateGame]; */
+	} else if ([noteName isEqualToString:FamigoMessageGameCanceled]) {
+		// Wah wah wahhhhh.  Back to Famigo.
+	} else if ([noteName isEqualToString:FamigoMessageGameFinished]) {		
+		// Show results.
+	}
 }
 
 #pragma mark - Reachability
