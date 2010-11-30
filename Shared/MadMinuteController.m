@@ -118,34 +118,46 @@
 	NSString *noteName = [note name];
 	NSLog(@"received note %@", noteName);
 	Famigo *f = [Famigo sharedInstance];
-	
-	if ([noteName isEqualToString:FamigoMessageGameUpdated]) {
-		// Game is ready to go.  All invites accepted.
-	} else if ([noteName isEqualToString:FamigoMessageGameCreated]) {		
+    
+    if ([noteName isEqualToString:FamigoMessageGameCreated]) {
 		// Populate initial data structures for multiplayer.
-		
-		/*
-		// For each player, we track which member id the player ties back to.
-		// We also track which points on our grid the player has claimed already.
-		NSDictionary *xMember = [membersForGame objectAtIndex:kXIndex];
-		NSString *xMemberId = [xMember objectForKey:FC_d_member_id];
-		NSMutableArray *xMemberClaimedPoints = [[NSMutableArray alloc] init];
-		NSDictionary *xData = [NSDictionary dictionaryWithObjectsAndKeys:xMemberId, FC_d_member_id,
-							   xMemberClaimedPoints, FC_claimed_points, nil];
-		
-		NSDictionary *oMember = [[f.gameInstance valueForKey:FC_d_game_players] objectAtIndex:kOIndex];
-		NSString *oMemberId = [oMember objectForKey:FC_d_member_id];
-		NSMutableArray *oMemberClaimedPoints = [[NSMutableArray alloc] init];
-		NSDictionary *oData = [NSDictionary dictionaryWithObjectsAndKeys:oMemberId, FC_d_member_id,
-							   oMemberClaimedPoints, FC_claimed_points, nil];
-		
-		NSDictionary *gameData = [NSDictionary dictionaryWithObjectsAndKeys:xData, FC_x_data, oData, FC_o_data, nil];
-		[f.gameInstance setValue:gameData forKey:f.game_name];
+        
+        // Get a list of player names
+        NSArray *playerDictionaries = [f.gameInstance valueForKey:FC_d_game_invites];
+        NSMutableArray *playerNames = [NSMutableArray array];
+        [playerNames addObject:f.member_name];
+        for (NSDictionary *playerDictionary in playerDictionaries) {
+            [playerNames addObject:[playerDictionary valueForKey:FC_d_member_name]];
+        }
+        
+        // Create the default player dictionary
+        NSDictionary *defaultPlayerDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+                                                 [NSNumber numberWithInt:0], @"numberRight",
+                                                 [NSNumber numberWithInt:0], @"numberWrong",
+                                                 [NSNumber numberWithInt:0], @"numberSkipped",
+                                                 [NSNumber numberWithInt:0], @"score",
+                                                 nil];
+        NSMutableDictionary *scoresDictionary = [NSMutableDictionary dictionary];
+        
+        // Set every player's dictionary to the default one
+        for (NSString *playerName in playerNames) {
+            [scoresDictionary setObject:defaultPlayerDictionary forKey:playerName];
+        }
+        
+        NSDictionary *gameData = [NSDictionary dictionaryWithObjectsAndKeys:
+                                  [NSNumber numberWithInt:0], @"seed",
+                                  [NSNumber numberWithInt:0], @"difficulty",
+                                  [NSNumber numberWithBool:NO], @"allowNegativeNumbers",
+                                  scoresDictionary, @"scores",
+                                  nil];
+        [f.gameInstance setValue:gameData forKey:f.game_name];
 		[f.gameInstance setValue:f.member_id forKey:FC_d_game_current_turn];
-		[f updateGame]; */
-	} else if ([noteName isEqualToString:FamigoMessageGameCanceled]) {
+		[f updateGame];
+    }
+    else if ([noteName isEqualToString:FamigoMessageGameCanceled]) {
 		// Wah wah wahhhhh.  Back to Famigo.
-	} else if ([noteName isEqualToString:FamigoMessageGameFinished]) {		
+	}
+    else if ([noteName isEqualToString:FamigoMessageGameFinished]) {		
 		// Show results.
 	}
 }
