@@ -20,6 +20,7 @@
 		34186170127726E300E4BAD5 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 34186167127726E300E4BAD5 /* iTunesArtwork */; };
 		3420F7A4128C8895008CD434 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3420F798128C8895008CD434 /* FBDialog.bundle */; };
 		3420F7A5128C8895008CD434 /* libFamigoAPI-Release.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3420F79D128C8895008CD434 /* libFamigoAPI-Release.a */; };
+		343993AB12A573FD003E7304 /* ResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 343993AA12A573FD003E7304 /* ResultsController.m */; };
 		34AFB8421284BBB4002D2369 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 34AFB83C1284BBB4002D2369 /* Default-Landscape.png */; };
 		34AFB8431284BBB4002D2369 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 34AFB83D1284BBB4002D2369 /* Default-Portrait.png */; };
 		34AFB8441284BBB4002D2369 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 34AFB83E1284BBB4002D2369 /* Icon-72.png */; };
@@ -200,6 +201,8 @@
 		3420F7A2128C8895008CD434 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonParser.h; path = "../Famigo/build/Release-universal/FamigoAPI/SBJsonParser.h"; sourceTree = SOURCE_ROOT; };
 		3420F7A3128C8895008CD434 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonWriter.h; path = "../Famigo/build/Release-universal/FamigoAPI/SBJsonWriter.h"; sourceTree = SOURCE_ROOT; };
 		343992C612A56106003E7304 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Shared/Constants.h; sourceTree = "<group>"; };
+		343993A912A573FD003E7304 /* ResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultsController.h; path = Shared/ResultsController.h; sourceTree = "<group>"; };
+		343993AA12A573FD003E7304 /* ResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultsController.m; path = Shared/ResultsController.m; sourceTree = "<group>"; };
 		34AFB83C1284BBB4002D2369 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
 		34AFB83D1284BBB4002D2369 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
 		34AFB83E1284BBB4002D2369 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
@@ -503,6 +506,8 @@
 				34EA90FC1281DFD800286BE9 /* SettingsController.m */,
 				34EA90FF1281E10D00286BE9 /* GameController.h */,
 				34EA91001281E10D00286BE9 /* GameController.m */,
+				343993A912A573FD003E7304 /* ResultsController.h */,
+				343993AA12A573FD003E7304 /* ResultsController.m */,
 				34DC9456127B62BC00EB659F /* ArithmeticEquationGenerator.h */,
 				34DC9457127B62BC00EB659F /* ArithmeticEquationGenerator.m */,
 				34DC9451127B627200EB659F /* ArithmeticEquation.h */,
@@ -1007,6 +1012,7 @@
 				34DC9458127B62BC00EB659F /* ArithmeticEquationGenerator.m in Sources */,
 				34EA90FD1281DFD800286BE9 /* SettingsController.m in Sources */,
 				34EA91011281E10D00286BE9 /* GameController.m in Sources */,
+				343993AB12A573FD003E7304 /* ResultsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

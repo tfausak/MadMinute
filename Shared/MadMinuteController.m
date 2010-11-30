@@ -11,6 +11,7 @@
 
 @implementation MadMinuteController
 
+@synthesize resultsController;
 @synthesize settingsController;
 @synthesize gameController;
 @synthesize famigoController;
@@ -29,6 +30,7 @@
 }
 
 - (void)dealloc {
+    [resultsController release];
     [settingsController release];
     [famigoController release];
     [famigoController release];
@@ -48,7 +50,12 @@
 }
 
 - (void)viewDidLoad {
-    
+    /*
+    // Display the results controller
+    resultsController = [[ResultsController alloc] init];
+    [resultsController setParentViewController:self];
+    [[self view] addSubview:[resultsController view]];
+    */
     // Display the game controller
     gameController = [[GameController alloc] init];
     [gameController setParentViewController:self];
@@ -132,10 +139,10 @@
         
         // Create the default player dictionary
         NSDictionary *defaultPlayerDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                                                 [NSNumber numberWithInt:0], @"numberRight",
-                                                 [NSNumber numberWithInt:0], @"numberWrong",
-                                                 [NSNumber numberWithInt:0], @"numberSkipped",
-                                                 [NSNumber numberWithInt:0], @"score",
+                                                 [NSNumber numberWithInt:0], kNumberRightKey,
+                                                 [NSNumber numberWithInt:0], kNumberWrongKey,
+                                                 [NSNumber numberWithInt:0], kNumberSkippedKey,
+                                                 [NSNumber numberWithInt:0], kScoreKey,
                                                  nil];
         NSMutableDictionary *scoresDictionary = [NSMutableDictionary dictionary];
         
@@ -145,17 +152,21 @@
         }
         
         NSDictionary *gameData = [NSDictionary dictionaryWithObjectsAndKeys:
-                                  [NSNumber numberWithInt:0], @"seed",
-                                  [NSNumber numberWithInt:0], @"difficulty",
-                                  [NSNumber numberWithBool:NO], @"allowNegativeNumbers",
-                                  scoresDictionary, @"scores",
+                                  [NSNumber numberWithInt:0], kSeedKey,
+                                  [NSNumber numberWithInt:0], kDifficultyKey,
+                                  [NSNumber numberWithBool:NO], kAllowNegativeNumbersKey,
+                                  scoresDictionary, kScoresKey,
                                   nil];
         [f.gameInstance setValue:gameData forKey:f.game_name];
 		[f.gameInstance setValue:f.member_id forKey:FC_d_game_current_turn];
 		[f updateGame];
     }
     else if ([noteName isEqualToString:FamigoMessageGameCanceled]) {
-		// Wah wah wahhhhh.  Back to Famigo.
+		// Wah wah wahhhhh. Back to Famigo.
+        
+        [famigoController viewWillAppear:NO];
+        [famigoController show];
+        [[self view] addSubview:[famigoController view]];
 	}
     else if ([noteName isEqualToString:FamigoMessageGameFinished]) {		
 		// Show results.

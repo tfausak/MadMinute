@@ -11,3 +11,11 @@
 #define kGameInstructions @"\nIt's like math, but faster!\n\n"
 #define kFamigoIPAddress @"174.143.213.31"
 #define kInitialTime 60
+#define kNumberRightKey @"numberRight"
+#define kNumberWrongKey @"numberWrong"
+#define kNumberSkippedKey @"numberSkipped"
+#define kScoreKey @"score"
+#define kSeedKey @"seed"
+#define kDifficultyKey @"difficulty"
+#define kAllowNegativeNumbersKey @"allowNegativeNumbers"
+#define kScoresKey @"scores"

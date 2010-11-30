@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Constants.h"
+#import "ResultsController.h"
 #import "SettingsController.h"
 #import "GameController.h"
 #import "FamigoHeaders.h"
 
 @interface MadMinuteController : UIViewController <FamigoControllerDelegate> {
+    ResultsController *resultsController;
     SettingsController *settingsController;
     GameController *gameController;
     FamigoController *famigoController;
@@ -22,6 +24,7 @@
 	UIAlertView *networkAlert;
 }
 
+@property (nonatomic, retain) ResultsController *resultsController;
 @property (nonatomic, retain) SettingsController *settingsController;
 @property (nonatomic, retain) GameController *gameController;
 @property (nonatomic, retain) FamigoController *famigoController;
