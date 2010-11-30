@@ -235,11 +235,25 @@
     
     // See if the game is actually done
     BOOL finished = YES;
+    int winningScore = 0;
+    NSString *winningMemberID = @"";
     for (NSString *memberID in [[f.gameInstance objectForKey:f.game_name] objectForKey:kScoresKey]) {
-        finished &= (BOOL) [[[[[f.gameInstance objectForKey:f.game_name] objectForKey:kScoresKey] objectForKey:memberID] valueForKey:kGameFinishedKey] intValue];
+        NSDictionary *player = [[[f.gameInstance objectForKey:f.game_name] objectForKey:kScoresKey] objectForKey:memberID];
+        finished &= (BOOL) [[player valueForKey:kGameFinishedKey] intValue];
+        int playerScore = (int) [[player valueForKey:kScoreKey] intValue];
+        if (playerScore > winningScore) { // TODO handle ties
+            winningScore = playerScore;
+            winningMemberID = memberID;
+        }
     }
     if (finished) {
         [f.gameInstance setValue:@"finished" forKey:FC_d_game_active];
+        for (NSDictionary *player in [f.gameInstance objectForKey:@"famigo_players"]) {
+            if ([[player objectForKey:@"member_name"] isEqualToString:winningMemberID]) {
+                // score isnt being set. if i print the dictionary, score is the only key not in quotes. what does it mean?
+                [player setValue:[NSNumber numberWithInt:1] forKey:@"score"];
+            }
+        }
     }
     
     // Push updates to game state

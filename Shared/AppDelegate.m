@@ -40,7 +40,7 @@
 	f.allFamigoPlayers = YES;
 	f.game_name = kGameName;
 	f.game_instructions = kGameInstructions;
-	f.forceGameToStartSynchronously = YES;
+	f.forceGameToStartSynchronously = YES; // change to NO for pass-and-play
 	
 	[self evaluateTimeForReview];
 	
