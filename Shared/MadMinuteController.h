@@ -16,6 +16,9 @@
     GameController *gameController;
     FamigoController *famigoController;
     LogoAnimationController *logoAnimationController;
+	
+	// Used for reachability.
+	UIAlertView *networkAlert;
 }
 
 @property (nonatomic, retain) SettingsController *settingsController;
@@ -27,5 +30,6 @@
 - (void)pressedNewGameButton:(id)sender;
 - (void)pressedSettingsButton:(id)sender;
 - (void)famigoReady;
+- (void)freezeGameNoNetwork;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "MadMinuteController.h"
+#import "Reachability.h"
 
 @implementation MadMinuteController
 
@@ -14,6 +15,18 @@
 @synthesize gameController;
 @synthesize famigoController;
 @synthesize logoAnimationController;
+
+-(id)init {
+	if (self = [super init]) {
+		[[NSNotificationCenter defaultCenter] addObserver:self 
+												 selector:@selector(reachabilityNote:)
+													 name:@"kNetworkReachabilityChangedNotification" 
+												   object:nil];
+		[[Famigo sharedInstance] registerForNotifications:self withSelector:@selector(famigoNote:)];
+	}
+	
+	return self;
+}
 
 - (void)dealloc {
     [settingsController release];
@@ -100,4 +113,36 @@
     NSLog(@"famigoReady");
 }
 
+#pragma mark - Reachability
+- (void)reachabilityNote:(NSNotification*)note {
+	Reachability *netStatusOracle = [Reachability sharedReachability];
+	
+	switch ([netStatusOracle internetConnectionStatus]) {
+		case NotReachable:
+			[self freezeGameNoNetwork];
+			break;
+		default:
+			// don't care if it's reachable via cell or wifi, just as long as it's reachable
+			[NSObject cancelPreviousPerformRequestsWithTarget:self];
+			[self performSelector:@selector(thawGame) withObject:nil afterDelay:1.];
+			break;
+	}
+}
+
+- (void)freezeGameNoNetwork {
+	UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Oops"
+									message:@"This game requires network access to play. This message will dismiss when network access is restored." 
+								   delegate:self 
+						  cancelButtonTitle:nil
+						  otherButtonTitles:nil];
+	networkAlert = av;
+	
+	[av show];
+	[av release];
+}
+
+- (void)thawGame {
+	[networkAlert dismissWithClickedButtonIndex:networkAlert.cancelButtonIndex animated:YES];
+	networkAlert = nil;
+}
 @end
