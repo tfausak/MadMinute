@@ -34,7 +34,7 @@
                              [NSNumber numberWithInt:Multiplication],
                              [NSNumber numberWithInt:Division],
                              nil];
-        additionMax = subtractionMax = 101;
+        additionMax = subtractionMax = 51;
         multiplicationMax = divisionMax = 14;
         
         switch (difficulty) {
@@ -42,22 +42,22 @@
                 [allowedOperations removeObjectAtIndex:3];
                 [allowedOperations removeObjectAtIndex:2];
                 [allowedOperations removeObjectAtIndex:1];
-                additionMax = 10;
+                additionMax = 6;
                 break;
             case Easy:
                 [allowedOperations removeObjectAtIndex:3];
                 [allowedOperations removeObjectAtIndex:2];
-                additionMax = 21;
-                subtractionMax = 10;
+                additionMax = 14;
+                subtractionMax = 6;
                 break;
             case Medium:
                 [allowedOperations removeObjectAtIndex:3];
-                additionMax = 51;
-                subtractionMax = 21;
+                additionMax = 21;
+                subtractionMax = 14;
                 multiplicationMax = 6;
                 break;
             case Hard:
-                subtractionMax = 51;
+                subtractionMax = 21;
                 divisionMax = 6;
                 break;
             case VeryHard:

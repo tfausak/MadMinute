@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Constants.h"
 #import "ArithmeticEquationGenerator.h"
-
-extern int const kInitialTime;
 
 @interface GameController : UIViewController {
     UIViewController *parentViewController;

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Constants.h"
 #import "FamigoHeaders.h"
 
 @interface SettingsController : UIViewController <UITableViewDataSource, UITableViewDelegate> {

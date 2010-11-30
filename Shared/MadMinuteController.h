@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Constants.h"
 #import "SettingsController.h"
 #import "GameController.h"
 #import "FamigoHeaders.h"

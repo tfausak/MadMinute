@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Constants.h"
 #import "ArithmeticEquation.h"
 
 typedef enum {

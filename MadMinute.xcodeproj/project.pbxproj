@@ -199,6 +199,7 @@
 		3420F7A1128C8895008CD434 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonBase.h; path = "../Famigo/build/Release-universal/FamigoAPI/SBJsonBase.h"; sourceTree = SOURCE_ROOT; };
 		3420F7A2128C8895008CD434 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonParser.h; path = "../Famigo/build/Release-universal/FamigoAPI/SBJsonParser.h"; sourceTree = SOURCE_ROOT; };
 		3420F7A3128C8895008CD434 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonWriter.h; path = "../Famigo/build/Release-universal/FamigoAPI/SBJsonWriter.h"; sourceTree = SOURCE_ROOT; };
+		343992C612A56106003E7304 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Shared/Constants.h; sourceTree = "<group>"; };
 		34AFB83C1284BBB4002D2369 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
 		34AFB83D1284BBB4002D2369 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
 		34AFB83E1284BBB4002D2369 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
@@ -493,6 +494,7 @@
 				34E8301C1276099C00FFF679 /* Famigo */,
 				3418613C127723CB00E4BAD5 /* Images */,
 				8D1107310486CEB800E47090 /* MadMinute-Info.plist */,
+				343992C612A56106003E7304 /* Constants.h */,
 				34E8315A12760CE500FFF679 /* AppDelegate.h */,
 				34E8315B12760CE500FFF679 /* AppDelegate.m */,
 				34E831B1127611C100FFF679 /* MadMinuteController.h */,
