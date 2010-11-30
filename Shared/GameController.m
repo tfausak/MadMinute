@@ -8,8 +8,6 @@
 
 #import "GameController.h"
 
-int const kInitialTime = 60;
-
 @implementation GameController
 
 @synthesize parentViewController;
@@ -166,7 +164,7 @@ int const kInitialTime = 60;
         UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeCustom]; {
             [deleteButton addTarget:self action:@selector(pressedDeleteButton:) forControlEvents:UIControlEventTouchUpInside];
             [deleteButton setBackgroundColor:[UIColor colorWithWhite:0.25 alpha:1.0]];
-            [deleteButton setTitle:@"×" forState:UIControlStateNormal];
+            [deleteButton setTitle:@"Delete" forState:UIControlStateNormal];
             [deleteButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [deleteButton setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
         } [numberPad addSubview:deleteButton];
@@ -378,8 +376,8 @@ int const kInitialTime = 60;
             [(UIButton *)[[numberPad subviews] objectAtIndex:7]  setFrame:CGRectMake(  0, 177, 340,  87)];
             [(UIButton *)[[numberPad subviews] objectAtIndex:8]  setFrame:CGRectMake(341, 177, 342,  87)];
             [(UIButton *)[[numberPad subviews] objectAtIndex:9]  setFrame:CGRectMake(684, 177, 340,  87)];
-            [(UIButton *)[[numberPad subviews] objectAtIndex:10] setFrame:CGRectMake(684, 265, 340,  87)];
-            [(UIButton *)[[numberPad subviews] objectAtIndex:11] setFrame:CGRectMake(  0, 265, 340,  87)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:10] setFrame:CGRectMake(  0, 265, 340,  87)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:11] setFrame:CGRectMake(684, 265, 340,  87)];
             
             [[(UIButton *)[[numberPad subviews] objectAtIndex:10] titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48]];
             [[(UIButton *)[[numberPad subviews] objectAtIndex:11] titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:48]];
@@ -434,8 +432,8 @@ int const kInitialTime = 60;
             [(UIButton *)[[numberPad subviews] objectAtIndex:7]  setFrame:CGRectMake(  0, 153, 255,  75)];
             [(UIButton *)[[numberPad subviews] objectAtIndex:8]  setFrame:CGRectMake(256, 153, 256,  75)];
             [(UIButton *)[[numberPad subviews] objectAtIndex:9]  setFrame:CGRectMake(513, 153, 255,  75)];
-            [(UIButton *)[[numberPad subviews] objectAtIndex:10] setFrame:CGRectMake(513, 229, 255,  75)];
-            [(UIButton *)[[numberPad subviews] objectAtIndex:11] setFrame:CGRectMake(  0, 229, 255,  75)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:10] setFrame:CGRectMake(  0, 229, 255,  75)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:11] setFrame:CGRectMake(513, 229, 255,  75)];
             
             [[(UIButton *)[[numberPad subviews] objectAtIndex:10] titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:36]];
             [[(UIButton *)[[numberPad subviews] objectAtIndex:11] titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:36]];
@@ -492,8 +490,8 @@ int const kInitialTime = 60;
             [(UIButton *)[[numberPad subviews] objectAtIndex:7]  setFrame:CGRectMake(  0,  82, 158,  40)];
             [(UIButton *)[[numberPad subviews] objectAtIndex:8]  setFrame:CGRectMake(159,  82, 162,  40)];
             [(UIButton *)[[numberPad subviews] objectAtIndex:9]  setFrame:CGRectMake(322,  82, 158,  40)];
-            [(UIButton *)[[numberPad subviews] objectAtIndex:10] setFrame:CGRectMake(322, 123, 158,  39)];
-            [(UIButton *)[[numberPad subviews] objectAtIndex:11] setFrame:CGRectMake(  0, 123, 158,  39)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:10] setFrame:CGRectMake(  0, 123, 158,  39)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:11] setFrame:CGRectMake(322, 123, 158,  39)];
             
             [[(UIButton *)[[numberPad subviews] objectAtIndex:10] titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:18]];
             [[(UIButton *)[[numberPad subviews] objectAtIndex:11] titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:18]];
@@ -548,8 +546,8 @@ int const kInitialTime = 60;
             [(UIButton *)[[numberPad subviews] objectAtIndex:7]  setFrame:CGRectMake(  0, 109, 105,  53)];
             [(UIButton *)[[numberPad subviews] objectAtIndex:8]  setFrame:CGRectMake(106, 109, 108,  53)];
             [(UIButton *)[[numberPad subviews] objectAtIndex:9]  setFrame:CGRectMake(215, 109, 105,  53)];
-            [(UIButton *)[[numberPad subviews] objectAtIndex:10] setFrame:CGRectMake(215, 163, 105,  53)];
-            [(UIButton *)[[numberPad subviews] objectAtIndex:11] setFrame:CGRectMake(  0, 163, 105,  53)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:10] setFrame:CGRectMake(  0, 163, 105,  53)];
+            [(UIButton *)[[numberPad subviews] objectAtIndex:11] setFrame:CGRectMake(215, 163, 105,  53)];
             
             [[(UIButton *)[[numberPad subviews] objectAtIndex:10] titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:24]];
             [[(UIButton *)[[numberPad subviews] objectAtIndex:11] titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:24]];

@@ -30,12 +30,12 @@
     
     // Set up the Famigo API
     NSUserDefaults *db = [NSUserDefaults standardUserDefaults];
-	[db setValue:@"0aa3a9f0acf8308151a50b8dd5d12e06a323ab12" forKey:FC_d_api_key];
+	[db setValue:kAPIKey forKey:FC_d_api_key];
 	Famigo *f = [Famigo sharedInstance];
 	f.skipInvites = NO;
 	f.allFamigoPlayers = YES;
-	f.game_name = @"Mad Minute";
-	f.game_instructions = @"\nIt's like math, but faster!\n\n";
+	f.game_name = kGameName;
+	f.game_instructions = kGameInstructions;
     
     // Create a new frame below the status bar
     CGRect frame = [window frame];
