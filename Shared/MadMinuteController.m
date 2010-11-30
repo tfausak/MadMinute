@@ -154,7 +154,7 @@
         NSDictionary *gameData = [NSDictionary dictionaryWithObjectsAndKeys:
                                   [NSNumber numberWithInt:0], kSeedKey,
                                   [NSNumber numberWithInt:0], kDifficultyKey,
-                                  [NSNumber numberWithBool:NO], kAllowNegativeNumbersKey,
+                                  [NSNumber numberWithInt:NO], kAllowNegativeNumbersKey, // don't even think about using numberWithBool
                                   scoresDictionary, kScoresKey,
                                   nil];
         [f.gameInstance setValue:gameData forKey:f.game_name];
