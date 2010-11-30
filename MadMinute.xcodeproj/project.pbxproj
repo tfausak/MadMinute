@@ -255,6 +255,7 @@
 		34B296AB1291E67800B52E9C /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		34D121E212A59D820076542A /* WaitController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WaitController.h; path = Shared/WaitController.h; sourceTree = "<group>"; };
 		34D121E312A59D820076542A /* WaitController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WaitController.m; path = Shared/WaitController.m; sourceTree = "<group>"; };
+		34D1224912A5A8D10076542A /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Entitlements.plist; path = Shared/Entitlements.plist; sourceTree = "<group>"; };
 		34DC9451127B627200EB659F /* ArithmeticEquation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArithmeticEquation.h; path = Shared/ArithmeticEquation.h; sourceTree = "<group>"; };
 		34DC9452127B627200EB659F /* ArithmeticEquation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArithmeticEquation.m; path = Shared/ArithmeticEquation.m; sourceTree = "<group>"; };
 		34DC9456127B62BC00EB659F /* ArithmeticEquationGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArithmeticEquationGenerator.h; path = Shared/ArithmeticEquationGenerator.h; sourceTree = "<group>"; wrapsLines = 1; };
@@ -434,7 +435,6 @@
 		34FC85EE128DEE200047B2CA /* GameResultsShareController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = GameResultsShareController.xib; path = "../Famigo/build/Release-universal/FamigoAPI/GameResultsShareController.xib"; sourceTree = SOURCE_ROOT; };
 		34FC8602128DF1C20047B2CA /* GameResultsShareController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "GameResultsShareController-iPad.xib"; path = "../Famigo/build/Release-universal/FamigoAPI/GameResultsShareController-iPad.xib"; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* MadMinute-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MadMinute-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		C99208A312958A3300364C64 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -500,6 +500,7 @@
 				34E8301C1276099C00FFF679 /* Famigo */,
 				3418613C127723CB00E4BAD5 /* Images */,
 				8D1107310486CEB800E47090 /* MadMinute-Info.plist */,
+				34D1224912A5A8D10076542A /* Entitlements.plist */,
 				343992C612A56106003E7304 /* Constants.h */,
 				34E8315A12760CE500FFF679 /* AppDelegate.h */,
 				34E8315B12760CE500FFF679 /* AppDelegate.m */,
@@ -530,7 +531,6 @@
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				C99208A312958A3300364C64 /* Entitlements.plist */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -1029,7 +1029,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_ENTITLEMENTS = "~/Famigo Local/Git/MadMinute/Entitlements.plist";
+				CODE_SIGN_ENTITLEMENTS = "~/Documents/Famigo/mad-minute/Shared/Entitlements.plist";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1049,7 +1049,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_ENTITLEMENTS = "~/Famigo Local/Git/MadMinute/Entitlements.plist";
+				CODE_SIGN_ENTITLEMENTS = "~/Documents/Famigo/mad-minute/Shared/Entitlements.plist";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1089,7 +1089,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_ENTITLEMENTS = "~/Famigo Local/Git/MadMinute/Entitlements.plist";
+				CODE_SIGN_ENTITLEMENTS = "~/Documents/Famigo/mad-minute/Shared/Entitlements.plist";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

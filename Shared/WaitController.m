@@ -20,18 +20,18 @@
 
 - (void)loadView {
     UIView *view = [[UIView alloc] init];
-    [view setFrame:[[UIScreen mainScreen] bounds]];
+    [view setBackgroundColor:[UIColor colorWithWhite:0.0 alpha:0.5]];
     [view setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
+    [view setFrame:[[UIScreen mainScreen] bounds]];
+    
     [self setView:view];
     [view release];
 }
 
 - (void)viewDidLoad {
-    [[self view] setBackgroundColor:[UIColor colorWithRed:0 green:0.5019607843 blue:0.2509803922 alpha:1]];
-    
     spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    [spinner setFrame:CGRectMake([[self view] frame].size.width / 2 - 18.5, [[self view] frame].size.height / 2 - 18.5, 37, 37)];
     [spinner setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin];
+    [spinner setFrame:CGRectMake([[self view] frame].size.width / 2 - 18.5, [[self view] frame].size.height / 2 - 18.5, 37, 37)];
     [spinner startAnimating];
     [[self view] addSubview:spinner];
 }

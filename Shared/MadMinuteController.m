@@ -125,6 +125,10 @@
     if ([noteName isEqualToString:FamigoMessageGameCreated]) {
 		// Populate initial data structures for multiplayer.
         
+        // Throw the wait controller up on the screen
+        waitController = [[WaitController alloc] init];
+        [[self view] addSubview:[waitController view]];
+        
         // Get a list of player names
         NSArray *playerDictionaries = [f.gameInstance valueForKey:FC_d_game_invites];
         NSMutableArray *playerNames = [NSMutableArray array];
@@ -157,12 +161,9 @@
         [f.gameInstance setValue:gameData forKey:f.game_name];
 		[f.gameInstance setValue:f.member_id forKey:FC_d_game_current_turn];
 		[f updateGame];
-        
-        // Throw the wait controller up on the screen
-        waitController = [[WaitController alloc] init];
-        [[self view] addSubview:[waitController view]];
     }
     else if ([noteName isEqualToString:FamigoMessageGameUpdated]) {
+        [[waitController view] removeFromSuperview];
     }
     else if ([noteName isEqualToString:FamigoMessageGameCanceled]) {
 		// Wah wah wahhhhh. Back to Famigo.
