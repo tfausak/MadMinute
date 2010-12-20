@@ -20,3 +20,6 @@
 #define kAllowNegativeNumbersKey @"allowNegativeNumbers"
 #define kScoresKey @"scores"
 #define kGameFinishedKey @"gameFinished"
+#define kAppLaunchCountKey @"appLaunchCount"
+#define kPromptForReviewOnLaunchCount 3
+#define kAppStoreReviewUrl @""

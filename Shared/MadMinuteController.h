@@ -14,6 +14,7 @@
 #import "FamigoHeaders.h"
 #import "Reachability.h"
 #import "WaitController.h"
+#import "GameTypeController.h"
 
 @interface MadMinuteController : UIViewController <FamigoControllerDelegate> {
     ResultsController *resultsController;
@@ -22,6 +23,7 @@
     FamigoController *famigoController;
     LogoAnimationController *logoAnimationController;
     WaitController *waitController;
+    GameTypeController *gameTypeController;
 	
 	// Used for reachability.
 	UIAlertView *networkAlert;
@@ -33,11 +35,13 @@
 @property (nonatomic, retain) FamigoController *famigoController;
 @property (nonatomic, retain) LogoAnimationController *logoAnimationController;
 @property (nonatomic, retain) WaitController *waitController;
+@property (nonatomic, retain) GameTypeController *gameTypeController;
 
 - (void)pressedFamigoButton:(id)sender;
 - (void)pressedNewGameButton:(id)sender;
 - (void)pressedSettingsButton:(id)sender;
 - (void)famigoReady;
 - (void)freezeGameNoNetwork;
+- (void)pressedGameTypeButton:(id)sender;
 
 @end

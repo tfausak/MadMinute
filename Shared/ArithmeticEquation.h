@@ -28,7 +28,7 @@ typedef enum {
 @property (nonatomic, assign, readonly) int secondOperand;
 @property (nonatomic, assign, readonly) int result;
 
-- (id)initWithFirstOperand:(int)_firstOperand operation:(Operation)_operation secondOperand:(int)_secondOperand;
+- (id)initWithFirstOperand:(int)theFirstOperand operation:(Operation)theOperation secondOperand:(int)theSecondOperand;
 - (NSString *)firstOperandAsString;
 - (NSString *)operationAsString;
 - (NSString *)secondOperandAsString;

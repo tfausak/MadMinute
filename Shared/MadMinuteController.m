@@ -16,6 +16,7 @@
 @synthesize famigoController;
 @synthesize logoAnimationController;
 @synthesize waitController;
+@synthesize gameTypeController;
 
 -(id)init {
 	if (self = [super init]) {
@@ -36,6 +37,7 @@
     [famigoController release];
     [logoAnimationController release];
     [waitController release];
+    [gameTypeController release];
 	
     [super dealloc];
 }
@@ -69,12 +71,17 @@
     [famigoController show];
     [[self view] addSubview:[famigoController view]];
     
+    // Display the game type controller
+    gameTypeController = [[GameTypeController alloc] init];
+    [[gameTypeController view] setFrame:[[self view] frame]];
+    [[self view] addSubview:[gameTypeController view]];
+    /*
     // Display the Famigo logo
     logoAnimationController = [[LogoAnimationController alloc] init];
     [[logoAnimationController view] setFrame:[[self view] frame]];
     [[logoAnimationController view] setBackgroundColor:[UIColor whiteColor]];
     [[self view] addSubview:[logoAnimationController view]];
-    
+    */
     // Capture the notification at the end of the logo animation
     [logoAnimationController registerForNotifications:self withSelector:@selector(logoAnimationDidFinish:)];
     
@@ -112,7 +119,9 @@
     [[self view] exchangeSubviewAtIndex:0 withSubviewAtIndex:1];
 }
 
-#pragma mark - Famigo integration
+#pragma mark -
+#pragma mark Famigo integration
+
 - (void)famigoReady {
     NSLog(@"famigoReady");
 }
@@ -190,7 +199,9 @@
 	}
 }
 
-#pragma mark - Reachability
+#pragma mark -
+#pragma mark Reachability
+
 - (void)reachabilityNote:(NSNotification*)note {
 	Reachability *netStatusOracle = [Reachability sharedReachability];
 	
@@ -207,19 +218,28 @@
 }
 
 - (void)freezeGameNoNetwork {
-	UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Oops"
-									message:@"This game requires network access to play. This message will dismiss when network access is restored." 
-								   delegate:self 
-						  cancelButtonTitle:nil
-						  otherButtonTitles:nil];
-	networkAlert = av;
-	
-	[av show];
-	[av release];
+	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:@"This game requires network access to play. This message will dismiss when network access is restored." 
+                                                       delegate:self 
+                                              cancelButtonTitle:nil
+                                              otherButtonTitles:nil];
+	networkAlert = alertView;
+	[alertView show];
+	[alertView release];
 }
 
 - (void)thawGame {
 	[networkAlert dismissWithClickedButtonIndex:networkAlert.cancelButtonIndex animated:YES];
 	networkAlert = nil;
 }
+
+#pragma mark -
+
+- (void)pressedGameTypeButton:(id)sender {
+    [[Famigo sharedInstance] setForceGameToStartSynchronously:![sender tag]];
+    [[Famigo sharedInstance] setIsPassAndPlaySession:[sender tag]];
+    [[gameTypeController view] removeFromSuperview];
+    [gameTypeController release];
+}
+
 @end

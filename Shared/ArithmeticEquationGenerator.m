@@ -24,10 +24,10 @@
     [super dealloc];
 }
 
-- (id)initWithDifficulty:(Difficulty)_difficulty allowNegativeNumbers:(BOOL)_allowNegativeNumbers {
+- (id)initWithDifficulty:(Difficulty)theDifficulty allowNegativeNumbers:(BOOL)shouldAllowNegativeNumbers {
     if (self = [super init]) {
-        difficulty = _difficulty;
-        allowNegativeNumbers = _allowNegativeNumbers;
+        difficulty = theDifficulty;
+        allowNegativeNumbers = shouldAllowNegativeNumbers;
         allowedOperations = [[NSMutableArray alloc] initWithObjects:
                              [NSNumber numberWithInt:Addition],
                              [NSNumber numberWithInt:Subtraction],

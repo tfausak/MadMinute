@@ -36,7 +36,7 @@ typedef enum {
 @property (nonatomic, assign, readonly) int multiplicationMax;
 @property (nonatomic, assign, readonly) int divisionMax;
 
-- (id)initWithDifficulty:(Difficulty)_difficulty allowNegativeNumbers:(BOOL)_allowNegativeNumbers;
+- (id)initWithDifficulty:(Difficulty)theDifficulty allowNegativeNumbers:(BOOL)shouldAllowNegativeNumbers;
 - (ArithmeticEquation *)generateEquation;
 
 @end

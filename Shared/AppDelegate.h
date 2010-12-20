@@ -10,6 +10,7 @@
 #import "Constants.h"
 #import "MadMinuteController.h"
 #import "FamigoHeaders.h"
+#import "Reachability.h"
 
 @interface AppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
@@ -18,5 +19,7 @@
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) MadMinuteController *madMinuteController;
+
+- (void)evaluateTimeForReview;
 
 @end
