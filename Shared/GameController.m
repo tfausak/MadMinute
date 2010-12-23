@@ -188,8 +188,11 @@
 #pragma mark -
 
 - (void)newGame {
-    arithmeticEquationGenerator = [[ArithmeticEquationGenerator alloc] initWithDifficulty:[[NSUserDefaults standardUserDefaults] integerForKey:@"difficulty"]
-                                                                     allowNegativeNumbers:[[NSUserDefaults standardUserDefaults] boolForKey:@"allowNegativeNumbers"]];
+	int difficulty = [[NSUserDefaults standardUserDefaults] integerForKey:@"difficulty"];
+	BOOL allowNegativeNumbers = [[NSUserDefaults standardUserDefaults] boolForKey:@"allowNegativeNumbers"];
+	
+    arithmeticEquationGenerator = [[ArithmeticEquationGenerator alloc] initWithDifficulty:difficulty
+                                                                     allowNegativeNumbers:allowNegativeNumbers];
     arithmeticEquation = [arithmeticEquationGenerator generateEquation];
     gameClock = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFireMethod:) userInfo:nil repeats:YES];
     timeLeft = kInitialTime;
@@ -202,6 +205,22 @@
     [numberPad setUserInteractionEnabled:YES];
     [signControl setUserInteractionEnabled:YES];
     
+	// Here, we persist our settings values.
+	NSDictionary *settingsData = [NSDictionary dictionaryWithObjectsAndKeys:
+							  [NSNumber numberWithInt:difficulty], kDifficultyKey,
+							  [NSNumber numberWithInt:allowNegativeNumbers], kAllowNegativeNumbersKey, // don't even think about using numberWithBool, says Taylor.
+							  nil];
+	
+	// First, find the dictionary that corresponds to the current player.
+	Famigo *f = [Famigo sharedInstance];
+	NSDictionary *gameData = [f.gameInstance valueForKey:f.game_name];
+	NSDictionary *myPlayerDictionary = [gameData valueForKey:f.member_id];
+	
+	// We can safely overwrite their own persisted settings using the info'z they just selected.
+	[myPlayerDictionary setValue:settingsData forKey:kPlayerSettingsKey];
+	[f updateGame];
+	
+	
     [self updateUI];
 }
 

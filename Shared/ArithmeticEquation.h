@@ -29,9 +29,10 @@ typedef enum {
 @property (nonatomic, assign, readonly) int result;
 
 - (id)initWithFirstOperand:(int)theFirstOperand operation:(Operation)theOperation secondOperand:(int)theSecondOperand;
+- (id)initWithStringRepresentation:(NSString*)equationAsString;
 - (NSString *)firstOperandAsString;
 - (NSString *)operationAsString;
 - (NSString *)secondOperandAsString;
 - (NSString *)resultAsString;
-
+- (NSString *)equationAsString;
 @end

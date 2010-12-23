@@ -47,6 +47,12 @@
     return self;
 }
 
+- (id)initWithStringRepresentation:(NSString*)equationAsString {
+	if (self = [super init]) {
+	}
+	return self;
+}
+
 - (NSString *)firstOperandAsString {
     return [NSString stringWithFormat:@"%d", firstOperand];
 }
@@ -75,4 +81,8 @@
     return [NSString stringWithFormat:@"%d", result];
 }
 
+- (NSString *)equationAsString {
+	return [NSString stringWithFormat:@"%d %@ %d", [self firstOperandAsString], 
+			[self operationAsString], [self secondOperandAsString]];
+}
 @end

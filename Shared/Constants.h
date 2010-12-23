@@ -23,3 +23,5 @@
 #define kAppLaunchCountKey @"appLaunchCount"
 #define kPromptForReviewOnLaunchCount 3
 #define kAppStoreReviewUrl @""
+#define kPlayerSettingsKey @"settings"
+#define kPlayerQuestionsKey @"questions"

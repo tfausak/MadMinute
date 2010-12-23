@@ -54,7 +54,6 @@
 		34E830C6127609B400FFF679 /* dad2.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E83032127609B400FFF679 /* dad2.png */; };
 		34E830C7127609B400FFF679 /* dad3.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E83033127609B400FFF679 /* dad3.png */; };
 		34E830C8127609B400FFF679 /* dad4.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E83034127609B400FFF679 /* dad4.png */; };
-		34E830C9127609B400FFF679 /* dotOpaque.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E83035127609B400FFF679 /* dotOpaque.png */; };
 		34E830CA127609B400FFF679 /* EmailViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34E83036127609B400FFF679 /* EmailViewController-iPad.xib */; };
 		34E830CB127609B400FFF679 /* EmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34E83038127609B400FFF679 /* EmailViewController.xib */; };
 		34E830CC127609B400FFF679 /* famidog.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E83039127609B400FFF679 /* famidog.png */; };
@@ -118,8 +117,6 @@
 		34E83106127609B400FFF679 /* kid2.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E8307D127609B400FFF679 /* kid2.png */; };
 		34E83107127609B400FFF679 /* kid3.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E8307E127609B400FFF679 /* kid3.png */; };
 		34E83108127609B400FFF679 /* kid4.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E8307F127609B400FFF679 /* kid4.png */; };
-		34E83109127609B400FFF679 /* logo_no_ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E83080127609B400FFF679 /* logo_no_ball.png */; };
-		34E8310A127609B400FFF679 /* m_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E83082127609B400FFF679 /* m_add.png */; };
 		34E8310B127609B400FFF679 /* m_boy.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E83083127609B400FFF679 /* m_boy.png */; };
 		34E8310C127609B400FFF679 /* m_dad.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E83084127609B400FFF679 /* m_dad.png */; };
 		34E8310D127609B400FFF679 /* m_girl.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E83085127609B400FFF679 /* m_girl.png */; };
@@ -150,8 +147,6 @@
 		34E83126127609B400FFF679 /* sis3.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E830AA127609B400FFF679 /* sis3.png */; };
 		34E83127127609B400FFF679 /* sis4.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E830AB127609B400FFF679 /* sis4.png */; };
 		34E83128127609B400FFF679 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E830AC127609B400FFF679 /* stop.png */; };
-		34E83129127609B400FFF679 /* superball_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E830AD127609B400FFF679 /* superball_gray.png */; };
-		34E8312A127609B400FFF679 /* superball.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E830AE127609B400FFF679 /* superball.png */; };
 		34E8312B127609B400FFF679 /* tab.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E830AF127609B400FFF679 /* tab.png */; };
 		34E8312C127609B400FFF679 /* tink.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34E830B1127609B400FFF679 /* tink.wav */; };
 		34E8312D127609B400FFF679 /* WelcomeViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34E830B6127609B400FFF679 /* WelcomeViewController-iPad.xib */; };
@@ -288,7 +283,6 @@
 		34E83032127609B400FFF679 /* dad2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dad2.png; path = "../Famigo/build/Release-universal/FamigoAPI/dad2.png"; sourceTree = SOURCE_ROOT; };
 		34E83033127609B400FFF679 /* dad3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dad3.png; path = "../Famigo/build/Release-universal/FamigoAPI/dad3.png"; sourceTree = SOURCE_ROOT; };
 		34E83034127609B400FFF679 /* dad4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dad4.png; path = "../Famigo/build/Release-universal/FamigoAPI/dad4.png"; sourceTree = SOURCE_ROOT; };
-		34E83035127609B400FFF679 /* dotOpaque.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dotOpaque.png; path = "../Famigo/build/Release-universal/FamigoAPI/dotOpaque.png"; sourceTree = SOURCE_ROOT; };
 		34E83036127609B400FFF679 /* EmailViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "EmailViewController-iPad.xib"; path = "../Famigo/build/Release-universal/FamigoAPI/EmailViewController-iPad.xib"; sourceTree = SOURCE_ROOT; };
 		34E83037127609B400FFF679 /* EmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmailViewController.h; path = "../Famigo/build/Release-universal/FamigoAPI/EmailViewController.h"; sourceTree = SOURCE_ROOT; };
 		34E83038127609B400FFF679 /* EmailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EmailViewController.xib; path = "../Famigo/build/Release-universal/FamigoAPI/EmailViewController.xib"; sourceTree = SOURCE_ROOT; };
@@ -363,9 +357,7 @@
 		34E8307D127609B400FFF679 /* kid2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kid2.png; path = "../Famigo/build/Release-universal/FamigoAPI/kid2.png"; sourceTree = SOURCE_ROOT; };
 		34E8307E127609B400FFF679 /* kid3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kid3.png; path = "../Famigo/build/Release-universal/FamigoAPI/kid3.png"; sourceTree = SOURCE_ROOT; };
 		34E8307F127609B400FFF679 /* kid4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kid4.png; path = "../Famigo/build/Release-universal/FamigoAPI/kid4.png"; sourceTree = SOURCE_ROOT; };
-		34E83080127609B400FFF679 /* logo_no_ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_no_ball.png; path = "../Famigo/build/Release-universal/FamigoAPI/logo_no_ball.png"; sourceTree = SOURCE_ROOT; };
 		34E83081127609B400FFF679 /* LogoAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogoAnimationController.h; path = "../Famigo/build/Release-universal/FamigoAPI/LogoAnimationController.h"; sourceTree = SOURCE_ROOT; };
-		34E83082127609B400FFF679 /* m_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = m_add.png; path = "../Famigo/build/Release-universal/FamigoAPI/m_add.png"; sourceTree = SOURCE_ROOT; };
 		34E83083127609B400FFF679 /* m_boy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = m_boy.png; path = "../Famigo/build/Release-universal/FamigoAPI/m_boy.png"; sourceTree = SOURCE_ROOT; };
 		34E83084127609B400FFF679 /* m_dad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = m_dad.png; path = "../Famigo/build/Release-universal/FamigoAPI/m_dad.png"; sourceTree = SOURCE_ROOT; };
 		34E83085127609B400FFF679 /* m_girl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = m_girl.png; path = "../Famigo/build/Release-universal/FamigoAPI/m_girl.png"; sourceTree = SOURCE_ROOT; };
@@ -407,8 +399,6 @@
 		34E830AA127609B400FFF679 /* sis3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sis3.png; path = "../Famigo/build/Release-universal/FamigoAPI/sis3.png"; sourceTree = SOURCE_ROOT; };
 		34E830AB127609B400FFF679 /* sis4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sis4.png; path = "../Famigo/build/Release-universal/FamigoAPI/sis4.png"; sourceTree = SOURCE_ROOT; };
 		34E830AC127609B400FFF679 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stop.png; path = "../Famigo/build/Release-universal/FamigoAPI/stop.png"; sourceTree = SOURCE_ROOT; };
-		34E830AD127609B400FFF679 /* superball_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = superball_gray.png; path = "../Famigo/build/Release-universal/FamigoAPI/superball_gray.png"; sourceTree = SOURCE_ROOT; };
-		34E830AE127609B400FFF679 /* superball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = superball.png; path = "../Famigo/build/Release-universal/FamigoAPI/superball.png"; sourceTree = SOURCE_ROOT; };
 		34E830AF127609B400FFF679 /* tab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab.png; path = "../Famigo/build/Release-universal/FamigoAPI/tab.png"; sourceTree = SOURCE_ROOT; };
 		34E830B0127609B400FFF679 /* TimeUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeUtility.h; path = "../Famigo/build/Release-universal/FamigoAPI/TimeUtility.h"; sourceTree = SOURCE_ROOT; };
 		34E830B1127609B400FFF679 /* tink.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = tink.wav; path = "../Famigo/build/Release-universal/FamigoAPI/tink.wav"; sourceTree = SOURCE_ROOT; };
@@ -684,7 +674,6 @@
 				34E83032127609B400FFF679 /* dad2.png */,
 				34E83033127609B400FFF679 /* dad3.png */,
 				34E83034127609B400FFF679 /* dad4.png */,
-				34E83035127609B400FFF679 /* dotOpaque.png */,
 				34E83036127609B400FFF679 /* EmailViewController-iPad.xib */,
 				34E83037127609B400FFF679 /* EmailViewController.h */,
 				34E83038127609B400FFF679 /* EmailViewController.xib */,
@@ -759,9 +748,7 @@
 				34E8307D127609B400FFF679 /* kid2.png */,
 				34E8307E127609B400FFF679 /* kid3.png */,
 				34E8307F127609B400FFF679 /* kid4.png */,
-				34E83080127609B400FFF679 /* logo_no_ball.png */,
 				34E83081127609B400FFF679 /* LogoAnimationController.h */,
-				34E83082127609B400FFF679 /* m_add.png */,
 				34E83083127609B400FFF679 /* m_boy.png */,
 				34E83084127609B400FFF679 /* m_dad.png */,
 				34E83085127609B400FFF679 /* m_girl.png */,
@@ -803,8 +790,6 @@
 				34E830AA127609B400FFF679 /* sis3.png */,
 				34E830AB127609B400FFF679 /* sis4.png */,
 				34E830AC127609B400FFF679 /* stop.png */,
-				34E830AD127609B400FFF679 /* superball_gray.png */,
-				34E830AE127609B400FFF679 /* superball.png */,
 				34E830AF127609B400FFF679 /* tab.png */,
 				34E830B0127609B400FFF679 /* TimeUtility.h */,
 				34E830B1127609B400FFF679 /* tink.wav */,
@@ -886,7 +871,6 @@
 				34E830C6127609B400FFF679 /* dad2.png in Resources */,
 				34E830C7127609B400FFF679 /* dad3.png in Resources */,
 				34E830C8127609B400FFF679 /* dad4.png in Resources */,
-				34E830C9127609B400FFF679 /* dotOpaque.png in Resources */,
 				34E830CA127609B400FFF679 /* EmailViewController-iPad.xib in Resources */,
 				34E830CB127609B400FFF679 /* EmailViewController.xib in Resources */,
 				34E830CC127609B400FFF679 /* famidog.png in Resources */,
@@ -950,8 +934,6 @@
 				34E83106127609B400FFF679 /* kid2.png in Resources */,
 				34E83107127609B400FFF679 /* kid3.png in Resources */,
 				34E83108127609B400FFF679 /* kid4.png in Resources */,
-				34E83109127609B400FFF679 /* logo_no_ball.png in Resources */,
-				34E8310A127609B400FFF679 /* m_add.png in Resources */,
 				34E8310B127609B400FFF679 /* m_boy.png in Resources */,
 				34E8310C127609B400FFF679 /* m_dad.png in Resources */,
 				34E8310D127609B400FFF679 /* m_girl.png in Resources */,
@@ -982,8 +964,6 @@
 				34E83126127609B400FFF679 /* sis3.png in Resources */,
 				34E83127127609B400FFF679 /* sis4.png in Resources */,
 				34E83128127609B400FFF679 /* stop.png in Resources */,
-				34E83129127609B400FFF679 /* superball_gray.png in Resources */,
-				34E8312A127609B400FFF679 /* superball.png in Resources */,
 				34E8312B127609B400FFF679 /* tab.png in Resources */,
 				34E8312C127609B400FFF679 /* tink.wav in Resources */,
 				34E8312D127609B400FFF679 /* WelcomeViewController-iPad.xib in Resources */,

@@ -140,34 +140,27 @@
         
         // Get a list of player names
         NSArray *playerDictionaries = [f.gameInstance valueForKey:FC_d_game_invites];
-        NSMutableArray *playerNames = [NSMutableArray array];
-        [playerNames addObject:f.member_id];
+        NSMutableArray *playerMemberIds = [NSMutableArray array];
+        [playerMemberIds addObject:f.member_id];
         for (NSDictionary *playerDictionary in playerDictionaries) {
-            [playerNames addObject:[playerDictionary valueForKey:FC_d_member_id]];
+            [playerMemberIds addObject:[playerDictionary valueForKey:FC_d_member_id]];
         }
         
-        // Create the default player dictionary
-        NSDictionary *defaultPlayerDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
-                                                 [NSNumber numberWithInt:0], kGameFinishedKey,
-                                                 [NSNumber numberWithInt:0], kNumberRightKey,
-                                                 [NSNumber numberWithInt:0], kNumberWrongKey,
-                                                 [NSNumber numberWithInt:0], kNumberSkippedKey,
-                                                 [NSNumber numberWithInt:0], kScoreKey,
-                                                 nil];
-        NSMutableDictionary *scoresDictionary = [NSMutableDictionary dictionary];
-        
-        // Set every player's dictionary to the default one
-        for (NSString *playerName in playerNames) {
-            [scoresDictionary setObject:defaultPlayerDictionary forKey:playerName];
-        }
-        
-        NSDictionary *gameData = [NSDictionary dictionaryWithObjectsAndKeys:
-                                  [NSNumber numberWithInt:0], kSeedKey,
-                                  [NSNumber numberWithInt:0], kDifficultyKey,
-                                  [NSNumber numberWithInt:NO], kAllowNegativeNumbersKey, // don't even think about using numberWithBool
-                                  scoresDictionary, kScoresKey,
-                                  nil];
-        [f.gameInstance setValue:gameData forKey:f.game_name];
+		// Our game data consists of a dictionary of member_id to a separate dictionary, which
+		// stores player settings and player questions.
+		NSMutableDictionary *gameData = [NSMutableDictionary dictionary];
+		for (NSString *memberId in playerMemberIds) {
+			// Settings: our seed, our difficulty, our negative number settings.
+			NSMutableDictionary *settingsPlaceholder = [NSMutableDictionary dictionary];
+			// Questions: each question the user faced and their answer/skipped status.
+			NSMutableArray *questionPlaceholder = [NSMutableArray array];
+			
+			NSDictionary *madMinutePlayerDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
+													   settingsPlaceholder, kPlayerSettingsKey,
+													   questionPlaceholder, kPlayerQuestionsKey, nil];
+			[gameData setValue:madMinutePlayerDictionary forKey:memberId];
+		}
+		[f.gameInstance setValue:gameData forKey:f.game_name];
 		[f.gameInstance setValue:f.member_id forKey:FC_d_game_current_turn];
 		[f updateGame];
     }
