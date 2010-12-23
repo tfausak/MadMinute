@@ -10,7 +10,7 @@
 #define kGameName @"Mad Minute"
 #define kGameInstructions @"\nIt's like math, but faster!\n\n"
 #define kFamigoIPAddress @"174.143.213.31"
-#define kInitialTime 5
+#define kInitialTime 60
 #define kNumberRightKey @"numberRight"
 #define kNumberWrongKey @"numberWrong"
 #define kNumberSkippedKey @"numberSkipped"
@@ -25,3 +25,5 @@
 #define kAppStoreReviewUrl @""
 #define kPlayerSettingsKey @"settings"
 #define kPlayerQuestionsKey @"questions"
+#define kPlayerEquationKey @"equation"
+#define kPlayerResponseKey @"response"

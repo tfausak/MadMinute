@@ -82,7 +82,6 @@
 }
 
 - (NSString *)equationAsString {
-	return [NSString stringWithFormat:@"%d %@ %d", [self firstOperandAsString], 
-			[self operationAsString], [self secondOperandAsString]];
+	return [NSString stringWithFormat:@"%d %d %d", firstOperand, operation, secondOperand];
 }
 @end

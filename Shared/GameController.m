@@ -220,7 +220,6 @@
 	[myPlayerDictionary setValue:settingsData forKey:kPlayerSettingsKey];
 	[f updateGame];
 	
-	
     [self updateUI];
 }
 
@@ -356,6 +355,24 @@
         }
     }
     
+	
+	// For each question faced, we persist the question as well as the user's answer.
+	NSDictionary *questionAndResult = [NSDictionary dictionaryWithObjectsAndKeys:
+									   [arithmeticEquation equationAsString], kPlayerEquationKey,
+									   responseValue, kPlayerResponseKey, nil];
+	
+	Famigo *f = [Famigo sharedInstance];
+	NSDictionary *gameData = [f.gameInstance valueForKey:f.game_name];
+	NSDictionary *myPlayerDictionary = [gameData valueForKey:f.member_id];
+	
+	// There's an existing array of questions, we just need to add to it.  It's initialized
+	// when we start the game.
+	NSMutableArray *myAnsweredQuestions = [myPlayerDictionary valueForKey:kPlayerQuestionsKey];
+	[myAnsweredQuestions addObject:questionAndResult];
+	NSLog(@"my answered questions are %@", myAnsweredQuestions);
+	NSLog(@"my game data is %@", gameData);
+	[f updateGame];
+
     [UIView beginAnimations:nil context:nil]; {
         [UIView setAnimationDuration:0.5];
         [[self view] setBackgroundColor:[UIColor colorWithWhite:0.75 alpha:1.0]];
