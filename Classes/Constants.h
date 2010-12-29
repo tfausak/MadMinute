@@ -30,10 +30,10 @@
 #define kPlayerResponseKey @"response"
 
 typedef enum {
-    SinglePlayer = 0x01 << 0,
-    PassAndPlay = 0x01 << 1,
-    PassAndPlayWithFamigo = 0x01 << 2,
-    MultiDeviceWithFamigo = 0x01 << 3
+    SinglePlayer,
+    PassAndPlay,
+    PassAndPlayWithFamigo,
+    MultiDeviceWithFamigo
 } GameType;
 
 typedef enum {

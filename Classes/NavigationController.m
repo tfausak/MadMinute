@@ -51,12 +51,6 @@
         logoAnimationController = [[LogoAnimationController alloc] init];
         [logoAnimationController registerForNotifications:self withSelector:@selector(logoAnimationDidFinish)];
         [self pushViewController:logoAnimationController animated:NO];
-        
-        // Fade in the Famigo logo
-        [[logoAnimationController view] setAlpha:0];
-        [UIView beginAnimations:nil context:nil]; {
-            [[logoAnimationController view] setAlpha:1];
-        } [UIView commitAnimations];
     }
     
     return self;
@@ -99,17 +93,16 @@
     [[NSUserDefaults standardUserDefaults] setInteger:gameType forKey:kGameTypeKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    // Bring up the next view controller
-    if (gameType == SinglePlayer || gameType == PassAndPlay) {
-        settingsViewController = [[SettingsViewController alloc] init];
-        [self pushViewController:settingsViewController animated:YES];
-    }
-    else if (gameType == PassAndPlayWithFamigo || gameType == MultiDeviceWithFamigo) {
+    if (gameType == PassAndPlayWithFamigo || gameType == MultiDeviceWithFamigo) {
         famigoController = [FamigoController sharedInstanceWithDelegate:self];
         [self pushViewController:famigoController animated:YES];
         
-        // Check for network availability
+        // Make sure we have connectivity
         [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"kNetworkReachabilityChangedNotification" object:NULL]];
+    }
+    else {
+        settingsViewController = [[SettingsViewController alloc] init];
+        [self pushViewController:settingsViewController animated:YES];
     }
 }
 

@@ -103,14 +103,19 @@
 - (BOOL)shouldPromptUserToReview {
     int appLaunchCount = [[NSUserDefaults standardUserDefaults] integerForKey:kAppLaunchCountKey];
     
-    // A negative launch count means they already reviewed or said they don't want to
-    if (appLaunchCount < 0 || [[Reachability sharedReachability] internetConnectionStatus] == NotReachable) {
+    // Don't bug 'em if they've already reviewed (or said they don't want to)
+    if (appLaunchCount < 0) {
         return NO;
     }
     
     // Update the app launch count
     [[NSUserDefaults standardUserDefaults] setInteger:appLaunchCount + 1 forKey:kAppLaunchCountKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    // No use trying to review if there's no network access
+    if ([[Reachability sharedReachability] internetConnectionStatus] == NotReachable) {
+        return NO;
+    }
     
     return appLaunchCount >= kPromptOnAppLaunchCount;
 }
