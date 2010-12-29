@@ -1,0 +1,1115 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		3421A5AE12C01DDD00742E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3421A5AD12C01DDD00742E49 /* AudioToolbox.framework */; };
+		3421A69B12C02A0700742E49 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3421A69A12C02A0700742E49 /* SystemConfiguration.framework */; };
+		34D57F4312C28679005897F4 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D57F4212C28679005897F4 /* SettingsViewController.m */; };
+		34D5822212C2AE44005897F4 /* ArithmeticEquationGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D5821E12C2AE44005897F4 /* ArithmeticEquationGenerator.m */; };
+		34D5822312C2AE44005897F4 /* ArithmeticEquation.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D5822012C2AE44005897F4 /* ArithmeticEquation.m */; };
+		34D5823112C2AF01005897F4 /* MadMinuteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D5823012C2AF01005897F4 /* MadMinuteViewController.m */; };
+		34D7D7C712BFECD900687591 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D7D7C612BFECD900687591 /* AppDelegate.m */; };
+		34D7D7F012BFEDD400687591 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D7EE12BFEDD400687591 /* Entitlements.plist */; };
+		34D7D7F112BFEDD400687591 /* Mad_Minute-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D7EF12BFEDD400687591 /* Mad_Minute-Info.plist */; };
+		34D7D81512BFEEF800687591 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D80912BFEEF800687591 /* Default-Landscape.png */; };
+		34D7D81612BFEEF800687591 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D80A12BFEEF800687591 /* Default-Portrait.png */; };
+		34D7D81712BFEEF800687591 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D80B12BFEEF800687591 /* Default.png */; };
+		34D7D81812BFEEF800687591 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D80C12BFEEF800687591 /* Default@2x.png */; };
+		34D7D81A12BFEEF800687591 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D80E12BFEEF800687591 /* Icon-72.png */; };
+		34D7D81B12BFEEF800687591 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D80F12BFEEF800687591 /* Icon-Small-50.png */; };
+		34D7D81C12BFEEF800687591 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D81012BFEEF800687591 /* Icon-Small.png */; };
+		34D7D81D12BFEEF800687591 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D81112BFEEF800687591 /* Icon-Small@2x.png */; };
+		34D7D81E12BFEEF800687591 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D81212BFEEF800687591 /* Icon.png */; };
+		34D7D81F12BFEEF800687591 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D81312BFEEF800687591 /* Icon@2x.png */; };
+		34D7D82012BFEEF800687591 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D81412BFEEF800687591 /* iTunesArtwork */; };
+		34D7D83012BFEFC200687591 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D82F12BFEFC200687591 /* background.png */; };
+		34D7D91712BFF03400687591 /* bro2.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D84712BFF03400687591 /* bro2.png */; };
+		34D7D91812BFF03400687591 /* bro3.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D84812BFF03400687591 /* bro3.png */; };
+		34D7D91912BFF03400687591 /* bro4.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D84912BFF03400687591 /* bro4.png */; };
+		34D7D91A12BFF03400687591 /* broX.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D84A12BFF03400687591 /* broX.png */; };
+		34D7D91B12BFF03400687591 /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D84C12BFF03400687591 /* chat.png */; };
+		34D7D91C12BFF03400687591 /* ChatMessageViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D84D12BFF03400687591 /* ChatMessageViewController-iPad.xib */; };
+		34D7D91D12BFF03400687591 /* ChatMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D84F12BFF03400687591 /* ChatMessageViewController.xib */; };
+		34D7D91E12BFF03400687591 /* checkGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D85012BFF03400687591 /* checkGreen.png */; };
+		34D7D91F12BFF03400687591 /* cheer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D85112BFF03400687591 /* cheer.wav */; };
+		34D7D92012BFF03400687591 /* circleGray.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D85212BFF03400687591 /* circleGray.png */; };
+		34D7D92112BFF03400687591 /* ContactListViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D85312BFF03400687591 /* ContactListViewController-iPad.xib */; };
+		34D7D92212BFF03400687591 /* ContactListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D85512BFF03400687591 /* ContactListViewController.xib */; };
+		34D7D92312BFF03400687591 /* dad2.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D85612BFF03400687591 /* dad2.png */; };
+		34D7D92412BFF03400687591 /* dad3.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D85712BFF03400687591 /* dad3.png */; };
+		34D7D92512BFF03400687591 /* dad4.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D85812BFF03400687591 /* dad4.png */; };
+		34D7D92612BFF03400687591 /* dotOpaque.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D85912BFF03400687591 /* dotOpaque.png */; };
+		34D7D92712BFF03400687591 /* EmailViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D85A12BFF03400687591 /* EmailViewController-iPad.xib */; };
+		34D7D92812BFF03400687591 /* EmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D85C12BFF03400687591 /* EmailViewController.xib */; };
+		34D7D92912BFF03400687591 /* famidog.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D85E12BFF03400687591 /* famidog.png */; };
+		34D7D92A12BFF03400687591 /* famidogshare.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D85F12BFF03400687591 /* famidogshare.png */; };
+		34D7D92B12BFF03400687591 /* Famigo Logo 01.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D86012BFF03400687591 /* Famigo Logo 01.png */; };
+		34D7D92C12BFF03400687591 /* Famigo Logo 02.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D86112BFF03400687591 /* Famigo Logo 02.png */; };
+		34D7D92D12BFF03400687591 /* Famigo Logo 03.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D86212BFF03400687591 /* Famigo Logo 03.png */; };
+		34D7D92E12BFF03400687591 /* Famigo Logo 04.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D86312BFF03400687591 /* Famigo Logo 04.png */; };
+		34D7D92F12BFF03400687591 /* Famigo Logo 05.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D86412BFF03400687591 /* Famigo Logo 05.png */; };
+		34D7D93012BFF03400687591 /* Famigo Logo 06.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D86512BFF03400687591 /* Famigo Logo 06.png */; };
+		34D7D93112BFF03400687591 /* Famigo Logo 07.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D86612BFF03400687591 /* Famigo Logo 07.png */; };
+		34D7D93212BFF03400687591 /* Famigo Logo 08.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D86712BFF03400687591 /* Famigo Logo 08.png */; };
+		34D7D93312BFF03400687591 /* Famigo Logo 09.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D86812BFF03400687591 /* Famigo Logo 09.png */; };
+		34D7D93412BFF03400687591 /* Famigo Logo 10.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D86912BFF03400687591 /* Famigo Logo 10.png */; };
+		34D7D93512BFF03400687591 /* Famigo Logo 11.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D86A12BFF03400687591 /* Famigo Logo 11.png */; };
+		34D7D93612BFF03400687591 /* Famigo Logo 12.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D86B12BFF03400687591 /* Famigo Logo 12.png */; };
+		34D7D93712BFF03400687591 /* Famigo Logo 13.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D86C12BFF03400687591 /* Famigo Logo 13.png */; };
+		34D7D93812BFF03400687591 /* Famigo Logo 14.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D86D12BFF03400687591 /* Famigo Logo 14.png */; };
+		34D7D93912BFF03400687591 /* Famigo Logo 15.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D86E12BFF03400687591 /* Famigo Logo 15.png */; };
+		34D7D93A12BFF03400687591 /* Famigo Logo 16.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D86F12BFF03400687591 /* Famigo Logo 16.png */; };
+		34D7D93B12BFF03400687591 /* Famigo Logo 17.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D87012BFF03400687591 /* Famigo Logo 17.png */; };
+		34D7D93C12BFF03400687591 /* Famigo Logo 18.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D87112BFF03400687591 /* Famigo Logo 18.png */; };
+		34D7D93D12BFF03400687591 /* Famigo Logo 19.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D87212BFF03400687591 /* Famigo Logo 19.png */; };
+		34D7D93E12BFF03400687591 /* Famigo Logo 20.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D87312BFF03400687591 /* Famigo Logo 20.png */; };
+		34D7D93F12BFF03400687591 /* Famigo Logo 21.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D87412BFF03400687591 /* Famigo Logo 21.png */; };
+		34D7D94012BFF03400687591 /* Famigo Logo 22.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D87512BFF03400687591 /* Famigo Logo 22.png */; };
+		34D7D94112BFF03400687591 /* Famigo Logo 23.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D87612BFF03400687591 /* Famigo Logo 23.png */; };
+		34D7D94212BFF03400687591 /* Famigo Logo 24.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D87712BFF03400687591 /* Famigo Logo 24.png */; };
+		34D7D94312BFF03400687591 /* Famigo Logo 25.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D87812BFF03400687591 /* Famigo Logo 25.png */; };
+		34D7D94412BFF03400687591 /* Famigo Logo 26.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D87912BFF03400687591 /* Famigo Logo 26.png */; };
+		34D7D94512BFF03400687591 /* Famigo Logo 27.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D87A12BFF03400687591 /* Famigo Logo 27.png */; };
+		34D7D94612BFF03400687591 /* Famigo Logo 28.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D87B12BFF03400687591 /* Famigo Logo 28.png */; };
+		34D7D94712BFF03400687591 /* Famigo Logo 29.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D87C12BFF03400687591 /* Famigo Logo 29.png */; };
+		34D7D94812BFF03400687591 /* Famigo Logo 30.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D87D12BFF03400687591 /* Famigo Logo 30.png */; };
+		34D7D94912BFF03400687591 /* Famigo Logo 31.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D87E12BFF03400687591 /* Famigo Logo 31.png */; };
+		34D7D94A12BFF03400687591 /* Famigo Logo 32.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D87F12BFF03400687591 /* Famigo Logo 32.png */; };
+		34D7D94B12BFF03400687591 /* Famigo Logo 33.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D88012BFF03400687591 /* Famigo Logo 33.png */; };
+		34D7D94C12BFF03400687591 /* Famigo Logo 34.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D88112BFF03400687591 /* Famigo Logo 34.png */; };
+		34D7D94D12BFF03400687591 /* Famigo Logo 35.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D88212BFF03400687591 /* Famigo Logo 35.png */; };
+		34D7D94E12BFF03400687591 /* Famigo Logo 36.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D88312BFF03400687591 /* Famigo Logo 36.png */; };
+		34D7D94F12BFF03400687591 /* Famigo Logo 37.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D88412BFF03400687591 /* Famigo Logo 37.png */; };
+		34D7D95012BFF03400687591 /* famigo_drums.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D88512BFF03400687591 /* famigo_drums.wav */; };
+		34D7D95112BFF03400687591 /* famigo_logo_new.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D88612BFF03400687591 /* famigo_logo_new.png */; };
+		34D7D95212BFF03400687591 /* famigo_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D88712BFF03400687591 /* famigo_logo.png */; };
+		34D7D95312BFF03400687591 /* famigo_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D88812BFF03400687591 /* famigo_small.png */; };
+		34D7D95412BFF03400687591 /* Famigo-F.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D88912BFF03400687591 /* Famigo-F.png */; };
+		34D7D95512BFF03400687591 /* Family.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D88E12BFF03400687591 /* Family.png */; };
+		34D7D95612BFF03400687591 /* FamilyChatViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D88F12BFF03400687591 /* FamilyChatViewController-iPad.xib */; };
+		34D7D95712BFF03400687591 /* FamilyChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D89112BFF03400687591 /* FamilyChatViewController.xib */; };
+		34D7D95812BFF03400687591 /* FamilyInviteEmailBody.txt in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D89212BFF03400687591 /* FamilyInviteEmailBody.txt */; };
+		34D7D95912BFF03400687591 /* FamilyInviteViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D89312BFF03400687591 /* FamilyInviteViewController-iPad.xib */; };
+		34D7D95A12BFF03400687591 /* FamilyInviteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D89512BFF03400687591 /* FamilyInviteViewController.xib */; };
+		34D7D95B12BFF03400687591 /* familySDK.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D89612BFF03400687591 /* familySDK.png */; };
+		34D7D95C12BFF03400687591 /* FamilyViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D89712BFF03400687591 /* FamilyViewController-iPad.xib */; };
+		34D7D95D12BFF03400687591 /* FamilyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D89912BFF03400687591 /* FamilyViewController.xib */; };
+		34D7D95E12BFF03400687591 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D89B12BFF03400687591 /* FBDialog.bundle */; };
+		34D7D95F12BFF03400687591 /* GameResultsShareController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D89F12BFF03400687591 /* GameResultsShareController-iPad.xib */; };
+		34D7D96012BFF03400687591 /* GameResultsShareController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8A112BFF03400687591 /* GameResultsShareController.xib */; };
+		34D7D96112BFF03400687591 /* games.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8A212BFF03400687591 /* games.png */; };
+		34D7D96212BFF03400687591 /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8A412BFF03400687591 /* gear.png */; };
+		34D7D96312BFF03400687591 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8A612BFF03400687591 /* info.png */; };
+		34D7D96412BFF03400687591 /* Invite.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8A812BFF03400687591 /* Invite.png */; };
+		34D7D96512BFF03400687591 /* InviteViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8A912BFF03400687591 /* InviteViewController-iPad.xib */; };
+		34D7D96612BFF03400687591 /* InviteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8AB12BFF03400687591 /* InviteViewController.xib */; };
+		34D7D96712BFF03400687591 /* kid2.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8AD12BFF03400687591 /* kid2.png */; };
+		34D7D96812BFF03400687591 /* kid3.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8AE12BFF03400687591 /* kid3.png */; };
+		34D7D96912BFF03400687591 /* kid4.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8AF12BFF03400687591 /* kid4.png */; };
+		34D7D96A12BFF03400687591 /* libFamigoAPI-Release.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D7D8B012BFF03400687591 /* libFamigoAPI-Release.a */; };
+		34D7D96B12BFF03400687591 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D7D8B112BFF03400687591 /* libGoogleAnalytics.a */; };
+		34D7D96C12BFF03400687591 /* libOAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D7D8B212BFF03400687591 /* libOAuth.a */; };
+		34D7D96D12BFF03400687591 /* logo_no_ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8B312BFF03400687591 /* logo_no_ball.png */; };
+		34D7D96E12BFF03400687591 /* m_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8B512BFF03400687591 /* m_add.png */; };
+		34D7D96F12BFF03400687591 /* m_boy.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8B612BFF03400687591 /* m_boy.png */; };
+		34D7D97012BFF03400687591 /* m_dad.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8B712BFF03400687591 /* m_dad.png */; };
+		34D7D97112BFF03400687591 /* m_girl.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8B812BFF03400687591 /* m_girl.png */; };
+		34D7D97212BFF03400687591 /* m_mom.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8B912BFF03400687591 /* m_mom.png */; };
+		34D7D97312BFF03400687591 /* m_wtf.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8BA12BFF03400687591 /* m_wtf.png */; };
+		34D7D97412BFF03400687591 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8BB12BFF03400687591 /* menu.png */; };
+		34D7D97512BFF03400687591 /* mom2.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8CF12BFF03400687591 /* mom2.png */; };
+		34D7D97612BFF03400687591 /* mom3.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8D012BFF03400687591 /* mom3.png */; };
+		34D7D97712BFF03400687591 /* mom4.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8D112BFF03400687591 /* mom4.png */; };
+		34D7D97812BFF03400687591 /* mrarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8D212BFF03400687591 /* mrarrow.png */; };
+		34D7D97912BFF03400687591 /* NeighborhoodGamesController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8D312BFF03400687591 /* NeighborhoodGamesController-iPad.xib */; };
+		34D7D97A12BFF03400687591 /* NeighborhoodGamesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8D512BFF03400687591 /* NeighborhoodGamesController.xib */; };
+		34D7D97B12BFF03400687591 /* NeighborhoodInviteEmailBody.txt in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8D612BFF03400687591 /* NeighborhoodInviteEmailBody.txt */; };
+		34D7D97C12BFF03400687591 /* neighborhoodSDK.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8D712BFF03400687591 /* neighborhoodSDK.png */; };
+		34D7D97D12BFF03400687591 /* NeighborhoodSearchViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8D812BFF03400687591 /* NeighborhoodSearchViewController-iPad.xib */; };
+		34D7D97E12BFF03400687591 /* NeighborhoodSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8DA12BFF03400687591 /* NeighborhoodSearchViewController.xib */; };
+		34D7D97F12BFF03400687591 /* NewFamilyController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8DB12BFF03400687591 /* NewFamilyController-iPad.xib */; };
+		34D7D98012BFF03400687591 /* NewFamilyController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8DD12BFF03400687591 /* NewFamilyController.xib */; };
+		34D7D98112BFF03400687591 /* NewGameInvite-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8DF12BFF03400687591 /* NewGameInvite-iPad.xib */; };
+		34D7D98212BFF03400687591 /* NewGameInvite.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8E012BFF03400687591 /* NewGameInvite.xib */; };
+		34D7D98312BFF03400687591 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8F912BFF03400687591 /* pause.png */; };
+		34D7D98412BFF03400687591 /* PendingOperationController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8FA12BFF03400687591 /* PendingOperationController-iPad.xib */; };
+		34D7D98512BFF03400687591 /* PendingOperationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8FC12BFF03400687591 /* PendingOperationController.xib */; };
+		34D7D98612BFF03400687591 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8FD12BFF03400687591 /* play.png */; };
+		34D7D98712BFF03400687591 /* red_dog.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D8FF12BFF03400687591 /* red_dog.png */; };
+		34D7D98812BFF03400687591 /* sad_trombone.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D90012BFF03400687591 /* sad_trombone.wav */; };
+		34D7D98912BFF03400687591 /* sis2.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D90512BFF03400687591 /* sis2.png */; };
+		34D7D98A12BFF03400687591 /* sis3.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D90612BFF03400687591 /* sis3.png */; };
+		34D7D98B12BFF03400687591 /* sis4.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D90712BFF03400687591 /* sis4.png */; };
+		34D7D98C12BFF03400687591 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D90812BFF03400687591 /* stop.png */; };
+		34D7D98D12BFF03400687591 /* superball_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D90912BFF03400687591 /* superball_gray.png */; };
+		34D7D98E12BFF03400687591 /* superball.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D90A12BFF03400687591 /* superball.png */; };
+		34D7D98F12BFF03400687591 /* tab.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D90B12BFF03400687591 /* tab.png */; };
+		34D7D99012BFF03400687591 /* tink.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D90D12BFF03400687591 /* tink.wav */; };
+		34D7D99112BFF03400687591 /* WelcomeViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D91312BFF03400687591 /* WelcomeViewController-iPad.xib */; };
+		34D7D99212BFF03400687591 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D91512BFF03400687591 /* WelcomeViewController.xib */; };
+		34D7D99312BFF03400687591 /* yay.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D91612BFF03400687591 /* yay.wav */; };
+		34DEB51C12C13C1D002FBB69 /* GameTypeSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DEB51B12C13C1D002FBB69 /* GameTypeSelectorViewController.m */; };
+		34DEB81212C15DDE002FBB69 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DEB81112C15DDE002FBB69 /* NavigationController.m */; };
+		34DEB91912C164FB002FBB69 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DEB91812C164FB002FBB69 /* AddressBook.framework */; };
+		34DEB91F12C16509002FBB69 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DEB91E12C16509002FBB69 /* libsqlite3.dylib */; };
+		34DEB92312C16517002FBB69 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DEB92212C16517002FBB69 /* CFNetwork.framework */; };
+		34DEB93E12C16545002FBB69 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DEB93D12C16545002FBB69 /* QuartzCore.framework */; };
+		34DEB94E12C165DF002FBB69 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DEB94D12C165DF002FBB69 /* MediaPlayer.framework */; };
+		34DEB95012C165DF002FBB69 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DEB94F12C165DF002FBB69 /* Security.framework */; };
+		34DEB95212C165DF002FBB69 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DEB95112C165DF002FBB69 /* libxml2.dylib */; };
+		34DEBA7C12C1668B002FBB69 /* libFamigoAPI-Release.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DEBA7B12C1668B002FBB69 /* libFamigoAPI-Release.a */; };
+		34DFBCC312C3E75B00B522CC /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DFBCC212C3E75B00B522CC /* ResultsViewController.m */; };
+		34E84A1612C30BAB00A639C4 /* NumberOfPlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E84A1512C30BAB00A639C4 /* NumberOfPlayersViewController.m */; };
+		34FE19F312C9449D00CBB17E /* DifficultyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FE19F212C9449D00CBB17E /* DifficultyViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D6058910D05DD3D006BFB54 /* Mad Minute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mad Minute.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* Mad_Minute_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mad_Minute_Prefix.pch; sourceTree = "<group>"; };
+		3421A5AD12C01DDD00742E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3421A69A12C02A0700742E49 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		34D57F4112C28679005897F4 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		34D57F4212C28679005897F4 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		34D5821D12C2AE44005897F4 /* ArithmeticEquationGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArithmeticEquationGenerator.h; sourceTree = "<group>"; };
+		34D5821E12C2AE44005897F4 /* ArithmeticEquationGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArithmeticEquationGenerator.m; sourceTree = "<group>"; };
+		34D5821F12C2AE44005897F4 /* ArithmeticEquation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArithmeticEquation.h; sourceTree = "<group>"; };
+		34D5822012C2AE44005897F4 /* ArithmeticEquation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArithmeticEquation.m; sourceTree = "<group>"; };
+		34D5822F12C2AF01005897F4 /* MadMinuteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MadMinuteViewController.h; sourceTree = "<group>"; };
+		34D5823012C2AF01005897F4 /* MadMinuteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MadMinuteViewController.m; sourceTree = "<group>"; };
+		34D7D7C212BFECC900687591 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		34D7D7C512BFECD900687591 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		34D7D7C612BFECD900687591 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		34D7D7EE12BFEDD400687591 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Entitlements.plist; path = Resources/Entitlements.plist; sourceTree = "<group>"; };
+		34D7D7EF12BFEDD400687591 /* Mad_Minute-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Mad_Minute-Info.plist"; path = "Resources/Mad_Minute-Info.plist"; sourceTree = "<group>"; };
+		34D7D80912BFEEF800687591 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
+		34D7D80A12BFEEF800687591 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
+		34D7D80B12BFEEF800687591 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		34D7D80C12BFEEF800687591 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		34D7D80E12BFEEF800687591 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		34D7D80F12BFEEF800687591 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		34D7D81012BFEEF800687591 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		34D7D81112BFEEF800687591 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		34D7D81212BFEEF800687591 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		34D7D81312BFEEF800687591 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		34D7D81412BFEEF800687591 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		34D7D82F12BFEFC200687591 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		34D7D84112BFF03400687591 /* ABContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABContact.h; path = "../Famigo/build/Release-universal/FamigoAPI/ABContact.h"; sourceTree = SOURCE_ROOT; };
+		34D7D84212BFF03400687591 /* ABContactsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABContactsHelper.h; path = "../Famigo/build/Release-universal/FamigoAPI/ABContactsHelper.h"; sourceTree = SOURCE_ROOT; };
+		34D7D84312BFF03400687591 /* ABGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABGroup.h; path = "../Famigo/build/Release-universal/FamigoAPI/ABGroup.h"; sourceTree = SOURCE_ROOT; };
+		34D7D84412BFF03400687591 /* ApiDataAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApiDataAccess.h; path = "../Famigo/build/Release-universal/FamigoAPI/ApiDataAccess.h"; sourceTree = SOURCE_ROOT; };
+		34D7D84512BFF03400687591 /* AsyncTurnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncTurnView.h; path = "../Famigo/build/Release-universal/FamigoAPI/AsyncTurnView.h"; sourceTree = SOURCE_ROOT; };
+		34D7D84612BFF03400687591 /* AudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioStreamer.h; path = "../Famigo/build/Release-universal/FamigoAPI/AudioStreamer.h"; sourceTree = SOURCE_ROOT; };
+		34D7D84712BFF03400687591 /* bro2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bro2.png; path = "../Famigo/build/Release-universal/FamigoAPI/bro2.png"; sourceTree = SOURCE_ROOT; };
+		34D7D84812BFF03400687591 /* bro3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bro3.png; path = "../Famigo/build/Release-universal/FamigoAPI/bro3.png"; sourceTree = SOURCE_ROOT; };
+		34D7D84912BFF03400687591 /* bro4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bro4.png; path = "../Famigo/build/Release-universal/FamigoAPI/bro4.png"; sourceTree = SOURCE_ROOT; };
+		34D7D84A12BFF03400687591 /* broX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = broX.png; path = "../Famigo/build/Release-universal/FamigoAPI/broX.png"; sourceTree = SOURCE_ROOT; };
+		34D7D84B12BFF03400687591 /* BSJSONEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSJSONEncoder.h; path = "../Famigo/build/Release-universal/FamigoAPI/BSJSONEncoder.h"; sourceTree = SOURCE_ROOT; };
+		34D7D84C12BFF03400687591 /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chat.png; path = "../Famigo/build/Release-universal/FamigoAPI/chat.png"; sourceTree = SOURCE_ROOT; };
+		34D7D84D12BFF03400687591 /* ChatMessageViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "ChatMessageViewController-iPad.xib"; path = "../Famigo/build/Release-universal/FamigoAPI/ChatMessageViewController-iPad.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D84E12BFF03400687591 /* ChatMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatMessageViewController.h; path = "../Famigo/build/Release-universal/FamigoAPI/ChatMessageViewController.h"; sourceTree = SOURCE_ROOT; };
+		34D7D84F12BFF03400687591 /* ChatMessageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ChatMessageViewController.xib; path = "../Famigo/build/Release-universal/FamigoAPI/ChatMessageViewController.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D85012BFF03400687591 /* checkGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checkGreen.png; path = "../Famigo/build/Release-universal/FamigoAPI/checkGreen.png"; sourceTree = SOURCE_ROOT; };
+		34D7D85112BFF03400687591 /* cheer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = cheer.wav; path = "../Famigo/build/Release-universal/FamigoAPI/cheer.wav"; sourceTree = SOURCE_ROOT; };
+		34D7D85212BFF03400687591 /* circleGray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = circleGray.png; path = "../Famigo/build/Release-universal/FamigoAPI/circleGray.png"; sourceTree = SOURCE_ROOT; };
+		34D7D85312BFF03400687591 /* ContactListViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "ContactListViewController-iPad.xib"; path = "../Famigo/build/Release-universal/FamigoAPI/ContactListViewController-iPad.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D85412BFF03400687591 /* ContactListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactListViewController.h; path = "../Famigo/build/Release-universal/FamigoAPI/ContactListViewController.h"; sourceTree = SOURCE_ROOT; };
+		34D7D85512BFF03400687591 /* ContactListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ContactListViewController.xib; path = "../Famigo/build/Release-universal/FamigoAPI/ContactListViewController.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D85612BFF03400687591 /* dad2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dad2.png; path = "../Famigo/build/Release-universal/FamigoAPI/dad2.png"; sourceTree = SOURCE_ROOT; };
+		34D7D85712BFF03400687591 /* dad3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dad3.png; path = "../Famigo/build/Release-universal/FamigoAPI/dad3.png"; sourceTree = SOURCE_ROOT; };
+		34D7D85812BFF03400687591 /* dad4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dad4.png; path = "../Famigo/build/Release-universal/FamigoAPI/dad4.png"; sourceTree = SOURCE_ROOT; };
+		34D7D85912BFF03400687591 /* dotOpaque.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dotOpaque.png; path = "../Famigo/build/Release-universal/FamigoAPI/dotOpaque.png"; sourceTree = SOURCE_ROOT; };
+		34D7D85A12BFF03400687591 /* EmailViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "EmailViewController-iPad.xib"; path = "../Famigo/build/Release-universal/FamigoAPI/EmailViewController-iPad.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D85B12BFF03400687591 /* EmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmailViewController.h; path = "../Famigo/build/Release-universal/FamigoAPI/EmailViewController.h"; sourceTree = SOURCE_ROOT; };
+		34D7D85C12BFF03400687591 /* EmailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EmailViewController.xib; path = "../Famigo/build/Release-universal/FamigoAPI/EmailViewController.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D85D12BFF03400687591 /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Facebook.h; path = "../Famigo/build/Release-universal/FamigoAPI/Facebook.h"; sourceTree = SOURCE_ROOT; };
+		34D7D85E12BFF03400687591 /* famidog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = famidog.png; path = "../Famigo/build/Release-universal/FamigoAPI/famidog.png"; sourceTree = SOURCE_ROOT; };
+		34D7D85F12BFF03400687591 /* famidogshare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = famidogshare.png; path = "../Famigo/build/Release-universal/FamigoAPI/famidogshare.png"; sourceTree = SOURCE_ROOT; };
+		34D7D86012BFF03400687591 /* Famigo Logo 01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 01.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 01.png"; sourceTree = SOURCE_ROOT; };
+		34D7D86112BFF03400687591 /* Famigo Logo 02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 02.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 02.png"; sourceTree = SOURCE_ROOT; };
+		34D7D86212BFF03400687591 /* Famigo Logo 03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 03.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 03.png"; sourceTree = SOURCE_ROOT; };
+		34D7D86312BFF03400687591 /* Famigo Logo 04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 04.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 04.png"; sourceTree = SOURCE_ROOT; };
+		34D7D86412BFF03400687591 /* Famigo Logo 05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 05.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 05.png"; sourceTree = SOURCE_ROOT; };
+		34D7D86512BFF03400687591 /* Famigo Logo 06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 06.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 06.png"; sourceTree = SOURCE_ROOT; };
+		34D7D86612BFF03400687591 /* Famigo Logo 07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 07.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 07.png"; sourceTree = SOURCE_ROOT; };
+		34D7D86712BFF03400687591 /* Famigo Logo 08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 08.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 08.png"; sourceTree = SOURCE_ROOT; };
+		34D7D86812BFF03400687591 /* Famigo Logo 09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 09.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 09.png"; sourceTree = SOURCE_ROOT; };
+		34D7D86912BFF03400687591 /* Famigo Logo 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 10.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 10.png"; sourceTree = SOURCE_ROOT; };
+		34D7D86A12BFF03400687591 /* Famigo Logo 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 11.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 11.png"; sourceTree = SOURCE_ROOT; };
+		34D7D86B12BFF03400687591 /* Famigo Logo 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 12.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 12.png"; sourceTree = SOURCE_ROOT; };
+		34D7D86C12BFF03400687591 /* Famigo Logo 13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 13.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 13.png"; sourceTree = SOURCE_ROOT; };
+		34D7D86D12BFF03400687591 /* Famigo Logo 14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 14.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 14.png"; sourceTree = SOURCE_ROOT; };
+		34D7D86E12BFF03400687591 /* Famigo Logo 15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 15.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 15.png"; sourceTree = SOURCE_ROOT; };
+		34D7D86F12BFF03400687591 /* Famigo Logo 16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 16.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 16.png"; sourceTree = SOURCE_ROOT; };
+		34D7D87012BFF03400687591 /* Famigo Logo 17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 17.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 17.png"; sourceTree = SOURCE_ROOT; };
+		34D7D87112BFF03400687591 /* Famigo Logo 18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 18.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 18.png"; sourceTree = SOURCE_ROOT; };
+		34D7D87212BFF03400687591 /* Famigo Logo 19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 19.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 19.png"; sourceTree = SOURCE_ROOT; };
+		34D7D87312BFF03400687591 /* Famigo Logo 20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 20.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 20.png"; sourceTree = SOURCE_ROOT; };
+		34D7D87412BFF03400687591 /* Famigo Logo 21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 21.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 21.png"; sourceTree = SOURCE_ROOT; };
+		34D7D87512BFF03400687591 /* Famigo Logo 22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 22.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 22.png"; sourceTree = SOURCE_ROOT; };
+		34D7D87612BFF03400687591 /* Famigo Logo 23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 23.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 23.png"; sourceTree = SOURCE_ROOT; };
+		34D7D87712BFF03400687591 /* Famigo Logo 24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 24.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 24.png"; sourceTree = SOURCE_ROOT; };
+		34D7D87812BFF03400687591 /* Famigo Logo 25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 25.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 25.png"; sourceTree = SOURCE_ROOT; };
+		34D7D87912BFF03400687591 /* Famigo Logo 26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 26.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 26.png"; sourceTree = SOURCE_ROOT; };
+		34D7D87A12BFF03400687591 /* Famigo Logo 27.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 27.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 27.png"; sourceTree = SOURCE_ROOT; };
+		34D7D87B12BFF03400687591 /* Famigo Logo 28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 28.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 28.png"; sourceTree = SOURCE_ROOT; };
+		34D7D87C12BFF03400687591 /* Famigo Logo 29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 29.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 29.png"; sourceTree = SOURCE_ROOT; };
+		34D7D87D12BFF03400687591 /* Famigo Logo 30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 30.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 30.png"; sourceTree = SOURCE_ROOT; };
+		34D7D87E12BFF03400687591 /* Famigo Logo 31.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 31.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 31.png"; sourceTree = SOURCE_ROOT; };
+		34D7D87F12BFF03400687591 /* Famigo Logo 32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 32.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 32.png"; sourceTree = SOURCE_ROOT; };
+		34D7D88012BFF03400687591 /* Famigo Logo 33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 33.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 33.png"; sourceTree = SOURCE_ROOT; };
+		34D7D88112BFF03400687591 /* Famigo Logo 34.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 34.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 34.png"; sourceTree = SOURCE_ROOT; };
+		34D7D88212BFF03400687591 /* Famigo Logo 35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 35.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 35.png"; sourceTree = SOURCE_ROOT; };
+		34D7D88312BFF03400687591 /* Famigo Logo 36.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 36.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 36.png"; sourceTree = SOURCE_ROOT; };
+		34D7D88412BFF03400687591 /* Famigo Logo 37.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo Logo 37.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo Logo 37.png"; sourceTree = SOURCE_ROOT; };
+		34D7D88512BFF03400687591 /* famigo_drums.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = famigo_drums.wav; path = "../Famigo/build/Release-universal/FamigoAPI/famigo_drums.wav"; sourceTree = SOURCE_ROOT; };
+		34D7D88612BFF03400687591 /* famigo_logo_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = famigo_logo_new.png; path = "../Famigo/build/Release-universal/FamigoAPI/famigo_logo_new.png"; sourceTree = SOURCE_ROOT; };
+		34D7D88712BFF03400687591 /* famigo_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = famigo_logo.png; path = "../Famigo/build/Release-universal/FamigoAPI/famigo_logo.png"; sourceTree = SOURCE_ROOT; };
+		34D7D88812BFF03400687591 /* famigo_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = famigo_small.png; path = "../Famigo/build/Release-universal/FamigoAPI/famigo_small.png"; sourceTree = SOURCE_ROOT; };
+		34D7D88912BFF03400687591 /* Famigo-F.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Famigo-F.png"; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo-F.png"; sourceTree = SOURCE_ROOT; };
+		34D7D88A12BFF03400687591 /* Famigo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Famigo.h; path = "../Famigo/build/Release-universal/FamigoAPI/Famigo.h"; sourceTree = SOURCE_ROOT; };
+		34D7D88B12BFF03400687591 /* FamigoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FamigoController.h; path = "../Famigo/build/Release-universal/FamigoAPI/FamigoController.h"; sourceTree = SOURCE_ROOT; };
+		34D7D88C12BFF03400687591 /* FamigoHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FamigoHeaders.h; path = "../Famigo/build/Release-universal/FamigoAPI/FamigoHeaders.h"; sourceTree = SOURCE_ROOT; };
+		34D7D88D12BFF03400687591 /* FamigoMediaController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FamigoMediaController.h; path = "../Famigo/build/Release-universal/FamigoAPI/FamigoMediaController.h"; sourceTree = SOURCE_ROOT; };
+		34D7D88E12BFF03400687591 /* Family.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Family.png; path = "../Famigo/build/Release-universal/FamigoAPI/Family.png"; sourceTree = SOURCE_ROOT; };
+		34D7D88F12BFF03400687591 /* FamilyChatViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "FamilyChatViewController-iPad.xib"; path = "../Famigo/build/Release-universal/FamigoAPI/FamilyChatViewController-iPad.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D89012BFF03400687591 /* FamilyChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FamilyChatViewController.h; path = "../Famigo/build/Release-universal/FamigoAPI/FamilyChatViewController.h"; sourceTree = SOURCE_ROOT; };
+		34D7D89112BFF03400687591 /* FamilyChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FamilyChatViewController.xib; path = "../Famigo/build/Release-universal/FamigoAPI/FamilyChatViewController.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D89212BFF03400687591 /* FamilyInviteEmailBody.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = FamilyInviteEmailBody.txt; path = "../Famigo/build/Release-universal/FamigoAPI/FamilyInviteEmailBody.txt"; sourceTree = SOURCE_ROOT; };
+		34D7D89312BFF03400687591 /* FamilyInviteViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "FamilyInviteViewController-iPad.xib"; path = "../Famigo/build/Release-universal/FamigoAPI/FamilyInviteViewController-iPad.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D89412BFF03400687591 /* FamilyInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FamilyInviteViewController.h; path = "../Famigo/build/Release-universal/FamigoAPI/FamilyInviteViewController.h"; sourceTree = SOURCE_ROOT; };
+		34D7D89512BFF03400687591 /* FamilyInviteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FamilyInviteViewController.xib; path = "../Famigo/build/Release-universal/FamigoAPI/FamilyInviteViewController.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D89612BFF03400687591 /* familySDK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = familySDK.png; path = "../Famigo/build/Release-universal/FamigoAPI/familySDK.png"; sourceTree = SOURCE_ROOT; };
+		34D7D89712BFF03400687591 /* FamilyViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "FamilyViewController-iPad.xib"; path = "../Famigo/build/Release-universal/FamigoAPI/FamilyViewController-iPad.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D89812BFF03400687591 /* FamilyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FamilyViewController.h; path = "../Famigo/build/Release-universal/FamigoAPI/FamilyViewController.h"; sourceTree = SOURCE_ROOT; };
+		34D7D89912BFF03400687591 /* FamilyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FamilyViewController.xib; path = "../Famigo/build/Release-universal/FamigoAPI/FamilyViewController.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D89A12BFF03400687591 /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBConnect.h; path = "../Famigo/build/Release-universal/FamigoAPI/FBConnect.h"; sourceTree = SOURCE_ROOT; };
+		34D7D89B12BFF03400687591 /* FBDialog.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FBDialog.bundle; path = "../Famigo/build/Release-universal/FamigoAPI/FBDialog.bundle"; sourceTree = SOURCE_ROOT; };
+		34D7D89C12BFF03400687591 /* FBDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBDialog.h; path = "../Famigo/build/Release-universal/FamigoAPI/FBDialog.h"; sourceTree = SOURCE_ROOT; };
+		34D7D89D12BFF03400687591 /* FBLoginDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBLoginDialog.h; path = "../Famigo/build/Release-universal/FamigoAPI/FBLoginDialog.h"; sourceTree = SOURCE_ROOT; };
+		34D7D89E12BFF03400687591 /* FBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBRequest.h; path = "../Famigo/build/Release-universal/FamigoAPI/FBRequest.h"; sourceTree = SOURCE_ROOT; };
+		34D7D89F12BFF03400687591 /* GameResultsShareController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "GameResultsShareController-iPad.xib"; path = "../Famigo/build/Release-universal/FamigoAPI/GameResultsShareController-iPad.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D8A012BFF03400687591 /* GameResultsShareController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameResultsShareController.h; path = "../Famigo/build/Release-universal/FamigoAPI/GameResultsShareController.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8A112BFF03400687591 /* GameResultsShareController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = GameResultsShareController.xib; path = "../Famigo/build/Release-universal/FamigoAPI/GameResultsShareController.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D8A212BFF03400687591 /* games.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = games.png; path = "../Famigo/build/Release-universal/FamigoAPI/games.png"; sourceTree = SOURCE_ROOT; };
+		34D7D8A312BFF03400687591 /* GANTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GANTracker.h; path = "../Famigo/build/Release-universal/FamigoAPI/GANTracker.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8A412BFF03400687591 /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gear.png; path = "../Famigo/build/Release-universal/FamigoAPI/gear.png"; sourceTree = SOURCE_ROOT; };
+		34D7D8A512BFF03400687591 /* GearTab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GearTab.h; path = "../Famigo/build/Release-universal/FamigoAPI/GearTab.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8A612BFF03400687591 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = info.png; path = "../Famigo/build/Release-universal/FamigoAPI/info.png"; sourceTree = SOURCE_ROOT; };
+		34D7D8A712BFF03400687591 /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InformationViewController.h; path = "../Famigo/build/Release-universal/FamigoAPI/InformationViewController.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8A812BFF03400687591 /* Invite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Invite.png; path = "../Famigo/build/Release-universal/FamigoAPI/Invite.png"; sourceTree = SOURCE_ROOT; };
+		34D7D8A912BFF03400687591 /* InviteViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "InviteViewController-iPad.xib"; path = "../Famigo/build/Release-universal/FamigoAPI/InviteViewController-iPad.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D8AA12BFF03400687591 /* InviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InviteViewController.h; path = "../Famigo/build/Release-universal/FamigoAPI/InviteViewController.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8AB12BFF03400687591 /* InviteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InviteViewController.xib; path = "../Famigo/build/Release-universal/FamigoAPI/InviteViewController.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D8AC12BFF03400687591 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSON.h; path = "../Famigo/build/Release-universal/FamigoAPI/JSON.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8AD12BFF03400687591 /* kid2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kid2.png; path = "../Famigo/build/Release-universal/FamigoAPI/kid2.png"; sourceTree = SOURCE_ROOT; };
+		34D7D8AE12BFF03400687591 /* kid3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kid3.png; path = "../Famigo/build/Release-universal/FamigoAPI/kid3.png"; sourceTree = SOURCE_ROOT; };
+		34D7D8AF12BFF03400687591 /* kid4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kid4.png; path = "../Famigo/build/Release-universal/FamigoAPI/kid4.png"; sourceTree = SOURCE_ROOT; };
+		34D7D8B012BFF03400687591 /* libFamigoAPI-Release.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libFamigoAPI-Release.a"; path = "../Famigo/build/Release-universal/FamigoAPI/libFamigoAPI-Release.a"; sourceTree = SOURCE_ROOT; };
+		34D7D8B112BFF03400687591 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = "../Famigo/build/Release-universal/FamigoAPI/libGoogleAnalytics.a"; sourceTree = SOURCE_ROOT; };
+		34D7D8B212BFF03400687591 /* libOAuth.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOAuth.a; path = "../Famigo/build/Release-universal/FamigoAPI/libOAuth.a"; sourceTree = SOURCE_ROOT; };
+		34D7D8B312BFF03400687591 /* logo_no_ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_no_ball.png; path = "../Famigo/build/Release-universal/FamigoAPI/logo_no_ball.png"; sourceTree = SOURCE_ROOT; };
+		34D7D8B412BFF03400687591 /* LogoAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogoAnimationController.h; path = "../Famigo/build/Release-universal/FamigoAPI/LogoAnimationController.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8B512BFF03400687591 /* m_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = m_add.png; path = "../Famigo/build/Release-universal/FamigoAPI/m_add.png"; sourceTree = SOURCE_ROOT; };
+		34D7D8B612BFF03400687591 /* m_boy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = m_boy.png; path = "../Famigo/build/Release-universal/FamigoAPI/m_boy.png"; sourceTree = SOURCE_ROOT; };
+		34D7D8B712BFF03400687591 /* m_dad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = m_dad.png; path = "../Famigo/build/Release-universal/FamigoAPI/m_dad.png"; sourceTree = SOURCE_ROOT; };
+		34D7D8B812BFF03400687591 /* m_girl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = m_girl.png; path = "../Famigo/build/Release-universal/FamigoAPI/m_girl.png"; sourceTree = SOURCE_ROOT; };
+		34D7D8B912BFF03400687591 /* m_mom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = m_mom.png; path = "../Famigo/build/Release-universal/FamigoAPI/m_mom.png"; sourceTree = SOURCE_ROOT; };
+		34D7D8BA12BFF03400687591 /* m_wtf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = m_wtf.png; path = "../Famigo/build/Release-universal/FamigoAPI/m_wtf.png"; sourceTree = SOURCE_ROOT; };
+		34D7D8BB12BFF03400687591 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = "../Famigo/build/Release-universal/FamigoAPI/menu.png"; sourceTree = SOURCE_ROOT; };
+		34D7D8BC12BFF03400687591 /* MGTwitterEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterEngine.h; path = "../Famigo/build/Release-universal/FamigoAPI/MGTwitterEngine.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8BD12BFF03400687591 /* MGTwitterEngineDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterEngineDelegate.h; path = "../Famigo/build/Release-universal/FamigoAPI/MGTwitterEngineDelegate.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8BE12BFF03400687591 /* MGTwitterEngineGlobalHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterEngineGlobalHeader.h; path = "../Famigo/build/Release-universal/FamigoAPI/MGTwitterEngineGlobalHeader.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8BF12BFF03400687591 /* MGTwitterHTTPURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterHTTPURLConnection.h; path = "../Famigo/build/Release-universal/FamigoAPI/MGTwitterHTTPURLConnection.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8C012BFF03400687591 /* MGTwitterLibXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterLibXMLParser.h; path = "../Famigo/build/Release-universal/FamigoAPI/MGTwitterLibXMLParser.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8C112BFF03400687591 /* MGTwitterMessagesLibXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterMessagesLibXMLParser.h; path = "../Famigo/build/Release-universal/FamigoAPI/MGTwitterMessagesLibXMLParser.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8C212BFF03400687591 /* MGTwitterMessagesParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterMessagesParser.h; path = "../Famigo/build/Release-universal/FamigoAPI/MGTwitterMessagesParser.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8C312BFF03400687591 /* MGTwitterMiscLibXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterMiscLibXMLParser.h; path = "../Famigo/build/Release-universal/FamigoAPI/MGTwitterMiscLibXMLParser.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8C412BFF03400687591 /* MGTwitterMiscParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterMiscParser.h; path = "../Famigo/build/Release-universal/FamigoAPI/MGTwitterMiscParser.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8C512BFF03400687591 /* MGTwitterParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterParserDelegate.h; path = "../Famigo/build/Release-universal/FamigoAPI/MGTwitterParserDelegate.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8C612BFF03400687591 /* MGTwitterRequestTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterRequestTypes.h; path = "../Famigo/build/Release-universal/FamigoAPI/MGTwitterRequestTypes.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8C712BFF03400687591 /* MGTwitterSocialGraphLibXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterSocialGraphLibXMLParser.h; path = "../Famigo/build/Release-universal/FamigoAPI/MGTwitterSocialGraphLibXMLParser.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8C812BFF03400687591 /* MGTwitterSocialGraphParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterSocialGraphParser.h; path = "../Famigo/build/Release-universal/FamigoAPI/MGTwitterSocialGraphParser.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8C912BFF03400687591 /* MGTwitterStatusesLibXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterStatusesLibXMLParser.h; path = "../Famigo/build/Release-universal/FamigoAPI/MGTwitterStatusesLibXMLParser.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8CA12BFF03400687591 /* MGTwitterStatusesParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterStatusesParser.h; path = "../Famigo/build/Release-universal/FamigoAPI/MGTwitterStatusesParser.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8CB12BFF03400687591 /* MGTwitterUserListsParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterUserListsParser.h; path = "../Famigo/build/Release-universal/FamigoAPI/MGTwitterUserListsParser.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8CC12BFF03400687591 /* MGTwitterUsersLibXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterUsersLibXMLParser.h; path = "../Famigo/build/Release-universal/FamigoAPI/MGTwitterUsersLibXMLParser.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8CD12BFF03400687591 /* MGTwitterUsersParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterUsersParser.h; path = "../Famigo/build/Release-universal/FamigoAPI/MGTwitterUsersParser.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8CE12BFF03400687591 /* MGTwitterXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTwitterXMLParser.h; path = "../Famigo/build/Release-universal/FamigoAPI/MGTwitterXMLParser.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8CF12BFF03400687591 /* mom2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mom2.png; path = "../Famigo/build/Release-universal/FamigoAPI/mom2.png"; sourceTree = SOURCE_ROOT; };
+		34D7D8D012BFF03400687591 /* mom3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mom3.png; path = "../Famigo/build/Release-universal/FamigoAPI/mom3.png"; sourceTree = SOURCE_ROOT; };
+		34D7D8D112BFF03400687591 /* mom4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mom4.png; path = "../Famigo/build/Release-universal/FamigoAPI/mom4.png"; sourceTree = SOURCE_ROOT; };
+		34D7D8D212BFF03400687591 /* mrarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mrarrow.png; path = "../Famigo/build/Release-universal/FamigoAPI/mrarrow.png"; sourceTree = SOURCE_ROOT; };
+		34D7D8D312BFF03400687591 /* NeighborhoodGamesController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "NeighborhoodGamesController-iPad.xib"; path = "../Famigo/build/Release-universal/FamigoAPI/NeighborhoodGamesController-iPad.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D8D412BFF03400687591 /* NeighborhoodGamesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NeighborhoodGamesController.h; path = "../Famigo/build/Release-universal/FamigoAPI/NeighborhoodGamesController.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8D512BFF03400687591 /* NeighborhoodGamesController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NeighborhoodGamesController.xib; path = "../Famigo/build/Release-universal/FamigoAPI/NeighborhoodGamesController.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D8D612BFF03400687591 /* NeighborhoodInviteEmailBody.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = NeighborhoodInviteEmailBody.txt; path = "../Famigo/build/Release-universal/FamigoAPI/NeighborhoodInviteEmailBody.txt"; sourceTree = SOURCE_ROOT; };
+		34D7D8D712BFF03400687591 /* neighborhoodSDK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = neighborhoodSDK.png; path = "../Famigo/build/Release-universal/FamigoAPI/neighborhoodSDK.png"; sourceTree = SOURCE_ROOT; };
+		34D7D8D812BFF03400687591 /* NeighborhoodSearchViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "NeighborhoodSearchViewController-iPad.xib"; path = "../Famigo/build/Release-universal/FamigoAPI/NeighborhoodSearchViewController-iPad.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D8D912BFF03400687591 /* NeighborhoodSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NeighborhoodSearchViewController.h; path = "../Famigo/build/Release-universal/FamigoAPI/NeighborhoodSearchViewController.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8DA12BFF03400687591 /* NeighborhoodSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NeighborhoodSearchViewController.xib; path = "../Famigo/build/Release-universal/FamigoAPI/NeighborhoodSearchViewController.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D8DB12BFF03400687591 /* NewFamilyController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "NewFamilyController-iPad.xib"; path = "../Famigo/build/Release-universal/FamigoAPI/NewFamilyController-iPad.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D8DC12BFF03400687591 /* NewFamilyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewFamilyController.h; path = "../Famigo/build/Release-universal/FamigoAPI/NewFamilyController.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8DD12BFF03400687591 /* NewFamilyController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NewFamilyController.xib; path = "../Famigo/build/Release-universal/FamigoAPI/NewFamilyController.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D8DE12BFF03400687591 /* NewGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewGameController.h; path = "../Famigo/build/Release-universal/FamigoAPI/NewGameController.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8DF12BFF03400687591 /* NewGameInvite-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "NewGameInvite-iPad.xib"; path = "../Famigo/build/Release-universal/FamigoAPI/NewGameInvite-iPad.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D8E012BFF03400687591 /* NewGameInvite.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NewGameInvite.xib; path = "../Famigo/build/Release-universal/FamigoAPI/NewGameInvite.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D8E112BFF03400687591 /* NSArray+BSJSONAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+BSJSONAdditions.h"; path = "../Famigo/build/Release-universal/FamigoAPI/NSArray+BSJSONAdditions.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8E212BFF03400687591 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "../Famigo/build/Release-universal/FamigoAPI/NSData+Base64.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8E312BFF03400687591 /* NSDictionary+BSJSONAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+BSJSONAdditions.h"; path = "../Famigo/build/Release-universal/FamigoAPI/NSDictionary+BSJSONAdditions.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8E412BFF03400687591 /* NSDictionary+OPPOST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+OPPOST.h"; path = "../Famigo/build/Release-universal/FamigoAPI/NSDictionary+OPPOST.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8E512BFF03400687591 /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableURLRequest+Parameters.h"; path = "../Famigo/build/Release-universal/FamigoAPI/NSMutableURLRequest+Parameters.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8E612BFF03400687591 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+SBJSON.h"; path = "../Famigo/build/Release-universal/FamigoAPI/NSObject+SBJSON.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8E712BFF03400687591 /* NSScanner+BSJSONAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSScanner+BSJSONAdditions.h"; path = "../Famigo/build/Release-universal/FamigoAPI/NSScanner+BSJSONAdditions.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8E812BFF03400687591 /* NSString+BSJSONAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+BSJSONAdditions.h"; path = "../Famigo/build/Release-universal/FamigoAPI/NSString+BSJSONAdditions.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8E912BFF03400687591 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+SBJSON.h"; path = "../Famigo/build/Release-universal/FamigoAPI/NSString+SBJSON.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8EA12BFF03400687591 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+URLEncoding.h"; path = "../Famigo/build/Release-universal/FamigoAPI/NSString+URLEncoding.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8EB12BFF03400687591 /* NSString+UUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+UUID.h"; path = "../Famigo/build/Release-universal/FamigoAPI/NSString+UUID.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8EC12BFF03400687591 /* NSURL+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURL+Base.h"; path = "../Famigo/build/Release-universal/FamigoAPI/NSURL+Base.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8ED12BFF03400687591 /* OAAsynchronousDataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAAsynchronousDataFetcher.h; path = "../Famigo/build/Release-universal/FamigoAPI/OAAsynchronousDataFetcher.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8EE12BFF03400687591 /* OAConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAConsumer.h; path = "../Famigo/build/Release-universal/FamigoAPI/OAConsumer.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8EF12BFF03400687591 /* OADataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OADataFetcher.h; path = "../Famigo/build/Release-universal/FamigoAPI/OADataFetcher.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8F012BFF03400687591 /* OAHMAC_SHA1SignatureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAHMAC_SHA1SignatureProvider.h; path = "../Famigo/build/Release-universal/FamigoAPI/OAHMAC_SHA1SignatureProvider.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8F112BFF03400687591 /* OAMutableURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAMutableURLRequest.h; path = "../Famigo/build/Release-universal/FamigoAPI/OAMutableURLRequest.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8F212BFF03400687591 /* OAPlaintextSignatureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAPlaintextSignatureProvider.h; path = "../Famigo/build/Release-universal/FamigoAPI/OAPlaintextSignatureProvider.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8F312BFF03400687591 /* OARequestParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OARequestParameter.h; path = "../Famigo/build/Release-universal/FamigoAPI/OARequestParameter.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8F412BFF03400687591 /* OAServiceTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAServiceTicket.h; path = "../Famigo/build/Release-universal/FamigoAPI/OAServiceTicket.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8F512BFF03400687591 /* OASignatureProviding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OASignatureProviding.h; path = "../Famigo/build/Release-universal/FamigoAPI/OASignatureProviding.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8F612BFF03400687591 /* OAToken_KeychainExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAToken_KeychainExtensions.h; path = "../Famigo/build/Release-universal/FamigoAPI/OAToken_KeychainExtensions.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8F712BFF03400687591 /* OAToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAToken.h; path = "../Famigo/build/Release-universal/FamigoAPI/OAToken.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8F812BFF03400687591 /* OAuthConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OAuthConsumer.h; path = "../Famigo/build/Release-universal/FamigoAPI/OAuthConsumer.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8F912BFF03400687591 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pause.png; path = "../Famigo/build/Release-universal/FamigoAPI/pause.png"; sourceTree = SOURCE_ROOT; };
+		34D7D8FA12BFF03400687591 /* PendingOperationController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "PendingOperationController-iPad.xib"; path = "../Famigo/build/Release-universal/FamigoAPI/PendingOperationController-iPad.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D8FB12BFF03400687591 /* PendingOperationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PendingOperationController.h; path = "../Famigo/build/Release-universal/FamigoAPI/PendingOperationController.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8FC12BFF03400687591 /* PendingOperationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PendingOperationController.xib; path = "../Famigo/build/Release-universal/FamigoAPI/PendingOperationController.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D8FD12BFF03400687591 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play.png; path = "../Famigo/build/Release-universal/FamigoAPI/play.png"; sourceTree = SOURCE_ROOT; };
+		34D7D8FE12BFF03400687591 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = "../Famigo/build/Release-universal/FamigoAPI/Reachability.h"; sourceTree = SOURCE_ROOT; };
+		34D7D8FF12BFF03400687591 /* red_dog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_dog.png; path = "../Famigo/build/Release-universal/FamigoAPI/red_dog.png"; sourceTree = SOURCE_ROOT; };
+		34D7D90012BFF03400687591 /* sad_trombone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sad_trombone.wav; path = "../Famigo/build/Release-universal/FamigoAPI/sad_trombone.wav"; sourceTree = SOURCE_ROOT; };
+		34D7D90112BFF03400687591 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJSON.h; path = "../Famigo/build/Release-universal/FamigoAPI/SBJSON.h"; sourceTree = SOURCE_ROOT; };
+		34D7D90212BFF03400687591 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonBase.h; path = "../Famigo/build/Release-universal/FamigoAPI/SBJsonBase.h"; sourceTree = SOURCE_ROOT; };
+		34D7D90312BFF03400687591 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonParser.h; path = "../Famigo/build/Release-universal/FamigoAPI/SBJsonParser.h"; sourceTree = SOURCE_ROOT; };
+		34D7D90412BFF03400687591 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonWriter.h; path = "../Famigo/build/Release-universal/FamigoAPI/SBJsonWriter.h"; sourceTree = SOURCE_ROOT; };
+		34D7D90512BFF03400687591 /* sis2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sis2.png; path = "../Famigo/build/Release-universal/FamigoAPI/sis2.png"; sourceTree = SOURCE_ROOT; };
+		34D7D90612BFF03400687591 /* sis3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sis3.png; path = "../Famigo/build/Release-universal/FamigoAPI/sis3.png"; sourceTree = SOURCE_ROOT; };
+		34D7D90712BFF03400687591 /* sis4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sis4.png; path = "../Famigo/build/Release-universal/FamigoAPI/sis4.png"; sourceTree = SOURCE_ROOT; };
+		34D7D90812BFF03400687591 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stop.png; path = "../Famigo/build/Release-universal/FamigoAPI/stop.png"; sourceTree = SOURCE_ROOT; };
+		34D7D90912BFF03400687591 /* superball_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = superball_gray.png; path = "../Famigo/build/Release-universal/FamigoAPI/superball_gray.png"; sourceTree = SOURCE_ROOT; };
+		34D7D90A12BFF03400687591 /* superball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = superball.png; path = "../Famigo/build/Release-universal/FamigoAPI/superball.png"; sourceTree = SOURCE_ROOT; };
+		34D7D90B12BFF03400687591 /* tab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tab.png; path = "../Famigo/build/Release-universal/FamigoAPI/tab.png"; sourceTree = SOURCE_ROOT; };
+		34D7D90C12BFF03400687591 /* TimeUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeUtility.h; path = "../Famigo/build/Release-universal/FamigoAPI/TimeUtility.h"; sourceTree = SOURCE_ROOT; };
+		34D7D90D12BFF03400687591 /* tink.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = tink.wav; path = "../Famigo/build/Release-universal/FamigoAPI/tink.wav"; sourceTree = SOURCE_ROOT; };
+		34D7D90E12BFF03400687591 /* TwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwitterViewController.h; path = "../Famigo/build/Release-universal/FamigoAPI/TwitterViewController.h"; sourceTree = SOURCE_ROOT; };
+		34D7D90F12BFF03400687591 /* UIColor-Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor-Extras.h"; path = "../Famigo/build/Release-universal/FamigoAPI/UIColor-Extras.h"; sourceTree = SOURCE_ROOT; };
+		34D7D91012BFF03400687591 /* UIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIConstants.h; path = "../Famigo/build/Release-universal/FamigoAPI/UIConstants.h"; sourceTree = SOURCE_ROOT; };
+		34D7D91112BFF03400687591 /* UIGradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIGradientButton.h; path = "../Famigo/build/Release-universal/FamigoAPI/UIGradientButton.h"; sourceTree = SOURCE_ROOT; };
+		34D7D91212BFF03400687591 /* URLWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = URLWrapper.h; path = "../Famigo/build/Release-universal/FamigoAPI/URLWrapper.h"; sourceTree = SOURCE_ROOT; };
+		34D7D91312BFF03400687591 /* WelcomeViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "WelcomeViewController-iPad.xib"; path = "../Famigo/build/Release-universal/FamigoAPI/WelcomeViewController-iPad.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D91412BFF03400687591 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WelcomeViewController.h; path = "../Famigo/build/Release-universal/FamigoAPI/WelcomeViewController.h"; sourceTree = SOURCE_ROOT; };
+		34D7D91512BFF03400687591 /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = WelcomeViewController.xib; path = "../Famigo/build/Release-universal/FamigoAPI/WelcomeViewController.xib"; sourceTree = SOURCE_ROOT; };
+		34D7D91612BFF03400687591 /* yay.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = yay.wav; path = "../Famigo/build/Release-universal/FamigoAPI/yay.wav"; sourceTree = SOURCE_ROOT; };
+		34DEB51A12C13C1D002FBB69 /* GameTypeSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTypeSelectorViewController.h; sourceTree = "<group>"; };
+		34DEB51B12C13C1D002FBB69 /* GameTypeSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTypeSelectorViewController.m; sourceTree = "<group>"; };
+		34DEB81012C15DDE002FBB69 /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		34DEB81112C15DDE002FBB69 /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		34DEB91812C164FB002FBB69 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		34DEB91E12C16509002FBB69 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		34DEB92212C16517002FBB69 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		34DEB93D12C16545002FBB69 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		34DEB94D12C165DF002FBB69 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		34DEB94F12C165DF002FBB69 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		34DEB95112C165DF002FBB69 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		34DEBA7B12C1668B002FBB69 /* libFamigoAPI-Release.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libFamigoAPI-Release.a"; path = "../Famigo/build/Release-universal/FamigoAPI/libFamigoAPI-Release.a"; sourceTree = SOURCE_ROOT; };
+		34DFBCC112C3E75B00B522CC /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
+		34DFBCC212C3E75B00B522CC /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
+		34E84A1412C30BAB00A639C4 /* NumberOfPlayersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberOfPlayersViewController.h; sourceTree = "<group>"; };
+		34E84A1512C30BAB00A639C4 /* NumberOfPlayersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberOfPlayersViewController.m; sourceTree = "<group>"; };
+		34FE19F112C9449D00CBB17E /* DifficultyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DifficultyViewController.h; sourceTree = "<group>"; };
+		34FE19F212C9449D00CBB17E /* DifficultyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DifficultyViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
+				34D7D96A12BFF03400687591 /* libFamigoAPI-Release.a in Frameworks */,
+				34D7D96B12BFF03400687591 /* libGoogleAnalytics.a in Frameworks */,
+				34D7D96C12BFF03400687591 /* libOAuth.a in Frameworks */,
+				3421A5AE12C01DDD00742E49 /* AudioToolbox.framework in Frameworks */,
+				3421A69B12C02A0700742E49 /* SystemConfiguration.framework in Frameworks */,
+				34DEB91912C164FB002FBB69 /* AddressBook.framework in Frameworks */,
+				34DEB91F12C16509002FBB69 /* libsqlite3.dylib in Frameworks */,
+				34DEB92312C16517002FBB69 /* CFNetwork.framework in Frameworks */,
+				34DEB93E12C16545002FBB69 /* QuartzCore.framework in Frameworks */,
+				34DEB94E12C165DF002FBB69 /* MediaPlayer.framework in Frameworks */,
+				34DEB95012C165DF002FBB69 /* Security.framework in Frameworks */,
+				34DEB95212C165DF002FBB69 /* libxml2.dylib in Frameworks */,
+				34DEBA7C12C1668B002FBB69 /* libFamigoAPI-Release.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				34D7D7C212BFECC900687591 /* Constants.h */,
+				34D7D7C512BFECD900687591 /* AppDelegate.h */,
+				34D7D7C612BFECD900687591 /* AppDelegate.m */,
+				34DEB81012C15DDE002FBB69 /* NavigationController.h */,
+				34DEB81112C15DDE002FBB69 /* NavigationController.m */,
+				34DEB51A12C13C1D002FBB69 /* GameTypeSelectorViewController.h */,
+				34DEB51B12C13C1D002FBB69 /* GameTypeSelectorViewController.m */,
+				34D57F4112C28679005897F4 /* SettingsViewController.h */,
+				34D57F4212C28679005897F4 /* SettingsViewController.m */,
+				34FE19F112C9449D00CBB17E /* DifficultyViewController.h */,
+				34FE19F212C9449D00CBB17E /* DifficultyViewController.m */,
+				34E84A1412C30BAB00A639C4 /* NumberOfPlayersViewController.h */,
+				34E84A1512C30BAB00A639C4 /* NumberOfPlayersViewController.m */,
+				34D5822F12C2AF01005897F4 /* MadMinuteViewController.h */,
+				34D5823012C2AF01005897F4 /* MadMinuteViewController.m */,
+				34DFBCC112C3E75B00B522CC /* ResultsViewController.h */,
+				34DFBCC212C3E75B00B522CC /* ResultsViewController.m */,
+				34D5821D12C2AE44005897F4 /* ArithmeticEquationGenerator.h */,
+				34D5821E12C2AE44005897F4 /* ArithmeticEquationGenerator.m */,
+				34D5821F12C2AE44005897F4 /* ArithmeticEquation.h */,
+				34D5822012C2AE44005897F4 /* ArithmeticEquation.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* Mad Minute.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* Mad_Minute_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				34D7D84012BFF02400687591 /* Famigo */,
+				34D7D80812BFEEF800687591 /* Images */,
+				34D7D7EF12BFEDD400687591 /* Mad_Minute-Info.plist */,
+				34D7D7EE12BFEDD400687591 /* Entitlements.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34DEB91812C164FB002FBB69 /* AddressBook.framework */,
+				3421A5AD12C01DDD00742E49 /* AudioToolbox.framework */,
+				34DEB92212C16517002FBB69 /* CFNetwork.framework */,
+				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				34DEB94D12C165DF002FBB69 /* MediaPlayer.framework */,
+				34DEB93D12C16545002FBB69 /* QuartzCore.framework */,
+				34DEB94F12C165DF002FBB69 /* Security.framework */,
+				3421A69A12C02A0700742E49 /* SystemConfiguration.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				34DEBA7B12C1668B002FBB69 /* libFamigoAPI-Release.a */,
+				34DEB91E12C16509002FBB69 /* libsqlite3.dylib */,
+				34DEB95112C165DF002FBB69 /* libxml2.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		34D7D80812BFEEF800687591 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				34D7D82F12BFEFC200687591 /* background.png */,
+				34D7D80912BFEEF800687591 /* Default-Landscape.png */,
+				34D7D80A12BFEEF800687591 /* Default-Portrait.png */,
+				34D7D80B12BFEEF800687591 /* Default.png */,
+				34D7D80C12BFEEF800687591 /* Default@2x.png */,
+				34D7D80E12BFEEF800687591 /* Icon-72.png */,
+				34D7D80F12BFEEF800687591 /* Icon-Small-50.png */,
+				34D7D81012BFEEF800687591 /* Icon-Small.png */,
+				34D7D81112BFEEF800687591 /* Icon-Small@2x.png */,
+				34D7D81212BFEEF800687591 /* Icon.png */,
+				34D7D81312BFEEF800687591 /* Icon@2x.png */,
+				34D7D81412BFEEF800687591 /* iTunesArtwork */,
+			);
+			name = Images;
+			path = Resources/Images;
+			sourceTree = "<group>";
+		};
+		34D7D84012BFF02400687591 /* Famigo */ = {
+			isa = PBXGroup;
+			children = (
+				34D7D84112BFF03400687591 /* ABContact.h */,
+				34D7D84212BFF03400687591 /* ABContactsHelper.h */,
+				34D7D84312BFF03400687591 /* ABGroup.h */,
+				34D7D84412BFF03400687591 /* ApiDataAccess.h */,
+				34D7D84512BFF03400687591 /* AsyncTurnView.h */,
+				34D7D84612BFF03400687591 /* AudioStreamer.h */,
+				34D7D84712BFF03400687591 /* bro2.png */,
+				34D7D84812BFF03400687591 /* bro3.png */,
+				34D7D84912BFF03400687591 /* bro4.png */,
+				34D7D84A12BFF03400687591 /* broX.png */,
+				34D7D84B12BFF03400687591 /* BSJSONEncoder.h */,
+				34D7D84C12BFF03400687591 /* chat.png */,
+				34D7D84D12BFF03400687591 /* ChatMessageViewController-iPad.xib */,
+				34D7D84E12BFF03400687591 /* ChatMessageViewController.h */,
+				34D7D84F12BFF03400687591 /* ChatMessageViewController.xib */,
+				34D7D85012BFF03400687591 /* checkGreen.png */,
+				34D7D85112BFF03400687591 /* cheer.wav */,
+				34D7D85212BFF03400687591 /* circleGray.png */,
+				34D7D85312BFF03400687591 /* ContactListViewController-iPad.xib */,
+				34D7D85412BFF03400687591 /* ContactListViewController.h */,
+				34D7D85512BFF03400687591 /* ContactListViewController.xib */,
+				34D7D85612BFF03400687591 /* dad2.png */,
+				34D7D85712BFF03400687591 /* dad3.png */,
+				34D7D85812BFF03400687591 /* dad4.png */,
+				34D7D85912BFF03400687591 /* dotOpaque.png */,
+				34D7D85A12BFF03400687591 /* EmailViewController-iPad.xib */,
+				34D7D85B12BFF03400687591 /* EmailViewController.h */,
+				34D7D85C12BFF03400687591 /* EmailViewController.xib */,
+				34D7D85D12BFF03400687591 /* Facebook.h */,
+				34D7D85E12BFF03400687591 /* famidog.png */,
+				34D7D85F12BFF03400687591 /* famidogshare.png */,
+				34D7D86012BFF03400687591 /* Famigo Logo 01.png */,
+				34D7D86112BFF03400687591 /* Famigo Logo 02.png */,
+				34D7D86212BFF03400687591 /* Famigo Logo 03.png */,
+				34D7D86312BFF03400687591 /* Famigo Logo 04.png */,
+				34D7D86412BFF03400687591 /* Famigo Logo 05.png */,
+				34D7D86512BFF03400687591 /* Famigo Logo 06.png */,
+				34D7D86612BFF03400687591 /* Famigo Logo 07.png */,
+				34D7D86712BFF03400687591 /* Famigo Logo 08.png */,
+				34D7D86812BFF03400687591 /* Famigo Logo 09.png */,
+				34D7D86912BFF03400687591 /* Famigo Logo 10.png */,
+				34D7D86A12BFF03400687591 /* Famigo Logo 11.png */,
+				34D7D86B12BFF03400687591 /* Famigo Logo 12.png */,
+				34D7D86C12BFF03400687591 /* Famigo Logo 13.png */,
+				34D7D86D12BFF03400687591 /* Famigo Logo 14.png */,
+				34D7D86E12BFF03400687591 /* Famigo Logo 15.png */,
+				34D7D86F12BFF03400687591 /* Famigo Logo 16.png */,
+				34D7D87012BFF03400687591 /* Famigo Logo 17.png */,
+				34D7D87112BFF03400687591 /* Famigo Logo 18.png */,
+				34D7D87212BFF03400687591 /* Famigo Logo 19.png */,
+				34D7D87312BFF03400687591 /* Famigo Logo 20.png */,
+				34D7D87412BFF03400687591 /* Famigo Logo 21.png */,
+				34D7D87512BFF03400687591 /* Famigo Logo 22.png */,
+				34D7D87612BFF03400687591 /* Famigo Logo 23.png */,
+				34D7D87712BFF03400687591 /* Famigo Logo 24.png */,
+				34D7D87812BFF03400687591 /* Famigo Logo 25.png */,
+				34D7D87912BFF03400687591 /* Famigo Logo 26.png */,
+				34D7D87A12BFF03400687591 /* Famigo Logo 27.png */,
+				34D7D87B12BFF03400687591 /* Famigo Logo 28.png */,
+				34D7D87C12BFF03400687591 /* Famigo Logo 29.png */,
+				34D7D87D12BFF03400687591 /* Famigo Logo 30.png */,
+				34D7D87E12BFF03400687591 /* Famigo Logo 31.png */,
+				34D7D87F12BFF03400687591 /* Famigo Logo 32.png */,
+				34D7D88012BFF03400687591 /* Famigo Logo 33.png */,
+				34D7D88112BFF03400687591 /* Famigo Logo 34.png */,
+				34D7D88212BFF03400687591 /* Famigo Logo 35.png */,
+				34D7D88312BFF03400687591 /* Famigo Logo 36.png */,
+				34D7D88412BFF03400687591 /* Famigo Logo 37.png */,
+				34D7D88512BFF03400687591 /* famigo_drums.wav */,
+				34D7D88612BFF03400687591 /* famigo_logo_new.png */,
+				34D7D88712BFF03400687591 /* famigo_logo.png */,
+				34D7D88812BFF03400687591 /* famigo_small.png */,
+				34D7D88912BFF03400687591 /* Famigo-F.png */,
+				34D7D88A12BFF03400687591 /* Famigo.h */,
+				34D7D88B12BFF03400687591 /* FamigoController.h */,
+				34D7D88C12BFF03400687591 /* FamigoHeaders.h */,
+				34D7D88D12BFF03400687591 /* FamigoMediaController.h */,
+				34D7D88E12BFF03400687591 /* Family.png */,
+				34D7D88F12BFF03400687591 /* FamilyChatViewController-iPad.xib */,
+				34D7D89012BFF03400687591 /* FamilyChatViewController.h */,
+				34D7D89112BFF03400687591 /* FamilyChatViewController.xib */,
+				34D7D89212BFF03400687591 /* FamilyInviteEmailBody.txt */,
+				34D7D89312BFF03400687591 /* FamilyInviteViewController-iPad.xib */,
+				34D7D89412BFF03400687591 /* FamilyInviteViewController.h */,
+				34D7D89512BFF03400687591 /* FamilyInviteViewController.xib */,
+				34D7D89612BFF03400687591 /* familySDK.png */,
+				34D7D89712BFF03400687591 /* FamilyViewController-iPad.xib */,
+				34D7D89812BFF03400687591 /* FamilyViewController.h */,
+				34D7D89912BFF03400687591 /* FamilyViewController.xib */,
+				34D7D89A12BFF03400687591 /* FBConnect.h */,
+				34D7D89B12BFF03400687591 /* FBDialog.bundle */,
+				34D7D89C12BFF03400687591 /* FBDialog.h */,
+				34D7D89D12BFF03400687591 /* FBLoginDialog.h */,
+				34D7D89E12BFF03400687591 /* FBRequest.h */,
+				34D7D89F12BFF03400687591 /* GameResultsShareController-iPad.xib */,
+				34D7D8A012BFF03400687591 /* GameResultsShareController.h */,
+				34D7D8A112BFF03400687591 /* GameResultsShareController.xib */,
+				34D7D8A212BFF03400687591 /* games.png */,
+				34D7D8A312BFF03400687591 /* GANTracker.h */,
+				34D7D8A412BFF03400687591 /* gear.png */,
+				34D7D8A512BFF03400687591 /* GearTab.h */,
+				34D7D8A612BFF03400687591 /* info.png */,
+				34D7D8A712BFF03400687591 /* InformationViewController.h */,
+				34D7D8A812BFF03400687591 /* Invite.png */,
+				34D7D8A912BFF03400687591 /* InviteViewController-iPad.xib */,
+				34D7D8AA12BFF03400687591 /* InviteViewController.h */,
+				34D7D8AB12BFF03400687591 /* InviteViewController.xib */,
+				34D7D8AC12BFF03400687591 /* JSON.h */,
+				34D7D8AD12BFF03400687591 /* kid2.png */,
+				34D7D8AE12BFF03400687591 /* kid3.png */,
+				34D7D8AF12BFF03400687591 /* kid4.png */,
+				34D7D8B012BFF03400687591 /* libFamigoAPI-Release.a */,
+				34D7D8B112BFF03400687591 /* libGoogleAnalytics.a */,
+				34D7D8B212BFF03400687591 /* libOAuth.a */,
+				34D7D8B312BFF03400687591 /* logo_no_ball.png */,
+				34D7D8B412BFF03400687591 /* LogoAnimationController.h */,
+				34D7D8B512BFF03400687591 /* m_add.png */,
+				34D7D8B612BFF03400687591 /* m_boy.png */,
+				34D7D8B712BFF03400687591 /* m_dad.png */,
+				34D7D8B812BFF03400687591 /* m_girl.png */,
+				34D7D8B912BFF03400687591 /* m_mom.png */,
+				34D7D8BA12BFF03400687591 /* m_wtf.png */,
+				34D7D8BB12BFF03400687591 /* menu.png */,
+				34D7D8BC12BFF03400687591 /* MGTwitterEngine.h */,
+				34D7D8BD12BFF03400687591 /* MGTwitterEngineDelegate.h */,
+				34D7D8BE12BFF03400687591 /* MGTwitterEngineGlobalHeader.h */,
+				34D7D8BF12BFF03400687591 /* MGTwitterHTTPURLConnection.h */,
+				34D7D8C012BFF03400687591 /* MGTwitterLibXMLParser.h */,
+				34D7D8C112BFF03400687591 /* MGTwitterMessagesLibXMLParser.h */,
+				34D7D8C212BFF03400687591 /* MGTwitterMessagesParser.h */,
+				34D7D8C312BFF03400687591 /* MGTwitterMiscLibXMLParser.h */,
+				34D7D8C412BFF03400687591 /* MGTwitterMiscParser.h */,
+				34D7D8C512BFF03400687591 /* MGTwitterParserDelegate.h */,
+				34D7D8C612BFF03400687591 /* MGTwitterRequestTypes.h */,
+				34D7D8C712BFF03400687591 /* MGTwitterSocialGraphLibXMLParser.h */,
+				34D7D8C812BFF03400687591 /* MGTwitterSocialGraphParser.h */,
+				34D7D8C912BFF03400687591 /* MGTwitterStatusesLibXMLParser.h */,
+				34D7D8CA12BFF03400687591 /* MGTwitterStatusesParser.h */,
+				34D7D8CB12BFF03400687591 /* MGTwitterUserListsParser.h */,
+				34D7D8CC12BFF03400687591 /* MGTwitterUsersLibXMLParser.h */,
+				34D7D8CD12BFF03400687591 /* MGTwitterUsersParser.h */,
+				34D7D8CE12BFF03400687591 /* MGTwitterXMLParser.h */,
+				34D7D8CF12BFF03400687591 /* mom2.png */,
+				34D7D8D012BFF03400687591 /* mom3.png */,
+				34D7D8D112BFF03400687591 /* mom4.png */,
+				34D7D8D212BFF03400687591 /* mrarrow.png */,
+				34D7D8D312BFF03400687591 /* NeighborhoodGamesController-iPad.xib */,
+				34D7D8D412BFF03400687591 /* NeighborhoodGamesController.h */,
+				34D7D8D512BFF03400687591 /* NeighborhoodGamesController.xib */,
+				34D7D8D612BFF03400687591 /* NeighborhoodInviteEmailBody.txt */,
+				34D7D8D712BFF03400687591 /* neighborhoodSDK.png */,
+				34D7D8D812BFF03400687591 /* NeighborhoodSearchViewController-iPad.xib */,
+				34D7D8D912BFF03400687591 /* NeighborhoodSearchViewController.h */,
+				34D7D8DA12BFF03400687591 /* NeighborhoodSearchViewController.xib */,
+				34D7D8DB12BFF03400687591 /* NewFamilyController-iPad.xib */,
+				34D7D8DC12BFF03400687591 /* NewFamilyController.h */,
+				34D7D8DD12BFF03400687591 /* NewFamilyController.xib */,
+				34D7D8DE12BFF03400687591 /* NewGameController.h */,
+				34D7D8DF12BFF03400687591 /* NewGameInvite-iPad.xib */,
+				34D7D8E012BFF03400687591 /* NewGameInvite.xib */,
+				34D7D8E112BFF03400687591 /* NSArray+BSJSONAdditions.h */,
+				34D7D8E212BFF03400687591 /* NSData+Base64.h */,
+				34D7D8E312BFF03400687591 /* NSDictionary+BSJSONAdditions.h */,
+				34D7D8E412BFF03400687591 /* NSDictionary+OPPOST.h */,
+				34D7D8E512BFF03400687591 /* NSMutableURLRequest+Parameters.h */,
+				34D7D8E612BFF03400687591 /* NSObject+SBJSON.h */,
+				34D7D8E712BFF03400687591 /* NSScanner+BSJSONAdditions.h */,
+				34D7D8E812BFF03400687591 /* NSString+BSJSONAdditions.h */,
+				34D7D8E912BFF03400687591 /* NSString+SBJSON.h */,
+				34D7D8EA12BFF03400687591 /* NSString+URLEncoding.h */,
+				34D7D8EB12BFF03400687591 /* NSString+UUID.h */,
+				34D7D8EC12BFF03400687591 /* NSURL+Base.h */,
+				34D7D8ED12BFF03400687591 /* OAAsynchronousDataFetcher.h */,
+				34D7D8EE12BFF03400687591 /* OAConsumer.h */,
+				34D7D8EF12BFF03400687591 /* OADataFetcher.h */,
+				34D7D8F012BFF03400687591 /* OAHMAC_SHA1SignatureProvider.h */,
+				34D7D8F112BFF03400687591 /* OAMutableURLRequest.h */,
+				34D7D8F212BFF03400687591 /* OAPlaintextSignatureProvider.h */,
+				34D7D8F312BFF03400687591 /* OARequestParameter.h */,
+				34D7D8F412BFF03400687591 /* OAServiceTicket.h */,
+				34D7D8F512BFF03400687591 /* OASignatureProviding.h */,
+				34D7D8F612BFF03400687591 /* OAToken_KeychainExtensions.h */,
+				34D7D8F712BFF03400687591 /* OAToken.h */,
+				34D7D8F812BFF03400687591 /* OAuthConsumer.h */,
+				34D7D8F912BFF03400687591 /* pause.png */,
+				34D7D8FA12BFF03400687591 /* PendingOperationController-iPad.xib */,
+				34D7D8FB12BFF03400687591 /* PendingOperationController.h */,
+				34D7D8FC12BFF03400687591 /* PendingOperationController.xib */,
+				34D7D8FD12BFF03400687591 /* play.png */,
+				34D7D8FE12BFF03400687591 /* Reachability.h */,
+				34D7D8FF12BFF03400687591 /* red_dog.png */,
+				34D7D90012BFF03400687591 /* sad_trombone.wav */,
+				34D7D90112BFF03400687591 /* SBJSON.h */,
+				34D7D90212BFF03400687591 /* SBJsonBase.h */,
+				34D7D90312BFF03400687591 /* SBJsonParser.h */,
+				34D7D90412BFF03400687591 /* SBJsonWriter.h */,
+				34D7D90512BFF03400687591 /* sis2.png */,
+				34D7D90612BFF03400687591 /* sis3.png */,
+				34D7D90712BFF03400687591 /* sis4.png */,
+				34D7D90812BFF03400687591 /* stop.png */,
+				34D7D90912BFF03400687591 /* superball_gray.png */,
+				34D7D90A12BFF03400687591 /* superball.png */,
+				34D7D90B12BFF03400687591 /* tab.png */,
+				34D7D90C12BFF03400687591 /* TimeUtility.h */,
+				34D7D90D12BFF03400687591 /* tink.wav */,
+				34D7D90E12BFF03400687591 /* TwitterViewController.h */,
+				34D7D90F12BFF03400687591 /* UIColor-Extras.h */,
+				34D7D91012BFF03400687591 /* UIConstants.h */,
+				34D7D91112BFF03400687591 /* UIGradientButton.h */,
+				34D7D91212BFF03400687591 /* URLWrapper.h */,
+				34D7D91312BFF03400687591 /* WelcomeViewController-iPad.xib */,
+				34D7D91412BFF03400687591 /* WelcomeViewController.h */,
+				34D7D91512BFF03400687591 /* WelcomeViewController.xib */,
+				34D7D91612BFF03400687591 /* yay.wav */,
+			);
+			name = Famigo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* Mad Minute */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Mad Minute" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mad Minute";
+			productName = "Mad Minute";
+			productReference = 1D6058910D05DD3D006BFB54 /* Mad Minute.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Mad Minute" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* Mad Minute */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34D7D7F012BFEDD400687591 /* Entitlements.plist in Resources */,
+				34D7D7F112BFEDD400687591 /* Mad_Minute-Info.plist in Resources */,
+				34D7D81512BFEEF800687591 /* Default-Landscape.png in Resources */,
+				34D7D81612BFEEF800687591 /* Default-Portrait.png in Resources */,
+				34D7D81712BFEEF800687591 /* Default.png in Resources */,
+				34D7D81812BFEEF800687591 /* Default@2x.png in Resources */,
+				34D7D81A12BFEEF800687591 /* Icon-72.png in Resources */,
+				34D7D81B12BFEEF800687591 /* Icon-Small-50.png in Resources */,
+				34D7D81C12BFEEF800687591 /* Icon-Small.png in Resources */,
+				34D7D81D12BFEEF800687591 /* Icon-Small@2x.png in Resources */,
+				34D7D81E12BFEEF800687591 /* Icon.png in Resources */,
+				34D7D81F12BFEEF800687591 /* Icon@2x.png in Resources */,
+				34D7D82012BFEEF800687591 /* iTunesArtwork in Resources */,
+				34D7D83012BFEFC200687591 /* background.png in Resources */,
+				34D7D91712BFF03400687591 /* bro2.png in Resources */,
+				34D7D91812BFF03400687591 /* bro3.png in Resources */,
+				34D7D91912BFF03400687591 /* bro4.png in Resources */,
+				34D7D91A12BFF03400687591 /* broX.png in Resources */,
+				34D7D91B12BFF03400687591 /* chat.png in Resources */,
+				34D7D91C12BFF03400687591 /* ChatMessageViewController-iPad.xib in Resources */,
+				34D7D91D12BFF03400687591 /* ChatMessageViewController.xib in Resources */,
+				34D7D91E12BFF03400687591 /* checkGreen.png in Resources */,
+				34D7D91F12BFF03400687591 /* cheer.wav in Resources */,
+				34D7D92012BFF03400687591 /* circleGray.png in Resources */,
+				34D7D92112BFF03400687591 /* ContactListViewController-iPad.xib in Resources */,
+				34D7D92212BFF03400687591 /* ContactListViewController.xib in Resources */,
+				34D7D92312BFF03400687591 /* dad2.png in Resources */,
+				34D7D92412BFF03400687591 /* dad3.png in Resources */,
+				34D7D92512BFF03400687591 /* dad4.png in Resources */,
+				34D7D92612BFF03400687591 /* dotOpaque.png in Resources */,
+				34D7D92712BFF03400687591 /* EmailViewController-iPad.xib in Resources */,
+				34D7D92812BFF03400687591 /* EmailViewController.xib in Resources */,
+				34D7D92912BFF03400687591 /* famidog.png in Resources */,
+				34D7D92A12BFF03400687591 /* famidogshare.png in Resources */,
+				34D7D92B12BFF03400687591 /* Famigo Logo 01.png in Resources */,
+				34D7D92C12BFF03400687591 /* Famigo Logo 02.png in Resources */,
+				34D7D92D12BFF03400687591 /* Famigo Logo 03.png in Resources */,
+				34D7D92E12BFF03400687591 /* Famigo Logo 04.png in Resources */,
+				34D7D92F12BFF03400687591 /* Famigo Logo 05.png in Resources */,
+				34D7D93012BFF03400687591 /* Famigo Logo 06.png in Resources */,
+				34D7D93112BFF03400687591 /* Famigo Logo 07.png in Resources */,
+				34D7D93212BFF03400687591 /* Famigo Logo 08.png in Resources */,
+				34D7D93312BFF03400687591 /* Famigo Logo 09.png in Resources */,
+				34D7D93412BFF03400687591 /* Famigo Logo 10.png in Resources */,
+				34D7D93512BFF03400687591 /* Famigo Logo 11.png in Resources */,
+				34D7D93612BFF03400687591 /* Famigo Logo 12.png in Resources */,
+				34D7D93712BFF03400687591 /* Famigo Logo 13.png in Resources */,
+				34D7D93812BFF03400687591 /* Famigo Logo 14.png in Resources */,
+				34D7D93912BFF03400687591 /* Famigo Logo 15.png in Resources */,
+				34D7D93A12BFF03400687591 /* Famigo Logo 16.png in Resources */,
+				34D7D93B12BFF03400687591 /* Famigo Logo 17.png in Resources */,
+				34D7D93C12BFF03400687591 /* Famigo Logo 18.png in Resources */,
+				34D7D93D12BFF03400687591 /* Famigo Logo 19.png in Resources */,
+				34D7D93E12BFF03400687591 /* Famigo Logo 20.png in Resources */,
+				34D7D93F12BFF03400687591 /* Famigo Logo 21.png in Resources */,
+				34D7D94012BFF03400687591 /* Famigo Logo 22.png in Resources */,
+				34D7D94112BFF03400687591 /* Famigo Logo 23.png in Resources */,
+				34D7D94212BFF03400687591 /* Famigo Logo 24.png in Resources */,
+				34D7D94312BFF03400687591 /* Famigo Logo 25.png in Resources */,
+				34D7D94412BFF03400687591 /* Famigo Logo 26.png in Resources */,
+				34D7D94512BFF03400687591 /* Famigo Logo 27.png in Resources */,
+				34D7D94612BFF03400687591 /* Famigo Logo 28.png in Resources */,
+				34D7D94712BFF03400687591 /* Famigo Logo 29.png in Resources */,
+				34D7D94812BFF03400687591 /* Famigo Logo 30.png in Resources */,
+				34D7D94912BFF03400687591 /* Famigo Logo 31.png in Resources */,
+				34D7D94A12BFF03400687591 /* Famigo Logo 32.png in Resources */,
+				34D7D94B12BFF03400687591 /* Famigo Logo 33.png in Resources */,
+				34D7D94C12BFF03400687591 /* Famigo Logo 34.png in Resources */,
+				34D7D94D12BFF03400687591 /* Famigo Logo 35.png in Resources */,
+				34D7D94E12BFF03400687591 /* Famigo Logo 36.png in Resources */,
+				34D7D94F12BFF03400687591 /* Famigo Logo 37.png in Resources */,
+				34D7D95012BFF03400687591 /* famigo_drums.wav in Resources */,
+				34D7D95112BFF03400687591 /* famigo_logo_new.png in Resources */,
+				34D7D95212BFF03400687591 /* famigo_logo.png in Resources */,
+				34D7D95312BFF03400687591 /* famigo_small.png in Resources */,
+				34D7D95412BFF03400687591 /* Famigo-F.png in Resources */,
+				34D7D95512BFF03400687591 /* Family.png in Resources */,
+				34D7D95612BFF03400687591 /* FamilyChatViewController-iPad.xib in Resources */,
+				34D7D95712BFF03400687591 /* FamilyChatViewController.xib in Resources */,
+				34D7D95812BFF03400687591 /* FamilyInviteEmailBody.txt in Resources */,
+				34D7D95912BFF03400687591 /* FamilyInviteViewController-iPad.xib in Resources */,
+				34D7D95A12BFF03400687591 /* FamilyInviteViewController.xib in Resources */,
+				34D7D95B12BFF03400687591 /* familySDK.png in Resources */,
+				34D7D95C12BFF03400687591 /* FamilyViewController-iPad.xib in Resources */,
+				34D7D95D12BFF03400687591 /* FamilyViewController.xib in Resources */,
+				34D7D95E12BFF03400687591 /* FBDialog.bundle in Resources */,
+				34D7D95F12BFF03400687591 /* GameResultsShareController-iPad.xib in Resources */,
+				34D7D96012BFF03400687591 /* GameResultsShareController.xib in Resources */,
+				34D7D96112BFF03400687591 /* games.png in Resources */,
+				34D7D96212BFF03400687591 /* gear.png in Resources */,
+				34D7D96312BFF03400687591 /* info.png in Resources */,
+				34D7D96412BFF03400687591 /* Invite.png in Resources */,
+				34D7D96512BFF03400687591 /* InviteViewController-iPad.xib in Resources */,
+				34D7D96612BFF03400687591 /* InviteViewController.xib in Resources */,
+				34D7D96712BFF03400687591 /* kid2.png in Resources */,
+				34D7D96812BFF03400687591 /* kid3.png in Resources */,
+				34D7D96912BFF03400687591 /* kid4.png in Resources */,
+				34D7D96D12BFF03400687591 /* logo_no_ball.png in Resources */,
+				34D7D96E12BFF03400687591 /* m_add.png in Resources */,
+				34D7D96F12BFF03400687591 /* m_boy.png in Resources */,
+				34D7D97012BFF03400687591 /* m_dad.png in Resources */,
+				34D7D97112BFF03400687591 /* m_girl.png in Resources */,
+				34D7D97212BFF03400687591 /* m_mom.png in Resources */,
+				34D7D97312BFF03400687591 /* m_wtf.png in Resources */,
+				34D7D97412BFF03400687591 /* menu.png in Resources */,
+				34D7D97512BFF03400687591 /* mom2.png in Resources */,
+				34D7D97612BFF03400687591 /* mom3.png in Resources */,
+				34D7D97712BFF03400687591 /* mom4.png in Resources */,
+				34D7D97812BFF03400687591 /* mrarrow.png in Resources */,
+				34D7D97912BFF03400687591 /* NeighborhoodGamesController-iPad.xib in Resources */,
+				34D7D97A12BFF03400687591 /* NeighborhoodGamesController.xib in Resources */,
+				34D7D97B12BFF03400687591 /* NeighborhoodInviteEmailBody.txt in Resources */,
+				34D7D97C12BFF03400687591 /* neighborhoodSDK.png in Resources */,
+				34D7D97D12BFF03400687591 /* NeighborhoodSearchViewController-iPad.xib in Resources */,
+				34D7D97E12BFF03400687591 /* NeighborhoodSearchViewController.xib in Resources */,
+				34D7D97F12BFF03400687591 /* NewFamilyController-iPad.xib in Resources */,
+				34D7D98012BFF03400687591 /* NewFamilyController.xib in Resources */,
+				34D7D98112BFF03400687591 /* NewGameInvite-iPad.xib in Resources */,
+				34D7D98212BFF03400687591 /* NewGameInvite.xib in Resources */,
+				34D7D98312BFF03400687591 /* pause.png in Resources */,
+				34D7D98412BFF03400687591 /* PendingOperationController-iPad.xib in Resources */,
+				34D7D98512BFF03400687591 /* PendingOperationController.xib in Resources */,
+				34D7D98612BFF03400687591 /* play.png in Resources */,
+				34D7D98712BFF03400687591 /* red_dog.png in Resources */,
+				34D7D98812BFF03400687591 /* sad_trombone.wav in Resources */,
+				34D7D98912BFF03400687591 /* sis2.png in Resources */,
+				34D7D98A12BFF03400687591 /* sis3.png in Resources */,
+				34D7D98B12BFF03400687591 /* sis4.png in Resources */,
+				34D7D98C12BFF03400687591 /* stop.png in Resources */,
+				34D7D98D12BFF03400687591 /* superball_gray.png in Resources */,
+				34D7D98E12BFF03400687591 /* superball.png in Resources */,
+				34D7D98F12BFF03400687591 /* tab.png in Resources */,
+				34D7D99012BFF03400687591 /* tink.wav in Resources */,
+				34D7D99112BFF03400687591 /* WelcomeViewController-iPad.xib in Resources */,
+				34D7D99212BFF03400687591 /* WelcomeViewController.xib in Resources */,
+				34D7D99312BFF03400687591 /* yay.wav in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				34D7D7C712BFECD900687591 /* AppDelegate.m in Sources */,
+				34DEB51C12C13C1D002FBB69 /* GameTypeSelectorViewController.m in Sources */,
+				34DEB81212C15DDE002FBB69 /* NavigationController.m in Sources */,
+				34D57F4312C28679005897F4 /* SettingsViewController.m in Sources */,
+				34D5822212C2AE44005897F4 /* ArithmeticEquationGenerator.m in Sources */,
+				34D5822312C2AE44005897F4 /* ArithmeticEquation.m in Sources */,
+				34D5823112C2AF01005897F4 /* MadMinuteViewController.m in Sources */,
+				34E84A1612C30BAB00A639C4 /* NumberOfPlayersViewController.m in Sources */,
+				34DFBCC312C3E75B00B522CC /* ResultsViewController.m in Sources */,
+				34FE19F312C9449D00CBB17E /* DifficultyViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = ./Resources/Entitlements.plist;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Mad_Minute_Prefix.pch;
+				INFOPLIST_FILE = "./Resources/Mad_Minute-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../Famigo/build/Release-universal/FamigoAPI\"",
+				);
+				PRODUCT_NAME = "Mad Minute";
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = ./Resources/Entitlements.plist;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Mad_Minute_Prefix.pch;
+				INFOPLIST_FILE = "./Resources/Mad_Minute-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../Famigo/build/Release-universal/FamigoAPI\"",
+				);
+				PRODUCT_NAME = "Mad Minute";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_ENTITLEMENTS = ./Resources/Entitlements.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "../Famigo/build/Release-universal/FamigoAPI/";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_ENTITLEMENTS = ./Resources/Entitlements.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "../Famigo/build/Release-universal/FamigoAPI/";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Mad Minute" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Mad Minute" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
