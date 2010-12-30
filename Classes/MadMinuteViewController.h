@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "Constants.h"
+#import "Famigo.h"
 #import "ArithmeticEquationGenerator.h"
 
 @interface MadMinuteViewController : UIViewController <UIAlertViewDelegate> {
+    Famigo *f;
+    NSUserDefaults *defaults;
+    
     // Game settings
     GameType gameType;
     Difficulty difficulty;
@@ -26,6 +30,7 @@
     int score;
     NSString *responseValue;
     BOOL responseIsPositive;
+    NSMutableDictionary *gameData;
     
     // User interface
     UIView *timeBar;
@@ -40,6 +45,9 @@
     UIView *numberPad;
 }
 
+@property (nonatomic, assign, readonly) Famigo *f;
+@property (nonatomic, assign, readonly) NSUserDefaults *defaults;
+
 @property (nonatomic, assign, readonly) GameType gameType;
 @property (nonatomic, assign, readonly) Difficulty difficulty;
 @property (nonatomic, assign, readonly) int numberOfPlayers;
@@ -53,6 +61,7 @@
 @property (nonatomic, assign, readonly) int score;
 @property (nonatomic, retain, readonly) NSString *responseValue;
 @property (nonatomic, assign, readonly) BOOL responseIsPositive;
+@property (nonatomic, assign, readonly) NSMutableDictionary *gameData;
 
 @property (nonatomic, retain, readonly) UIView *timeBar;
 @property (nonatomic, retain, readonly) UIView *timeElapsedBar;
@@ -69,10 +78,10 @@
 - (void)stopGame;
 - (void)cancelGame;
 - (void)timerDidFire;
-- (NSString *)deviceName;
-- (NSString *)nameForPlayerNumber:(int)number;
+- (void)timerDidExpire;
 - (void)signControlValueDidChange;
 - (void)pressedNumberPadButton:(id)sender;
+- (void)initUI;
 - (void)drawUI;
 - (void)updateUI;
 
