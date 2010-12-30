@@ -124,6 +124,7 @@
 #pragma mark FamigoControllerDelegate
 
 - (void)famigoReady {
+    NSLog(@"%@", [[[Famigo sharedInstance] gameInstance] objectForKey:@"famigo_active"]);
     // TODO bring up the *right* view controller
     settingsViewController = [[SettingsViewController alloc] init];
     [self pushViewController:settingsViewController animated:YES];

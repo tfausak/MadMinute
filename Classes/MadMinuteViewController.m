@@ -125,7 +125,7 @@
         
         // Store the game data
         if (f == nil) {
-            gameData = [[NSMutableDictionary dictionary] retain];
+            gameData = [NSMutableDictionary dictionary];
             
             // Initialize each player's data
             for (int player = 1; player <= numberOfPlayers; player += 1) {
@@ -151,6 +151,7 @@
             }
             [f updateGame];
         }
+        [gameData retain];
         
         // Set up the UI and zero everything out
         [self initUI];
@@ -219,8 +220,13 @@
 }
 
 - (void)cancelGame {
-    // TODO handle cancelling nicely (w/ famigo, etc.)
     [self stopGame];
+    
+    // Cancel the game on Famigo
+    if (f != nil) {
+        [f cancelGame];
+    }
+    
     [[self navigationController] popViewControllerAnimated:YES];
 }
 
@@ -234,6 +240,16 @@
 
 - (void)timerDidExpire {
     [self stopGame];
+    
+    // Store the game data
+    if (f == nil) {
+        [defaults setValue:gameData forKey:kGameDataKey];
+        [defaults synchronize];
+    }
+    else {
+        [[f gameInstance] setValue:gameData forKey:[f game_name]];
+        [f updateGame];
+    }
     
     switch (gameType) {
         case SinglePlayer:
@@ -253,11 +269,16 @@
             }
             else {
                 [(NavigationController *)[self navigationController] didStopGame];
+                [[f gameInstance] setValue:@"finished" forKey:@"famigo_active"];
+                [f setWatchGame:NO];
+                [f updateGame];
             }
             break;
         case MultiDeviceWithFamigo:
             [(NavigationController *)[self navigationController] didStopGame];
-            // TODO update famigo
+            [[f gameInstance] setValue:@"finished" forKey:@"famigo_active"];
+            [f setWatchGame:NO];
+            [f updateGame];
             break;
     }
 }
@@ -300,7 +321,7 @@
                 playerName = [NSString stringWithFormat:@"player-%d", currentPlayer];
             }
             else {
-                playerName = [[[[f gameInstance] valueForKey:@"famigo_players"] objectAtIndex:currentPlayer - 1] objectForKey:@"member_id"];
+                playerName = [[[[f gameInstance] objectForKey:@"famigo_players"] objectAtIndex:currentPlayer - 1] objectForKey:@"member_id"];
             }
             NSDictionary *playerData = [gameData objectForKey:playerName];
             NSMutableArray *playerQuestions = [playerData objectForKey:kPlayerQuestionsKey];
@@ -311,8 +332,6 @@
                 [[f gameInstance] setValue:gameData forKey:[f game_name]];
                 [f updateGame];
             }
-            
-            NSLog(@"%@", gameData);
             
             // Fade back to transparent
             [UIView beginAnimations:nil context:nil]; {

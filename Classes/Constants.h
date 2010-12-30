@@ -20,6 +20,7 @@
 #define kDifficultyKey @"difficulty"
 #define kNumberOfPlayersKey @"numberOfPlayers"
 #define kAllowNegativeNumbersKey @"allowNegativeNumbers"
+#define kGameDataKey @"gameData"
 //#define kScoresKey @"scores"
 //#define kGameFinishedKey @"gameFinished"
 //#define kScoreKey @"score"
