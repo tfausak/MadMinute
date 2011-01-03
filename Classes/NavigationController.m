@@ -71,38 +71,38 @@
 }
 
 - (void)didSelectGameType:(int)gameType {
-    switch (gameType) {
-        case SinglePlayer:
-            break;
-        case PassAndPlay:
-            break;
-        case PassAndPlayWithFamigo:
-            [[Famigo sharedInstance] setForceGameToStartSynchronously:NO];
-            [[Famigo sharedInstance] setIsPassAndPlaySession:YES];
-            break;
-        case MultiDeviceWithFamigo:
-            [[Famigo sharedInstance] setForceGameToStartSynchronously:YES];
-            [[Famigo sharedInstance] setIsPassAndPlaySession:NO];
-            break;
-        default:
-            NSAssert(NO, @"unknown game type");
-            break;
-    }
-    
     // Store the selected game type
     [[NSUserDefaults standardUserDefaults] setInteger:gameType forKey:kGameTypeKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    if (gameType == PassAndPlayWithFamigo || gameType == MultiDeviceWithFamigo) {
-        famigoController = [FamigoController sharedInstanceWithDelegate:self];
-        [self pushViewController:famigoController animated:YES];
-        
-        // Make sure we have connectivity
-        [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"kNetworkReachabilityChangedNotification" object:NULL]];
-    }
-    else {
+    if (gameType == SinglePlayer || gameType == PassAndPlay) {
         settingsViewController = [[SettingsViewController alloc] init];
         [self pushViewController:settingsViewController animated:YES];
+    }
+    else {
+        // Make sure we have connectivity
+        if ([[Reachability sharedReachability] internetConnectionStatus] == NotReachable) {
+            UIAlertView *alertView = [[UIAlertView alloc] init];
+            [alertView setTitle:@"Internet access required"];
+            [alertView setMessage:@"Famigo requires internet access."];
+            [alertView addButtonWithTitle:@"OK"];
+            [alertView setCancelButtonIndex:0];
+            [alertView show];
+            [alertView release];
+            return;
+        }
+        
+        // Set up the Famigo instance
+        [[Famigo sharedInstance] setSkipInvites:NO];
+        [[Famigo sharedInstance] setAllFamigoPlayers:YES];
+        [[Famigo sharedInstance] setForceGameToStartSynchronously:gameType == MultiDeviceWithFamigo];
+        [[Famigo sharedInstance] setGame_name:kGameName];
+        [[Famigo sharedInstance] setGame_instructions:kGameInstructions];
+        [[Famigo sharedInstance] setIsPassAndPlaySession:gameType == PassAndPlayWithFamigo];
+        [[Famigo sharedInstance] registerForNotifications:self withSelector:@selector(didReceiveFamigoNotification:)];
+        
+        famigoController = [FamigoController sharedInstanceWithDelegate:self];
+        [self pushViewController:famigoController animated:YES];
     }
 }
 

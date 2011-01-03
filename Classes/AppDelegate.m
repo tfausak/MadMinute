@@ -45,13 +45,6 @@
 	[[Reachability sharedReachability] setNetworkStatusNotificationsEnabled:YES];
 	[[Reachability sharedReachability] remoteHostStatus];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkReachabilityDidChange) name:@"kNetworkReachabilityChangedNotification" object:nil];
-    
-    // Set up the Famigo instance
-    [[Famigo sharedInstance] setSkipInvites:NO];
-    [[Famigo sharedInstance] setAllFamigoPlayers:YES];
-    [[Famigo sharedInstance] setGame_name:kGameName];
-    [[Famigo sharedInstance] setGame_instructions:kGameInstructions];
-    [[Famigo sharedInstance] registerForNotifications:navigationController withSelector:@selector(didReceiveFamigoNotification:)];
 	
     // Register for push notifications
 	[[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeBadge];
