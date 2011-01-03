@@ -145,4 +145,8 @@
 #pragma mark -
 #pragma mark UITableViewDelegate
 
+- (NSIndexPath *)tableView:(UITableView *)aTableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    return nil;
+}
+
 @end
