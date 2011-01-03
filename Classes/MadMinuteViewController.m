@@ -231,7 +231,7 @@
         [f setWatchGame:NO];
     }
     
-    [[self navigationController] popViewControllerAnimated:YES];
+    [[self navigationController] popToRootViewControllerAnimated:YES];
 }
 
 - (void)timerDidFire {

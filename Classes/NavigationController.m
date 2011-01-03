@@ -124,10 +124,14 @@
 #pragma mark FamigoControllerDelegate
 
 - (void)famigoReady {
-    NSLog(@"%@", [[[Famigo sharedInstance] gameInstance] objectForKey:@"famigo_active"]);
-    // TODO bring up the *right* view controller
-    settingsViewController = [[SettingsViewController alloc] init];
-    [self pushViewController:settingsViewController animated:YES];
+    if ([[Famigo sharedInstance] gameInProgress]) {
+        settingsViewController = [[SettingsViewController alloc] init];
+        [self pushViewController:settingsViewController animated:YES];
+    }
+    else {
+        resultsViewController = [[ResultsViewController alloc] init];
+        [self pushViewController:resultsViewController animated:YES];
+    }
 }
 
 - (void)didReceiveFamigoNotification:(NSNotification *)notification {
@@ -174,16 +178,18 @@
         }
     }
     else if ([[notification name] isEqualToString:FamigoMessageGameCanceled]) {
-        [self popToRootViewControllerAnimated:NO];
-        [[Famigo sharedInstance] setWatchGame:NO];
-        
-        UIAlertView *alertView = [[UIAlertView alloc] init];
-        [alertView setTitle:@"Game Canceled"];
-        [alertView setMessage:@"Somebody canceled the game!"];
-        [alertView addButtonWithTitle:@"OK"];
-        [alertView setCancelButtonIndex:0];
-        [alertView show];
-        [alertView release];
+        if ([[self topViewController] isKindOfClass:[MadMinuteViewController class]]) {
+            [self popToRootViewControllerAnimated:NO];
+            [[Famigo sharedInstance] setWatchGame:NO];
+            
+            UIAlertView *alertView = [[UIAlertView alloc] init];
+            [alertView setTitle:@"Game Canceled"];
+            [alertView setMessage:@"Somebody canceled the game!"];
+            [alertView addButtonWithTitle:@"OK"];
+            [alertView setCancelButtonIndex:0];
+            [alertView show];
+            [alertView release];
+        }
 	}
     else if ([[notification name] isEqualToString:FamigoMessageGameFinished]) {
         NSLog(@"game finished");
