@@ -25,13 +25,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Set some defaults
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:FC_d_api_key] == nil) {
-        [[NSUserDefaults standardUserDefaults] setValue:kAPIKey forKey:FC_d_api_key];
-    }
+    [[NSUserDefaults standardUserDefaults] setValue:kAPIKey forKey:FC_d_api_key];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kGameTypeKey];
     if ([[NSUserDefaults standardUserDefaults] objectForKey:kNumberOfPlayersKey] == nil) {
         [[NSUserDefaults standardUserDefaults] setInteger:2 forKey:kNumberOfPlayersKey];
     }
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kGameTypeKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     // Bring up the main window
@@ -46,7 +44,6 @@
 	[[Reachability sharedReachability] setAddress:kFamigoIPAddress];
 	[[Reachability sharedReachability] setNetworkStatusNotificationsEnabled:YES];
 	[[Reachability sharedReachability] remoteHostStatus];
-    [self networkReachabilityDidChange];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkReachabilityDidChange) name:@"kNetworkReachabilityChangedNotification" object:nil];
     
     // Set up the Famigo instance
@@ -72,12 +69,17 @@
 
 - (void)networkReachabilityDidChange {
     if ([[Reachability sharedReachability] internetConnectionStatus] == NotReachable) {
-        if ([[NSUserDefaults standardUserDefaults] integerForKey:kGameTypeKey] == PassAndPlayWithFamigo || [[NSUserDefaults standardUserDefaults] integerForKey:kGameTypeKey] == MultiDeviceWithFamigo) {
-            reachabilityAlertView = [[UIAlertView alloc] initWithTitle:@"Internet access required" message:@"This application requires internet access. This message will automatically be dismissed when network access is restored." delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
+        // Only show the reachability notice if the game type requires internet
+        GameType gameType = [[NSUserDefaults standardUserDefaults] integerForKey:kGameTypeKey];
+        if (gameType == PassAndPlayWithFamigo || gameType == MultiDeviceWithFamigo) {
+            reachabilityAlertView = [[UIAlertView alloc] init];
+            [reachabilityAlertView setTitle:@"Internet access required"];
+            [reachabilityAlertView setMessage:@"This application requires internet access. This message will automatically be dismissed when network access is restored."];
             [reachabilityAlertView show];
         }
     }
     else if (reachabilityAlertView != nil) {
+        // Dismiss the reachability notice
         [reachabilityAlertView dismissWithClickedButtonIndex:0 animated:YES];
         [reachabilityAlertView release];
         reachabilityAlertView = nil;
@@ -121,7 +123,14 @@
 }
 
 - (void)promptUserToReview {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Review %@?", kGameName] message:[NSString stringWithFormat:@"We notice that you've played %@ a few times now. Would you help new people find the game by reviewing it now?", kGameName] delegate:self cancelButtonTitle:@"Don't ask me again" otherButtonTitles:@"Yes, review it now!", @"Remind me later", nil];
+    UIAlertView *alertView = [[UIAlertView alloc] init];
+    [alertView setTitle:[NSString stringWithFormat:@"Review %@?", kGameName]];
+    [alertView setMessage:[NSString stringWithFormat:@"We notice that you've played %@ a few times now. Would you help new people find the game by reviewing it now?", kGameName]];
+    [alertView setDelegate:self];
+    [alertView addButtonWithTitle:@"Yes, review it now!"];
+    [alertView addButtonWithTitle:@"Remind me later"];
+    [alertView addButtonWithTitle:@"Don't ask me again"];
+    [alertView setCancelButtonIndex:2];
     [alertView show];
     [alertView release];
 }
@@ -136,16 +145,16 @@
             [[NSUserDefaults standardUserDefaults] setInteger:-1 forKey:kAppLaunchCountKey];
             break;
         case 1:
-            [[NSUserDefaults standardUserDefaults] setInteger:-2 forKey:kAppLaunchCountKey];
+            [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:kAppLaunchCountKey];
             break;
         case 2:
-            [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:kAppLaunchCountKey];
+            [[NSUserDefaults standardUserDefaults] setInteger:-2 forKey:kAppLaunchCountKey];
             break;
     }
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     // Redirect to the review page if necessary
-    if (buttonIndex == 1) {
+    if (buttonIndex == 0) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kAppStoreReviewUrl]];
     }
 }
