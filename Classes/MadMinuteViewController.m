@@ -132,6 +132,7 @@
                 NSMutableDictionary *playerData = [NSMutableDictionary dictionary];
                 [playerData setValue:settings forKey:kPlayerSettingsKey];
                 [playerData setValue:[NSMutableArray array] forKey:kPlayerQuestionsKey];
+                [playerData setValue:[NSString stringWithFormat:@"Player %d", player] forKey:kPlayerNameKey];
                 NSString *playerName = [NSString stringWithFormat:@"player-%d", player];
                 [gameData setValue:playerData forKey:playerName];
             }
@@ -139,6 +140,7 @@
         else {
             gameData = [[f gameInstance] valueForKey:[f game_name]];
             [[gameData valueForKey:[f member_id]] setValue:settings forKey:kPlayerSettingsKey];
+            [[gameData valueForKey:[f member_id]] setValue:[f member_name] forKey:kPlayerNameKey];
             
             // Initialize other players
             for (NSDictionary *player in [[f gameInstance] valueForKey:@"famigo_players"]) {
@@ -146,6 +148,7 @@
                     NSMutableDictionary *playerData = [NSMutableDictionary dictionary];
                     [playerData setValue:settings forKey:kPlayerSettingsKey];
                     [playerData setValue:[NSMutableArray array] forKey:kPlayerQuestionsKey];
+                    [playerData setValue:[player valueForKey:@"member_name"] forKey:kPlayerNameKey];
                     [gameData setValue:playerData forKey:[player valueForKey:@"member_id"]];
                 }
             }

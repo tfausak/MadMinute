@@ -12,7 +12,7 @@
 #define kGameInstructions @"\nIt's like math, but faster!\n\n"
 #define kPromptOnAppLaunchCount 3
 #define kAppStoreReviewUrl @"http://www.apple.com/"
-#define kInitialTime 60
+#define kInitialTime 5
 
 // NSUserDefaults keys
 #define kAppLaunchCountKey @"appLaunchCount"
@@ -27,8 +27,7 @@
 
 #define kPlayerSettingsKey @"settings"
 #define kPlayerQuestionsKey @"questions"
-#define kPlayerEquationKey @"equation"
-#define kPlayerResponseKey @"response"
+#define kPlayerNameKey @"name"
 
 typedef enum {
     SinglePlayer,
