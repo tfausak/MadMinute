@@ -135,11 +135,11 @@
     
     if ([[notification name] isEqualToString:FamigoMessageGameCreated]) {
         // Get a list of player names
-        NSArray *playerDictionaries = [[famigo gameInstance] valueForKey:FC_d_game_invites];
+        NSArray *playerDictionaries = [[famigo gameInstance] objectForKey:FC_d_game_invites];
         NSMutableArray *playerMemberIds = [NSMutableArray array];
         [playerMemberIds addObject:[famigo member_id]];
         for (NSDictionary *playerDictionary in playerDictionaries) {
-            [playerMemberIds addObject:[playerDictionary valueForKey:FC_d_member_id]];
+            [playerMemberIds addObject:[playerDictionary objectForKey:FC_d_member_id]];
         }
         
 		// Our game data consists of a dictionary of member_id to a separate dictionary, which stores player settings and player questions.
@@ -159,10 +159,12 @@
 		[famigo updateGame];
         
         // Wait for the other players to join
-        waitAlertView = [[UIAlertView alloc] init];
-        [waitAlertView setMessage:@"Waiting for all of the other players to join the game. Come on already!"];
-        [waitAlertView setTitle:@"Waiting for players"];
-        [waitAlertView show];
+        if ([[NSUserDefaults standardUserDefaults] integerForKey:kGameTypeKey] == MultiDeviceWithFamigo) {
+            waitAlertView = [[UIAlertView alloc] init];
+            [waitAlertView setMessage:@"Waiting for all of the other players to join the game. Come on already!"];
+            [waitAlertView setTitle:@"Waiting for players"];
+            [waitAlertView show];
+        }
     }
     else if ([[notification name] isEqualToString:FamigoMessageGameUpdated]) {
         if (waitAlertView != nil) {

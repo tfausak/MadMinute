@@ -12,7 +12,7 @@
 #define kGameInstructions @"\nIt's like math, but faster!\n\n"
 #define kPromptOnAppLaunchCount 3
 #define kAppStoreReviewUrl @"http://www.apple.com/"
-#define kInitialTime 60
+#define kInitialTime 6
 
 // NSUserDefaults keys
 #define kAppLaunchCountKey @"appLaunchCount"

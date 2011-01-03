@@ -100,15 +100,15 @@
             numberOfPlayers = [defaults integerForKey:kNumberOfPlayersKey];
         }
         else if (f != nil) {
-            numberOfPlayers = [[[f gameInstance] valueForKey:@"famigo_players"] count];
+            numberOfPlayers = [[[f gameInstance] objectForKey:@"famigo_players"] count];
         }
         
         // Figure out who the current player is
         currentPlayer = 1;
         if (gameType == MultiDeviceWithFamigo) {
-            NSArray *players = [[f gameInstance] valueForKey:@"famigo_players"];
+            NSArray *players = [[f gameInstance] objectForKey:@"famigo_players"];
             for (int index = 0; index < numberOfPlayers; index += 1) {
-                NSString *playerID = [[players objectAtIndex:index] valueForKey:@"member_id"];
+                NSString *playerID = [[players objectAtIndex:index] objectForKey:@"member_id"];
                 if ([[f member_id] isEqualToString:playerID]) {
                     currentPlayer = index + 1;
                     break;
@@ -138,18 +138,18 @@
             }
         }
         else {
-            gameData = [[f gameInstance] valueForKey:[f game_name]];
-            [[gameData valueForKey:[f member_id]] setValue:settings forKey:kPlayerSettingsKey];
-            [[gameData valueForKey:[f member_id]] setValue:[f member_name] forKey:kPlayerNameKey];
+            gameData = [[f gameInstance] objectForKey:[f game_name]];
+            [[gameData objectForKey:[f member_id]] setValue:settings forKey:kPlayerSettingsKey];
+            [[gameData objectForKey:[f member_id]] setValue:[f member_name] forKey:kPlayerNameKey];
             
             // Initialize other players
-            for (NSDictionary *player in [[f gameInstance] valueForKey:@"famigo_players"]) {
-                if ([gameData valueForKey:[player valueForKey:@"member_id"]] == nil) {
+            for (NSDictionary *player in [[f gameInstance] objectForKey:@"famigo_players"]) {
+                if ([gameData objectForKey:[player objectForKey:@"member_id"]] == nil) {
                     NSMutableDictionary *playerData = [NSMutableDictionary dictionary];
                     [playerData setValue:settings forKey:kPlayerSettingsKey];
                     [playerData setValue:[NSMutableArray array] forKey:kPlayerQuestionsKey];
-                    [playerData setValue:[player valueForKey:@"member_name"] forKey:kPlayerNameKey];
-                    [gameData setValue:playerData forKey:[player valueForKey:@"member_id"]];
+                    [playerData setValue:[player objectForKey:@"member_name"] forKey:kPlayerNameKey];
+                    [gameData setValue:playerData forKey:[player objectForKey:@"member_id"]];
                 }
             }
             [f updateGame];
@@ -228,6 +228,7 @@
     // Cancel the game on Famigo
     if (f != nil) {
         [f cancelGame];
+        [f setWatchGame:NO];
     }
     
     [[self navigationController] popViewControllerAnimated:YES];

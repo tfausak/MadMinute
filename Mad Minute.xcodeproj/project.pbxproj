@@ -11,6 +11,7 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		341C485612D259AC00FCEF33 /* ResultsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 341C485512D259AC00FCEF33 /* ResultsDetailViewController.m */; };
 		3421A5AE12C01DDD00742E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3421A5AD12C01DDD00742E49 /* AudioToolbox.framework */; };
 		3421A69B12C02A0700742E49 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3421A69A12C02A0700742E49 /* SystemConfiguration.framework */; };
 		34D57F4312C28679005897F4 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D57F4212C28679005897F4 /* SettingsViewController.m */; };
@@ -179,6 +180,8 @@
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Mad_Minute_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mad_Minute_Prefix.pch; sourceTree = "<group>"; };
+		341C485412D259AC00FCEF33 /* ResultsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsDetailViewController.h; sourceTree = "<group>"; };
+		341C485512D259AC00FCEF33 /* ResultsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsDetailViewController.m; sourceTree = "<group>"; };
 		3421A5AD12C01DDD00742E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		3421A69A12C02A0700742E49 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		34D57F4112C28679005897F4 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -487,6 +490,8 @@
 				34D5823012C2AF01005897F4 /* MadMinuteViewController.m */,
 				34DFBCC112C3E75B00B522CC /* ResultsViewController.h */,
 				34DFBCC212C3E75B00B522CC /* ResultsViewController.m */,
+				341C485412D259AC00FCEF33 /* ResultsDetailViewController.h */,
+				341C485512D259AC00FCEF33 /* ResultsDetailViewController.m */,
 				34D5821D12C2AE44005897F4 /* ArithmeticEquationGenerator.h */,
 				34D5821E12C2AE44005897F4 /* ArithmeticEquationGenerator.m */,
 				34D5821F12C2AE44005897F4 /* ArithmeticEquation.h */,
@@ -1002,6 +1007,7 @@
 				34E84A1612C30BAB00A639C4 /* NumberOfPlayersViewController.m in Sources */,
 				34DFBCC312C3E75B00B522CC /* ResultsViewController.m in Sources */,
 				34FE19F312C9449D00CBB17E /* DifficultyViewController.m in Sources */,
+				341C485612D259AC00FCEF33 /* ResultsDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

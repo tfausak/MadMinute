@@ -123,11 +123,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *tableViewCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
-    //[tableViewCell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    [tableViewCell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     
     //
     NSString *playerKey = [[gameData allKeys] objectAtIndex:[indexPath row]];
-    NSString *playerName = [[gameData valueForKey:playerKey] valueForKey:kPlayerNameKey];
+    NSString *playerName = [[gameData objectForKey:playerKey] objectForKey:kPlayerNameKey];
     [[tableViewCell textLabel] setText:playerName];
     
     //
@@ -145,8 +145,13 @@
 #pragma mark -
 #pragma mark UITableViewDelegate
 
-- (NSIndexPath *)tableView:(UITableView *)aTableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
+- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    ResultsDetailViewController *resultsDetailViewController = [ResultsDetailViewController alloc];
+    [resultsDetailViewController initWithPlayer:[[gameData allKeys] objectAtIndex:[indexPath row]]];
+    [[self navigationController] pushViewController:resultsDetailViewController animated:YES];
+    [resultsDetailViewController release];
 }
 
 @end

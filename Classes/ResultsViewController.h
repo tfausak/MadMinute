@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Constants.h"
 #import "Famigo.h"
+#import "ResultsDetailViewController.h"
 
 @interface ResultsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     Famigo *famigo;
