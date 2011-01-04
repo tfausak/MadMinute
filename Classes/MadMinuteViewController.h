@@ -47,12 +47,10 @@
 
 @property (nonatomic, assign, readonly) Famigo *f;
 @property (nonatomic, assign, readonly) NSUserDefaults *defaults;
-
 @property (nonatomic, assign, readonly) GameType gameType;
 @property (nonatomic, assign, readonly) Difficulty difficulty;
 @property (nonatomic, assign, readonly) int numberOfPlayers;
 @property (nonatomic, assign, readonly) BOOL allowNegativeNumbers;
-
 @property (nonatomic, assign, readonly) int currentPlayer;
 @property (nonatomic, retain, readonly) ArithmeticEquationGenerator *arithmeticEquationGenerator;
 @property (nonatomic, retain, readonly) ArithmeticEquation *arithmeticEquation;
@@ -62,7 +60,6 @@
 @property (nonatomic, retain, readonly) NSString *responseValue;
 @property (nonatomic, assign, readonly) BOOL responseIsPositive;
 @property (nonatomic, assign, readonly) NSMutableDictionary *gameData;
-
 @property (nonatomic, retain, readonly) UIView *timeBar;
 @property (nonatomic, retain, readonly) UIView *timeElapsedBar;
 @property (nonatomic, retain, readonly) UILabel *timeElapsedLabel;

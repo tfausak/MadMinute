@@ -13,12 +13,10 @@
 
 @synthesize f;
 @synthesize defaults;
-
 @synthesize gameType;
 @synthesize difficulty;
 @synthesize numberOfPlayers;
 @synthesize allowNegativeNumbers;
-
 @synthesize currentPlayer;
 @synthesize arithmeticEquationGenerator;
 @synthesize arithmeticEquation;
@@ -28,7 +26,6 @@
 @synthesize responseValue;
 @synthesize responseIsPositive;
 @synthesize gameData;
-
 @synthesize timeBar;
 @synthesize timeElapsedBar;
 @synthesize timeElapsedLabel;
@@ -43,13 +40,11 @@
 - (void)dealloc {
     [f release];
     [defaults release];
-    
     [arithmeticEquationGenerator release];
     [arithmeticEquation release];
     [timer release];
     [responseValue release];
     [gameData release];
-    
     [timeBar release];
     [timeElapsedBar release];
     [timeElapsedLabel release];

@@ -11,19 +11,12 @@
 
 @implementation ResultsViewController
 
-@synthesize famigo;
-@synthesize defaults;
 @synthesize tableView;
-
-@synthesize gameType;
-@synthesize gameData;
+@synthesize data;
 
 - (void)dealloc {
-    [famigo release];
-    [defaults release];
     [tableView release];
-    
-    [gameData release];
+    [data release];
     
     [super dealloc];
 }
@@ -34,32 +27,52 @@
     if (self = [super init]) {
         [self setTitle:@"Results"];
         
-        // Load the game type
-        defaults = [NSUserDefaults standardUserDefaults];
-        gameType = [defaults integerForKey:kGameTypeKey];
-        
         // Load the game data
+        GameType gameType = [[NSUserDefaults standardUserDefaults] integerForKey:kGameTypeKey];
+        NSDictionary *gameData;
         if (gameType == SinglePlayer || gameType == PassAndPlay) {
-            gameData = [defaults objectForKey:kGameDataKey];
+            gameData = [[NSUserDefaults standardUserDefaults] objectForKey:kGameDataKey];
         }
         else {
-            famigo = [Famigo sharedInstance];
-            gameData = [[famigo gameInstance] objectForKey:[famigo game_name]];
+            gameData = [[[Famigo sharedInstance] gameInstance] objectForKey:[[Famigo sharedInstance] game_name]];
         }
-        [gameData retain];
+        
+        // Re-format game data
+        NSMutableArray *players = [[NSMutableArray alloc] init];
+        for (NSString *key in gameData) {
+            NSDictionary *value = [gameData objectForKey:key];
+            NSDictionary *playerData = [NSDictionary dictionaryWithObjectsAndKeys:
+                                        key, kPlayerKeyKey,
+                                        [value objectForKey:kPlayerNameKey], kPlayerNameKey,
+                                        [NSNumber numberWithInt:[self scoreForPlayerData:value]], kPlayerScoreKey,
+                                        [value objectForKey:kPlayerSettingsKey], kPlayerSettingsKey,
+                                        [value objectForKey:kPlayerQuestionsKey], kPlayerQuestionsKey,
+                                        nil];
+            [players addObject:playerData];
+        }
+        
+        // Sort game data
+        [players sortUsingDescriptors:[NSArray arrayWithObjects:
+                                       [NSSortDescriptor sortDescriptorWithKey:kPlayerScoreKey
+                                                                     ascending:NO],
+                                       [NSSortDescriptor sortDescriptorWithKey:kPlayerNameKey
+                                                                     ascending:YES
+                                                                      selector:@selector(caseInsensitiveCompare:)],
+                                       nil]];
+        
+        // Store the game data
+        data = [[NSArray alloc] initWithArray:players];
         
         // Set up the table view
         tableView = [[UITableView alloc] initWithFrame:[[self view] bounds] style:UITableViewStyleGrouped];
         [tableView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
-        [tableView setDataSource:self];
-        [tableView setDelegate:self];
-        [[self view] addSubview:tableView];
-        
-        // Hide the table view's background
         [tableView setBackgroundColor:[UIColor clearColor]];
         if ([tableView respondsToSelector:@selector(setBackgroundView:)]) {
             [tableView setBackgroundView:nil];
         }
+        [tableView setDataSource:self];
+        [tableView setDelegate:self];
+        [[self view] addSubview:tableView];
     }
     
     return self;
@@ -75,22 +88,15 @@
 
 #pragma mark -
 
-- (NSInteger)scoreForPlayerNamed:(NSString *)playerName {
-    // Get the player's data
-    NSDictionary *data = [gameData objectForKey:playerName];
-    
-    // Split the player data into its components
-    NSDictionary *settings = [data objectForKey:kPlayerSettingsKey];
-    NSArray *questions = [data objectForKey:kPlayerQuestionsKey];
-    
-    // Get settings relevant to calculating score
-    Difficulty difficulty = [[settings objectForKey:kDifficultyKey] intValue];
-    BOOL allowNegativeNumbers = [[settings objectForKey:kAllowNegativeNumbersKey] intValue];
-    
-    // Loop over the questions
+- (NSInteger)scoreForPlayerData:(NSDictionary *)playerData {
     NSInteger score = 0;
-    for (NSString *question in questions) {
-        if ([self isResponseCorrect:question]) {
+    Difficulty difficulty = [[[playerData objectForKey:@"settings"] objectForKey:@"difficulty"] intValue];
+    BOOL allowNegativeNumbers = [[[playerData objectForKey:@"settings"] objectForKey:@"allowNegativeNumbers"] intValue];
+    
+    for (NSString *question in [playerData objectForKey:@"questions"]) {
+        NSArray *tokens = [question componentsSeparatedByString:@" "];
+        ArithmeticEquation *equation = [ArithmeticEquation unserialize:question];
+        if ([tokens count] >= 4 && [[tokens objectAtIndex:3] isEqualToString:[equation resultAsString]]) {
             score += 1 + difficulty + allowNegativeNumbers;
         }
     }
@@ -98,48 +104,26 @@
     return score;
 }
 
-- (NSString *)responseToQuestion:(NSString *)question {
-    // Split the question into tokens
-    NSArray *tokens = [question componentsSeparatedByString:@" "];
-    
-    // Return the empty string if the user didn't respond
-    if ([tokens count] < 4) {
-        return @"";
-    }
-    
-    // Return the user response
-    return [tokens objectAtIndex:3];
-}
-
-- (BOOL)isResponseCorrect:(NSString *)question {
-    ArithmeticEquation *arithmeticEquation = [ArithmeticEquation unserialize:question];
-    NSString *response = [self responseToQuestion:question];
-    
-    return [response isEqualToString:[arithmeticEquation resultAsString]];
-}
-
 #pragma mark -
 #pragma mark UITableViewDataSource
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *tableViewCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
+    NSString *name = [[data objectAtIndex:[indexPath row]] objectForKey:kPlayerNameKey];
+    NSInteger score = [[[data objectAtIndex:[indexPath row]] objectForKey:kPlayerScoreKey] intValue];
+    NSString *s = (score == 1) ? @"" : @"s";
+    
+    //
+    UITableViewCell *tableViewCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
+                                             reuseIdentifier:nil];
     [tableViewCell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-    
-    //
-    NSString *playerKey = [[gameData allKeys] objectAtIndex:[indexPath row]];
-    NSString *playerName = [[gameData objectForKey:playerKey] objectForKey:kPlayerNameKey];
-    [[tableViewCell textLabel] setText:playerName];
-    
-    //
-    NSInteger playerScore = [self scoreForPlayerNamed:playerKey];
-    NSString *s = (playerScore == 1) ? @"" : @"s";
-    [[tableViewCell detailTextLabel] setText:[NSString stringWithFormat:@"%d point%@", playerScore, s]];
+    [[tableViewCell textLabel] setText:name];
+    [[tableViewCell detailTextLabel] setText:[NSString stringWithFormat:@"%d point%@", score, s]];
     
     return tableViewCell;
 }
 
 - (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)section {
-    return [gameData count];
+    return [data count];
 }
 
 #pragma mark -
@@ -147,11 +131,12 @@
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSString *playerKey = [[data objectAtIndex:[indexPath row]] objectForKey:kPlayerKeyKey];
     
-    ResultsDetailViewController *resultsDetailViewController = [ResultsDetailViewController alloc];
-    [resultsDetailViewController initWithPlayer:[[gameData allKeys] objectAtIndex:[indexPath row]]];
-    [[self navigationController] pushViewController:resultsDetailViewController animated:YES];
-    [resultsDetailViewController release];
+    ResultsDetailViewController *viewController = [ResultsDetailViewController alloc];
+    [viewController initWithPlayer:playerKey];
+    [[self navigationController] pushViewController:viewController animated:YES];
+    [viewController release];
 }
 
 @end

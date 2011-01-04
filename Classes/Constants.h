@@ -21,9 +21,12 @@
 #define kNumberOfPlayersKey @"numberOfPlayers"
 #define kAllowNegativeNumbersKey @"allowNegativeNumbers"
 #define kGameDataKey @"gameData"
+
+#define kPlayerKeyKey @"key"
+#define kPlayerNameKey @"name"
+#define kPlayerScoreKey @"score"
 #define kPlayerSettingsKey @"settings"
 #define kPlayerQuestionsKey @"questions"
-#define kPlayerNameKey @"name"
 
 typedef enum {
     SinglePlayer,

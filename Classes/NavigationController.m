@@ -114,7 +114,12 @@
 
 - (void)didStopGame {
     [self popToRootViewControllerAnimated:NO];
-    [[Famigo sharedInstance] setWatchGame:NO];
+    
+    //
+    GameType gameType = [[[NSUserDefaults standardUserDefaults] objectForKey:kGameTypeKey] intValue];
+    if (gameType == PassAndPlayWithFamigo || gameType == MultiDeviceWithFamigo) {
+        [[Famigo sharedInstance] setWatchGame:NO];
+    }
     
     resultsViewController = [[ResultsViewController alloc] init];
     [self pushViewController:resultsViewController animated:YES];
@@ -124,7 +129,7 @@
 #pragma mark FamigoControllerDelegate
 
 - (void)famigoReady {
-    if ([[Famigo sharedInstance] gameInProgress]) {
+    if ([[Famigo sharedInstance] gameInProgress] || [[Famigo sharedInstance] gameInstance] == nil) {
         settingsViewController = [[SettingsViewController alloc] init];
         [self pushViewController:settingsViewController animated:YES];
     }
