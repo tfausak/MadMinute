@@ -163,7 +163,7 @@
         [waitAlertView setTitle:@"Waiting for players"];
         [waitAlertView show];
     }
-    else if ([[notification name] isEqualToString:FamigoMessageGameUpdated]) {
+    else if ([[notification name] isEqualToString:FamigoMessageGameRead]) {
         if (waitAlertView != nil) {
             [waitAlertView dismissWithClickedButtonIndex:0 animated:YES];
             [waitAlertView release];
