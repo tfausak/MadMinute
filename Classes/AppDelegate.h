@@ -16,9 +16,9 @@
     UIAlertView *reachabilityAlertView;
 }
 
-@property (nonatomic, retain) UIWindow *window;
-@property (nonatomic, retain) NavigationController *navigationController;
-@property (nonatomic, retain) UIAlertView *reachabilityAlertView;
+@property (nonatomic, retain, readonly) UIWindow *window;
+@property (nonatomic, retain, readonly) NavigationController *navigationController;
+@property (nonatomic, retain, readonly) UIAlertView *reachabilityAlertView;
 
 - (void)networkReachabilityDidChange;
 - (BOOL)shouldPromptUserToReview;
