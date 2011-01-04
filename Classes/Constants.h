@@ -11,7 +11,7 @@
 #define kGameName @"Mad Minute"
 #define kGameInstructions @"\nIt's like math, but faster!\n\n"
 #define kPromptOnAppLaunchCount 3
-#define kAppStoreReviewUrl @"http://www.apple.com/"
+#define kAppStoreReviewUrl @"http://www.famigogames.com/"
 #define kInitialTime 60
 
 // NSUserDefaults keys
@@ -20,14 +20,13 @@
 #define kDifficultyKey @"difficulty"
 #define kNumberOfPlayersKey @"numberOfPlayers"
 #define kAllowNegativeNumbersKey @"allowNegativeNumbers"
-//#define kScoresKey @"scores"
-//#define kGameFinishedKey @"gameFinished"
-//#define kScoreKey @"score"
+#define kGameDataKey @"gameData"
 
+#define kPlayerKeyKey @"key"
+#define kPlayerNameKey @"name"
+#define kPlayerScoreKey @"score"
 #define kPlayerSettingsKey @"settings"
 #define kPlayerQuestionsKey @"questions"
-#define kPlayerEquationKey @"equation"
-#define kPlayerResponseKey @"response"
 
 typedef enum {
     SinglePlayer,

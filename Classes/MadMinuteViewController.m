@@ -11,11 +11,12 @@
 
 @implementation MadMinuteViewController
 
+@synthesize f;
+@synthesize defaults;
 @synthesize gameType;
 @synthesize difficulty;
 @synthesize numberOfPlayers;
 @synthesize allowNegativeNumbers;
-
 @synthesize currentPlayer;
 @synthesize arithmeticEquationGenerator;
 @synthesize arithmeticEquation;
@@ -24,7 +25,7 @@
 @synthesize score;
 @synthesize responseValue;
 @synthesize responseIsPositive;
-
+@synthesize gameData;
 @synthesize timeBar;
 @synthesize timeElapsedBar;
 @synthesize timeElapsedLabel;
@@ -37,11 +38,13 @@
 @synthesize numberPad;
 
 - (void)dealloc {
+    [f release];
+    [defaults release];
     [arithmeticEquationGenerator release];
     [arithmeticEquation release];
     [timer release];
     [responseValue release];
-    
+    [gameData release];
     [timeBar release];
     [timeElapsedBar release];
     [timeElapsedLabel release];
@@ -62,127 +65,94 @@
     if (self = [super init]) {
         [self setTitle:@"Mad Minute"];
         
-        // Change the back button to a cancel button
-        UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelGame)];
-        [[self navigationItem] setLeftBarButtonItem:cancelButton animated:YES];
+        // Ditch the back button in favor of a cancel button
+        UIBarButtonItem *cancelButton = [UIBarButtonItem alloc];
+        [cancelButton initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                           target:self
+                                           action:@selector(cancelGame)];
+        [[self navigationItem] setLeftBarButtonItem:cancelButton];
         [cancelButton release];
         
-        // Get game settings from user defaults
-        gameType = (GameType)[[NSUserDefaults standardUserDefaults] integerForKey:kGameTypeKey];
-        difficulty = (Difficulty)[[NSUserDefaults standardUserDefaults] integerForKey:kDifficultyKey];
-        allowNegativeNumbers = [[NSUserDefaults standardUserDefaults] integerForKey:kAllowNegativeNumbersKey];
+        // Get game settings
+        defaults = [NSUserDefaults standardUserDefaults];
+        gameType = [defaults integerForKey:kGameTypeKey];
+        difficulty = [defaults integerForKey:kDifficultyKey];
+        allowNegativeNumbers = [defaults integerForKey:kAllowNegativeNumbersKey];
         
-        // Figure out how many players are playing
-        switch (gameType) {
-            case PassAndPlay:
-                numberOfPlayers = [[NSUserDefaults standardUserDefaults] integerForKey:kNumberOfPlayersKey];
-                break;
-            case PassAndPlayWithFamigo:
-                numberOfPlayers = [(NSArray *)[[[Famigo sharedInstance] gameInstance] valueForKey:@"famigo_players"] count];
-                break;
-            default:
-                numberOfPlayers = 1;
-                break;
+        // Initialize the arithmetic equation generator
+        arithmeticEquationGenerator = [ArithmeticEquationGenerator alloc];
+        [arithmeticEquationGenerator initWithDifficulty:difficulty
+                                   allowNegativeNumbers:allowNegativeNumbers];
+        
+        // Set up a Famigo shorthand
+        if (gameType == PassAndPlayWithFamigo || gameType == MultiDeviceWithFamigo) {
+            f = [Famigo sharedInstance];
         }
         
-        //
+        // Figure out how many people are playing
+        numberOfPlayers = 1;
+        if (gameType == PassAndPlay) {
+            numberOfPlayers = [defaults integerForKey:kNumberOfPlayersKey];
+        }
+        else if (f != nil) {
+            numberOfPlayers = [[[f gameInstance] objectForKey:@"famigo_players"] count];
+        }
+        
+        // Figure out who the current player is
         currentPlayer = 1;
-        arithmeticEquationGenerator = [[ArithmeticEquationGenerator alloc] initWithDifficulty:difficulty allowNegativeNumbers:allowNegativeNumbers];
-        
-        // Time bar
-        timeBar = [[UIView alloc] init];
-        [timeBar setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.25]];
-        [[self view] addSubview:timeBar];
-        
-        // Time elapsed bar
-        timeElapsedBar = [[UIView alloc] init];
-        [timeElapsedBar setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.25]];
-        [[self view] addSubview:timeElapsedBar];
-        
-        // Time elapsed label
-        timeElapsedLabel = [[UILabel alloc] init];
-        [timeElapsedLabel setBackgroundColor:[UIColor clearColor]];
-        [timeElapsedLabel setTextAlignment:UITextAlignmentCenter];
-        [timeElapsedLabel setTextColor:[UIColor whiteColor]];
-        [[self view] addSubview:timeElapsedLabel];
-        
-        // First operand label
-        firstOperandLabel = [[UILabel alloc] init];
-        [firstOperandLabel setAdjustsFontSizeToFitWidth:YES];
-        [firstOperandLabel setBackgroundColor:[UIColor clearColor]];
-        [firstOperandLabel setTextColor:[UIColor blackColor]];
-        [[self view] addSubview:firstOperandLabel];
-        
-        // Operator label
-        operatorLabel = [[UILabel alloc] init];
-        [operatorLabel setAdjustsFontSizeToFitWidth:YES];
-        [operatorLabel setBackgroundColor:[UIColor clearColor]];
-        [operatorLabel setTextAlignment:UITextAlignmentCenter];
-        [operatorLabel setTextColor:[UIColor blackColor]];
-        [[self view] addSubview:operatorLabel];
-        
-        // Second operand label
-        secondOperandLabel = [[UILabel alloc] init];
-        [secondOperandLabel setAdjustsFontSizeToFitWidth:YES];
-        [secondOperandLabel setBackgroundColor:[UIColor clearColor]];
-        [secondOperandLabel setTextColor:[UIColor blackColor]];
-        [[self view] addSubview:secondOperandLabel];
-        
-        // Response background
-        responseBackground = [[UIView alloc] init];
-        [responseBackground setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.25]];
-        [[self view] addSubview:responseBackground];
-        
-        // Response label
-        responseLabel = [[UILabel alloc] init];
-        [responseLabel setAdjustsFontSizeToFitWidth:NO];
-        [responseLabel setBackgroundColor:[UIColor clearColor]];
-        [responseLabel setTextAlignment:UITextAlignmentRight];
-        [responseLabel setTextColor:[UIColor blackColor]];
-        [[self view] addSubview:responseLabel];
-        
-        // Sign control
-        signControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"+", @"-", nil]];
-        [signControl addTarget:self action:@selector(signControlValueDidChange) forControlEvents:UIControlEventValueChanged];
-        [[self view] addSubview:signControl];
-        
-        // Number pad
-        numberPad = [[UIView alloc] init];
-        [numberPad setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.25]];
-        [[self view] addSubview:numberPad];
-        
-        // Number buttons
-        UIButton *button;
-        for (int index = 0; index <= 9; index += 1) {
-            button = [UIButton buttonWithType:UIButtonTypeCustom];
-            [button addTarget:self action:@selector(pressedNumberPadButton:) forControlEvents:UIControlEventTouchUpInside];
-            [button setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.25]];
-            [button setTag:index];
-            [button setTitle:[NSString stringWithFormat:@"%d", index] forState:UIControlStateNormal];
-            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-            [numberPad addSubview:button];
+        if (gameType == MultiDeviceWithFamigo) {
+            NSArray *players = [[f gameInstance] objectForKey:@"famigo_players"];
+            for (int index = 0; index < numberOfPlayers; index += 1) {
+                NSString *playerID = [[players objectAtIndex:index] objectForKey:@"member_id"];
+                if ([[f member_id] isEqualToString:playerID]) {
+                    currentPlayer = index + 1;
+                    break;
+                }
+            }
         }
         
-        // Delete button
-        button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button addTarget:self action:@selector(pressedNumberPadButton:) forControlEvents:UIControlEventTouchUpInside];
-        [button setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.25]];
-        [button setTag:10];
-        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
-        [numberPad addSubview:button];
+        // Wrap up the settings in a dictionary
+        NSMutableDictionary *settings = [NSMutableDictionary dictionary];
+        [settings setValue:[NSNumber numberWithInt:gameType] forKey:kGameTypeKey];
+        [settings setValue:[NSNumber numberWithInt:difficulty] forKey:kDifficultyKey];
+        [settings setValue:[NSNumber numberWithInt:allowNegativeNumbers] forKey:kAllowNegativeNumbersKey];
+        [settings setValue:[NSNumber numberWithInt:numberOfPlayers] forKey:kNumberOfPlayersKey];
         
-        // Done/skip button
-        button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button addTarget:self action:@selector(pressedNumberPadButton:) forControlEvents:UIControlEventTouchUpInside];
-        [button setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.25]];
-        [button setTag:11];
-        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
-        [numberPad addSubview:button];
+        // Store the game data
+        if (f == nil) {
+            gameData = [NSMutableDictionary dictionary];
+            
+            // Initialize each player's data
+            for (int player = 1; player <= numberOfPlayers; player += 1) {
+                NSMutableDictionary *playerData = [NSMutableDictionary dictionary];
+                [playerData setValue:settings forKey:kPlayerSettingsKey];
+                [playerData setValue:[NSMutableArray array] forKey:kPlayerQuestionsKey];
+                [playerData setValue:[NSString stringWithFormat:@"Player %d", player] forKey:kPlayerNameKey];
+                NSString *playerName = [NSString stringWithFormat:@"player-%d", player];
+                [gameData setValue:playerData forKey:playerName];
+            }
+        }
+        else {
+            gameData = [[f gameInstance] objectForKey:[f game_name]];
+            [[gameData objectForKey:[f member_id]] setValue:settings forKey:kPlayerSettingsKey];
+            [[gameData objectForKey:[f member_id]] setValue:[f member_name] forKey:kPlayerNameKey];
+            
+            // Initialize other players
+            for (NSDictionary *player in [[f gameInstance] objectForKey:@"famigo_players"]) {
+                if ([gameData objectForKey:[player objectForKey:@"member_id"]] == nil) {
+                    NSMutableDictionary *playerData = [NSMutableDictionary dictionary];
+                    [playerData setValue:settings forKey:kPlayerSettingsKey];
+                    [playerData setValue:[NSMutableArray array] forKey:kPlayerQuestionsKey];
+                    [playerData setValue:[player objectForKey:@"member_name"] forKey:kPlayerNameKey];
+                    [gameData setValue:playerData forKey:[player objectForKey:@"member_id"]];
+                }
+            }
+            [f updateGame];
+        }
+        [gameData retain];
         
-        //
+        // Set up the UI and zero everything out
+        [self initUI];
         [self stopGame];
         [self drawUI];
     }
@@ -209,37 +179,28 @@
 #pragma mark -
 
 - (void)startGame {
-    //
+    // Initialize game state
     arithmeticEquation = [arithmeticEquationGenerator generateEquation];
-    timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerDidFire) userInfo:nil repeats:YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval:1
+                                             target:self
+                                           selector:@selector(timerDidFire)
+                                           userInfo:nil
+                                            repeats:YES];
     timeLeft = kInitialTime;
     score = 0;
     responseValue = @"";
     responseIsPositive = YES;
     
-    //
+    // Show the UI
     [timeElapsedBar setHidden:NO];
     [timeElapsedLabel setHidden:NO];
     [signControl setHidden:NO];
     [numberPad setUserInteractionEnabled:YES];
     [self updateUI];
-    
-    // Store settings with Famigo
-    if (gameType == PassAndPlayWithFamigo || gameType == MultiDeviceWithFamigo) {
-        NSDictionary *settings = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:difficulty], kDifficultyKey, [NSNumber numberWithInt:allowNegativeNumbers], kAllowNegativeNumbersKey, nil];
-        Famigo *famigo = [Famigo sharedInstance];
-        NSDictionary *gameData = [[famigo gameInstance] valueForKey:[famigo game_name]];
-        NSDictionary *myDictionary = [gameData valueForKey:[famigo member_id]];
-        [myDictionary setValue:settings forKey:kPlayerSettingsKey];
-        [famigo updateGame];
-    }
-    
-    //
-    NSLog(@"%@", [[Famigo sharedInstance] gameInstance]);
 }
 
 - (void)stopGame {
-    //
+    // Destroy game state
     arithmeticEquation = nil;
     [timer invalidate];
     timer = nil;
@@ -248,7 +209,7 @@
     responseValue = @"";
     responseIsPositive = YES;
     
-    //
+    // Hide the UI
     [timeElapsedBar setHidden:YES];
     [timeElapsedLabel setHidden:YES];
     [signControl setHidden:YES];
@@ -257,115 +218,131 @@
 }
 
 - (void)cancelGame {
-    // TODO handle cancelling nicely (w/ famigo, etc.)
     [self stopGame];
-    [[self navigationController] popViewControllerAnimated:YES];
+    
+    // Cancel the game on Famigo
+    if (f != nil) {
+        [f cancelGame];
+        [f setWatchGame:NO];
+    }
+    
+    [[self navigationController] popToRootViewControllerAnimated:YES];
 }
 
 - (void)timerDidFire {
     timeLeft -= 1;
     if (timeLeft < 0) {
-        [self stopGame];
-        switch (gameType) {
-            case SinglePlayer:
-                [(NavigationController *)[self navigationController] didStopGame];
-                break;
-            case PassAndPlay:
-                if (currentPlayer < numberOfPlayers) {
-                    currentPlayer += 1;
-                    UIAlertView *alertView = [[UIAlertView alloc] init];
-                    [alertView addButtonWithTitle:@"OK"];
-                    [alertView setDelegate:self];
-                    [alertView setMessage:[NSString stringWithFormat:@"Pass the %@ to %@.", [self deviceName], [self nameForPlayerNumber:currentPlayer]]];
-                    [alertView setTitle:@"Pass!"];
-                    [alertView show];
-                    [alertView release];
-                }
-                else {
-                    [(NavigationController *)[self navigationController] didStopGame];
-                }
-                break;
-            case PassAndPlayWithFamigo:
-                if (currentPlayer < numberOfPlayers) {
-                    currentPlayer += 1;
-                    UIAlertView *alertView = [[UIAlertView alloc] init];
-                    [alertView addButtonWithTitle:@"OK"];
-                    [alertView setDelegate:self];
-                    [alertView setMessage:[NSString stringWithFormat:@"Pass the %@ to %@.", [self deviceName], [self nameForPlayerNumber:currentPlayer]]];
-                    [alertView setTitle:@"Pass!"];
-                    [alertView show];
-                    [alertView release];
-                }
-                else {
-                    [(NavigationController *)[self navigationController] didStopGame];
-                }
-                break;
-            case MultiDeviceWithFamigo:
-                // TODO update famigo
-                [(NavigationController *)[self navigationController] didStopGame];
-                break;
-            default:
-                NSAssert(NO, @"unknown game type");
-                break;
-        }
+        [self timerDidExpire];
     }
     [self updateUI];
 }
 
-- (NSString *)deviceName {
-    if ([[[UIDevice currentDevice] model] rangeOfString:@"iPhone"].location != NSNotFound) {
-        return @"iPhone";
+- (void)timerDidExpire {
+    [self stopGame];
+    
+    // Store the game data
+    if (f == nil) {
+        [defaults setValue:gameData forKey:kGameDataKey];
+        [defaults synchronize];
+    }
+    else {
+        [[f gameInstance] setValue:gameData forKey:[f game_name]];
+        [f updateGame];
     }
     
-    if ([[[UIDevice currentDevice] model] rangeOfString:@"iPad"].location != NSNotFound) {
-        return @"iPad";
-    }
-    
-    if ([[[UIDevice currentDevice] model] rangeOfString:@"iPod"].location != NSNotFound) {
-        return @"iPod";
-    }
-    
-    return @"device";
-}
-
-- (NSString *)nameForPlayerNumber:(int)number {
     switch (gameType) {
+        case SinglePlayer:
+            [(NavigationController *)[self navigationController] didStopGame];
+            break;
         case PassAndPlay:
-            return [NSString stringWithFormat:@"player %d", number];
         case PassAndPlayWithFamigo:
-            return (NSString *)[(NSDictionary *)[(NSArray *)[[[Famigo sharedInstance] gameInstance] valueForKey:@"famigo_players"] objectAtIndex:number - 1] objectForKey:@"member_name"];
-        default:
-            return nil;
+            if (currentPlayer < numberOfPlayers) {
+                currentPlayer += 1;
+                UIAlertView *alertView = [[UIAlertView alloc] init];
+                [alertView addButtonWithTitle:@"OK"];
+                [alertView setDelegate:self];
+                [alertView setMessage:@"Pass to the next player."];
+                [alertView setTitle:@"Pass!"];
+                [alertView show];
+                [alertView release];
+            }
+            else {
+                [(NavigationController *)[self navigationController] didStopGame];
+                [[f gameInstance] setValue:@"finished" forKey:@"famigo_active"];
+                [f updateGame];
+                [f setWatchGame:NO];
+            }
+            break;
+        case MultiDeviceWithFamigo:
+            [(NavigationController *)[self navigationController] didStopGame];
+            [[f gameInstance] setValue:@"finished" forKey:@"famigo_active"];
+            [f updateGame];
+            [f setWatchGame:NO];
+            break;
     }
 }
 
 - (void)signControlValueDidChange {
-    switch ([signControl selectedSegmentIndex]) {
-        case 0:
-            responseIsPositive = YES;
-            break;
-        case 1:
-            responseIsPositive = NO;
-            break;
-        default:
-            NSAssert(NO, @"Unknown sign control state");
-            break;
-    }
+    responseIsPositive = ![signControl selectedSegmentIndex];
     [self updateUI];
 }
 
 - (void)pressedNumberPadButton:(id)sender {
     switch ([sender tag]) {
-        case 0:
-        case 1:
-        case 2:
-        case 3:
-        case 4:
-        case 5:
-        case 6:
-        case 7:
-        case 8:
-        case 9: // a number
+        case 10: // delete
+            // Only delete if there is something to delete
+            if ([responseValue length] > 0) {
+                responseValue = [responseValue substringToIndex:([responseValue length] - 1)];
+            }
+            break;
+        case 11: // done/skip
+            // Prepend a minus sign if necessary
+            if (!responseIsPositive && ![responseValue isEqualToString:@"0"]) {
+                responseValue = [@"-" stringByAppendingString:responseValue];
+            }
+            
+            // Check for right/wrong/skipped answers
+            if ([responseValue isEqualToString:[arithmeticEquation resultAsString]]) {
+                [[self view] setBackgroundColor:[UIColor greenColor]];
+                score += 1 + [arithmeticEquationGenerator difficulty] + [arithmeticEquationGenerator allowNegativeNumbers];
+            }
+            else if ([responseValue isEqualToString:@""]) {
+                [[self view] setBackgroundColor:[UIColor whiteColor]];
+            }
+            else {
+                [[self view] setBackgroundColor:[UIColor redColor]];
+            }
+            
+            // Update the game data
+            NSString *playerName;
+            NSString *question = [NSString stringWithFormat:@"%@ %@", [arithmeticEquation serialize], responseValue];
+            if (f == nil) {
+                playerName = [NSString stringWithFormat:@"player-%d", currentPlayer];
+            }
+            else {
+                playerName = [[[[f gameInstance] objectForKey:@"famigo_players"] objectAtIndex:currentPlayer - 1] objectForKey:@"member_id"];
+            }
+            NSDictionary *playerData = [gameData objectForKey:playerName];
+            NSMutableArray *playerQuestions = [playerData objectForKey:kPlayerQuestionsKey];
+            [playerQuestions addObject:question];
+            
+            // Keep Famigo in sync
+            if (f != nil) {
+                [[f gameInstance] setValue:gameData forKey:[f game_name]];
+                [f updateGame];
+            }
+            
+            // Fade back to transparent
+            [UIView beginAnimations:nil context:nil]; {
+                [[self view] setBackgroundColor:[UIColor clearColor]];
+            } [UIView commitAnimations];
+            
+            // Make the next question
+            arithmeticEquation = [arithmeticEquationGenerator generateEquation];
+            responseValue = @"";
+            responseIsPositive = YES;
+            break;
+        default: // a number
             if ([responseValue length] < 6) {
                 if ([responseValue isEqualToString:@"0"]) {
                     responseValue = [NSString stringWithFormat:@"%d", [sender tag]];
@@ -376,54 +353,105 @@
                 }
             }
             break;
-        case 10: // delete
-            if ([responseValue length] > 0) {
-                responseValue = [responseValue substringToIndex:([responseValue length] - 1)];
-            }
-            break;
-        case 11: // done/skip
-            if (!responseIsPositive && ![responseValue isEqualToString:@"0"]) {
-                responseValue = [@"-" stringByAppendingString:responseValue];
-            }
-            
-            if ([responseValue isEqualToString:[arithmeticEquation resultAsString]]) {
-                [[self view] setBackgroundColor:[UIColor greenColor]];
-                score += 1 + [arithmeticEquationGenerator difficulty] + [arithmeticEquationGenerator allowNegativeNumbers];
-            }
-            else {
-                if ([responseValue isEqualToString:@""]) {
-                    [[self view] setBackgroundColor:[UIColor whiteColor]];
-                }
-                else {
-                    [[self view] setBackgroundColor:[UIColor redColor]];
-                }
-            }
-            
-            // Log the question
-            if (gameType == PassAndPlayWithFamigo || gameType == MultiDeviceWithFamigo) {
-                NSDictionary *question = [NSDictionary dictionaryWithObjectsAndKeys:[arithmeticEquation serialize], kPlayerEquationKey, responseValue, kPlayerResponseKey, nil];
-                Famigo *famigo = [Famigo sharedInstance];
-                NSDictionary *gameData = [[famigo gameInstance] valueForKey:[famigo game_name]];
-                NSDictionary *myDictionary = [gameData valueForKey:[famigo member_id]];
-                NSMutableArray *myQuestions = [myDictionary valueForKey:kPlayerQuestionsKey];
-                [myQuestions addObject:question];
-                [famigo updateGame];
-                NSLog(@"\n%@\n%@", gameData, myQuestions);
-            }
-            
-            [UIView beginAnimations:nil context:nil]; {
-                [[self view] setBackgroundColor:[UIColor clearColor]];
-            } [UIView commitAnimations];
-            
-            arithmeticEquation = [arithmeticEquationGenerator generateEquation];
-            responseValue = @"";
-            responseIsPositive = YES;
-            break;
-        default:
-            NSAssert(NO, @"unknown tag");
-            break;
     }
     [self updateUI];
+}
+
+#pragma mark -
+
+- (void)initUI {
+    // Time bar
+    timeBar = [[UIView alloc] init];
+    [timeBar setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.25]];
+    [[self view] addSubview:timeBar];
+    
+    // Time elapsed bar
+    timeElapsedBar = [[UIView alloc] init];
+    [timeElapsedBar setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.25]];
+    [[self view] addSubview:timeElapsedBar];
+    
+    // Time elapsed label
+    timeElapsedLabel = [[UILabel alloc] init];
+    [timeElapsedLabel setBackgroundColor:[UIColor clearColor]];
+    [timeElapsedLabel setTextAlignment:UITextAlignmentCenter];
+    [timeElapsedLabel setTextColor:[UIColor whiteColor]];
+    [[self view] addSubview:timeElapsedLabel];
+    
+    // First operand label
+    firstOperandLabel = [[UILabel alloc] init];
+    [firstOperandLabel setAdjustsFontSizeToFitWidth:YES];
+    [firstOperandLabel setBackgroundColor:[UIColor clearColor]];
+    [firstOperandLabel setTextColor:[UIColor blackColor]];
+    [[self view] addSubview:firstOperandLabel];
+    
+    // Operator label
+    operatorLabel = [[UILabel alloc] init];
+    [operatorLabel setAdjustsFontSizeToFitWidth:YES];
+    [operatorLabel setBackgroundColor:[UIColor clearColor]];
+    [operatorLabel setTextAlignment:UITextAlignmentCenter];
+    [operatorLabel setTextColor:[UIColor blackColor]];
+    [[self view] addSubview:operatorLabel];
+    
+    // Second operand label
+    secondOperandLabel = [[UILabel alloc] init];
+    [secondOperandLabel setAdjustsFontSizeToFitWidth:YES];
+    [secondOperandLabel setBackgroundColor:[UIColor clearColor]];
+    [secondOperandLabel setTextColor:[UIColor blackColor]];
+    [[self view] addSubview:secondOperandLabel];
+    
+    // Response background
+    responseBackground = [[UIView alloc] init];
+    [responseBackground setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.25]];
+    [[self view] addSubview:responseBackground];
+    
+    // Response label
+    responseLabel = [[UILabel alloc] init];
+    [responseLabel setAdjustsFontSizeToFitWidth:NO];
+    [responseLabel setBackgroundColor:[UIColor clearColor]];
+    [responseLabel setTextAlignment:UITextAlignmentRight];
+    [responseLabel setTextColor:[UIColor blackColor]];
+    [[self view] addSubview:responseLabel];
+    
+    // Sign control
+    signControl = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"+", @"-", nil]];
+    [signControl addTarget:self action:@selector(signControlValueDidChange) forControlEvents:UIControlEventValueChanged];
+    [[self view] addSubview:signControl];
+    
+    // Number pad
+    numberPad = [[UIView alloc] init];
+    [numberPad setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.25]];
+    [[self view] addSubview:numberPad];
+    
+    // Number buttons
+    UIButton *button;
+    for (int index = 0; index <= 9; index += 1) {
+        button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button addTarget:self action:@selector(pressedNumberPadButton:) forControlEvents:UIControlEventTouchUpInside];
+        [button setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.25]];
+        [button setTag:index];
+        [button setTitle:[NSString stringWithFormat:@"%d", index] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+        [numberPad addSubview:button];
+    }
+    
+    // Delete button
+    button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button addTarget:self action:@selector(pressedNumberPadButton:) forControlEvents:UIControlEventTouchUpInside];
+    [button setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.25]];
+    [button setTag:10];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+    [numberPad addSubview:button];
+    
+    // Done/skip button
+    button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button addTarget:self action:@selector(pressedNumberPadButton:) forControlEvents:UIControlEventTouchUpInside];
+    [button setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.25]];
+    [button setTag:11];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+    [numberPad addSubview:button];
 }
 
 - (void)drawUI {

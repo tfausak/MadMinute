@@ -71,38 +71,38 @@
 }
 
 - (void)didSelectGameType:(int)gameType {
-    switch (gameType) {
-        case SinglePlayer:
-            break;
-        case PassAndPlay:
-            break;
-        case PassAndPlayWithFamigo:
-            [[Famigo sharedInstance] setForceGameToStartSynchronously:NO];
-            [[Famigo sharedInstance] setIsPassAndPlaySession:YES];
-            break;
-        case MultiDeviceWithFamigo:
-            [[Famigo sharedInstance] setForceGameToStartSynchronously:YES];
-            [[Famigo sharedInstance] setIsPassAndPlaySession:NO];
-            break;
-        default:
-            NSAssert(NO, @"unknown game type");
-            break;
-    }
-    
     // Store the selected game type
     [[NSUserDefaults standardUserDefaults] setInteger:gameType forKey:kGameTypeKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    if (gameType == PassAndPlayWithFamigo || gameType == MultiDeviceWithFamigo) {
-        famigoController = [FamigoController sharedInstanceWithDelegate:self];
-        [self pushViewController:famigoController animated:YES];
-        
-        // Make sure we have connectivity
-        [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"kNetworkReachabilityChangedNotification" object:NULL]];
-    }
-    else {
+    if (gameType == SinglePlayer || gameType == PassAndPlay) {
         settingsViewController = [[SettingsViewController alloc] init];
         [self pushViewController:settingsViewController animated:YES];
+    }
+    else {
+        // Make sure we have connectivity
+        if ([[Reachability sharedReachability] internetConnectionStatus] == NotReachable) {
+            UIAlertView *alertView = [[UIAlertView alloc] init];
+            [alertView setTitle:@"Internet access required"];
+            [alertView setMessage:@"Famigo requires internet access."];
+            [alertView addButtonWithTitle:@"OK"];
+            [alertView setCancelButtonIndex:0];
+            [alertView show];
+            [alertView release];
+            return;
+        }
+        
+        // Set up the Famigo instance
+        [[Famigo sharedInstance] setSkipInvites:NO];
+        [[Famigo sharedInstance] setAllFamigoPlayers:YES];
+        [[Famigo sharedInstance] setForceGameToStartSynchronously:gameType == MultiDeviceWithFamigo];
+        [[Famigo sharedInstance] setGame_name:kGameName];
+        [[Famigo sharedInstance] setGame_instructions:kGameInstructions];
+        [[Famigo sharedInstance] setIsPassAndPlaySession:gameType == PassAndPlayWithFamigo];
+        [[Famigo sharedInstance] registerForNotifications:self withSelector:@selector(didReceiveFamigoNotification:)];
+        
+        famigoController = [FamigoController sharedInstanceWithDelegate:self];
+        [self pushViewController:famigoController animated:YES];
     }
 }
 
@@ -114,7 +114,12 @@
 
 - (void)didStopGame {
     [self popToRootViewControllerAnimated:NO];
-    [[Famigo sharedInstance] setWatchGame:NO];
+    
+    //
+    GameType gameType = [[[NSUserDefaults standardUserDefaults] objectForKey:kGameTypeKey] intValue];
+    if (gameType == PassAndPlayWithFamigo || gameType == MultiDeviceWithFamigo) {
+        [[Famigo sharedInstance] setWatchGame:NO];
+    }
     
     resultsViewController = [[ResultsViewController alloc] init];
     [self pushViewController:resultsViewController animated:YES];
@@ -124,9 +129,14 @@
 #pragma mark FamigoControllerDelegate
 
 - (void)famigoReady {
-    // TODO bring up the *right* view controller
-    settingsViewController = [[SettingsViewController alloc] init];
-    [self pushViewController:settingsViewController animated:YES];
+    if ([[Famigo sharedInstance] gameInProgress] || [[Famigo sharedInstance] gameInstance] == nil) {
+        settingsViewController = [[SettingsViewController alloc] init];
+        [self pushViewController:settingsViewController animated:YES];
+    }
+    else {
+        resultsViewController = [[ResultsViewController alloc] init];
+        [self pushViewController:resultsViewController animated:YES];
+    }
 }
 
 - (void)didReceiveFamigoNotification:(NSNotification *)notification {
@@ -134,11 +144,11 @@
     
     if ([[notification name] isEqualToString:FamigoMessageGameCreated]) {
         // Get a list of player names
-        NSArray *playerDictionaries = [[famigo gameInstance] valueForKey:FC_d_game_invites];
+        NSArray *playerDictionaries = [[famigo gameInstance] objectForKey:FC_d_game_invites];
         NSMutableArray *playerMemberIds = [NSMutableArray array];
         [playerMemberIds addObject:[famigo member_id]];
         for (NSDictionary *playerDictionary in playerDictionaries) {
-            [playerMemberIds addObject:[playerDictionary valueForKey:FC_d_member_id]];
+            [playerMemberIds addObject:[playerDictionary objectForKey:FC_d_member_id]];
         }
         
 		// Our game data consists of a dictionary of member_id to a separate dictionary, which stores player settings and player questions.
@@ -158,10 +168,12 @@
 		[famigo updateGame];
         
         // Wait for the other players to join
-        waitAlertView = [[UIAlertView alloc] init];
-        [waitAlertView setMessage:@"Waiting for all of the other players to join the game. Come on already!"];
-        [waitAlertView setTitle:@"Waiting for players"];
-        [waitAlertView show];
+        if ([[NSUserDefaults standardUserDefaults] integerForKey:kGameTypeKey] == MultiDeviceWithFamigo) {
+            waitAlertView = [[UIAlertView alloc] init];
+            [waitAlertView setMessage:@"Waiting for all of the other players to join the game. Come on already!"];
+            [waitAlertView setTitle:@"Waiting for players"];
+            [waitAlertView show];
+        }
     }
     else if ([[notification name] isEqualToString:FamigoMessageGameRead]) {
         if (waitAlertView != nil) {
@@ -171,16 +183,18 @@
         }
     }
     else if ([[notification name] isEqualToString:FamigoMessageGameCanceled]) {
-        [self popToRootViewControllerAnimated:NO];
-        [[Famigo sharedInstance] setWatchGame:NO];
-        
-        UIAlertView *alertView = [[UIAlertView alloc] init];
-        [alertView setTitle:@"Game Canceled"];
-        [alertView setMessage:@"Somebody canceled the game!"];
-        [alertView addButtonWithTitle:@"OK"];
-        [alertView setCancelButtonIndex:0];
-        [alertView show];
-        [alertView release];
+        if ([[self topViewController] isKindOfClass:[MadMinuteViewController class]]) {
+            [self popToRootViewControllerAnimated:NO];
+            [[Famigo sharedInstance] setWatchGame:NO];
+            
+            UIAlertView *alertView = [[UIAlertView alloc] init];
+            [alertView setTitle:@"Game Canceled"];
+            [alertView setMessage:@"Somebody canceled the game!"];
+            [alertView addButtonWithTitle:@"OK"];
+            [alertView setCancelButtonIndex:0];
+            [alertView show];
+            [alertView release];
+        }
 	}
     else if ([[notification name] isEqualToString:FamigoMessageGameFinished]) {
         NSLog(@"game finished");

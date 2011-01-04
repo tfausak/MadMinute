@@ -8,8 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "Constants.h"
+#import "Famigo.h"
+#import "ResultsDetailViewController.h"
 
-@interface ResultsViewController : UIViewController {
+@interface ResultsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+    UITableView *tableView;
+    NSArray *data;
 }
+
+@property (nonatomic, retain, readonly) UITableView *tableView;
+@property (nonatomic, retain, readonly) NSArray *data;
+
+- (NSInteger)scoreForPlayerData:(NSDictionary *)playerData;
 
 @end

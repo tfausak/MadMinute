@@ -56,11 +56,6 @@
     // Break the string into tokens
     NSArray *tokens = [serializedArithmeticEquation componentsSeparatedByString:@" "];
     
-    // Bail early if the number of tokens isn't right
-    if ([tokens count] != 3) {
-        return nil;
-    }
-    
     // Get each component
     int theFirstOperand = [(NSString *)[tokens objectAtIndex:0] intValue];
     int theOperation = (Operation)[(NSString *)[tokens objectAtIndex:1] intValue];
