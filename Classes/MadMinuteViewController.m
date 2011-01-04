@@ -274,15 +274,15 @@
             else {
                 [(NavigationController *)[self navigationController] didStopGame];
                 [[f gameInstance] setValue:@"finished" forKey:@"famigo_active"];
-                [f setWatchGame:NO];
                 [f updateGame];
+                [f setWatchGame:NO];
             }
             break;
         case MultiDeviceWithFamigo:
             [(NavigationController *)[self navigationController] didStopGame];
             [[f gameInstance] setValue:@"finished" forKey:@"famigo_active"];
-            [f setWatchGame:NO];
             [f updateGame];
+            [f setWatchGame:NO];
             break;
     }
 }
