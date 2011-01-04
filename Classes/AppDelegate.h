@@ -7,19 +7,18 @@
 //
 
 #import "Constants.h"
-#import "Famigo.h"
-#import "Reachability.h"
-#import "NavigationController.h"
+
+@class NavigationController;
 
 @interface AppDelegate : NSObject <UIApplicationDelegate, UIAlertViewDelegate> {
-    UIAlertView *reachabilityAlertView;
     UIWindow *window;
     NavigationController *navigationController;
+    UIAlertView *reachabilityAlertView;
 }
 
-@property (nonatomic, retain) UIAlertView *reachabilityAlertView;
 @property (nonatomic, retain) UIWindow *window;
 @property (nonatomic, retain) NavigationController *navigationController;
+@property (nonatomic, retain) UIAlertView *reachabilityAlertView;
 
 - (void)networkReachabilityDidChange;
 - (BOOL)shouldPromptUserToReview;

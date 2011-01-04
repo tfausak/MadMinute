@@ -7,30 +7,33 @@
 //
 
 #import "AppDelegate.h"
+#import "Famigo.h"
+#import "Settings.h"
+#import "NavigationController.h"
+#import "Reachability.h"
 
 @implementation AppDelegate
 
-@synthesize reachabilityAlertView;
 @synthesize window;
 @synthesize navigationController;
+@synthesize reachabilityAlertView;
 
 - (void)dealloc {
-    [reachabilityAlertView release];
     [window release];
     [navigationController release];
+    [reachabilityAlertView release];
     [super dealloc];
 }
 
 #pragma mark -
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Set some defaults
     [[NSUserDefaults standardUserDefaults] setValue:kAPIKey forKey:FC_d_api_key];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kGameTypeKey];
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:kNumberOfPlayersKey] == nil) {
-        [[NSUserDefaults standardUserDefaults] setInteger:2 forKey:kNumberOfPlayersKey];
-    }
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    // Set some defaults
+    [Settings setGameType:0];
+    [Settings setNumberOfPlayers:2];
     
     // Bring up the main window
     window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -44,7 +47,10 @@
 	[[Reachability sharedReachability] setAddress:kFamigoIPAddress];
 	[[Reachability sharedReachability] setNetworkStatusNotificationsEnabled:YES];
 	[[Reachability sharedReachability] remoteHostStatus];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkReachabilityDidChange) name:@"kNetworkReachabilityChangedNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(networkReachabilityDidChange)
+                                                 name:@"kNetworkReachabilityChangedNotification"
+                                               object:nil];
 	
     // Register for push notifications
 	[[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeBadge];
@@ -61,21 +67,24 @@
 #pragma mark Reachability
 
 - (void)networkReachabilityDidChange {
-    if ([[Reachability sharedReachability] internetConnectionStatus] == NotReachable) {
-        // Only show the reachability notice if the game type requires internet
-        GameType gameType = [[NSUserDefaults standardUserDefaults] integerForKey:kGameTypeKey];
-        if (gameType == PassAndPlayWithFamigo || gameType == MultiDeviceWithFamigo) {
-            reachabilityAlertView = [[UIAlertView alloc] init];
-            [reachabilityAlertView setTitle:@"Internet access required"];
-            [reachabilityAlertView setMessage:@"This application requires internet access. This message will automatically be dismissed when network access is restored."];
-            [reachabilityAlertView show];
+    if ([Settings gameType] == PassAndPlayWithFamigo || [Settings gameType] == MultiDeviceWithFamigo) {
+        if ([[Reachability sharedReachability] internetConnectionStatus] == NotReachable) {
+            if (reachabilityAlertView == nil) {
+                reachabilityAlertView = [UIAlertView alloc];
+                [reachabilityAlertView initWithTitle:@"Internet access required"
+                                             message:@"This application requires internet access. This message will automatically be dismissed when network access is restored."
+                                            delegate:nil
+                                   cancelButtonTitle:nil
+                                   otherButtonTitles:nil];
+                [reachabilityAlertView show];
+            }
         }
-    }
-    else if (reachabilityAlertView != nil) {
-        // Dismiss the reachability notice
-        [reachabilityAlertView dismissWithClickedButtonIndex:0 animated:YES];
-        [reachabilityAlertView release];
-        reachabilityAlertView = nil;
+        else if (reachabilityAlertView != nil) {
+            [reachabilityAlertView dismissWithClickedButtonIndex:0
+                                                        animated:YES];
+            [reachabilityAlertView release];
+            reachabilityAlertView = nil;
+        }
     }
 }
 

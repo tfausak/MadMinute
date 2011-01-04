@@ -7,7 +7,7 @@
 //
 
 #import "NumberOfPlayersViewController.h"
-#import "NavigationController.h"
+#import "Settings.h"
 
 @implementation NumberOfPlayersViewController
 
@@ -15,6 +15,7 @@
 
 - (void)dealloc {
     [tableView release];
+    
     [super dealloc];
 }
 
@@ -24,8 +25,10 @@
     if (self = [super init]) {
         [self setTitle:@"Number of players"];
         
-        // Set up the table view
-        tableView = [[UITableView alloc] initWithFrame:[[self view] bounds] style:UITableViewStyleGrouped];
+        // Initialize the table view
+        tableView = [UITableView alloc];
+        [tableView initWithFrame:[[self view] bounds]
+                           style:UITableViewStyleGrouped];
         [tableView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
         [tableView setBackgroundColor:[UIColor clearColor]];
         if ([tableView respondsToSelector:@selector(setBackgroundView:)]) {
@@ -40,7 +43,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [(NavigationController *)[self navigationController] setNavigationBarHidden:NO animated:animated];
+    [[self navigationController] setNavigationBarHidden:NO animated:animated];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
@@ -51,73 +54,36 @@
 #pragma mark UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)section {
-    NSAssert(aTableView == tableView, @"invalid table view");
-    
-    switch (section) {
-        case 0:
-            return 5;
-        default:
-            NSAssert(NO, @"unknown section");
-            return 0;
-    }
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSAssert(aTableView == tableView, @"invalid table view");
+    UITableViewCell *cell = [UITableViewCell alloc];
+    [cell initWithStyle:UITableViewCellStyleDefault
+        reuseIdentifier:@""];
+    [cell autorelease];
     
-    UITableViewCell *tableViewCell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil] autorelease];
-    
-    switch ([indexPath section]) {
-        case 0:
-            switch ([indexPath row]) {
-                case 0:
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                    [[tableViewCell textLabel] setText:[NSString stringWithFormat:@"%d players", [indexPath row] + 2]];
-                    if ([indexPath row] == [[NSUserDefaults standardUserDefaults] integerForKey:kNumberOfPlayersKey] - 2) {
-                        [tableViewCell setAccessoryType:UITableViewCellAccessoryCheckmark];
-                    }
-                    break;
-                default:
-                    NSAssert(NO, @"unknown row");
-                    break;
-            }
-            break;
-        default:
-            NSAssert(NO, @"unknown section");
-            return nil;
+    [[cell textLabel] setText:[Settings numberOfPlayersAsString:[indexPath row] + 2]];
+    if ([indexPath row] == [Settings numberOfPlayers] - 2) {
+        [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
     }
     
-    return tableViewCell;
+    return cell;
 }
 
 #pragma mark -
 #pragma mark UITableViewDelegate
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSAssert(aTableView == tableView, @"invalid table view");
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    switch ([indexPath section]) {
-        case 0:
-        case 1:
-        case 2:
-        case 3:
-        case 4:
-            if ([indexPath row] != [[NSUserDefaults standardUserDefaults] integerForKey:kNumberOfPlayersKey] - 2) {
-                [[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:[[NSUserDefaults standardUserDefaults] integerForKey:kNumberOfPlayersKey] - 2 inSection:[indexPath section]]] setAccessoryType:UITableViewCellAccessoryNone];
-            }
-            
-            [tableView deselectRowAtIndexPath:indexPath animated:YES];
-            [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
-            
-            [[NSUserDefaults standardUserDefaults] setInteger:[indexPath row] + 2 forKey:kNumberOfPlayersKey];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-            break;
-        default:
-            NSAssert(NO, @"unknown section");
-            break;
+    if ([indexPath row] != [Settings numberOfPlayers] - 2) {
+        // Deselect the old difficulty
+        [[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:[Settings numberOfPlayers] - 2 inSection:0]] setAccessoryType:UITableViewCellAccessoryNone];
+        
+        // Check the new difficulty
+        [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
+        [Settings setNumberOfPlayers:[indexPath row] + 2];
     }
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "DifficultyViewController.h"
+#import "Settings.h"
 
 @implementation DifficultyViewController
 
@@ -14,6 +15,7 @@
 
 - (void)dealloc {
     [tableView release];
+    
     [super dealloc];
 }
 
@@ -23,8 +25,10 @@
     if (self = [super init]) {
         [self setTitle:@"Difficulty"];
         
-        // Set up the table view
-        tableView = [[UITableView alloc] initWithFrame:[[self view] bounds] style:UITableViewStyleGrouped];
+        // Initialize the table view
+        tableView = [UITableView alloc];
+        [tableView initWithFrame:[[self view] bounds]
+                           style:UITableViewStyleGrouped];
         [tableView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
         [tableView setBackgroundColor:[UIColor clearColor]];
         if ([tableView respondsToSelector:@selector(setBackgroundView:)]) {
@@ -47,105 +51,39 @@
 }
 
 #pragma mark -
-
-+ (Difficulty)currentDifficulty {
-    return (Difficulty)[[NSUserDefaults standardUserDefaults] integerForKey:kDifficultyKey];
-}
-
-+ (NSString *)currentDifficultyAsString {
-    return [[self class] difficultyAsString:[[self class] currentDifficulty]];
-}
-
-+ (NSString *)difficultyAsString:(Difficulty)difficulty {
-    switch (difficulty) {
-        case VeryEasy:
-            return @"Very easy";
-        case Easy:
-            return @"Easy";
-        case Medium:
-            return @"Medium";
-        case Hard:
-            return @"Hard";
-        case VeryHard:
-            return @"Very hard";
-        default:
-            NSAssert(NO, @"unknown difficulty");
-            return nil;
-    }
-}
-
-#pragma mark -
 #pragma mark UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)section {
-    switch (section) {
-        case 0:
-            return 5;
-        default:
-            NSAssert(NO, @"unknown section");
-            return 0;
-    }
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *tableViewCell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil] autorelease];
+    UITableViewCell *cell = [UITableViewCell alloc];
+    [cell initWithStyle:UITableViewCellStyleDefault
+        reuseIdentifier:@""];
+    [cell autorelease];
     
-    switch ([indexPath section]) {
-        case 0:
-            switch ([indexPath row]) {
-                case VeryEasy:
-                case Easy:
-                case Medium:
-                case Hard:
-                case VeryHard:
-                    [[tableViewCell textLabel] setText:[[self class] difficultyAsString:[indexPath row]]];
-                    if ([indexPath row] == [[self class] currentDifficulty]) {
-                        [tableViewCell setAccessoryType:UITableViewCellAccessoryCheckmark];
-                    }
-                    break;
-                default:
-                    NSAssert(NO, @"unknown row");
-                    break;
-            }
-            break;
-        default:
-            NSAssert(NO, @"unknown section");
-            return nil;
+    [[cell textLabel] setText:[Settings difficultyAsString:[indexPath row]]];
+    if ([indexPath row] == [Settings difficulty]) {
+        [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
     }
     
-    return tableViewCell;
+    return cell;
 }
 
 #pragma mark -
 #pragma mark UITableViewDelegate
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    switch ([indexPath section]) {
-        case 0:
-            switch ([indexPath row]) {
-                case VeryEasy:
-                case Easy:
-                case Medium:
-                case Hard:
-                case VeryHard:
-                    if ([indexPath row] != [[self class] currentDifficulty]) {
-                        [[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:[[self class] currentDifficulty] inSection:[indexPath section]]] setAccessoryType:UITableViewCellAccessoryNone];
-                    }
-                    
-                    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-                    [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
-                    
-                    [[NSUserDefaults standardUserDefaults] setInteger:[indexPath row] forKey:kDifficultyKey];
-                    [[NSUserDefaults standardUserDefaults] synchronize];
-                    break;
-                default:
-                    NSAssert(NO, @"unknown row");
-                    break;
-            }
-            break;
-        default:
-            NSAssert(NO, @"unknown section");
-            break;
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if ([indexPath row] != [Settings difficulty]) {
+        // Deselect the old difficulty
+        [[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:[Settings difficulty] inSection:0]] setAccessoryType:UITableViewCellAccessoryNone];
+        
+        // Check the new difficulty
+        [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
+        [Settings setDifficulty:[indexPath row]];
     }
 }
 

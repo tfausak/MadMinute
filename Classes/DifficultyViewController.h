@@ -15,8 +15,4 @@
 
 @property (nonatomic, retain) UITableView *tableView;
 
-+ (Difficulty)currentDifficulty;
-+ (NSString *)currentDifficultyAsString;
-+ (NSString *)difficultyAsString:(Difficulty)difficulty;
-
 @end

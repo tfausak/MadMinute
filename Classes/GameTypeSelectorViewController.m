@@ -7,6 +7,7 @@
 //
 
 #import "GameTypeSelectorViewController.h"
+#import "Settings.h"
 #import "NavigationController.h"
 
 @implementation GameTypeSelectorViewController
@@ -15,6 +16,7 @@
 
 - (void)dealloc {
     [tableView release];
+    
     [super dealloc];
 }
 
@@ -25,12 +27,18 @@
         [self setTitle:@"Mad Minute"];
         
         // Create a generic back button (so that it won't say "Mad Minute")
-        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:NULL action:NULL];
-        [[self navigationItem] setBackBarButtonItem:backButton];
-        [backButton release];
+        UIBarButtonItem *button = [UIBarButtonItem alloc];
+        [button initWithTitle:@"Back"
+                        style:UIBarButtonItemStyleBordered
+                       target:NULL
+                       action:NULL];
+        [[self navigationItem] setBackBarButtonItem:button];
+        [button release];
         
-        // Set up the table view
-        tableView = [[UITableView alloc] initWithFrame:[[self view] bounds] style:UITableViewStyleGrouped];
+        // Initialize the table view
+        tableView = [UITableView alloc];
+        [tableView initWithFrame:[[self view] bounds]
+                           style:UITableViewStyleGrouped];
         [tableView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
         [tableView setBackgroundColor:[UIColor clearColor]];
         if ([tableView respondsToSelector:@selector(setBackgroundView:)]) {
@@ -45,7 +53,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [(NavigationController *)[self navigationController] setNavigationBarHidden:NO animated:animated];
+    [[self navigationController] setNavigationBarHidden:NO animated:animated];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
@@ -56,125 +64,34 @@
 #pragma mark UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)section {
-    NSAssert(aTableView == tableView, @"invalid table view");
-    
-    switch (section) {
-        case 0:
-            return 4;
-        default:
-            NSAssert(NO, @"unknown section");
-            return 0;
-    }
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSAssert(aTableView == tableView, @"invalid table view");
+    UITableViewCell *cell = [UITableViewCell alloc];
+    [cell initWithStyle:UITableViewCellStyleDefault
+        reuseIdentifier:@""];
+    [cell autorelease];
+    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    [[cell textLabel] setText:[Settings gameTypeAsString:[indexPath row]]];
     
-    UITableViewCell *tableViewCell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil] autorelease];
-    [tableViewCell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-    
-    switch ([indexPath section]) {
-        case 0:
-            switch ([indexPath row]) {
-                case SinglePlayer:
-                    [[tableViewCell textLabel] setText:@"Single player"];
-                    [[tableViewCell detailTextLabel] setText:@""];
-                    break;
-                case PassAndPlay:
-                    [[tableViewCell textLabel] setText:@"Pass and play"];
-                    [[tableViewCell detailTextLabel] setText:@""];
-                    break;
-                case PassAndPlayWithFamigo:
-                    [[tableViewCell textLabel] setText:@"Pass and play"];
-                    [[tableViewCell detailTextLabel] setText:@"With Famigo"];
-                    break;
-                case MultiDeviceWithFamigo:
-                    [[tableViewCell textLabel] setText:@"Multi device"];
-                    [[tableViewCell detailTextLabel] setText:@"With Famigo"];
-                    break;
-                default:
-                    NSAssert(NO, @"unknown row");
-                    return nil;
-            }
-            break;
-        default:
-            NSAssert(NO, @"unknown section");
-            return nil;
-    }
-    
-    return tableViewCell;
+    return cell;
 }
 
 - (NSString *)tableView:(UITableView *)aTableView titleForHeaderInSection:(NSInteger)section {
-    NSAssert(aTableView == tableView, @"invalid table view");
-    
-    switch (section) {
-        case 0:
-            return @"Game type";
-        default:
-            NSAssert(NO, @"unknown section");
-            return nil;
-    }
+    return @"Game type";
 }
 
 - (NSString *)tableView:(UITableView *)aTableView titleForFooterInSection:(NSInteger)section {
-    NSAssert(aTableView == tableView, @"invalid table view");
-    
-    switch (section) {
-        case 0:
-            return @"Famigo requires internet access";
-        default:
-            NSAssert(NO, @"unknown section");
-            return nil;
-    }
+    return @"Famigo requires internet access";
 }
 
 #pragma mark -
 #pragma mark UITableViewDelegate
 
-- (CGFloat)tableView:(UITableView *)aTableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSAssert(aTableView == tableView, @"invalid table view");
-    
-    switch ([indexPath section]) {
-        case 0:
-            switch ([indexPath row]) {
-                case SinglePlayer:
-                case PassAndPlay:
-                case PassAndPlayWithFamigo:
-                case MultiDeviceWithFamigo:
-                    return 54;
-                default:
-                    NSAssert(NO, @"unknown row");
-                    return 0;
-            }
-        default:
-            NSAssert(NO, @"unknown section");
-            return 0;
-    }
-}
-
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSAssert(aTableView == tableView, @"invalid table view");
-    
-    switch ([indexPath section]) {
-        case 0:
-            switch ([indexPath row]) {
-                case SinglePlayer:
-                case PassAndPlay:
-                case PassAndPlayWithFamigo:
-                case MultiDeviceWithFamigo:
-                    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-                    [(NavigationController *)[self navigationController] didSelectGameType:[indexPath row]];
-                    break;
-                default:
-                    NSAssert(NO, @"unknown row");
-                    break;
-            }
-            break;
-        default:
-            NSAssert(NO, @"unknown section");
-            break;
-    }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [(NavigationController *)[self navigationController] didSelectGameType:[indexPath row]];
 }
 
 @end

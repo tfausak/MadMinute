@@ -14,7 +14,15 @@
 		341C485612D259AC00FCEF33 /* ResultsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 341C485512D259AC00FCEF33 /* ResultsDetailViewController.m */; };
 		3421A5AE12C01DDD00742E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3421A5AD12C01DDD00742E49 /* AudioToolbox.framework */; };
 		3421A69B12C02A0700742E49 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3421A69A12C02A0700742E49 /* SystemConfiguration.framework */; };
-		34D57F4312C28679005897F4 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D57F4212C28679005897F4 /* SettingsViewController.m */; };
+		34277D3E12D3B8F000BCCA16 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 34277D3D12D3B8F000BCCA16 /* Settings.m */; };
+		34277DD712D3C7AC00BCCA16 /* dotOpaque.png in Resources */ = {isa = PBXBuildFile; fileRef = 34277DCE12D3C7AC00BCCA16 /* dotOpaque.png */; };
+		34277DD812D3C7AC00BCCA16 /* facebook-icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 34277DCF12D3C7AC00BCCA16 /* facebook-icon.jpg */; };
+		34277DD912D3C7AC00BCCA16 /* logo_no_ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 34277DD012D3C7AC00BCCA16 /* logo_no_ball.png */; };
+		34277DDA12D3C7AC00BCCA16 /* m_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 34277DD112D3C7AC00BCCA16 /* m_add.png */; };
+		34277DDB12D3C7AC00BCCA16 /* NeighborhoodSetupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34277DD312D3C7AC00BCCA16 /* NeighborhoodSetupController.xib */; };
+		34277DDC12D3C7AC00BCCA16 /* superball_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 34277DD412D3C7AC00BCCA16 /* superball_gray.png */; };
+		34277DDD12D3C7AC00BCCA16 /* superball.png in Resources */ = {isa = PBXBuildFile; fileRef = 34277DD512D3C7AC00BCCA16 /* superball.png */; };
+		34277DDE12D3C7AC00BCCA16 /* twitter-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 34277DD612D3C7AC00BCCA16 /* twitter-icon.png */; };
 		34D5822212C2AE44005897F4 /* ArithmeticEquationGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D5821E12C2AE44005897F4 /* ArithmeticEquationGenerator.m */; };
 		34D5822312C2AE44005897F4 /* ArithmeticEquation.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D5822012C2AE44005897F4 /* ArithmeticEquation.m */; };
 		34D5823112C2AF01005897F4 /* MadMinuteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D5823012C2AF01005897F4 /* MadMinuteViewController.m */; };
@@ -179,8 +187,17 @@
 		341C485512D259AC00FCEF33 /* ResultsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsDetailViewController.m; sourceTree = "<group>"; };
 		3421A5AD12C01DDD00742E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		3421A69A12C02A0700742E49 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		34D57F4112C28679005897F4 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		34D57F4212C28679005897F4 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		34277D3C12D3B8F000BCCA16 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		34277D3D12D3B8F000BCCA16 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
+		34277DCE12D3C7AC00BCCA16 /* dotOpaque.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dotOpaque.png; path = "../Famigo/build/Release-universal/FamigoAPI/dotOpaque.png"; sourceTree = SOURCE_ROOT; };
+		34277DCF12D3C7AC00BCCA16 /* facebook-icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "facebook-icon.jpg"; path = "../Famigo/build/Release-universal/FamigoAPI/facebook-icon.jpg"; sourceTree = SOURCE_ROOT; };
+		34277DD012D3C7AC00BCCA16 /* logo_no_ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_no_ball.png; path = "../Famigo/build/Release-universal/FamigoAPI/logo_no_ball.png"; sourceTree = SOURCE_ROOT; };
+		34277DD112D3C7AC00BCCA16 /* m_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = m_add.png; path = "../Famigo/build/Release-universal/FamigoAPI/m_add.png"; sourceTree = SOURCE_ROOT; };
+		34277DD212D3C7AC00BCCA16 /* NeighborhoodSetupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NeighborhoodSetupController.h; path = "../Famigo/build/Release-universal/FamigoAPI/NeighborhoodSetupController.h"; sourceTree = SOURCE_ROOT; };
+		34277DD312D3C7AC00BCCA16 /* NeighborhoodSetupController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NeighborhoodSetupController.xib; path = "../Famigo/build/Release-universal/FamigoAPI/NeighborhoodSetupController.xib"; sourceTree = SOURCE_ROOT; };
+		34277DD412D3C7AC00BCCA16 /* superball_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = superball_gray.png; path = "../Famigo/build/Release-universal/FamigoAPI/superball_gray.png"; sourceTree = SOURCE_ROOT; };
+		34277DD512D3C7AC00BCCA16 /* superball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = superball.png; path = "../Famigo/build/Release-universal/FamigoAPI/superball.png"; sourceTree = SOURCE_ROOT; };
+		34277DD612D3C7AC00BCCA16 /* twitter-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter-icon.png"; path = "../Famigo/build/Release-universal/FamigoAPI/twitter-icon.png"; sourceTree = SOURCE_ROOT; };
 		34D5821D12C2AE44005897F4 /* ArithmeticEquationGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArithmeticEquationGenerator.h; sourceTree = "<group>"; };
 		34D5821E12C2AE44005897F4 /* ArithmeticEquationGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArithmeticEquationGenerator.m; sourceTree = "<group>"; };
 		34D5821F12C2AE44005897F4 /* ArithmeticEquation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArithmeticEquation.h; sourceTree = "<group>"; };
@@ -470,8 +487,8 @@
 				34DEB81112C15DDE002FBB69 /* NavigationController.m */,
 				34DEB51A12C13C1D002FBB69 /* GameTypeSelectorViewController.h */,
 				34DEB51B12C13C1D002FBB69 /* GameTypeSelectorViewController.m */,
-				34D57F4112C28679005897F4 /* SettingsViewController.h */,
-				34D57F4212C28679005897F4 /* SettingsViewController.m */,
+				34277D3C12D3B8F000BCCA16 /* Settings.h */,
+				34277D3D12D3B8F000BCCA16 /* Settings.m */,
 				34FE19F112C9449D00CBB17E /* DifficultyViewController.h */,
 				34FE19F212C9449D00CBB17E /* DifficultyViewController.m */,
 				34E84A1412C30BAB00A639C4 /* NumberOfPlayersViewController.h */,
@@ -573,6 +590,15 @@
 		34D7D84012BFF02400687591 /* Famigo */ = {
 			isa = PBXGroup;
 			children = (
+				34277DCE12D3C7AC00BCCA16 /* dotOpaque.png */,
+				34277DCF12D3C7AC00BCCA16 /* facebook-icon.jpg */,
+				34277DD012D3C7AC00BCCA16 /* logo_no_ball.png */,
+				34277DD112D3C7AC00BCCA16 /* m_add.png */,
+				34277DD212D3C7AC00BCCA16 /* NeighborhoodSetupController.h */,
+				34277DD312D3C7AC00BCCA16 /* NeighborhoodSetupController.xib */,
+				34277DD412D3C7AC00BCCA16 /* superball_gray.png */,
+				34277DD512D3C7AC00BCCA16 /* superball.png */,
+				34277DD612D3C7AC00BCCA16 /* twitter-icon.png */,
 				34D7D84112BFF03400687591 /* ABContact.h */,
 				34D7D84212BFF03400687591 /* ABContactsHelper.h */,
 				34D7D84312BFF03400687591 /* ABGroup.h */,
@@ -966,6 +992,14 @@
 				34D7D99112BFF03400687591 /* WelcomeViewController-iPad.xib in Resources */,
 				34D7D99212BFF03400687591 /* WelcomeViewController.xib in Resources */,
 				34D7D99312BFF03400687591 /* yay.wav in Resources */,
+				34277DD712D3C7AC00BCCA16 /* dotOpaque.png in Resources */,
+				34277DD812D3C7AC00BCCA16 /* facebook-icon.jpg in Resources */,
+				34277DD912D3C7AC00BCCA16 /* logo_no_ball.png in Resources */,
+				34277DDA12D3C7AC00BCCA16 /* m_add.png in Resources */,
+				34277DDB12D3C7AC00BCCA16 /* NeighborhoodSetupController.xib in Resources */,
+				34277DDC12D3C7AC00BCCA16 /* superball_gray.png in Resources */,
+				34277DDD12D3C7AC00BCCA16 /* superball.png in Resources */,
+				34277DDE12D3C7AC00BCCA16 /* twitter-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -980,7 +1014,6 @@
 				34D7D7C712BFECD900687591 /* AppDelegate.m in Sources */,
 				34DEB51C12C13C1D002FBB69 /* GameTypeSelectorViewController.m in Sources */,
 				34DEB81212C15DDE002FBB69 /* NavigationController.m in Sources */,
-				34D57F4312C28679005897F4 /* SettingsViewController.m in Sources */,
 				34D5822212C2AE44005897F4 /* ArithmeticEquationGenerator.m in Sources */,
 				34D5822312C2AE44005897F4 /* ArithmeticEquation.m in Sources */,
 				34D5823112C2AF01005897F4 /* MadMinuteViewController.m in Sources */,
@@ -988,6 +1021,7 @@
 				34DFBCC312C3E75B00B522CC /* ResultsViewController.m in Sources */,
 				34FE19F312C9449D00CBB17E /* DifficultyViewController.m in Sources */,
 				341C485612D259AC00FCEF33 /* ResultsDetailViewController.m in Sources */,
+				34277D3E12D3B8F000BCCA16 /* Settings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

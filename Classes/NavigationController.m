@@ -8,13 +8,18 @@
 
 #import "NavigationController.h"
 #import "AppDelegate.h"
+#import "LogoAnimationController.h"
+#import "GameTypeSelectorViewController.h"
+#import "Settings.h"
+#import "MadMinuteViewController.h"
+#import "ResultsViewController.h"
 
 @implementation NavigationController
 
 @synthesize logoAnimationController;
 @synthesize gameTypeSelectorViewController;
 @synthesize famigoController;
-@synthesize settingsViewController;
+@synthesize settings;
 @synthesize madMinuteViewController;
 @synthesize resultsViewController;
 @synthesize waitAlertView;
@@ -23,7 +28,7 @@
     [logoAnimationController release];
     [gameTypeSelectorViewController release];
     [famigoController release];
-    [settingsViewController release];
+    [settings release];
     [madMinuteViewController release];
     [resultsViewController release];
     [waitAlertView release];
@@ -70,14 +75,12 @@
     }
 }
 
-- (void)didSelectGameType:(int)gameType {
-    // Store the selected game type
-    [[NSUserDefaults standardUserDefaults] setInteger:gameType forKey:kGameTypeKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+- (void)didSelectGameType:(GameType)gameType {
+    [Settings setGameType:gameType];
     
     if (gameType == SinglePlayer || gameType == PassAndPlay) {
-        settingsViewController = [[SettingsViewController alloc] init];
-        [self pushViewController:settingsViewController animated:YES];
+        settings = [[Settings alloc] init];
+        [self pushViewController:settings animated:YES];
     }
     else {
         // Make sure we have connectivity
@@ -130,8 +133,8 @@
 
 - (void)famigoReady {
     if ([[Famigo sharedInstance] gameInProgress] || [[Famigo sharedInstance] gameInstance] == nil) {
-        settingsViewController = [[SettingsViewController alloc] init];
-        [self pushViewController:settingsViewController animated:YES];
+        settings = [[Settings alloc] init];
+        [self pushViewController:settings animated:YES];
     }
     else {
         resultsViewController = [[ResultsViewController alloc] init];
