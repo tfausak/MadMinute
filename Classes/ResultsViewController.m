@@ -54,13 +54,15 @@
         }
         
         // Sort game data
-        [players sortUsingDescriptors:[NSArray arrayWithObjects:
-                                       [NSSortDescriptor sortDescriptorWithKey:kPlayerScoreKey
-                                                                     ascending:NO],
-                                       [NSSortDescriptor sortDescriptorWithKey:kPlayerNameKey
-                                                                     ascending:YES
-                                                                      selector:@selector(caseInsensitiveCompare:)],
-                                       nil]];
+        if ([[[[NSSortDescriptor alloc] init] autorelease] respondsToSelector:@selector(sortDescriptorWithKey:ascending:)]) {
+            [players sortUsingDescriptors:[NSArray arrayWithObjects:
+                                           [NSSortDescriptor sortDescriptorWithKey:kPlayerScoreKey
+                                                                         ascending:NO],
+                                           [NSSortDescriptor sortDescriptorWithKey:kPlayerNameKey
+                                                                         ascending:YES
+                                                                          selector:@selector(caseInsensitiveCompare:)],
+                                           nil]];
+        }
         
         // Store the game data
         data = [[NSArray alloc] initWithArray:players];

@@ -101,6 +101,7 @@
     [[tableViewCell textLabel] setText:[NSString stringWithFormat:@"%d %@ %d = %@", [equation firstOperand], [equation operationAsString], [equation secondOperand], response]];
     if (correct) {
         [tableViewCell setAccessoryType:UITableViewCellAccessoryCheckmark];
+        [[tableViewCell detailTextLabel] setText:@""];
     }
     else {
         [[tableViewCell textLabel] setTextColor:[UIColor redColor]];
