@@ -12,7 +12,7 @@
 #define kGameInstructions @"\nIt's like math, but faster!\n\n"
 #define kPromptOnAppLaunchCount 3
 #define kAppStoreReviewUrl @"http://www.famigogames.com/"
-#define kInitialTime 6
+#define kInitialTime 60
 
 // NSUserDefaults keys
 #define kAppLaunchCountKey @"appLaunchCount"
