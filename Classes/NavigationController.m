@@ -213,6 +213,9 @@
         resultsViewController = [[ResultsViewController alloc] init];
         [self pushViewController:resultsViewController animated:YES];
     }
+    else if ([[notification name] isEqualToString:FamigoMessageGameUpdateFailed]) {
+        // TODO handle failed updates
+    }
 }
 
 #pragma mark -

@@ -31,8 +31,7 @@
     [[NSUserDefaults standardUserDefaults] setValue:kAPIKey forKey:FC_d_api_key];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    // Set some defaults
-    [Settings setGameType:0];
+    // Set the default number of players
     if ([Settings numberOfPlayers] == 0) {
         [Settings setNumberOfPlayers:2];
     }

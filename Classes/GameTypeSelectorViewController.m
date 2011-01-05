@@ -53,6 +53,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [Settings setGameType:SinglePlayer];
     [[self navigationController] setNavigationBarHidden:NO animated:animated];
 }
 
