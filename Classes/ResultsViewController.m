@@ -8,6 +8,9 @@
 
 #import "ResultsViewController.h"
 #import "NavigationController.h"
+#import "Famigo.h"
+#import "ResultsDetailViewController.h"
+#import "Settings.h"
 
 @implementation ResultsViewController
 
@@ -28,9 +31,8 @@
         [self setTitle:@"Results"];
         
         // Load the game data
-        GameType gameType = [[NSUserDefaults standardUserDefaults] integerForKey:kGameTypeKey];
         NSDictionary *gameData;
-        if (gameType == SinglePlayer || gameType == PassAndPlay) {
+        if ([Settings gameType] == SinglePlayer || [Settings gameType] == PassAndPlay) {
             gameData = [[NSUserDefaults standardUserDefaults] objectForKey:kGameDataKey];
         }
         else {
@@ -114,7 +116,7 @@
     
     //
     UITableViewCell *tableViewCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
-                                             reuseIdentifier:nil];
+                                             reuseIdentifier:@""];
     [tableViewCell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     [[tableViewCell textLabel] setText:name];
     [[tableViewCell detailTextLabel] setText:[NSString stringWithFormat:@"%d point%@", score, s]];

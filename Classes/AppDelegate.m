@@ -33,7 +33,9 @@
     
     // Set some defaults
     [Settings setGameType:0];
-    [Settings setNumberOfPlayers:2];
+    if ([Settings numberOfPlayers] == 0) {
+        [Settings setNumberOfPlayers:2];
+    }
     
     // Bring up the main window
     window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

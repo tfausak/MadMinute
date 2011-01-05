@@ -16,7 +16,7 @@
 @class MadMinuteViewController;
 @class ResultsViewController;
 
-@interface NavigationController : UINavigationController <FamigoControllerDelegate, UINavigationControllerDelegate> {
+@interface NavigationController : UINavigationController <FamigoControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate> {
     LogoAnimationController *logoAnimationController;
     GameTypeSelectorViewController *gameTypeSelectorViewController;
     FamigoController *famigoController;

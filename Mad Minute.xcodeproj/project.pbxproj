@@ -23,9 +23,9 @@
 		34277DDC12D3C7AC00BCCA16 /* superball_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 34277DD412D3C7AC00BCCA16 /* superball_gray.png */; };
 		34277DDD12D3C7AC00BCCA16 /* superball.png in Resources */ = {isa = PBXBuildFile; fileRef = 34277DD512D3C7AC00BCCA16 /* superball.png */; };
 		34277DDE12D3C7AC00BCCA16 /* twitter-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 34277DD612D3C7AC00BCCA16 /* twitter-icon.png */; };
+		3449329012D4CFF9005F1852 /* MadMinuteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3449328F12D4CFF9005F1852 /* MadMinuteViewController.m */; };
 		34D5822212C2AE44005897F4 /* ArithmeticEquationGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D5821E12C2AE44005897F4 /* ArithmeticEquationGenerator.m */; };
 		34D5822312C2AE44005897F4 /* ArithmeticEquation.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D5822012C2AE44005897F4 /* ArithmeticEquation.m */; };
-		34D5823112C2AF01005897F4 /* MadMinuteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D5823012C2AF01005897F4 /* MadMinuteViewController.m */; };
 		34D7D7C712BFECD900687591 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D7D7C612BFECD900687591 /* AppDelegate.m */; };
 		34D7D7F012BFEDD400687591 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D7EE12BFEDD400687591 /* Entitlements.plist */; };
 		34D7D7F112BFEDD400687591 /* Mad_Minute-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34D7D7EF12BFEDD400687591 /* Mad_Minute-Info.plist */; };
@@ -198,12 +198,12 @@
 		34277DD412D3C7AC00BCCA16 /* superball_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = superball_gray.png; path = "../Famigo/build/Release-universal/FamigoAPI/superball_gray.png"; sourceTree = SOURCE_ROOT; };
 		34277DD512D3C7AC00BCCA16 /* superball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = superball.png; path = "../Famigo/build/Release-universal/FamigoAPI/superball.png"; sourceTree = SOURCE_ROOT; };
 		34277DD612D3C7AC00BCCA16 /* twitter-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter-icon.png"; path = "../Famigo/build/Release-universal/FamigoAPI/twitter-icon.png"; sourceTree = SOURCE_ROOT; };
+		3449328E12D4CFF9005F1852 /* MadMinuteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MadMinuteViewController.h; sourceTree = "<group>"; };
+		3449328F12D4CFF9005F1852 /* MadMinuteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MadMinuteViewController.m; sourceTree = "<group>"; };
 		34D5821D12C2AE44005897F4 /* ArithmeticEquationGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArithmeticEquationGenerator.h; sourceTree = "<group>"; };
 		34D5821E12C2AE44005897F4 /* ArithmeticEquationGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArithmeticEquationGenerator.m; sourceTree = "<group>"; };
 		34D5821F12C2AE44005897F4 /* ArithmeticEquation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArithmeticEquation.h; sourceTree = "<group>"; };
 		34D5822012C2AE44005897F4 /* ArithmeticEquation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArithmeticEquation.m; sourceTree = "<group>"; };
-		34D5822F12C2AF01005897F4 /* MadMinuteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MadMinuteViewController.h; sourceTree = "<group>"; };
-		34D5823012C2AF01005897F4 /* MadMinuteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MadMinuteViewController.m; sourceTree = "<group>"; };
 		34D7D7C212BFECC900687591 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		34D7D7C512BFECD900687591 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		34D7D7C612BFECD900687591 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -493,8 +493,8 @@
 				34FE19F212C9449D00CBB17E /* DifficultyViewController.m */,
 				34E84A1412C30BAB00A639C4 /* NumberOfPlayersViewController.h */,
 				34E84A1512C30BAB00A639C4 /* NumberOfPlayersViewController.m */,
-				34D5822F12C2AF01005897F4 /* MadMinuteViewController.h */,
-				34D5823012C2AF01005897F4 /* MadMinuteViewController.m */,
+				3449328E12D4CFF9005F1852 /* MadMinuteViewController.h */,
+				3449328F12D4CFF9005F1852 /* MadMinuteViewController.m */,
 				34DFBCC112C3E75B00B522CC /* ResultsViewController.h */,
 				34DFBCC212C3E75B00B522CC /* ResultsViewController.m */,
 				341C485412D259AC00FCEF33 /* ResultsDetailViewController.h */,
@@ -1016,12 +1016,12 @@
 				34DEB81212C15DDE002FBB69 /* NavigationController.m in Sources */,
 				34D5822212C2AE44005897F4 /* ArithmeticEquationGenerator.m in Sources */,
 				34D5822312C2AE44005897F4 /* ArithmeticEquation.m in Sources */,
-				34D5823112C2AF01005897F4 /* MadMinuteViewController.m in Sources */,
 				34E84A1612C30BAB00A639C4 /* NumberOfPlayersViewController.m in Sources */,
 				34DFBCC312C3E75B00B522CC /* ResultsViewController.m in Sources */,
 				34FE19F312C9449D00CBB17E /* DifficultyViewController.m in Sources */,
 				341C485612D259AC00FCEF33 /* ResultsDetailViewController.m in Sources */,
 				34277D3E12D3B8F000BCCA16 /* Settings.m in Sources */,
+				3449329012D4CFF9005F1852 /* MadMinuteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1075,7 +1075,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "../Famigo/build/Release-universal/FamigoAPI/";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.2;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -1096,7 +1096,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "../Famigo/build/Release-universal/FamigoAPI/";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.2;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = (
 					"-ObjC",

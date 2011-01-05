@@ -1,6 +1,6 @@
 //
 //  ArithmeticEquation.h
-//  MadMinute
+//  Mad Minute
 //
 //  Created by Taylor Fausak on 10/29/10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.

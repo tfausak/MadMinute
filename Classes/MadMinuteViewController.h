@@ -2,35 +2,28 @@
 //  MadMinuteViewController.h
 //  Mad Minute
 //
-//  Created by Taylor Fausak on 12/22/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Created by Taylor Fausak on 1/5/11.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "Constants.h"
-#import "Famigo.h"
-#import "ArithmeticEquationGenerator.h"
+
+@class Famigo;
+@class ArithmeticEquationGenerator;
+@class ArithmeticEquation;
 
 @interface MadMinuteViewController : UIViewController <UIAlertViewDelegate> {
-    Famigo *f;
-    NSUserDefaults *defaults;
-    
-    // Game settings
-    GameType gameType;
-    Difficulty difficulty;
-    int numberOfPlayers;
-    BOOL allowNegativeNumbers;
+    Famigo *famigo;
     
     // Game state
-    int currentPlayer;
+    NSInteger currentPlayer;
     ArithmeticEquationGenerator *arithmeticEquationGenerator;
     ArithmeticEquation *arithmeticEquation;
     NSTimer *timer;
-    int timeLeft;
-    int score;
+    NSInteger timeLeft;
     NSString *responseValue;
     BOOL responseIsPositive;
-    NSMutableDictionary *gameData;
+    NSMutableArray *questions;
     
     // User interface
     UIView *timeBar;
@@ -45,21 +38,15 @@
     UIView *numberPad;
 }
 
-@property (nonatomic, assign, readonly) Famigo *f;
-@property (nonatomic, assign, readonly) NSUserDefaults *defaults;
-@property (nonatomic, assign, readonly) GameType gameType;
-@property (nonatomic, assign, readonly) Difficulty difficulty;
-@property (nonatomic, assign, readonly) int numberOfPlayers;
-@property (nonatomic, assign, readonly) BOOL allowNegativeNumbers;
-@property (nonatomic, assign, readonly) int currentPlayer;
+@property (nonatomic, retain, readonly) Famigo *famigo;
+@property (nonatomic, assign, readonly) NSInteger currentPlayer;
 @property (nonatomic, retain, readonly) ArithmeticEquationGenerator *arithmeticEquationGenerator;
 @property (nonatomic, retain, readonly) ArithmeticEquation *arithmeticEquation;
 @property (nonatomic, retain, readonly) NSTimer *timer;
-@property (nonatomic, assign, readonly) int timeLeft;
-@property (nonatomic, assign, readonly) int score;
+@property (nonatomic, assign, readonly) NSInteger timeLeft;
 @property (nonatomic, retain, readonly) NSString *responseValue;
 @property (nonatomic, assign, readonly) BOOL responseIsPositive;
-@property (nonatomic, assign, readonly) NSMutableDictionary *gameData;
+@property (nonatomic, retain, readonly) NSMutableArray *questions;
 @property (nonatomic, retain, readonly) UIView *timeBar;
 @property (nonatomic, retain, readonly) UIView *timeElapsedBar;
 @property (nonatomic, retain, readonly) UILabel *timeElapsedLabel;
@@ -71,13 +58,24 @@
 @property (nonatomic, retain, readonly) UISegmentedControl *signControl;
 @property (nonatomic, retain, readonly) UIView *numberPad;
 
+// Misc utilities
+- (NSString *)playerKeyFor:(NSInteger)playerNumber;
+- (NSString *)playerNameFor:(NSInteger)playerNumber;
+
+// Game control
 - (void)startGame;
 - (void)stopGame;
 - (void)cancelGame;
+
+// Timer
 - (void)timerDidFire;
 - (void)timerDidExpire;
+
+// Buttons
 - (void)signControlValueDidChange;
 - (void)pressedNumberPadButton:(id)sender;
+
+// UI
 - (void)initUI;
 - (void)drawUI;
 - (void)updateUI;
