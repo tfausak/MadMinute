@@ -276,12 +276,12 @@
             responseValue = @"";
             break;
         case 11: // done
-            [questions addObject:[NSString stringWithFormat:@"%@ %@", [arithmeticEquation serialize], responseValue]];
-            
             // Prepend a minus sign if necessary
             if (!responseIsPositive && ![responseValue isEqualToString:@"0"]) {
                 responseValue = [@"-" stringByAppendingString:responseValue];
             }
+            
+            [questions addObject:[NSString stringWithFormat:@"%@ %@", [arithmeticEquation serialize], responseValue]];
             
             // Check for right/wrong/skipped answers
             if ([responseValue isEqualToString:[arithmeticEquation resultAsString]]) {
