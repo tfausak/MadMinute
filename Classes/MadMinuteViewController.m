@@ -274,6 +274,7 @@
     switch ([sender tag]) {
         case 10: // clear
             responseValue = @"";
+            responseIsPositive = YES;
             break;
         case 11: // done
             // Prepend a minus sign if necessary
@@ -308,11 +309,11 @@
             if ([responseValue length] < 6) {
                 if ([responseValue isEqualToString:@"0"]) {
                     responseValue = [NSString stringWithFormat:@"%d", [sender tag]];
-                    [responseValue retain];
                 }
                 else {
                     responseValue = [responseValue stringByAppendingString:[NSString stringWithFormat:@"%d", [sender tag]]];
                 }
+                [responseValue retain];
             }
             break;
     }
@@ -613,7 +614,18 @@
     [firstOperandLabel setText:[arithmeticEquation firstOperandAsString]];
     [operatorLabel setText:[arithmeticEquation operationAsString]];
     [secondOperandLabel setText:[arithmeticEquation secondOperandAsString]];
-    [responseLabel setText:responseValue];
+    
+    //
+    NSString *label = @"";
+    NSLog(@"\nresponseValue: %@\nresponseIsPositive: %d\nlabel: %@", responseValue, responseIsPositive, label);
+    if (!responseIsPositive) {
+        NSLog(@"\nresponseValue: %@\nresponseIsPositive: %d\nlabel: %@", responseValue, responseIsPositive, label);
+        label = [@"-" stringByAppendingString:label];
+    }
+    NSLog(@"\nresponseValue: %@\nresponseIsPositive: %d\nlabel: %@", responseValue, responseIsPositive, label);
+    label = [label stringByAppendingString:responseValue];
+    NSLog(@"\nresponseValue: %@\nresponseIsPositive: %d\nlabel: %@", responseValue, responseIsPositive, label);
+    [responseLabel setText:label];
     
     // Update the sign control
     if ([Settings allowNegativeNumbers]) {
