@@ -27,11 +27,10 @@
         [self setTitle:@"Mad Minute"];
         
         // Create a generic back button (so that it won't say "Mad Minute")
-        UIBarButtonItem *button = [UIBarButtonItem alloc];
-        [button initWithTitle:@"Back"
-                        style:UIBarButtonItemStyleBordered
-                       target:NULL
-                       action:NULL];
+        UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"Back"
+                                                                   style:UIBarButtonItemStyleBordered
+                                                                  target:NULL
+                                                                  action:NULL];
         [[self navigationItem] setBackBarButtonItem:button];
         [button release];
         
@@ -69,9 +68,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [UITableViewCell alloc];
-    [cell initWithStyle:UITableViewCellStyleDefault
-        reuseIdentifier:@""];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                                   reuseIdentifier:@""];
     [cell autorelease];
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     [[cell textLabel] setText:[Settings gameTypeAsString:[indexPath row]]];

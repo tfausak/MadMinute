@@ -190,12 +190,11 @@
         }
         
         // Let the players know the game was canceled
-        UIAlertView *alertView = [UIAlertView alloc];
-        [alertView initWithTitle:@"Game canceled"
-                         message:@"Someone canceled the game!"
-                        delegate:nil
-               cancelButtonTitle:@"OK"
-               otherButtonTitles:nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Game canceled"
+                                                            message:@"Someone canceled the game!"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
         [alertView show];
         [alertView release];
     }

@@ -62,6 +62,7 @@
         
         // Save the new list of questions
         questions = [[NSArray alloc] initWithArray:playerQuestions];
+        [playerQuestions release];
         
         // Set up the table view
         tableView = [[UITableView alloc] initWithFrame:[[self view] bounds] style:UITableViewStyleGrouped];
@@ -91,6 +92,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *tableViewCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@""];
+    [tableViewCell autorelease];
     [tableViewCell setSelectionStyle:UITableViewCellSelectionStyleNone];
     NSDictionary *question = [questions objectAtIndex:[indexPath row]];
     

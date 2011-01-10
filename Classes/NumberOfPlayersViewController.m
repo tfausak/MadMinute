@@ -58,9 +58,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [UITableViewCell alloc];
-    [cell initWithStyle:UITableViewCellStyleDefault
-        reuseIdentifier:@""];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                                   reuseIdentifier:@""];
     [cell autorelease];
     
     [[cell textLabel] setText:[Settings numberOfPlayersAsString:[indexPath row] + 2]];

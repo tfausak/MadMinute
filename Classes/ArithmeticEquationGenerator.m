@@ -76,6 +76,7 @@
     float secondOperand;
     
     // Generate a random operation
+    firstOperand = secondOperand = 0;
     operation = [(NSNumber *)[allowedOperations objectAtIndex:(arc4random() % [allowedOperations count])] intValue];
     switch (operation) {
         case Addition:
@@ -117,7 +118,7 @@
         }
     }
     
-    return [[ArithmeticEquation alloc] initWithFirstOperand:firstOperand operation:operation secondOperand:secondOperand];
+    return [[[ArithmeticEquation alloc] initWithFirstOperand:firstOperand operation:operation secondOperand:secondOperand] autorelease];
 }
 
 @end

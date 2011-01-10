@@ -27,11 +27,10 @@
         [self setTitle:@"Settings"];
         
         // Add a bar button item to start the game
-        UIBarButtonItem *button = [UIBarButtonItem alloc];
-        [button initWithTitle:@"Start game"
-                        style:UIBarButtonItemStyleDone
-                       target:[self navigationController]
-                       action:@selector(didStartGame)];
+        UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"Start game"
+                                                                   style:UIBarButtonItemStyleDone
+                                                                  target:[self navigationController]
+                                                                  action:@selector(didStartGame)];
         [[self navigationItem] setRightBarButtonItem:button animated:YES];
         [button release];
         
@@ -88,7 +87,7 @@
 }
 
 + (NSDictionary *)all {
-    NSMutableDictionary *all = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *all = [[[NSMutableDictionary alloc] init] autorelease];
     [all setObject:[NSNumber numberWithInt:[Settings gameType]]
             forKey:kGameTypeKey];
     [all setObject:[NSNumber numberWithInt:[Settings difficulty]]
@@ -197,9 +196,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [UITableViewCell alloc];
-    [cell initWithStyle:UITableViewCellStyleValue1
-        reuseIdentifier:@""];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
+                                                   reuseIdentifier:@""];
     [cell autorelease];
     
     switch ([indexPath row]) {
@@ -254,10 +252,12 @@
         case 1: {
             DifficultyViewController *viewController = [[DifficultyViewController alloc] init];
             [[self navigationController] pushViewController:viewController animated:YES];
+            [viewController release];
             break; }
         case 3: {
             NumberOfPlayersViewController *viewController = [[NumberOfPlayersViewController alloc] init];
             [[self navigationController] pushViewController:viewController animated:YES];
+            [viewController release];
             break; }
     }
 }

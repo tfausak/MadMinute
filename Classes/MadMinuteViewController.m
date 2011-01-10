@@ -64,10 +64,9 @@
         [self setTitle:@"Mad Minute"];
         
         // Ditch the back button in favor of a cancel button
-        UIBarButtonItem *cancelButton = [UIBarButtonItem alloc];
-        [cancelButton initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
-                                           target:self
-                                           action:@selector(cancelGame)];
+        UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                                                      target:self
+                                                                                      action:@selector(cancelGame)];
         [[self navigationItem] setLeftBarButtonItem:cancelButton];
         [cancelButton release];
         
@@ -230,6 +229,7 @@
     [gameData setObject:playerData forKey:[self playerKeyFor:currentPlayer]];     
     [[NSUserDefaults standardUserDefaults] setObject:gameData forKey:kGameDataKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    [gameData release];
     
     // Synchronize Famigo
     if (famigo != nil) {
@@ -617,14 +617,10 @@
     
     //
     NSString *label = @"";
-    NSLog(@"\nresponseValue: %@\nresponseIsPositive: %d\nlabel: %@", responseValue, responseIsPositive, label);
-    if (!responseIsPositive) {
-        NSLog(@"\nresponseValue: %@\nresponseIsPositive: %d\nlabel: %@", responseValue, responseIsPositive, label);
+    if (!responseIsPositive && [responseValue length] != 0 && ![responseValue isEqualToString:@"0"]) {
         label = [@"-" stringByAppendingString:label];
     }
-    NSLog(@"\nresponseValue: %@\nresponseIsPositive: %d\nlabel: %@", responseValue, responseIsPositive, label);
     label = [label stringByAppendingString:responseValue];
-    NSLog(@"\nresponseValue: %@\nresponseIsPositive: %d\nlabel: %@", responseValue, responseIsPositive, label);
     [responseLabel setText:label];
     
     // Update the sign control

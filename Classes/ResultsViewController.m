@@ -66,6 +66,7 @@
         
         // Store the game data
         data = [[NSArray alloc] initWithArray:players];
+        [players release];
         
         // Set up the table view
         tableView = [[UITableView alloc] initWithFrame:[[self view] bounds] style:UITableViewStyleGrouped];
@@ -119,6 +120,7 @@
     //
     UITableViewCell *tableViewCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
                                              reuseIdentifier:@""];
+    [tableViewCell autorelease];
     [tableViewCell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     [[tableViewCell textLabel] setText:name];
     [[tableViewCell detailTextLabel] setText:[NSString stringWithFormat:@"%d point%@", score, s]];
@@ -137,8 +139,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSString *playerKey = [[data objectAtIndex:[indexPath row]] objectForKey:kPlayerKeyKey];
     
-    ResultsDetailViewController *viewController = [ResultsDetailViewController alloc];
-    [viewController initWithPlayer:playerKey];
+    ResultsDetailViewController *viewController = [[ResultsDetailViewController alloc] initWithPlayer:playerKey];
     [[self navigationController] pushViewController:viewController animated:YES];
     [viewController release];
 }
