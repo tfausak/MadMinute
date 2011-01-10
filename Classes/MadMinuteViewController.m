@@ -150,7 +150,7 @@
 
 - (void)startGame {
     // Initialize game state
-    arithmeticEquation = [arithmeticEquationGenerator generateEquation];
+    arithmeticEquation = [[arithmeticEquationGenerator generateEquation] retain];
     timer = [NSTimer scheduledTimerWithTimeInterval:1
                                              target:self
                                            selector:@selector(timerDidFire)
@@ -301,7 +301,7 @@
             } [UIView commitAnimations];
             
             // Make the next question
-            arithmeticEquation = [arithmeticEquationGenerator generateEquation];
+            arithmeticEquation = [[arithmeticEquationGenerator generateEquation] retain];
             responseValue = @"";
             responseIsPositive = YES;
             break;
