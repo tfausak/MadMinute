@@ -81,10 +81,6 @@
     return @"Game type";
 }
 
-- (NSString *)tableView:(UITableView *)aTableView titleForFooterInSection:(NSInteger)section {
-    return @"Famigo requires internet access";
-}
-
 #pragma mark -
 #pragma mark UITableViewDelegate
 
