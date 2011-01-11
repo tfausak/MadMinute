@@ -11,6 +11,7 @@
 #import "Settings.h"
 #import "NavigationController.h"
 #import "Reachability.h"
+#import "MadMinuteViewController.h"
 
 @implementation AppDelegate
 
@@ -62,6 +63,13 @@
     }
     
     return YES;
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application {
+    // Cancel the game if it happens to be active
+    if ([[navigationController topViewController] isKindOfClass:[MadMinuteViewController class]]) {
+        [(MadMinuteViewController *)[navigationController topViewController] cancelGame];
+    }
 }
 
 #pragma mark -

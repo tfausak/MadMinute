@@ -111,11 +111,6 @@
     [[self navigationController] setNavigationBarHidden:NO animated:animated];
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-    //[self cancelGame];
-    // todo
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
     return YES;
 }
@@ -236,7 +231,6 @@
     if (famigo != nil) {
         [[[famigo gameInstance] objectForKey:[famigo game_name]] setObject:playerData forKey:[self playerKeyFor:currentPlayer]];
         [[[[famigo gameInstance] objectForKey:@"famigo_players"] objectAtIndex:currentPlayer - 1] setObject:[NSNumber numberWithInt:score] forKey:@"score"];
-        NSLog(@"%@", [famigo gameInstance]);
         [famigo updateGame];
     }
     
