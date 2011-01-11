@@ -25,6 +25,7 @@
 @synthesize responseValue;
 @synthesize responseIsPositive;
 @synthesize questions;
+@synthesize score;
 @synthesize timeBar;
 @synthesize timeElapsedBar;
 @synthesize timeElapsedLabel;
@@ -160,6 +161,7 @@
     responseValue = @"";
     responseIsPositive = YES;
     questions = [[NSMutableArray alloc] init];
+    score = 0;
     
     // Show the UI
     [timeElapsedBar setHidden:NO];
@@ -178,6 +180,7 @@
     responseValue = @"";
     responseIsPositive = YES;
     questions = nil;
+    score = 0;
     
     // Hide the UI
     [timeElapsedBar setHidden:YES];
@@ -217,6 +220,8 @@
                    forKey:kPlayerSettingsKey];
     [playerData setObject:questions
                    forKey:kPlayerQuestionsKey];
+    [playerData setObject:[NSNumber numberWithInt:score]
+                   forKey:kPlayerScoreKey];
     [playerData setObject:[self playerNameFor:currentPlayer]
                    forKey:kPlayerNameKey];
     
@@ -287,6 +292,7 @@
             // Check for right/wrong/skipped answers
             if ([responseValue isEqualToString:[arithmeticEquation resultAsString]]) {
                 [[self view] setBackgroundColor:[UIColor greenColor]];
+                score += 1 + [Settings difficulty] + [Settings allowNegativeNumbers];
             }
             else if ([responseValue isEqualToString:@""]) {
                 [[self view] setBackgroundColor:[UIColor whiteColor]];

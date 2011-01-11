@@ -17,6 +17,4 @@
 @property (nonatomic, retain, readonly) UITableView *tableView;
 @property (nonatomic, retain, readonly) NSArray *data;
 
-- (NSInteger)scoreForPlayerData:(NSDictionary *)playerData;
-
 @end

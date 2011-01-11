@@ -24,6 +24,7 @@
     NSString *responseValue;
     BOOL responseIsPositive;
     NSMutableArray *questions;
+    NSInteger score;
     
     // User interface
     UIView *timeBar;
@@ -47,6 +48,7 @@
 @property (nonatomic, retain, readonly) NSString *responseValue;
 @property (nonatomic, assign, readonly) BOOL responseIsPositive;
 @property (nonatomic, retain, readonly) NSMutableArray *questions;
+@property (nonatomic, assign, readonly) NSInteger score;
 @property (nonatomic, retain, readonly) UIView *timeBar;
 @property (nonatomic, retain, readonly) UIView *timeElapsedBar;
 @property (nonatomic, retain, readonly) UILabel *timeElapsedLabel;

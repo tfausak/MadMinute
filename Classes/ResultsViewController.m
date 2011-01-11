@@ -46,7 +46,7 @@
             NSDictionary *playerData = [NSDictionary dictionaryWithObjectsAndKeys:
                                         key, kPlayerKeyKey,
                                         [value objectForKey:kPlayerNameKey], kPlayerNameKey,
-                                        [NSNumber numberWithInt:[self scoreForPlayerData:value]], kPlayerScoreKey,
+                                        [value objectForKey:kPlayerScoreKey], kPlayerScoreKey,
                                         [value objectForKey:kPlayerSettingsKey], kPlayerSettingsKey,
                                         [value objectForKey:kPlayerQuestionsKey], kPlayerQuestionsKey,
                                         nil];
@@ -89,24 +89,6 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
     return YES;
-}
-
-#pragma mark -
-
-- (NSInteger)scoreForPlayerData:(NSDictionary *)playerData {
-    NSInteger score = 0;
-    Difficulty difficulty = [[[playerData objectForKey:@"settings"] objectForKey:@"difficulty"] intValue];
-    BOOL allowNegativeNumbers = [[[playerData objectForKey:@"settings"] objectForKey:@"allowNegativeNumbers"] intValue];
-    
-    for (NSString *question in [playerData objectForKey:@"questions"]) {
-        NSArray *tokens = [question componentsSeparatedByString:@" "];
-        ArithmeticEquation *equation = [ArithmeticEquation unserialize:question];
-        if ([tokens count] >= 4 && [[tokens objectAtIndex:3] isEqualToString:[equation resultAsString]]) {
-            score += 1 + difficulty + allowNegativeNumbers;
-        }
-    }
-    
-    return score;
 }
 
 #pragma mark -
