@@ -225,10 +225,6 @@
     [playerData setObject:[self playerNameFor:currentPlayer]
                    forKey:kPlayerNameKey];
     
-    // Stop the game
-    // This must happen AFTER storing player data, since it kills the 'questions' variable
-    [self stopGame];
-    
     // Update the game data with this player's data
     NSMutableDictionary *gameData = [[[NSUserDefaults standardUserDefaults] objectForKey:kGameDataKey] mutableCopy];
     [gameData setObject:playerData forKey:[self playerKeyFor:currentPlayer]];     
@@ -239,8 +235,14 @@
     // Synchronize Famigo
     if (famigo != nil) {
         [[[famigo gameInstance] objectForKey:[famigo game_name]] setObject:playerData forKey:[self playerKeyFor:currentPlayer]];
+        [[[[famigo gameInstance] objectForKey:@"famigo_players"] objectAtIndex:currentPlayer - 1] setObject:[NSNumber numberWithInt:score] forKey:@"score"];
+        NSLog(@"%@", [famigo gameInstance]);
         [famigo updateGame];
     }
+    
+    // Stop the game
+    // This must happen AFTER storing player data and syncing with Famigo
+    [self stopGame];
         
     // Either finish the game or pass it off to the next person
     switch ([Settings gameType]) {
